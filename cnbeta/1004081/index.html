@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>腾讯公布快充重大安全漏洞：影响数亿设备、可直接烧毁 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="腾讯公布快充重大安全漏洞：影响数亿设备、可直接烧毁" />
+<meta property="og:description" content="这几年，快充技术发展越来越快，这几天各家也纷纷宣布了100W、125W的超级快充技术，但一直以来，围绕快充的安全性也存在不少疑虑甚至争议，包括对手机和电池的影响，以及充电技术本身的隐患。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1004081/" />
+<meta property="article:published_time" content="2020-07-16T16:54:37+08:00" />
+<meta property="article:modified_time" content="2020-07-16T16:54:37+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">腾讯公布快充重大安全漏洞：影响数亿设备、可直接烧毁</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-16T16:54:37&#43;08:00">July 16, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>这几年，快充技术发展越来越快，这几天各家也纷纷宣布了100W、125W的超级快充技术，但一直以来，围绕快充的安全性也存在不少疑虑甚至争议，包括对手机和电池的影响，以及充电技术本身的隐患。</p>
+<p>7月16日，腾讯安全玄武实验室发布研究报告称，市面上现行的大量快充设备存在安全问题，攻击者可通过改写快充设备的固件控制充电行为，造成被充电设备元器件烧毁，甚至更严重的后果，保守估计受影响的终端设备数量可能数以亿计，凡是通过USB供电的设备都可能成为受害者。</p>
+<p>腾讯将此安全问题命名为“BadPower”，这也是继“BadBarcode”、“BadTunnel”、“应用克隆”、“残迹重用”、“BucketShock”等等之后，腾讯安全玄武实验室发布的又一安全问题报告。</p>
+<p>腾讯认为，BadPower可能是世界上第一个能从数字世界攻击物理世界且影响范围如此之大的安全问题</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0716/469296e94bebb77.png" alt="img:腾讯公布快充重大安全漏洞：影响数亿设备、可直接烧毁"></p>
+<p>某受电设备遭BadPower攻击时芯片烧毁的情况</p>
+<p>据介绍，腾讯玄武安全实验室测试了市面上35款支持快充的充电器、充电宝等产品，发现其中18款存在安全问题，涉及到8个不同品牌、9个不同型号的快充芯片，当然具体名单不能公布。</p>
+<p>借助此隐患，攻击者可利用特制设备或被入侵的手机、笔记本等数字终端，入侵快充设备的固件，控制充电行为，使其向受电设备发送过高的功率，从而导致受电设备的元器件击穿、烧毁，还可能进一步给受电设备所在物理环境造成安全风险。</p>
+<p>攻击方式包括物理接触和非物理接触，其中有相当一部分攻击可以通过远程方式完成，18款设备有11款都可以通过数码终端进行无物理接触的攻击。</p>
+<p>可以看出，BadPower和传统的安全问题不同，它不会导致用户的数据隐私泄露，但是会造成实实在在的财产损失，甚至威胁人身安全，事实上更加严重。</p>
+<p><img src="https://img1.mydrivers.com/img/20200716/24c8410c1c36489d86c0783a87d72178.gif" alt="img:腾讯公布快充重大安全漏洞：影响数亿设备、可直接烧毁"></p>
+<p>攻击效果动图演示</p>
+<p>不过幸运的是，BadPower问题大部分都可以通过更新设备固件的方式进行修复，普通用户可以注意：不要轻易把自己的充电设备借给别人、不要用快充充电器给不支持快充的设备充电等。</p>
+<p>腾讯还强调，不同的快充协议本身没有安全性高低的差别，风险主要取决于是否允许通过USB口改写固件，以及是否对改写固件操作进行了安全校验等。</p>
+<p>玄武实验室也针对市面上的快充芯片进行了调研，发现接近60％的具备成品后通过USB口更新固件的功能，因此建议使用这些芯片制造产品时，要在设计时就充分考虑安全，严格控制安全校验机制、固件代码、软件漏洞等。</p>
+<p>腾讯安全玄武实验室已于今年3月27日将“BadPower”问题上报给国家主管机构CNVD，同时也在积极协调相关厂商，推动行业采取积极措施消除BadPower问题，并建议相关部门将安全校验纳入快充技术国家标准。</p>
+<p>据透露，小米、Anker目前是腾讯玄武实验室的紧密合作伙伴，对这次研究工作做出了贡献，在未来上市的快充产品中也会加入玄武安全检测环节。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0716/b7e0993b3b290db.png" alt="img:腾讯公布快充重大安全漏洞：影响数亿设备、可直接烧毁"></p>
+<p>附腾讯玄武安全实验室官方问答——</p>
+<p>Q1：这次BadPower影响面大概是怎样的？哪些设备、厂商需要格外关注BadPower问题？</p>
+<p>A：我们目前主要分析了一些充电器、充电宝等产品。但其实所有支持快充技术的可对外供电的设备都可能存在类似问题。</p>
+<p>快充供电产业链厂商格外需要关注这个问题。其中包括生产快充设备的厂商，也包括生产快充芯片的厂商等。</p>
+<p>同时，凡是通过USB供电的设备都可能成为BadPower功率过载攻击的受害者，所以至少也应该了解这个风险。</p>
+<p>Q2：厂商可以怎样解决BadPower问题？用户需要做什么？</p>
+<p>A：厂商：大部分BadPower问题可通过更新设备固件进行修复。设备厂商可根据情况，采取措施修复已销售产品中的BadPower问题，例如通过维修网点帮助用户更新充电设备中的固件，或通过网络向手机等支持快充技术的终端设备下发安全更新，升级充电设备中的固件。</p>
+<p>在未来设计和制造快充产品时应注意：</p>
+<p>1、对通过USB口更新固件的行为进行严格的合法性校验，或不提供该功能；</p>
+<p>2、对设备固件代码进行严格安全检查，防止常见软件漏洞。</p>
+<p>用户：普通用户也可采取一些措施减轻BadPower的威胁。例如不要轻易把自己的充电器、充电宝等给别人使用。同时建议不要用Type-C转其它USB接口的线缆让快充设备给不支持快充的受电设备供电。因为支持快充技术的受电设备过载保护通常好于不支持快充技术的受电设备。在遭受功率过载时，有更好过载保护的设备可能导致的后果更轻，甚至可能不受影响。</p>
+<p>Q3：请介绍一下你们是怎么攻击这些快充设备的，这种攻击方式有没有可能也同样沿用到别的场景？</p>
+<p>A：恶意攻击者可利用特殊设备（物理攻击）或被入侵的数字终端改写快充设备的固件，从而控制充电行为。</p>
+<p>Q4：这次的研究中，是否真的对智能手机实现了物理攻击成果？</p>
+<p>A：智能手机既可以成为发起BadPower攻击的媒介，也可以成为BadPower功率过载攻击的受害者。这两者我们都测试成功了。不过，由于用智能手机作为受害者来测试的成本比较高，我们在第一次测试中成功把手机烧坏了之后就没有再去测别的手机了。</p>
+<p>Q5：这次安全问题的安全威胁可以通过哪些路径发起？可否直接通过网络进行攻击？</p>
+<p>A：在研究中，我们实验了多种攻击路径。最直接一种是将特制攻击设备直接连到充电适配器上。我们也进一步实现了通过智能终端发起攻击。而智能终端是可以通过传统网络入侵手段进行控制的。</p>
+<p>Q6：这次安全问题原理上能够造成的最严重后果是什么？</p>
+<p>A：在我们的研究成果展示视频中，可以看到对某USB供电设备的攻击效果。可以看到设备内部的芯片被烧毁了。对不同的攻击对象和攻击场景来说，后果各不相同。具体与过载时的电压、电流，以及受电设备的电路布局、元器件选择、乃至外壳材质、内部结构等均有关系。</p>
+<p>大部分情况下，功率过载会导致受电设备内相关芯片击穿、烧毁，从而造成不可逆的物理损坏。由于功率过载对芯片的破坏情况无法控制和预测。所以芯片被破坏后还可能导致其它继发后果。</p>
+<p>我们在测试中曾观察到某款设备在受到攻击后，被击穿的芯片连接内置锂电池正负极的两个引脚间电阻由无穷大变成了几十欧姆。</p>
+<p>Q7：腾讯安全这次安全问题的研究过程中是否有和快充产品厂商合作？具体的合作是怎样一个形式？</p>
+<p>A：有的，主要合作的快充产品厂商包括小米和Anker。它们是玄武实验室的紧密合作伙伴，对这次研究工作做出了贡献，在未来上市的快充产品中也会加入玄武安全检测环节。</p>
+<p>Q8：有一种看法认为“芯片和固件，就是些更难修复的软件”，是描述整个硬件开发上安全缺失的现状，你认同这种评价吗？从你们的调研来看，快充芯片产业在安全建设上处于一个什么水平？</p>
+<p>A：芯片和固件的问题解决起来可能确实更麻烦一些。有两个很典型的例子。</p>
+<p>一是我们2017年底发现的屏下指纹“残迹重用”问题，那也是芯片固件这个层面的。但因为我们在行业刚开始使用该技术时就发现了问题，帮助手机行业从源头解决了问题，所以处理的比较圆满。所以你们现在无论买哪个牌子的手机，只要有屏下指纹功能，都有我们的贡献在里面。</p>
+<p>我们2015年发现的BadBarcode问题也是存在于设备固件里。但因为发现时该问题已经在行业里存在了十几二十年，处理起来就比较棘手。不过我们在过去五年中一直持续对此开展工作，帮助国内扫码器行业检测和修复问题，确保新生产的设备是安全的。</p>
+<p>基于有以上两个案例的经验，所以我们一直呼吁安全前置，在设计阶段就要考虑安全。</p>
+<p>至于这次的BadPower问题，玄武实验室在研究中实际分析了35款快充设备，发现其中至少18款存在BadPower问题。这18款存在问题的设备涉及8个品牌、9个不同型号的快充芯片。其中可通过支持快充的数码终端进行攻击的有11款。</p>
+<p>同时，玄武实验室对整个市场上的快充芯片进行调研后发现其中近六成具备成品后更新固件的功能。所以这显然也是一个需要认真对待的问题。</p>
+<p>Q9：这个安全问题是否是以一个存在很久的问题，如果是，为什么这个问题长期没有被关注到？</p>
+<p>A：快充技术是比较年轻的技术，本身也就最近几年才刚刚兴起。这次安全问题的根源一是行业还没有意识到安全前置的重要性，没有把安全做到设计环节；二是对供应链引入的安全风险还没有充分的认识。</p>
+<p>同时，安全行业里像我们实验室这样一直关注设计类安全问题的研究团队也确实不是特别多。</p>
+<p>Q10：这次的主要攻击对象是快充中的协议芯片，近几年芯片类的安全问题也曝出了不少，可否简单谈谈您的看法？</p>
+<p>A：快充协议芯片是一种典型的边缘芯片。但随着社会整体的电气化、数字化进程不断加快，很多应用场景中都会有这样的芯片。以往大家对于这类安全威胁缺乏关注。如果没有我们这次的研究，可能大众根本不会想到连充电器、充电宝都可以被入侵。</p>
+<p>而在未来的数字世界里，类似芯片都有可能成为网络攻击的新路径、新目标，所以需要尽早考虑相关安全问题。</p>
+<p>Q11：和常规的漏洞挖掘相比，这次的BadPower攻击方式有没有什么特别之处？</p>
+<p>A：BadPower可能是世界上第一个能从数字世界攻击物理世界且影响范围如此之大的安全问题。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0716/d9c127d19d1b323.png" alt="img:腾讯公布快充重大安全漏洞：影响数亿设备、可直接烧毁"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1004103/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">电影院回来了：《急先锋》等4部影片发布待映海报</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1004075/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Vivo首款真无线耳机TWS Neo现已登陆印度市场</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005995/">吉利新车引用飞机形象被中航工业指侵权？原来是一场乌龙</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005987/">清华大学新版录取通知书登上热搜 网友：简直美炸</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006009/">三星Galaxy Note20 Ultra通过FCC认证   确认搭载骁龙865&#43;</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006001/">膜拜神人：1.71秒算出15个6位数加减法</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006005/">Xbox Series X将会有Xbox史上最多样化的第一方游戏</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

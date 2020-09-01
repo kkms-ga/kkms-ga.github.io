@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>新的物联网基础模块漏洞可能使全球天量设备面临安全风险 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="新的物联网基础模块漏洞可能使全球天量设备面临安全风险" />
+<meta property="og:description" content="社会对技术的依赖程度非常高，预计到2025年，全球使用的互联网连接设备数量将增长到559亿台。这些设备中的许多设备涵盖了工业控制系统(ICS)的各个部分，它们影响着世界，协助我们在家中的日常生活，并监控和自动化生产工作中从能源使用到机器维护的一切。滥用这些系统的潜力已经引起了网络犯罪分子的注意；根据2020年IBM
+X-Force威胁情报指数，自2018年以来，针对这些系统的攻击增加了2000%以上。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1019161/" />
+<meta property="article:published_time" content="2020-08-23T08:48:12+08:00" />
+<meta property="article:modified_time" content="2020-08-23T08:48:12+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">新的物联网基础模块漏洞可能使全球天量设备面临安全风险</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-23T08:48:12&#43;08:00">August 23, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>社会对技术的依赖程度非常高，预计到2025年，全球使用的互联网连接设备数量将增长到559亿台。这些设备中的许多设备涵盖了工业控制系统(ICS)的各个部分，它们影响着世界，协助我们在家中的日常生活，并监控和自动化生产工作中从能源使用到机器维护的一切。滥用这些系统的潜力已经引起了网络犯罪分子的注意；根据2020年IBM
+X-Force威胁情报指数，自2018年以来，针对这些系统的攻击增加了2000%以上。</p>
+<p>作为持续研究的一部分，IBM的黑客团队X-Force Red发现了一个新的物联网漏洞，可以被远程利用。制造商泰雷兹自2020年2月起向客户提供了CVE-2020-15858的补丁，X-Force Red一直在合作，以确保用户了解该补丁，并采取措施保护他们的系统。</p>
+<p>在今天使用的数十亿智能设备中，泰雷兹是使它们能够连接到互联网、安全存储信息和验证身份的组件的供应商之一。泰雷兹的整个产品组合每年连接超过30亿个设备，从智能能源表到医疗监控设备和汽车，有超过3万家机构依赖其解决方案。</p>
+<p>然而，在2019年9月，X-Force Red发现了泰雷兹（原金雅拓）的Cinterion EHS8 M2M模块中的一个漏洞，该模块在过去十年中被用于数百万个互联网连接设备。经过进一步的测试，泰雷兹确认该漏洞会影响到EHS8同一产品线中的其他模块（BGS5、EHS5/6/8、PDS5/6/8、ELS61、ELS81、PLS62），进一步扩大了该漏洞的潜在影响。这些模块是实现物联网设备移动通信的微型电路板。</p>
+<p>更重要的是，它们存储和运行的Java代码通常包含密码、加密密钥和证书等机密信息。利用从模块中窃取的信息，恶意行为者有可能控制设备或获得中央控制网络的访问权，从而进行广泛的攻击&ndash;在某些情况下甚至可以通过3G远程攻击。利用这个漏洞，攻击者有可能指示智能电表打掉一个城市的电力，甚至给医疗病人注射过量的药物，只要负责这些关键功能的设备使用的是一个暴露在攻击者面前的未打补丁的模块，例如，通过这个模块启用的3G/4G连接。</p>
+<p>关于该漏洞</p>
+<p>EHS8模块及其系列中的其他模块，旨在通过3G/4G网络实现连接设备之间的安全通信。将该模块视为相当于一个值得信赖的数字锁箱，公司可以在其中安全地存储密码、凭证和操作代码等一系列秘密。这个漏洞破坏了这一功能，允许攻击者窃取组织机密。</p>
+<p>X-Force Red发现了一种绕过安全检查的方法，这种检查可以使文件或操作代码对未经授权的用户隐藏起来。这个漏洞可能使攻击者能够入侵数百万台设备，并通过转入提供商的后端网络来访问支持这些设备的网络或VPN。反过来，知识产权(IP)、凭证、密码、加密密钥都可能被攻击者轻易获得。换句话说，模块存储的机密信息可能不再是机密。攻击者甚至可以抢夺应用程序代码，彻底改变逻辑，操纵设备。</p>
+<p>潜在的影响是什么？</p>
+<p>这个漏洞的潜在影响根据攻击者可能入侵使用这一行模块的哪些设备而有所不同。据了解，全球有数百万台设备使用该模块，横跨汽车、医疗、能源和电信行业。</p>
+<p>鉴于其中许多设备的关键性，有针对性的网络攻击可能会很重要。以下是一些例子，说明如果在各种类型的设备中暴露出未打补丁的模块，攻击者可能会做什么。</p>
+<p>医疗设备： 操纵监测设备的读数来掩盖生命体征或制造虚假恐慌 在根据输入提供治疗的设备中，如胰岛素泵，网络犯罪分子可能会使患者用药过量或不足。</p>
+<p>能源和公用事业。篡改智能电表，提供伪造的读数，增加或减少每月的账单。通过控制网络访问一大群这些设备，恶意行为者还可以关闭整个城市的电表，造成大范围的停电，需要进行单独维修，甚至更糟糕的是，破坏电网本身。</p>
+<p>技术细节</p>
+<p>EHS8模块与该系列的其他模块一样，由一个微处理器组成，内嵌Java ME解释器和闪存，以及GSM、GPIO、ADC、数字和模拟音频、GPS、I2C、SPI和USB接口。它还提供了更高层次的通信堆栈，如PPP和IP。嵌入式Java环境允许安装Java &ldquo;midlet&rdquo;，以提供可定制的功能和与主机设备的交互，和/或作为主逻辑。该模块在基本的OEM集成商层面上运行时，其行为很像传统的 &ldquo;Hayes&quot;调制解调器。这意味着，除了加载到系统中的Java应用程序外，还可以通过内置在电路中的物理UART连接使用 &ldquo;AT &ldquo;串行命令进行控制。</p>
+<p>在安全研究实践中，Java应用程序可以被绕过，并将控制权交还给低层，允许攻击者直接控制模块。一旦控制了AT命令接口，就可以发出大量的标准命令，如 &ldquo;ATD&rdquo;&ndash;拨号，或 &ldquo;ATI&rdquo;&ndash;显示制造商信息。还有一些配置命令和用于访问覆盖在闪存上的基本文件系统的特定命令子集&ndash;&ldquo;AT^SFA&rdquo;。这提供了文件和子目录的读、写、删除和重命名。</p>
+<p>为了方便Java环境，还有一些与Java相关的命令，其中一个命令是 &ldquo;安装 &ldquo;先前上传到闪存文件系统的Java midlet。这可以有效地将Java代码复制到闪存文件系统中的 &ldquo;安全存储 &ldquo;中，理论上是 &ldquo;只写 &ldquo;的&ndash;即数据可以复制到该存储中，但永远不会被读回。这样一来，OEM厂商包含其IP的私有Java代码，以及任何安全相关的文件，如PKI密钥或证书和应用相关的数据库，都可以防止第三方窃取。</p>
+<p>然而，X-Force Red发现的漏洞允许对隐藏区域进行完全的读、写、删除访问（尽管Thales已经针对特定的文件类型进行了额外的检查）。这将允许攻击者读出系统上运行的全部java代码（包括OEM midlets和Thales的主 &ldquo;主&quot;代码），以及他们可能拥有的任何其他 &ldquo;隐藏 &ldquo;支持文件。</p>
+<p>由于Java很容易被反转为人类可读的代码，这可能会暴露任何应用程序的完整逻辑以及任何嵌入的 &ldquo;秘密&rdquo;，如密码、加密密钥等，并使IP窃取成为一个非常简单的操作。掌握了这些数据，攻击者可以很容易地创建 &ldquo;克隆 &ldquo;设备，或者更可怕的是，修改功能以实现欺诈或恶意活动。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/08/1f2050c1ecf099d.webp" alt="img:新的物联网基础模块漏洞可能使全球天量设备面临安全风险"></p>
+<p>带有漏洞的代码列表</p>
+<p>上图显示了该漏洞存在于计算路径子串中的字符数并检查第四个字符是否为点（字符数组中的第三个索引）的代码中。在正常情况下，任何访问带有点前缀的隐藏文件的尝试都会被拒绝（例如：a:/.hidden_file）。然而，用双斜线代替斜线（例如：a://.hidden_file）将导致条件失败，代码执行将跳转到一个字符检查循环，该循环将匹配任何可打印字符。在第二个斜线之后，系统将忽略它，没有什么能阻止攻击者使用点前缀的文件名，绕过安全测试条件。</p>
+<p>责任披露和补救</p>
+<p>泰雷兹公司与X-Force Red团队合作，在2020年2月测试、创建并向其客户分发补丁。</p>
+<p>补丁可以通过两种方式管理&ndash;通过软件插入USB运行更新，或者通过管理空中（OTA）更新。这个漏洞的补丁过程完全取决于设备的制造商和它的能力，例如，设备是否可以访问互联网，可能会使它的工作变得复杂。另一项需要注意的是，设备越是受监管（医疗设备、工业控制等），应用补丁的难度就越大，因为这样做可能需要重新认证，这往往是一个耗时的过程。</p>
+<p>我们要赞扬泰雷兹公司对这一缺陷的处理，并花费大量时间与客户合作，以确保他们了解补丁并采取步骤保护用户的安全。关于CVE-2020-15858的更多信息可以在https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-15858页面当中找到。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1019169/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">红旗H9今日上市 预售价格与奥迪A6L相当</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1019183/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">美国北加州LNU闪电山火已成为该州史上第二大山火</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021517/">特斯拉再涨4%：市值已接近丰田的2倍 大众的5倍</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021485/">小鹏汽车上市首日股价暴涨41% 市值达149亿美元</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021495/">TikTok举行全体员工大会：安抚内部情绪</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021501/">未来的Apple Watch可能会在用户更换表带时进行识别 并跟踪使用情况</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021533/">又一家进军电动厢式货车的公司：Bollinger发布DELIVER-E概念车</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

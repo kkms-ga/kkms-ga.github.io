@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>蓝牙5.0无法拯救音质：论蓝牙音频编码的重要性 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="蓝牙5.0无法拯救音质：论蓝牙音频编码的重要性" />
+<meta property="og:description" content="2019年开始，蓝牙5.0逐渐成为了无线耳机的标配。相比于之前的蓝牙4.2，蓝牙5.0在传输效率、传输距离、广播模式信息容量、功耗上都进行了大幅优化。蓝牙5.0的带宽由1Mbps提高到了2Mbps，这意味着其在同一时间内能够传输更多的数据量。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1007505/" />
+<meta property="article:published_time" content="2020-07-25T08:59:11+08:00" />
+<meta property="article:modified_time" content="2020-07-25T08:59:11+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">蓝牙5.0无法拯救音质：论蓝牙音频编码的重要性</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-25T08:59:11&#43;08:00">July 25, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>2019年开始，蓝牙5.0逐渐成为了无线耳机的标配。相比于之前的蓝牙4.2，蓝牙5.0在传输效率、传输距离、广播模式信息容量、功耗上都进行了大幅优化。蓝牙5.0的带宽由1Mbps提高到了2Mbps，这意味着其在同一时间内能够传输更多的数据量。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0725/92c94366ff1f417.jpg" alt="img:蓝牙5.0无法拯救音质：论蓝牙音频编码的重要性"></p>
+<p>近期，市面上很多仅采用蓝牙5.0、不支持高清蓝牙协议的耳机都以打着“传输数据量更大、音质更高”的大旗鼓吹自己产品的音质。仅采用蓝牙5.0、不支持任何高清蓝牙编码的耳机真的比蓝牙4.2传输音频的数据量更高吗？错！蓝牙5.0对耳机的提升仅在于传输的稳定性、延时和续航层面，想要提升蓝牙音频传输的数据量，还是要靠蓝牙编码。</p>
+<p>打个简单的比方，蓝牙版本的提升拓宽了连接手机和耳机间的道路，让更多的数据可以同时传输数据，但这些拓宽的道路并不是随便用的，各种数据的传输也要遵守“交规”来通行。蓝牙编码协议就好比这条道路上的汽车，有损蓝牙编码（SBC）和高清蓝牙编码（AAC、aptX、LDAC等）就好比一车装满了毛巾、一车装满了压缩毛巾，同样是“运货”，高清蓝牙编码就是会更胜一筹。</p>
+<p>以上只是为了让大家明白蓝牙5.0≠好音质，无线耳机的好音质必须需要高清蓝牙协议的加持。对于想要深究的朋友，笔者也顺便为大家普及一些“有损蓝牙编码为何会造成音质损失”、“蓝牙音频编码运算原理”的一些相关概念，供大家参考。</p>
+<p>有损蓝牙编码为何会造成音质损失</p>
+<p>所谓蓝牙编码，其实就是一种类似压缩的方式对声音的数字信号进行实时传输。与给文件打压缩包不同的是，无损音乐级别的数字音频信号的压缩很难做到尽善尽美。比如一个44.1KHz/16bit的两声道的数字音频，其不经压缩的码率就是44.1kHz×16bit×2=1.411Mbit/s，如此大的带宽对于曾经的蓝牙传输来说几乎不可能实现。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0725/87901a5e26e9ffb.jpg" alt="img:蓝牙5.0无法拯救音质：论蓝牙音频编码的重要性"></p>
+<p>就拿当前最通用的有损压缩编码SBC（sub band code）来说吧。当数字音源提供了过高比特率的数字音乐时，受多方面因素的限制，数字压缩编码会在保证听觉不产生失真的前提下，对音频数据进行选择性忽略。对于日常接打电话来说，SBC编码忽略掉这些信息对用户几乎不会产生影响。但是对于播放音乐来说，音频细节的忽略会导致耳机的声音劣化。</p>
+<p>蓝牙音频编码运算原理</p>
+<p>很多人认为数字编码会在一个频率（一般指20KHz，理论人耳感知频率的上限）对音源拦腰一刀斩断、只留下该频段以内的声音，这是不完整的。数字编码在压缩音频时，内部会建立一个心理声学模型。所谓心理声学模型，其实就是在传输之前，先筛一遍音频信号中的“冗余信息”，并将其筛除。</p>
+<p>对于心理声学模型来说，“冗余信息”一般指20KHz以上频率（人耳听觉范围之外）的声音、当一个强音和一个弱音同时存在时的弱音、当一个强音与弱音同时存在但不同步时的弱音（具体的理论大家可百度搜索“掩蔽效应”，笔者在此就不多赘述了。）</p>
+<p>由于数字编码自动筛除了这些“冗余信息”的传送，这就导致了用户在听音乐时感觉声音信息量大幅降低。说到底，SBC编码设计的初衷并不是为了能让用户听音乐用，而是在那个年代能够传送立体声或是接打电话用。相比于SBC来说，AAC、aptX、LDAC等这些专为听音乐设计的编码在听感上的提升还是比较直观的，因此高清蓝牙音频编码对追求音质的无线耳机用户的重要性是极高的。</p>
+<p>写在最后</p>
+<p>    蓝牙5.0能否为蓝牙耳机用户带来更好的体验？可以，但仅限于连接稳定性、功耗等方面。对于音质来说，使用相同的蓝牙编码条件下，耳机并不能带来更好的声音表现。因此如果想要好音质的蓝牙耳机，高清蓝牙编码是必备的。当然，在入手之前一定要先查一下自己的手机支持什么编码格式。苹果手机支持AAC、安卓8.0版本以上手机支持LDAC、使用高通芯片的手机部分会支持apt X，如果你入手的蓝牙耳机和手机没用共通的编解码的握手协议（比如使用不支持AAC的安卓手机连接AirPods），那么你的手机和耳机之间也只能通过最低音质的SBC编码来传输，这一点请朋友们一定注意。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1007513/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">三天造就一层楼 国内首台“住宅造楼机”来了</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1007503/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">三星Galaxy Note20 Ultra智能手机套将配备抗菌涂层</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1009421/">Chrome 无障碍访问添新功能：自动生成带标签的 PDF</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1009415/">三星Galaxy Z Fold 2折叠屏新机的官方渲染图曝光</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1009405/">索尼公布“Ready for PS5”电视阵容</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1009403/">美政府对前Twitter员工提起新一轮指控 称其犯有间谍罪等更多罪行</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1009423/">Cerberus 恶意软件团队解散，10 万美元拍卖源代码</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

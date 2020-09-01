@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>多种DNS解析程序被发现漏洞 允许攻击者发动拒绝服务攻击 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="多种DNS解析程序被发现漏洞 允许攻击者发动拒绝服务攻击" />
+<meta property="og:description" content="DNS 解析程序的一个漏洞允许攻击者通过封包放大创造拒绝服务条件。该漏洞被称为 NXNSAttack。攻击者滥用了 DNS 委托机制，它发送的委托只包含权威
+DNS 服务器的名字但不包含其 IP 地址。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/982263/" />
+<meta property="article:published_time" content="2020-05-22T19:58:20+08:00" />
+<meta property="article:modified_time" content="2020-05-22T19:58:20+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">多种DNS解析程序被发现漏洞 允许攻击者发动拒绝服务攻击</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-22T19:58:20&#43;08:00">May 22, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>DNS 解析程序的一个漏洞允许攻击者通过封包放大创造拒绝服务条件。该漏洞被称为 NXNSAttack。攻击者滥用了 DNS 委托机制，它发送的委托只包含权威
+DNS 服务器的名字但不包含其 IP 地址。</p>
+<p>DNS 解析程序不能向“名字”发送域名查询，因此解析器首先需要获得权威 DNS 服务器的 IPv4
+或 IPv6 地址，之后才能继续查询域名。</p>
+<p>NXNSAttack 就是基于这一原理，攻击者发送的委托包含了假的权威服务器名字，指向受害者的
+DNS 服务器，迫使解析程序对受害者的 DNS 服务器生成查询。一次查询会被放大数十次乃至数百次，对受害者服务器发动了拒绝服务攻击。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0522/fcd11453e000aac.png" alt="img:多种DNS解析程序被发现漏洞 允许攻击者发动拒绝服务攻击"></p>
+<p>众多 DNS
+软件都受到影响，其中包括 ISC BIND (CVE-2020-8616)、NLnet labs Unbound
+(CVE-2020-12662)、PowerDNS (CVE-2020-10995)、 CZ.NIC Knot Resolver
+(CVE-2020-12667)、Cloudflare、Google、Amazon、Microsoft、Oracle(DYN)、Verisign、IBM
+Quad9 和 ICANN。细节可查阅论文。          	            </p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/982267/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Intel 10nm&#43;功德圆满：11代酷睿轻薄本冲上5GHz</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/982269/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">15米长、近40吨重的抹香鲸塑化标本即将完成：千年不坏</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/984025/">iOS 14细节曝光 拥有多项“安卓”功能</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/984023/">日本大学研究出乳腺癌检测新技术：采集泪水 20分钟出结果</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/984031/">卷土重来？金立发布中端机K6 售价799元起</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/984019/">SpaceX送宇航员上空间站 马斯克让载人航天重返美国</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/984027/">CES上亮相的贝尔金新型无线充电配件已经发售</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

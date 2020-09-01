@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>黑科技or大势所趋？谈谈手机GPU驱动升级那点事 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="黑科技or大势所趋？谈谈手机GPU驱动升级那点事" />
+<meta property="og:description" content="最近，MIUI开始推送独立GPU驱动的事情，引起了很多朋友的关注。众所周知，手机的硬件驱动往往不能像电脑一样，独立安装升级，现在情况居然发生了变化，不少朋友纷纷感叹这简直就是黑科技。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/973197/" />
+<meta property="article:published_time" content="2020-04-30T01:18:04+08:00" />
+<meta property="article:modified_time" content="2020-04-30T01:18:04+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">黑科技or大势所趋？谈谈手机GPU驱动升级那点事</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-04-30T01:18:04&#43;08:00">April 30, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>最近，MIUI开始推送独立GPU驱动的事情，引起了很多朋友的关注。众所周知，手机的硬件驱动往往不能像电脑一样，独立安装升级，现在情况居然发生了变化，不少朋友纷纷感叹这简直就是黑科技。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0430/c38331484290be6.jpg" alt="img:黑科技or大势所趋？谈谈手机GPU驱动升级那点事"></p>
+<p>应用商店竟然可以推送GPU驱动更新？</p>
+<p>GPU驱动能够独立升级，对于用户体验来说，无疑是一件好事情。通过独立的驱动更新，手机能够更迅速便捷地获得新驱动带来的性能提升、问题修复。这样的好事情，在别的安卓上也会有吗？这是独门科技还是大势所趋？这就来谈谈吧。</p>
+<p>安卓为何没法单独升级驱动？</p>
+<p>安卓之所以长时间以来，没法像Windows那样灵活升级驱动，是和系统架构息息相关的。安卓基于Linux，而Linux使用的是宏内核，系统内核和驱动等模块紧密结合。而Windows的架构更接近于微内核，系统各模块之间分离度较高。</p>
+<p>宏内核和微内核（类微内核）的特性，会反映到驱动的更新推送的体验上。由于宏内核将驱动和系统内核耦合在一起，因此如果想要升级驱动，往往需要升级系统；而Windows这样的类微内核系统，则可以独立升级驱动。微软为了兼容更多硬件，还为驱动设计了标准模型，例如图形驱动的WDDM，音频架构UAA等，只要驱动编写符合WDDM、UAA等架构，就可以自行安装升级，无需对系统内核进行改动。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0430/041f56e1e311481.jpg" alt="img:黑科技or大势所趋？谈谈手机GPU驱动升级那点事"></p>
+<p>传统意义上的安卓系统架构，可见显示驱动、相机驱动等等都是被打包在Linux内核当中的</p>
+<p>尽管宏内核在驱动升级方面不够灵活，但Linux之所以如此设计，还是有道理的——宏内核耦合度高，这可以带来更高的进程间IPC通讯效率，性能更为出色。因此，我们可以看到Linux广泛应用于各类不同性能的设备之上，超算用Linux能够更加物尽其用，智能手环这样的小物件用Linux则可以带来更流畅的体验。</p>
+<p>安卓的改变：装驱动越来越像Windows？</p>
+<p>然而，宏内核在移动互联网/物联网时代，则遭遇到了一些挑战。各式各样智能设备迅速涌现，令硬件适配成为了一个不得不面对的问题。</p>
+<p>以安卓机为例，市面上的安卓机使用了不同的CPU、GPU、基带、CODEC等等，由于宏内核的高耦合度，安卓机很难对操作系统和硬件驱动进行单独升级，无论想要升级系统还是想要升级驱动，厂商都需要为每个安卓机型号单独制作系统镜像。并不是每个厂商都会选择投入大精力到系统维护当中的，这导致了安卓系统和驱动升级困难，最后的结果就是安卓机系统版本的碎片化。</p>
+<p>为此，Google改变了安卓的形态，在安卓8.0中推行了Project Treble机制，将系统（Android OS framework）单独分区，和硬件驱动（Vendor implementation）分离，此后厂商可以为设备单独推送新版安卓，而不需要重新适配驱动。Project Treble大大简化了安卓系统的升级流程，我们也可以观察到，安卓8.0以后的设备，升级安卓大版本的速度比以前更快了。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0430/8345f8ca37c98eb.png" alt="img:黑科技or大势所趋？谈谈手机GPU驱动升级那点事"></p>
+<p>Project Treble将Google的安卓系统框架和硬件供应商提供的驱动作了分离</p>
+<p>但这还不够。在安卓10当中，Google推行了Project Mainline，将系统进一步细分模块化。在安卓10中，14个系统组件被Mainline化，媒体解码器、权限控制器、网络组件等系统组件，都可以像普通APP一样，通过应用商店来更新——GPU驱动能够独立更新，就得益于此。</p>
+<p>可以说，安卓通过Project Treble和Project Mainline，正变得越来越“微内核”。在尚未正式发布的安卓11中，安卓的组件模块达到了20个之多，安卓的系统维护将会变得前所未有地灵活，变得越来越像PC。</p>
+<p>GPU驱动升级是黑科技吗？</p>
+<p>可见，MIUI之所以能够通过应用商店独立更新GPU驱动，主要是受益于安卓Project Treble和Project Mainline的特性。而作为此次更新所服务的硬件，高通芯片的贡献也功不可没。</p>
+<p>在去年年底，高通就宣布旗下的最新SoC骁龙865，可以通过应用商店来独立更新驱动，而且更新操作和更新APP一样简单。不过当时高通所说的是通过Google Play商店来进行更新，由于众所周知的原因，国内无法使用Google Play，因此MIUI转用自己的渠道更新GPU驱动，这还是很不错的。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0430/3da5a63f7352011.jpg" alt="img:黑科技or大势所趋？谈谈手机GPU驱动升级那点事"></p>
+<p>高通宣布GPU驱动可以单独更新</p>
+<p>如无意外，高通今后也会继续为旗下的芯片发布新驱动，不过是否所有的安卓机都能收到更新？这最终还得看手机OEM厂商——驱动发布后，需要OEM厂商进行测试，然后再向用户推送。无论如何，OEM厂商所需要做的工作，已经比以往少了许多，这都不给用户提供驱动升级，未免太说不过去。</p>
+<p>目前高通似乎尚未明确除了骁龙865外，还有哪些芯片能够获得独立的驱动更新。但无论如何，Project Mainline的前途是光明的。此后我们有望在越来越多的手机上得到GPU驱动升级这样的福利，这个Google带来的“黑科技”将成为解决安卓碎片化的希望。</p>
+<p>总结</p>
+<p>随着移动互联网和物联网的发展，为了更灵活地适配硬件，系统的“微内核化”似乎成为了趋势，从安卓的系统架构变更可以印证这点。希望有更多硬件厂商跟进安卓的新机制，及时为各类硬件推送独立驱动，为用户带来更好的体验吧！</p>
+<p>访问:</p>
+<p>京东商城</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/973199/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Zoom 5.0更新发布 加强了加密和会议安全功能</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/973195/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">瑞幸咖啡称受新冠疫情影响 无法按时提交2019年财报</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/974863/">EA公布其年度发布会EA Play Live 2020举办时间</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/974857/">卖光所有财产？特斯拉CEO马斯克挂牌出售近4000万豪宅</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/974859/">欧盟委员会批准向法国航空公司提供70亿欧元紧急资金援助</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/974861/">Ghost博客平台服务器被黑客攻击并安装了加密货币挖掘软件</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/974855/">越来越多的上市公司已经开始在SEC文件中把赎金软件列为前瞻性风险因素</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>1Password 推出 Linux 版本，后端完全采用 Rust 编写 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="1Password 推出 Linux 版本，后端完全采用 Rust 编写" />
+<meta property="og:description" content="1Password 官方本周宣布，将在今年内推出 Linux 版本，现已进入公开预览阶段。这款流行的密码管理软件兼容
+Mac、iOS、Windows 和 Android 等多个平台，也能与 Chrome、Edge、Firefox、Safari、Opera
+等各类浏览器融合，实现包括自动填充、密码保存与管理在内的功能。但唯独缺少对 Linux 平台的支持。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1012255/" />
+<meta property="article:published_time" content="2020-08-06T09:30:05+08:00" />
+<meta property="article:modified_time" content="2020-08-06T09:30:05+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">1Password 推出 Linux 版本，后端完全采用 Rust 编写</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-06T09:30:05&#43;08:00">August 06, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>1Password 官方本周宣布，将在今年内推出 Linux 版本，现已进入公开预览阶段。这款流行的密码管理软件兼容
+Mac、iOS、Windows 和 Android 等多个平台，也能与 Chrome、Edge、Firefox、Safari、Opera
+等各类浏览器融合，实现包括自动填充、密码保存与管理在内的功能。但唯独缺少对 Linux 平台的支持。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0806/9d2c260d9e4d678.png" alt="img:1Password 推出 Linux 版本，后端完全采用 Rust 编写"></p>
+<p>早在 2010 年，就有用户在 1Password 官方论坛中提出 Linux 本地支持的需求，这场讨论一直持续到了近两年。大多数 Linux 用户尝试通过 Wine 来使用 1Password，但体验总是差一截，因此 Linux 本地版本的呼声多年来都非常高。</p>
+<p>2017 年，这项工作有了一些进展：1Password 为 Linux 和 Chrome OS 用户专门提供了一款 Chrome 插件，即 1Password X。三年后的现在，Linux 桌面版也终于提上了日程。</p>
+<p>开发团队称其为一款“真正的 Linux 应用”，旨在满足 Linux 用户性能需求的同时保障安全性。Linux 版 1Password 后端完全采用 Rust 编写，还选用了 Rust 的 ring 来增强端到端加密功能。UI 组件则基于 React。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0806/b0317f1e6789b88.png" alt="img:1Password 推出 Linux 版本，后端完全采用 Rust 编写"></p>
+<p>预览版主要带来了这些功能：</p>
+<p>使用 apt 和 dnf 包管理器安装</p>
+<p>根据 GTK 主题自动选择暗模式</p>
+<p>开放的网络位置（FTP、SSH、SMB）</p>
+<p>支持平铺式窗口管理器</p>
+<p>可用生物识别在内的方式解锁 Linux 帐户</p>
+<p>系统任务栏图标可在关闭时保持解锁状态</p>
+<p>X11 剪贴板集成和清除</p>
+<p>键盘快捷键</p>
+<p>数据导出</p>
+<p>使用不同的密码解锁多个帐户</p>
+<p>创建集合以管理帐户和数据</p>
+<p>Debian、Ubuntu、CentOS、Fedora 和 Red Hat Enterprise Linux 的 apt 及 rpm 软件包都会受到官方维护。该项目仍处于开发阶段，用户可以在只读状态下参与测试。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1012257/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">纽约时报数字业务营收首超纸媒业务 CEO：这是分水岭</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1012273/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">特朗普：微软同意“被抽成” 若交易达成需支付一大笔钱</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1014105/">法拉第未来一辆原型电动汽车将拍卖 车内电线裸露</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1014109/">谷歌地图登陆苹果CarPlay及Apple Watch</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1014115/">iOS 14可在点击网页文章链接时跳转至Apple News客户端</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1014099/">福奇概述民众可通过完成六件事来帮助战胜新冠病毒</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1014107/">李佳琦直播间观看人次深夜暴涨 回应：假的！数据出错了</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

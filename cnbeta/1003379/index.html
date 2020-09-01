@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>OpenCV 开源协议将从 BSD 变更为 Apache 2 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="OpenCV 开源协议将从 BSD 变更为 Apache 2" />
+<meta property="og:description" content="计算机视觉库 OpenCV 即将迎来 20 周年，其重要版本 OpenCV 5 也发布在即。OpenCV 官方宣布，随着此版本的推行，OpenCV 的开源许可协议将从 3-clause BSD 变更为 Apache 2。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1003379/" />
+<meta property="article:published_time" content="2020-07-15T10:42:25+08:00" />
+<meta property="article:modified_time" content="2020-07-15T10:42:25+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">OpenCV 开源协议将从 BSD 变更为 Apache 2</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-15T10:42:25&#43;08:00">July 15, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>计算机视觉库 OpenCV 即将迎来 20 周年，其重要版本 OpenCV 5 也发布在即。OpenCV 官方宣布，随着此版本的推行，OpenCV 的开源许可协议将从 3-clause BSD 变更为 Apache 2。</p>
+<p>自项目发布之初，OpenCV 就一直使用较为宽松的 BSD 协议。然而，BSD 协议已很难满足快速发展的计算机视觉领域，尤其因为该协议不涉及专利，而使用该协议的代码很有可能包含一些专利算法的实现。根据 OpenCV 的介绍，“从传统的视觉算法到深度学习拓扑网络以及两者的混合，越来越多的算法申请了专利”。但在 BSD 条款下，专利用户的权利难以得到保障。</p>
+<p>此前的报道有提到过，为了避免这个问题，OpenCV 选择不接收有专利的算法。这样做虽然保障了安全性，但也让一些优秀算法无法进入 OpenCV。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0715/998d0b0a3062472.png" alt="img:OpenCV 开源协议将从 BSD 变更为 Apache 2"></p>
+<p>经过考量，OpenCV 团队发现 Apache 2 是最为有效的解决方案。因为 “Apache 2 比 BSD 协议更新，提供了与 BSD 许可相同的免费使用特性，还包含有关专利的使用条款”。关于专利，Apache 2 中有两项条款做了大致说明：</p>
+<p>如果个人或实体在 Apache 2 协议下提供代码，由于包含的专利被授予了一个隐含许可，则用户不能因违反该实体在该代码中的专利或从该代码派生的作品中的专利而被起诉。</p>
+<p>如果个人或实体（A）决定起诉某人或某个实体（B），被起诉的（B）创建了一个由（A）的专利所涵盖的上述（1）中代码派生的作品，那么（A）将失去他们所有的 Apache 2 专利诉讼保护，从而可能使他们面临其他方面的法律攻击。</p>
+<p>OpenCV 表示，虽然这种专利保护不是绝对的，但 Apache 2 在这方面目前是最先进的，因此决定进行协议变更。</p>
+<p>迁移将从 OpenCV 4.4 开始，考虑到原有许可和原有版权，该版本会在同一个仓库中复制分支。仍旧需要使用 BSD 许可证的用户，可以继续使用 OpenCV 2.x、OpenCV 3.x 和 OpenCV 4.x，以及最新的 OpenCV 4.4。</p>
+<p>从 OpenCV pre-5.0（将在新创建的分支中开发）和 OpenCV pre-4.5（“master”分支）开始，许可证将正式更改为 Apache 2。所有新功能的贡献者都必须同意将他们的代码在 Apache 2 许可证下授权。</p>
+<p>此次协议变更，对于 OpenCV 用户来说，并无太大变化，主要是需要增加针对专利诉讼的保护措施。Apache 2 许可下的 OpenCV 仍然可以自由地用于商业和非商业项目。</p>
+<p>参考：OpenCV 开源协议将变更为 Apache 2  作者：OpenCV 团队</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1003381/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">谷歌Play商店剔除了11款带有Joker恶意软件的Android应用</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1003365/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[图]诺基亚：500万个4G基站可通过软件方式升级至5G网络</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005339/">嫦娥五号年内升空，我们为什么要去月亮上“挖土”？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005353/">网传红旗H9 2.0T顶配45万：有望8月15日正式上市</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005355/">外媒：英国将日本NEC和富士通列为5G设备替代供应商</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005381/">《集合啦！动物森友会》夏日新CM公开 夏日同游其乐融融！</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005383/">阿联酋希望号发射升空 拉开2020火星探测大幕</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

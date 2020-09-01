@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>22年后再战高性能显卡市场 Intel Xe GPU架构详解 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="22年后再战高性能显卡市场 Intel Xe GPU架构详解" />
+<meta property="og:description" content="作为CPU界的王者，Intel对高性能GPU市场一直没有死心，1998年就推出了i740独显，12年后又推出Larrabee，22年后的今天又重燃战鼓，推出了Xe GPU架构。Intel重新杀入高性能GPU市场的传闻已久，并挖来了AMD RTG部门前主管、首席架构师Raja Koduri坐镇GPU业务，这次是否会不一样呢？" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1015383/" />
+<meta property="article:published_time" content="2020-08-13T22:30:24+08:00" />
+<meta property="article:modified_time" content="2020-08-13T22:30:24+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">22年后再战高性能显卡市场 Intel Xe GPU架构详解</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-13T22:30:24&#43;08:00">August 13, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>作为CPU界的王者，Intel对高性能GPU市场一直没有死心，1998年就推出了i740独显，12年后又推出Larrabee，22年后的今天又重燃战鼓，推出了Xe GPU架构。Intel重新杀入高性能GPU市场的传闻已久，并挖来了AMD RTG部门前主管、首席架构师Raja Koduri坐镇GPU业务，这次是否会不一样呢？</p>
+<p>今天的2020年架构日上，Intel终于详细地解开了Xe GPU的面纱，这里我们就来管中窥豹一探Intel历时多年重新打造的GPU架构。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/561a897cf36b948.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>对于Xe架构，我们之前的报道已经多次提到Intel对它的期望是希望用一种架构去满足多种使用场景，从笔记本到游戏卡再到高性能超算，都是Xe架构，推动GPU算力从万亿次（TFLOPS）向千万亿次（PFLOPS）迈进。</p>
+<p>Intel Xe架构总览：一种架构通杀四方、适应AI、云时代</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/9f082dcd605c8fc.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>对于Xe GPU架构，官方的定义是“并行矢量矩阵架构”，已经突出了这个架构的特点，那就是高度并行，适合扩展多种场景。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/a24cb4315513167.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>Xe GPU架构有三大重点——软件第一、并行第二，同时适应全新的工作负载，比如AI、视觉云计算等等，这也是Intel作为GPU后来的一个优势，研发GPU架构的时候可以不用照顾太多之前的积累，直接面向未来潜力巨大的场景，比如AI、云计算等等。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/d0ec23f0482c456.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>Xe GPU希望用一个架构统一所有应用场景，不过实际情况还是很复杂的，不同场景对性能、功耗的要求不同，可以细分为集成+低能耗、中端、发烧级、数据中心/AI、HPC百亿亿次计算等等。</p>
+<p>在这些细分场景中，Intel打造了三种不同的架构——Xe LP低功耗、Xe HP高性能、Xe HPC，不过实际上已经扩展到了四种，后面会再详细说。</p>
+<p>虽然有三四种不同的架构，不过Intel现在做的主要是两种——适用于HPC的Xe HPC及低功耗的Xe LP，后者适合核显、笔记本及低端独显，包括之前曝光最多的DG1显卡。</p>
+<p>Intel Xe GPU架构详解：EU、存储、AI、显示、视频单元全都改了</p>
+<p>目前进度最好的还是Xe LP低功耗版，Xe GPU的结构介绍都是基于Xe LP的，具体如下：</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/d62cd9645c4f656.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>Xe LP架构简单来说就是在提升FLOPS浮点性能的同时，还要考虑功耗，所以能效很重要，性能及能效兼顾。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/ddefc101d4811d5.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>提升性能就要提升计算规模，Xe架构在Gen11基础上全面提升了执行单元的规模，EU单元从Ice Lake处理器上的Gen11核显最多64个提升到了96个，每周期Texel纹理、Pixel像素渲染能力也从32、16提升到48、24，总体性能1.5倍于目前Gen11显卡水平。</p>
+<p>考虑到Gen11的规模实际上已经是目前Gen9.5的2倍多，理论上Tiger Lake上的Gen12核显性能是现有核显的至少3倍。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/00e619f44939631.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>能效方面，在同样的电压下，Xe LP GPU的频率大幅提升，从之前1.1GHz左右提升到了1.7GHz，还有其他手段一起降低了功耗，能效也全面改进了。</p>
+<p>下面就是Gen11与Xe架构EU单元的具体对比了。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/5a2ddb8c1f8a2f8.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/a6bf7656159d644.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/97cdd471011676c.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>存储单元方面，Xe LP GPU的改变也不小，L1新增了数据是缓存，并支持端对端压缩，L3缓存从Gen11的3MB大幅提升到16MB，同时GTI（Graphics Technology Interface 图形技术接口）带宽翻倍。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/9393c7e9177eaa7.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>在AI上，Xe架构之前的GPU主要是支持FP32、FP16及Int16浮点，而Xe GPU开始支持INT8指令，AI性能是FP32的4倍。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/25172ad511444af.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>多媒体引擎上，Xe GPU架构的解码、编码带宽翻倍，支持AV1加速，同时支持4K/8K60播放，还有HDR、杜比音效等等。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/578a847266976c1.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>显示输出方面，Xe GPU支持4屏扩展，支持双eDP，接口支持DP 1.4、HDMI 2.0、TBT4及USB4，并支持8K UHD输出，还有360Hz高刷、自适应Sync，全面达到顶级水平。</p>
+<p>为何说软件第一？Intel Xe GPU驱动及软件优化</p>
+<p>前面提到Xe GPU架构的时候，Intel第一个强调的是软件，很多人可能并不理解，实际上Intel这次是抓到重点了，软件支持是GPU最容易翻车的地方，Intel的核显GPU多年来理论性能不弱，但是游戏表现一言难尽，就是驱动和优化是最大的锅。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/f38bebeb77e56c6.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>这次Intel对软件及驱动的重视终于提上来了，这也跟Raja Koduri本人的风格有一定关系，2013年他回到AMD的时候，当年AMD第一个改革的就是催化剂驱动，全面放弃之前的界面及设计，变成了现在的肾上腺素Adrenalin驱动。</p>
+<p>在图形软件方面，不同场景下的GPU面对的挑战也是不同的，3D渲染、计算、多媒体、性能、稳定性等等都很重要。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/a3eca94e8f4347d.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>在驱动及编译器效率上，Xe GPU改变了调度设计，支持AI优化指令，降低了DX11中的驱动开销（overhead），减少了API延迟等等。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/aab2ec8f6f4a0fc.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>针对GPU优化，Xe GPU可以自适应优化，在后台就最大化GPU性能。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/864a1dfda9c174b.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>Xe GPU还支持了VRS可变帧率渲染，根据渲染场景的不同来选择降低或者提升渲染内容，之前在Ice Lkae的Gen11上首先应用了。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/b219b308fd77899.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/2950d952dc644b3.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/bf6fe8ee84c9aef.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>还有就是IGCC控制面板，这里面提供了不少游戏辅助弓箭手，包括截屏、锐化、直播等等，如果大家用过NVIDIA的GFE及AMD的RIS，就知道Intel这是在一比一的致敬两位对手了，这对游戏玩家来说也是好事。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/6c6c43a852a8568.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>最后就是游戏支持，这个才是考验GPU厂商的关键，目前已经得到英雄萨姆4、GRID、Gear Tactics、Ring of Elysium、Chvalry II等游戏支持的，这个只能慢慢来了。</p>
+<p>Intel Xe GPU产品线：Xe LP首发三款、One More Thing惊喜亮相</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/58fa167c28f770a.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>在尾声阶段，来看看Intel Xe GPU最终的产品线，目前主要是Xe LP及Xe HPC两个架构有结果，其中LP架构会有三款产品。</p>
+<p>最快见到的Tiger Lake处理器上的Gen12核显，然后就是DG1，这个是针对移动内容创造者的，还有就是针对服务器的SG1，后两者规格应该差不多。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/e20a5b162a04847.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>然后就是One More Thing了，前面说到了Xe GPU有LP、HP及HPC三种，现在Intel又增加了一个选择——Xe HPG，专门为发烧级游戏玩家设计的。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/11445ae32576c1b.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>Xe HPG最大的特点就是支持RT光线追踪，硬件光追这个未来游戏的最大卖点也追上来了，至此AMD、NVIDIA及Intel三家都明确了支持光追了。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/4bc9aebb9c4ef8d.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>现在Xe GPU的架构就变成了Xe LP、Xe HPG、Xe HP及Xe HPC四大金刚了，未来会覆盖核显到HPC超算在内的多个场景。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/843ed0e7ba5407c.png" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+<p>最最后就是四款GPU架构的工艺及封装了，Xe LP会使用Intel的10nm SuperFin工艺，Xe HPG及Xe HP则是增强版10nm SuperFin工艺，其中Xe HP还会使用EMIB 2.5D封装技术。</p>
+<p>在往上，Xe HPC的计算卡之前原定是7nm工艺首发，现在随着7nm延期，也退回到了10nm SuperFin工艺了，不过封装技术是最先进的Foveros及Co-EMIB。</p>
+<p>总之，今天公布的Xe架构可以让大家过过瘾，然而这些东西依然是纸面上的，停留在架构上的，有关DG1显卡、HPG光追卡的最终规格、性能、价格、上市时间等信息还得等等，最快也要年底左右了。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/5320b9f245f3c8a.jpg" alt="img:22年后再战高性能显卡市场 Intel Xe GPU架构详解"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1015389/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">144层QLC闪存&#43;傲腾内存双管齐下 Intel公布存储路线图</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1015387/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Intel Tiger Lake架构解密：你能想到的全都变了</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1017321/">特斯拉正与台积电合作开发HW 4.0自动驾驶芯片 2021年Q4量产</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1017317/">京东与申通停止合作背后：电商平台有权帮商家选择快递吗？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1017319/">日常更新？新款苹果30W USB‑C 电源适配器评测</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1017309/">只用一百多块钱：我就从华强北买到了 “Apple Watch”</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1017313/">拼多多：协助团购特斯拉武汉车主成功提车</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[图]遵循GPT分区规范：Windows 10 20H1开始正确放置恢复分区 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[图]遵循GPT分区规范：Windows 10 20H1开始正确放置恢复分区" />
+<meta property="og:description" content="在用户升级系统新版本的时候，如果 Windows 检测到恢复分区上没有充足的空间，那么它有可能会自动创建一个新的恢复分区。如果未分配的磁盘空间并没有放置在卷分区的后面，那么 Windows 就无法扩展卷分区。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1002403/" />
+<meta property="article:published_time" content="2020-07-13T09:23:54+08:00" />
+<meta property="article:modified_time" content="2020-07-13T09:23:54+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[图]遵循GPT分区规范：Windows 10 20H1开始正确放置恢复分区</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-13T09:23:54&#43;08:00">July 13, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>在用户升级系统新版本的时候，如果 Windows 检测到恢复分区上没有充足的空间，那么它有可能会自动创建一个新的恢复分区。如果未分配的磁盘空间并没有放置在卷分区的后面，那么 Windows 就无法扩展卷分区。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0713/bc10b7bdc06e47b.jpg" alt="img:[图]遵循GPT分区规范：Windows 10 20H1开始正确放置恢复分区"></p>
+<p>在某些 PC 设备上，WinRe（Windows Recovery）分区作为第一个分区放置，这使得用户或操作系统本身无法扩展卷。在基于 UEFI 的 GPT 存储磁盘上，Windows 设置默认将恢复分区定位在第一个分区时，就会发生这种情况。在某些配置中，恢复分区也会位于 MSR 和 Windows 分区的中间位置。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0713/a10cecebc21c616.jpg" alt="img:[图]遵循GPT分区规范：Windows 10 20H1开始正确放置恢复分区"></p>
+<p>如果 Windows 10 功能升级需要更多的空间，或者你想要扩展系统驱动器的空间时候，就会出现问题。一旦恢复分区无法被扩展，那么就会通过缩小系统分区来创建新的恢复分区，原来的恢复分区就会被淘汰。您可以删除过时的恢复分区或扩展它，以避免创建一个新的恢复分区。</p>
+<p>不幸的是，目前微软官方提供的磁盘管理工具无法做到这点。微软 Contingent 工作人员在论坛帖子中指出，要想对卷分区的位置进行任何修改，需要使用 &ldquo;diskpart.exe &ldquo;命令行工具或第三方应用程序。</p>
+<p>而在 Windows 10 May 2020（20H1/Version 2004）功能更新中，解决了分区定位的这个根本缺陷。从该功能更新开始，Windows设置现在使用推荐的分区布局进行清洁安装。</p>
+<p>此前，当你使用Windows Setup 清理安装 Windows 10 时，卷分区的创建布局如下:</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0713/cbf3515f3cae243.jpg" alt="img:[图]遵循GPT分区规范：Windows 10 20H1开始正确放置恢复分区"></p>
+<p>从上面的截图中可以看到，Windows Setup 默认将恢复分区定位在第一位，这违背了微软自己的分区指南。微软指出：“我们建议您将此分区（恢复）紧随 Windows 分区之后。这允许 Windows 以后在未来更新需要更大的恢复映像时修改和重新创建分区。”</p>
+<p>而在 Windows 10 Version 2004 功能更新开始，Windows Setup 会在 Windows 分区之后创建 WinRe（恢复）分区。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0713/0f9f77e5d827da9.jpg" alt="img:[图]遵循GPT分区规范：Windows 10 20H1开始正确放置恢复分区"></p>
+<p>如上图画面所示，Windows 10 Verison 2004 的 Windows Setup 现在使用了正确的分区布局。旧的布局对一些用户来说是一个巨大的问题，因为它创建了多个恢复分区或阻止用户扩展系统驱动器的空间。在微软的论坛上有几个帖子，用户抱怨多个恢复分区或无法扩展卷空间。随着 Windows 10 Version 2004 的推出，Windows Setup 终于遵循了微软自己的 GPT 分区指南。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1002415/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[图]谷歌最低端Pixel设备现身跑分库：搭载骁龙617和4GB内存</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1002397/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">为星链项目铺路：SpaceX正积极游说FCC开放12GHz频谱中的500MHz</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004705/">报道称Facebook高管在FTC反垄断调查中可能会被要求提供宣誓证词</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004713/">三星Galaxy Buds Live真无线耳机3D动画曝光：双扬声器确认</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004717/">微软推出经典进程监控工具Procmon的Linux 版本</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004709/">Lyft司机对公司向他们销售个人防护装备的做法感到不满</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004723/">美国航空推出非接触式登机体验  但仍允许预订中间座位</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

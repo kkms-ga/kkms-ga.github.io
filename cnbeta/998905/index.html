@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>App该不该读取用户剪贴板？这件事苹果想得比你更复杂 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="App该不该读取用户剪贴板？这件事苹果想得比你更复杂" />
+<meta property="og:description" content="最近 iOS 14 的一个新功能引起了人们的讨论，当应用从剪贴板中获取内容时，会在手机顶部显示内容来源。在 PingWest
+品玩进行的一项测试中，国内 40 款主流应用只有 5 款不会获取用户剪贴板。这件事就和之前的 vivo 升降式摄像头、MIUI 12
+照明弹一样，将应用暗中进行的一些行为暴露出来，随即引发了一系列关于隐私的讨论。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/998905/" />
+<meta property="article:published_time" content="2020-07-03T23:17:25+08:00" />
+<meta property="article:modified_time" content="2020-07-03T23:17:25+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">App该不该读取用户剪贴板？这件事苹果想得比你更复杂</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-03T23:17:25&#43;08:00">July 03, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>最近 iOS 14 的一个新功能引起了人们的讨论，当应用从剪贴板中获取内容时，会在手机顶部显示内容来源。在 PingWest
+品玩进行的一项测试中，国内 40 款主流应用只有 5 款不会获取用户剪贴板。这件事就和之前的 vivo 升降式摄像头、MIUI 12
+照明弹一样，将应用暗中进行的一些行为暴露出来，随即引发了一系列关于隐私的讨论。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0703/b95906b523e5e17.jpg" alt="img:App该不该读取用户剪贴板？这件事苹果想得比你更复杂"></p>
+<p>其实剪贴板提醒只是手机厂商与第三方 App 博弈的一个缩影，这几年以苹果、Google 为首的两大平台都在为用户的隐私问题推出一系列新功能。苹果对 iPhone 的隐私保护尤为看重，他们每年都会推出强调隐私保护的品牌宣传广告，与 FBI 抗衡的事件也广为流传，当然在一些细节功能上他们也因矫枉过正被用户吐槽，比如迟迟不支持通话录音等。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0703/0bc75cf04e0af63.jpg" alt="img:App该不该读取用户剪贴板？这件事苹果想得比你更复杂"></p>
+<p>在 iOS 14 中，苹果依然针对用户隐私推出了很多新功能、新举措，下面极客之选（微信：GeekChoice）就来介绍一下。</p>
+<p>剪贴板提醒，对某些应用公开处刑</p>
+<p>先来讲一下最受关注的剪贴板提醒，简单来说就是当你切换到某个应用时，如果该应用读取了你剪贴板中的内容，就会弹出“粘贴自 XX 应用”的提醒，这个 XX 应用代表复制内容的来源。</p>
+<p>正常的应用是这样做的，比如把某条微博分享到微信时，微信会读取复制自微博的内容，因为这是主动分享的行为，从微博到微信的分享就是通过复制剪贴板链接完成的。如果是单纯复制文字（比如从备忘录），微信并不会主动读取剪贴板，只有你主动点击复制时才会触发。</p>
+<p>而一些不规矩的应用，典型的比如电商购物 App，会在未经允许的情况下读取你的剪贴板。最明显的表现就是无论你何时、从何处复制了内容，切到淘宝、京东时都会显示“粘贴自 XX 应用”。所以你就应该知道，为什么你在其它应用里提到过的商品名称，会出现在电商 App 的搜索推荐里。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0703/3f64f229e1564bf.gif" alt="img:App该不该读取用户剪贴板？这件事苹果想得比你更复杂"></p>
+<p>读取剪贴板，也可能是为了提升用户体验</p>
+<p>应用自动读取你的剪贴板内容，大多数是为了精准推荐广告，当然我们也不要对这种行为进行全盘否定。淘宝的淘口令也是通过读取剪贴板完成，体验上确实加快了流程，只要不是后台一直默认读取就好。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0703/2ed508d9d9f004b.gif" alt="img:App该不该读取用户剪贴板？这件事苹果想得比你更复杂"></p>
+<p>手机 QQ 也有一个功能，就是通过其它设备发送到“我的手机”的文字，会自动复制到剪贴板中，方便在其它地方复制。（这种行为某种意义上也是未经用户同意的，会被其它自动读取剪贴板的应用利用。）</p>
+<p>这个细节是我从 iPhone 换到安卓手机后，寻找 AirDrop 替代方案时发现的，虽然还是多了几个步骤，但已经方便不少。</p>
+<p>搜狗输入法通过读取剪贴板实现了“云剪贴板”以及“剪贴板候选”，能够快速复制。在我换成安卓手机后，搜狗输入法配合上面提到的 QQ 功能，已经解决了一部分多设备协同的问题。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0703/08508e94d0c16fb.gif" alt="img:App该不该读取用户剪贴板？这件事苹果想得比你更复杂"></p>
+<p>这些应用的行为之前只是在暗中进行，而 iOS 14 的剪贴板提醒把它们都曝光了出来，就像之前的 vivo 升降式摄像头、MIUI 12 照明弹一样。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0703/3b905b400b34897.jpg" alt="img:App该不该读取用户剪贴板？这件事苹果想得比你更复杂"></p>
+<p>舆论是把双刃剑</p>
+<p>实际上，iOS 14 的另一项特性也把应用调用摄像头、麦克风的行为曝光了出来。应用在调用摄像头时右上角会显示绿色指示灯，调用麦克风会显示黄色指示灯，这既是对用户操作行为的反馈，又能提醒用户隐私是否被侵犯。苹果在没有增加任何硬件的情况下，实现了类似真实世界的指示灯效果，这个技术并不难，但理念真的值得夸赞。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0703/254f072b2bf1baa.gif" alt="img:App该不该读取用户剪贴板？这件事苹果想得比你更复杂"></p>
+<p>仔细看右上角</p>
+<p>虽然 80% 以上的应用都在暗中利用用户的隐私为自己谋利，并不是出于提升用户体验，但我很怕苹果的这些“曝光”会把舆论引向另一个极端，应用开发者为了平息众怒，去掉一切获取用户信息的功能（TikTok 已经承诺在下个版本停止对剪贴板的访问），那样其实会扼杀掉很多对用户真正有用的智能推荐、个性化推送功能，不一定是件好事。</p>
+<p>把知情权、选择权留给用户</p>
+<p>这就要说到苹果在权限获取方面的一些新改动，简单来说就是给用户更多的选择，在一些应用中上传照片时，用户可以选择只获取一张照片（比如图像处理、上传头像），还是获取查看所有照片的权限。</p>
+<p>在获取位置时，用户也能选择获取大概位置（用于新闻、天气），还是获取精确位置（用于打车、导航）。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0703/657fcab735eb3fb.jpg" alt="img:App该不该读取用户剪贴板？这件事苹果想得比你更复杂"></p>
+<p>苹果的另一些举措就是把更多“知情权”留给用户，在 Safari 中打开网页可以查看该网站的隐私报告。在 App Store 中应用需要展示获取了哪些用户权限，以及为什么要这样做（在未来的更新中会支持）。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0703/0072c512d30a8f3.jpg" alt="img:App该不该读取用户剪贴板？这件事苹果想得比你更复杂"></p>
+<p>手机厂商的平衡术</p>
+<p>总结来说，苹果分别在三个方面加强了对用户的隐私保护：让你主动查看自己的隐私被用在了哪里、实时并强制展示应用获取数据的行为、把更多权限开关交给用户。你说是为了品牌口碑也好、为了用户体验也好，苹果的这些动作可以说是用心良苦。</p>
+<p>另一边 Google 的 Android 11 其实也是同样的操作。不过我之前也提到，他们的做法是在隐私权限方面把功能做足，但对用户来说还是过于复杂。保护用户的隐私，不是把选择的权限都推给用户就是好，我们要的是一个“智能”手机。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0703/90aba26749d651a.png" alt="img:App该不该读取用户剪贴板？这件事苹果想得比你更复杂"></p>
+<p>厂商作为平台方要平衡好开发者和用户双方的体验：提供严格但开放的接口给开发者，在系统端做好对权限的把控；给用户足够但不复杂的权限，让他们知道自己的哪部分数据被用在了什么地方。</p>
+<p>智能手机离我们越近，它的隐私保护也就越加重要，而数据、隐私、智能化纠缠在一起的复杂问题，也只能交给厂商去权衡了。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/998903/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">研究人员创造BionicSwift机器人鸟 用人造羽毛飞行</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/998911/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">华为1996年员工招聘广告曝光：年龄35岁以下、本科/硕士以上</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1000793/">SuSE 已就收购 Rancher 事宜正式达成最终协议</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1000783/">美国宇航局的Psyche小行星探测任务到达一个重要的里程碑</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1000789/">Intel官宣Thunderbolt 4接口：Tiger Lake首发 支持双4K输出</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1000785/">弹个车回应“侵犯客户合法权益报道”：会依法行事</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1000787/">《刺客信条：英灵殿》7分钟演示泄露 展示Boss战</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？ - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？" />
+<meta property="og:description" content="苹果在今年的WWDC上宣布，macOS 11将会迁移到ARM平台，引起了轰动。苹果称，将会在Mac电脑上用自研ARM平台取代Intel的X86平台，并且迁移包括操作系统和软件在内的生态，这意味着ARM在个人PC领域迈出了挑战X86的一步。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1004671/" />
+<meta property="article:published_time" content="2020-07-18T08:06:12+08:00" />
+<meta property="article:modified_time" content="2020-07-18T08:06:12+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-18T08:06:12&#43;08:00">July 18, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>苹果在今年的WWDC上宣布，macOS 11将会迁移到ARM平台，引起了轰动。苹果称，将会在Mac电脑上用自研ARM平台取代Intel的X86平台，并且迁移包括操作系统和软件在内的生态，这意味着ARM在个人PC领域迈出了挑战X86的一步。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0718/39198fffd1841c6.jpg" alt="img:macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？"></p>
+<p>macOS 11将兼容ARM芯片</p>
+<p>人们对苹果的这个举措是寄予厚望的。macOS并不是首次“换马”，在二十一世纪的第一个十年，Mac就从IBM PowerPC平台迁移到了Intel X86平台，并取得了成功，这也是人们对Mac此次换用ARM后，仍能提供良好体验抱有如此信心的一大原因。</p>
+<p>苹果宣布这一消息的同时，不少人同时也联想到了微软——微软已经在ARM领域摸索多年，推出过Windows RT这样的特制系统，最近更是让Windows 10运行在了ARM上，并且兼容之前的大量软件。然而，Win10 ARM战略似乎未能取得太大反响，Windows RT甚至直接暴死。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0718/12a0f7b2f866d98.jpg" alt="img:macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？"></p>
+<p>微软早已经涉足ARM领域，推出了基于ARM的Windows平板</p>
+<p>Mac迁移平台来势汹汹，人们普遍的预期是顺风顺水，而Win10却屡屡碰壁。Win10在ARM的道路上，到底行差踏错了些什么？今天一起来谈谈这个问题吧。</p>
+<p>X86转移ARM：到底会有什么坑？</p>
+<p>众所周知，ARM和X86平台最大的区别是微架构的不同。ARM属于RISC简单指令集，而X86则是CISC复杂指令集，程序要这两个不同的平台运行，需要编译不同的版本。当然，借助中间层，也可以实现两个不同平台之间的兼容。</p>
+<p>然而，无论是那种方案，将之前兼容X86的操作系统要将生态迁移到ARM，都需要付出代价。</p>
+<p>如果放弃X86平台上老软件的兼容，只让新软件兼容ARM平台，那么就意味着生态系统需要从头做起，新系统起步会变得非常艰难。在过渡期间，新开发的软件需要同时兼容X86和ARM平台，意味着要么开发者投入更多的精力自行编译不同的版本，要么操作系统的开发套件提供同时编译的功能。无论如何，都需要投入更多的工作。</p>
+<p>而如果想要生态无缝衔接、让新的ARM平台起步更顺利，最好可以让X86平台的老软件直接可以运行在新的ARM平台上，那么就需要对中间层做工作了。例如Android就是一个很好的例子，通过HAL来模糊硬件接口，利用善于跨平台的JAVA作为应用上层，无论是运行在X86的Android还是ARM的Android，都可以同时兼容绝大部分的App。</p>
+<p>但这个方法的缺点在于，中间层可能会成为效率的瓶颈。Android的中间层就很厚，效率感人诟病已久。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0718/97bed54529c1d9a.jpg" alt="img:macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？"></p>
+<p>X86指令转制为ARM实现兼容，性能下滑不可避免</p>
+<p>另外，由于ARM多用于移动平台，因此如果桌面操作系统想要迁移到ARM，往往也会打起通过移动平台已有生态造血的注意，也就是让迁移到ARM的桌面操作系统，兼容移动平台的App。当然，这里面也有大坑，例如UI的适配就是个麻烦——手机平板的屏幕和桌面PC显示器不同，要有体验好的视觉效果，UI需要灵活变形，这对UI元素的自动排列提出了极高要求，是也是个需要投入大量精力研究的课题。</p>
+<p>2苹果迁移ARM到底做了什么？</p>
+<p>苹果迁移ARM到底做了什么？</p>
+<p>上面提到了X86迁移ARM可能会碰到的问题，大家却对苹果的迁移之举抱有信心。要理解这一点，我们首先来看看苹果为ARM平台的迁移工作都准备了什么吧。</p>
+<p>提前量十足的全新开发生态</p>
+<p>苹果打算将Mac迁移到ARM平台，其实很早就能看出端倪了。为了平滑过渡到ARM平台，苹果早有准备，对开发套件作了大量工作，以统合的思路，开始改造其应用生态。</p>
+<p>苹果这两年做的很多事，就是为了解决ARM迁移到X86平台上的问题。苹果在2019年的WWDC大会上，推出了SwiftUI和Mac Catalyst。这两个套件的作用，在于架起了ARM和X86间、以及移动平台和桌面平台间跨平台开发的桥梁——苹果本身就有着成熟的ARM移动生态，这无疑能成为桌面平台迁移到ARM的强劲助力。</p>
+<p>先来说说Mac Catalyst，这是一个跨ARM和X86平台的开发套件。通过Mac Catalyst，开发者在构建一个iPad App的同时，这个App也能成为macOS的原生应用。从某个角度来说，Mac Catalyst将会是iPadOS和macOS新的开发基准，iPadOS将会和macOS的应用生态深度融合。此后，即使macOS迁移到了ARM平台，基于Mac Catalyst开发的软件应用，也可以无缝兼容。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0718/5b49e4c40b2b52c.jpg" alt="img:macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？"></p>
+<p>Mac Catalyst可以让一个软件应用同时兼容iPadOS和macOS</p>
+<p>而SwiftUI，其作用则在于为移动平台和桌面平台提供了跨平台的UI适配方案。通过SwiftUI，开发者能用较为简单的代码，一次开发出适配多个平台的软件UI。例如开发者想要为macOS和iOS、iPadOS做软件应用，那么通过SwiftUI就可以轻松做出能适配这几个平台应用的UI。可以说，SwiftUI大大降低了为不同苹果平台开发软件应用的门槛，意义重大。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0718/8c73611846d5d6e.png" alt="img:macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？"></p>
+<p>SwiftUI可以让同一个应用的UI同时适配多个苹果平台</p>
+<p>无论是Mac Catalyst还是SwiftUI，目前都已经投入了实战当中，通过新版的Xcode以及高质量的开发文档，每个苹果开发者都可以制作出基于新技术的高质量软件应用。</p>
+<p>很大程度上，苹果已经解决了新软件同时兼容X86/ARM、移动/桌面平台的开发问题。请注意，这是在ARM版macOS发布之前做的工作，可谓是兵马未动粮草先行。目前，苹果尚未发布ARM版Mac电脑，但为其配套的开发组件，却已相当完备了。待到macOS真正迁移到ARM平台时，基于Mac Catalyst以及SwiftUI开发的软件应用早已经花繁叶茂，macOS迁移ARM其软件生态不至于会“休克”。</p>
+<p>步步为营的生态迁移</p>
+<p>Mac Catalyst解决了代码在X86和ARM平台的编译问题，而SwiftUI则解决了移动平台和桌面平台的UI适配问题，但这是针对于新开发的软件应用的。对于macOS旧有的软件，苹果也祭出了招数。</p>
+<p>在今年的WWDC大会，苹果宣布，将会为macOS平滑过渡到ARM平台，推出Rosetta 2中间转换层。如果你是老果粉，对于Rosetta这个词一定很熟悉——苹果Mac电脑当年从IBM PowerPC架构，迁移到Intel X86平台，所使用的转换层正是Rosetta。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0718/5e1a733b9e5782a.jpg" alt="img:macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？"></p>
+<p>Mac迁移平台这事，苹果已经干过一次了，当年Mac从PPC迁移到X86的兼容层被称为“Rosetta”</p>
+<p>Rosetta 2的作用在于，它通过指令翻译，可以让ARM平台的macOS，直接运行绝大部分的X86软件。而且Rosetta 2的性能还相当不错，它并不是在软件运行的时候，才翻译指令的，而是在软件安装时就做好了转换。当然，这也并非说Rosetta 2可以实现性能完全无损，它对AVX指令兼容并不好，如果X86软件依赖AVX乃至AVX2，那么在ARM平台上由于没有对应的高性能指令，运行效率会有明显下滑。并不是所有的软件都会用到AVX指令集，总体来说，Rosetta 2的性能还是可以接受的。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0718/f324a34b9cde093.jpg" alt="img:macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？"></p>
+<p>这次Mac从X86迁移到ARM，Rosetta 2对旧有X86软件的兼容也起着至关重要的作用</p>
+<p>和当年的Rosetta一样，Rosetta 2只是一个临时举措，它的意义在于为迁移到ARM平台提供平滑的过渡期。我们可以参考一下Rosetta的进度：2005年苹果在WWDC宣布换用X86，接着苹果在2006年推出基于X86平台的Mac电脑并部署了Rosetta，到2009年苹果Mac OS X 10.6不再支持PowerPC的Mac，2011年Mac OS X 11.7不再支持Rosetta，放弃了对PowerPC时代Mac软件的支持。从此以后，苹果Mac生态彻底转移到了X86平台，整个过程并未有太大的阵痛。</p>
+<p>从Rosetta的历程来看，macOS转移到ARM，旧有的X86软件也会经由数年的过渡兼容期。在未来几年，我们或许也会看到新的macOS 11不再支持旧有X86 Mac电脑、在未来某个版本彻底不支持Rosetta 2这样的节点。到最后，macOS 11上只剩下专为ARM开发的新软件，而届时ARM的软件应用也早已经琳琅满目。</p>
+<p>苹果相当清楚，新旧平台的更迭，绝非一蹴而几的事情。苹果一方面通过SwiftUI和Mac Catalyst慢慢为ARM平台的Mac营造新生态，一方面通过Rosetta 2保持原有生态不流失，而且两方面的完成度都非常高，可谓两手都要抓、两手都要硬的典型。加上此前从PowerPC到X86换平台的成功经历，人们对Mac换用ARM架构抱有极大期待，也就理所当然了。</p>
+<p>3Win10 ARM失败在哪里？</p>
+<p>Win10 ARM失败在哪里？</p>
+<p>在很多人的认知中，微软Windows系统向ARM进军的步伐，要比苹果macOS来得更早。的确，微软在2012年就已经发布了用于ARM平台的Windows RT系统，并将其装载于第一代Surface平板电脑上。而最近，微软更是将Windows 10桌面系统整个迁移到ARM上，目前市面上已经出现了基于骁龙处理器的Windows 10平板，而微软自身也推出了基于骁龙ARM平台的Surface Pro X。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0718/ce5d2897c4e7518.png" alt="img:macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？"></p>
+<p>运行在ARM平台上的Windows RT系统</p>
+<p>从推向市场的进度来看，微软无疑远远领先于苹果——macOS的ARM产品尚未见诸市面，而微软的ARM Windows产品已经开卖多时。然而，这些产品并没有在市场上掀起太大波澜，Window RT已经宣告终结，而Surface Pro X等Windows 10 ARM产品，则落下了性能低下的坏口碑，并没有取得什么好的市场表现。</p>
+<p>为什么会这样子呢？我们来回看微软Windows在ARM平台上的征程。</p>
+<p>2012年，为了和iPad竞争，微软推出了Surface平板产品线。然而，用于ARM平台Surface平板的Windows RT系统，却拥有着诸多限制。</p>
+<p>从外表来看，Windows RT和正儿八经的Windows 8桌面操作系统无异。然而，Windows RT却不能兼容一切传统基于X86开发的Windows程序。Windows RT只能从应用商店中获取应用，这让Windows RT一度几乎无第三方软件可用。实际上，这是由于微软通过数字签名限制了第三方应用，破除了微软的限制后，传统的X86软件通过重新编译为ARM应用，是可以运行在Windows RT上的。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0718/2fe713b815e1a37.jpg" alt="img:macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？"></p>
+<p>Windows RT不兼容传统的桌面软件，必须从Windows商店下载</p>
+<p>为何微软要这么做？在微软的构思中，Windows RT和Windows Phone共用应用商店，双方生态打通，开发者为Windows Phone开发App的同时，也可以顾及Windows RT。然而，这只不过是一个美好的幻想，Windows RT的这些缺陷，将它送进了坟墓。</p>
+<p>·手机和平板的交互基础差异过大。Windows Phone和Windows RT都力推Metro（Modern）设计，然而小屏和大屏之间终究有难以逾越的鸿沟。加之Windows RT仍残留着大量桌面UI，借助Windows Phone上的App给Windows RT生态输血，显得不合时宜。</p>
+<p>·Windows Phone并未建立起强有力的生态。微软多次变更Windows Phone的开发路线，开发工具也一改再改。Windows Phone的开发环境非常不稳定，系统自身从开始的CE内核变为NT内核，而应用则从一开始的XAP到APPX，到了Win10M又要求开发者开发UWP应用……开发者连Windows Phone剧变的开发环境都无法跟上，最后冷眼旁观WP/Win10M的垂死，更何况边缘产品Windows RT？此情此景下，通过WP给Windows RT输血是不切实际的。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0718/b889f2810bed144.png" alt="img:macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？"></p>
+<p>Windows应用商店不稳定，还时不时爆出无法安装应用的大问题</p>
+<p>·ARM平台性能太弱。Surface使用的是Tegra3芯片，该芯片的性能甚至不如同时代的Atom，系统自带的Office运行起来卡顿无比。指望当时的ARM芯片支撑起桌面级的体验？根本无法胜任。</p>
+<p>·其他因素。开发者们发现，通过破解Windows RT系统数字签名限制，可以将X86平台上的Win32程序重新编译后，安装到Windows RT上，并且顺利运行。然而微软封堵相关漏洞，进一步削弱了Windows RT的扩展性。</p>
+<p>简单来说，尽管微软让Windows RT运行在了ARM平台上，但没有为其配备一个理想的开发环境，也没有让其能直接兼容传统的X86软件应用，与此同时Windows RT还有着UI分裂、平台性能羸弱等问题，失败也就在情理之中。</p>
+<p>到了最近的Windows 10 ARM版，许多问题似乎已经得到解决。ARM芯片的性能大幅提升，甚至逼近了桌面低压X86处理器；而可以跨平台支持ARM和X86的UWP应用开发环境，相对以前来说也较为稳定；同时，微软还让Windows 10 ARM可以直接运行X86软件。然而，Windows 10 ARM却依然有着如下缺陷。</p>
+<p>·兼容不佳。微软为Windows 10 ARM做的中间兼容层，当前并不能完美兼容所有的X86软件，只有32位的软件能够实现兼容。事实上，Windows 10 ARM使用的Thumb2指令集是和Windows RT一脉相承的，不过这次面向Win32程序开放了兼容，但这套指令集并不兼容X86-64（Windows RT时代ARM处理器仍未迈入64位），日后需要大改才能兼容64位软件。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0718/e4f7ef3cbabfb26.png" alt="img:macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？"></p>
+<p>Windows 10 ARM运行Win32软件效果一般</p>
+<p>·性能低下。在Windows 10 ARM上运行的X86软件，是边转码边运行的，并不像苹果Rosetta 2那样在安装时作好转码工作，运行时无需再次转码。这就造成了Windows 10 ARM运行X86软件性能不尽如人意。</p>
+<p>·UWP前景成疑。UWP应用目前仍存在诸多限制，能实现的功能有限，稳定性更差，开发环境也不如传统的WPF成熟。要知道，用Mac Catalyst开发应用，是起码有成熟的iPad生态兜底的，兼容macOS是一个加分项；用UWP开发应用能得到什么？只会面对传统Win 32软件的强烈竞争，开发者在UWP和Win32软件开发之间，会作何选择不言而喻。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0718/7b83936aa91c8e1.jpg" alt="img:macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？"></p>
+<p>UWP的大饼真香，但喂不饱开发者</p>
+<p>·微软没有对ARM硬件的掌控力。Windows 10 ARM运行于骁龙平台，微软并没有像苹果那样，自行设计ARM芯片，软硬件结合度自然有所欠缺。苹果可以确保未来macOS跑在怎样性能水准的ARM芯片上，而微软只能仰仗高通。在ARM性能对X86仍处于追赶态势的现状下，这是一个藏有暗雷的要素。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0718/a494c882790a174.jpg" alt="img:macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？"></p>
+<p>苹果可以祭出自己的芯片，微软只能和高通合作</p>
+<p>·Windows有着更沉重的历史遗留兼容问题。macOS换用ARM，苹果仍只需专心打造新的Mac电脑；而Windows换用ARM，微软必须顾及众多的硬件厂商，以及诸多的老软件，转型速度注定不如苹果。</p>
+<p>总结</p>
+<p>到了这里，我们可以总结一下，为何苹果macOS换用ARM能万众瞩目，而微软Windows转移ARM却不尽如人意了。</p>
+<p>·苹果提供了能编译同时兼容X86、ARM平台的应用的高质量开发方案（SwiftUI+Mac Catalyst），微软在这方面举棋不定；</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0718/0e295216d97e0b8.jpg" alt="img:macOS换用ARM来势汹汹 Windows10 ARM失败在哪里？"></p>
+<p>现在还没有macOS的ARM产品面市，但开发机却是已经有了，苹果的准备力度可见一斑</p>
+<p>·苹果提供了X86软件在ARM平台的兼容方案（Rosetta 2），效率良好。而Windows RT不兼容X86软件，Windows 10 ARM则运行X86软件效率较差，且不支持64位；</p>
+<p>·苹果能够自行设计高性能的ARM芯片，微软没有这样的能力，ARM芯片性能尚不足以支撑桌面环境时就上马Windows RT，现在Windows 10 ARM平板的性能也无法和同价位的其他X86平板相提并论；</p>
+<p>·苹果提前布局好ARM生态的转移工作，并设置了足够的过渡期，相应产品由始至终保持了较高完成度，而微软未准备好配套就匆匆将不成熟的产品推向市场；</p>
+<p>·苹果对生态掌控力度更大，能促使开发者更新迭代适配新平台，而微软背负着沉重的兼容性包袱。</p>
+<p>在当前，X86仍是桌面平台的绝对主流。但ARM平台已经在能效上彰显优势，如果微软铁了心要兼顾ARM平台，就必须解决当下的种种问题，才能带来良好的体验，期待微软日后能做得更好吧。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1004677/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">索尼表示PS5预购不能突然开启 而会提前通知</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1004681/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">蔚来汽车收盘大跌逾14% 此前遭高盛下调评级至卖出</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006565/">苹果推出安全研究设备计划 提供一台“特殊” iPhone</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006583/">突然宣称掌握5G技术 印度制造还是印度组装？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006569/">软银希望出售Arm Holdings 但是苹果似乎并不感兴趣</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006571/">Xbox Series X上市时将拥有游戏机史上最多游戏</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006567/">马斯克：特斯拉下一座超级工厂将选址奥斯汀</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

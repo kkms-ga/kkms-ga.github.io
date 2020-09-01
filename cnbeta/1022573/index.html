@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>29 年过百万次 commit，Linux 内核何以发展至今？ - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="29 年过百万次 commit，Linux 内核何以发展至今？" />
+<meta property="og:description" content="1991 年，21 岁的芬兰大学生 Linus Torvalds 写下第一行 Linux
+内核代码时，多半没有想到它会成长为今天这样的庞然大物。当年 8 月 25 日，Torvalds 在 Minix Usenet
+新闻组里发了一封帖子，称自己正在做一个自由的操作系统，“就是个兴趣爱好，不会搞得像 GNU 那么大那么专业”。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1022573/" />
+<meta property="article:published_time" content="2020-08-31T11:57:44+08:00" />
+<meta property="article:modified_time" content="2020-08-31T11:57:44+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">29 年过百万次 commit，Linux 内核何以发展至今？</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-31T11:57:44&#43;08:00">August 31, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>1991 年，21 岁的芬兰大学生 Linus Torvalds 写下第一行 Linux
+内核代码时，多半没有想到它会成长为今天这样的庞然大物。当年 8 月 25 日，Torvalds 在 Minix Usenet
+新闻组里发了一封帖子，称自己正在做一个自由的操作系统，“就是个兴趣爱好，不会搞得像 GNU 那么大那么专业”。</p>
+<p>事情的发展显然远超他的预期，如今小到传感器，大到超级计算机，从智能手机、手表、汽车等日常用品到航天器等设备，Linux 内核的身影已无处不在。</p>
+<p>随着迄今为止最大版本 Linux Kernel 5.8 于今年 8 月初的发布，Linux 内核已拥有超过 2 万名贡献者，历史 commit 数超过 100 万次，迎来一个新的里程碑。</p>
+<p>上周恰逢 Linux 29 周年纪念日，Linux 基金会发布了一份详尽的 Linux 内核报告，涵盖了自 1991 年 9 月 17 日首次发布以来，到 2020 年 8 月 2 日最新版本的 Linux 内核历史。</p>
+<p>版本控制：从 BitKeeper 到 Git</p>
+<p>Linux 基金会从 2008 年开始每年发布 Linux 内核报告，但此前一直难以将其发展过程完整串联起来。今年，借助 Daniel German 博士的 cregit 工具，他们成功追溯到了第一个版本，Linux 内核的发展时间线变得清晰。根据版本控制方式，可大致分为以下三个阶段：</p>
+<p>pre-version control（前版本控制）：1991 年 9 月 - 2002 年 2 月 4 日</p>
+<p>BitKeeper：2002 年 2 月 4 日 - 2005 年 4 月 15 日</p>
+<p>Git：2005 年 4 月 16 日至今</p>
+<p>版本控制对社区协作能力影响重大，这在 2000 年代初是一件令人颇为苦恼的事情。使用版本控制系统，也就是 BitKeeper 之前，贡献者需要将补丁提交至邮件列表，待 Torvalds 接受后放进源码树，再发布整个树的新版本。在这种方式下，具体是谁在做贡献、贡献的数量和路径都不够透明。</p>
+<p>2002 年 2 月 4 日，BitKeeper 的使用标志着 Linux 内核 commit 历史的开启。然而 BitKeeper 为专有软件，这一决定在社区中遭受了长期质疑。直到 2005 年，BitKeeper 拥有者 Larry McVoy 决定收回无偿使用 BitKeeper 的许可。Torvalds 本人当时又对现成的 CVS 和 Subversion 等集中式版本控制工具感到不满，因此自己动手，用十天时间写出了 Git 的第一个版本。</p>
+<p>Git 目前已成为开发者们非常熟知且广泛使用的分布式版本控制系统。Linus Torvalds 则表现得更多的是迫于无奈，他曾声称自己“根本不想做源代码管理，觉得这是计算机世界中最无趣的事情”。</p>
+<p>自从版本控制系统由 BitKeeper 改为 Git 后，Linux 内核每年的贡献者和 commit 数量都在稳步增长。历年的内核报告数据显示，2005 年 5 月发布的 2.6.12 版本平均每小时收到 2 次 commit。15 年后，2019 年的平均数是每小时 9.4 次。而在最新的 5.8 内核中，平均每小时 commit 数达到了 10.7 次。</p>
+<p>繁杂且自成体系的内核代码</p>
+<p>首个内核版本 linux-0.01.tar.Z 由 88 个文件和 10,239 行代码组成，运行在 i386 这样单一的硬件架构上。到了 5.8 版本，这一数据扩张为 69,325 个文件和 28,442,673 行代码，并能够在 30 多种主要的架构上运行。</p>
+<p>数量上的庞大仅是 Linux 内核代码的表象，它自身更是形成了一套复杂的体系，不熟悉的人往往不知从何处下手，极有可能“牵一发而动全身”。这或许也是内核维护者难寻的原因之一。</p>
+<p>Linux 内核发布第一天起的某些代码仍在当前版本中使用，例如 Torvalds 和大学好友 Lars Wirzenius 共同编写的 vsprintf 例程，它也是为数不多存在至今的首次 commit 中的源代码。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0831/73618ebdf4cf9fb.png" alt="img:29 年过百万次 commit，Linux 内核何以发展至今？"></p>
+<p>今年的内核报告提到，有 2,964 个能被追溯至 1991 年的 token 如今在 5.8 版本中也能找到。5.8 版本超过一半的代码写于近 7 年内，但之前所有年份都对此版本有贡献。过去的代码不断在后续的版本中留下痕迹。</p>
+<p>持续膨胀的内核文件量和代码行数未见得完全是一件好事，为了使系统不变得臃肿，内核维护者需要做一些修枝剪叶的工作。Linux 内核中未使用的代码和文件都会被视情况删除，有一些版本还会进行大的清理，例如 2018 年的 4.17 版本，删除了 8 个架构，净减少代码大约 180,000 行。</p>
+<p>不仅仅是源码，Linux 内核维护者还会关注空白行和代码注释，以确保源码的可读性。</p>
+<p>开发者原创证书和标签管理</p>
+<p>2004 年对开发者原创证书（Developer Certificate of Origin，简称 DCO）的标准化是 Linux 内核史上的一个关键变化点。DCO 的引入为开发者和用户提供了法律保护，同时又不至于增加程序负担。它极大地提高了跟踪补丁进入内核的路径的能力，加上版本控制系统向 Git 的过渡，DCO 有效地减轻了开发者做贡献的开销，因此变得很受欢迎，后来也被许多其他开源项目采用。</p>
+<p>随着 DCO 的标准化使用，现在几乎所有的 commit 都有一个 Signed-off-by 标签。通常每个 commit 平均会有两个该标签，能够反映代码在合并之前的维护者层次结构，有助于追溯补丁进入代码的路径。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0831/b14cbf3cdd34217.png" alt="img:29 年过百万次 commit，Linux 内核何以发展至今？"></p>
+<p>Signed-off-by 之外，Linux 内核还增加了表示审查的标签（Reviewed-by 和 Acked-by）。审查对内核代码的质量来说相当重要，标签的加入令这个过程更加清晰，有越来越多的维护者选择使用标签来表示已审查。</p>
+<p>在审查 git 仓库时，Linux 基金会发现了一些比较有趣的标签，像是 &ldquo;Enithusiastically-ack&rsquo;d by&rdquo;、&ldquo;Thanksto&rdquo;、&ldquo;Based-on-the-Original-screenplay-by&rdquo;、&ldquo;Catched-by-andrightfully-ranted-at-by&rdquo; 等等。但这些标签并没有像上述两类一样被广泛采用。</p>
+<p>行之有效的发布模式</p>
+<p>Linux 内核的发布模式已渐趋成熟，现在基本固定为 Prepatch（或&rdquo;-rc&rdquo;）、Mainline、Stable 和 Long Term Stable 四类版本。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0831/66963748b80a2e2.png" alt="img:29 年过百万次 commit，Linux 内核何以发展至今？"></p>
+<p>社区曾对发布周期进行了大量的探讨和实验，并逐渐找到了行之有效的发布模式，发布周期也几乎完全可预测——每个发布周期由时长两周的“合并窗口”开始，这时，新功能经适当的 review 后可被纳入接下来要发布的 git 仓库。一旦它被标记为 rc1，那么集成测试、调试和稳定化的周期就开始了。然后每周对 rc 候选版本进行标记，直到达到目标质量和稳定性。发布后，随着下一个合并窗口的到来，这个周期又开始循环。</p>
+<p>内核的主线树由 Linus Torvalds 维护，这棵树引入了所有新功能。新的主线（Mainline）内核每 2 到 3 个月发布一次。但这样的发布节奏较慢，难以满足大多数用户的需求。因此，从 2005 年开始，每周发行一次稳定版（Stable）内核。</p>
+<p>用户还想要受维护时间更长的版本，于是 2006 年发布的 2.6.16 版本成为第一个长期支持（LTS）版本内核。此后每年都有一个新的 LTS 内核，该内核将由内核社区维护至少 2 年（从 4.4 版本开始延长至 6 年）。Linux 内核官网公布了所有现存 LTS 版本的发行日期、EOL 日期及维护者（目前 6 个 LTS 版本都由 Greg Kroah-Hartman 和 Sasha Levin 这两人维护）。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0831/91ebdb3e9851351.png" alt="img:29 年过百万次 commit，Linux 内核何以发展至今？"></p>
+<p>贡献者：长尾的力量不可忽视</p>
+<p>不少组织都在为 Linux 内核做贡献，贡献者排行榜前列几乎都被 Intel、Red Hat、IBM、SUSE、Google、Samsung、AMD、Oracle、华为和 ARM 这样的大企业占据。</p>
+<p>从 2007 年到 2019 年，Linux 内核共接受了来自 1,730 个组织的 780,048 次 commit。排在最前面的 20 个组织占了 68% 的 commit 量。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0831/a507f5e0020728e.png" alt="img:29 年过百万次 commit，Linux 内核何以发展至今？"></p>
+<p>在过去十年中，每年有超过 400 个组织为 Linux 内核做出贡献。其中相当一部分可能只有过一次 commit。从每年的 commit 比例来看，其中 1/3 贡献来自神秘的长尾。也就是图中最上面浅灰色 “Others” 的部分。</p>
+<p>Linux 基金会指出，企业的贡献会根据业务需求和战略的不同而有所变化。前 20 名贡献者中，有些是 2007 年之后才加入，有些在此前做过很多贡献的公司，被收购后便不再继续参与。贡献者的多样性为内核发展赋予了一些弹性。</p>
+<p>除了组织贡献者，Linux 内核社区成员也致力于增加个人贡献者的多样性，他们通常愿意花费自己的时间来指导新的开发者。Linux 基金会有一个 Kernel Mentorship（LKMP）项目，用来帮助新加入开源的开发者进行实验、学习，并为开源社区做出贡献。</p>
+<p>内核社区的共同目标：高质量、可靠性</p>
+<p>报告的最后，Linux 基金会指出，内核社区的重点是保持一个共同的目标，即拥有一个没有回归的高质量操作系统，愿意根据需要创建新的流程和工具，以帮助提高效率，并继续提升 Linux 内核的可靠性。</p>
+<p>内核测试现在也引入了一些自动化测试工具：静态分析工具如 sparse（语义解析器）、smatch（源匹配器）和cocicheck（语义补丁，测试特定的 bug），由 0-day 和 Hulk Robot 这样的自动测试机器人在 Linux 内核树上运行。机器人在发现和跟踪 bug 上起到不少作用。这些测试工具能够帮助开发人员跟上上游内核的速率变化，并继续改进内核版本，提升其稳定性。</p>
+<p>Linux 内核如今被应用于诸多领域，基金会认为，改进基础设施，进行正确的安全分析，是接下来要应对的重大挑战之一。目前 Linux 内核已拥有一个很好的基础，它应当继续引领创造最佳实践，以促进整个开源软件行业的发展。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1022581/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">充电时间再缩短 家里安上“超充桩” 蔚来20kW家用快充桩今日发售</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1022609/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">斯蒂芬·金奇幻恐怖小说改编剧《末日逼近》曝先导预告</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023151/">《精灵宝可梦Go》将于10月停止对旧版iOS和Android平台的支持</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023149/">iOS版谷歌相册应用更新 支持修剪编辑和添加视频滤镜</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023147/">[图]科学家克服硅融入锂电池难题 可打造轻便、高容量电池</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023097/">吃胡萝卜能让你获得夜视能力？并不能，但是背后有个好玩的历史</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023101/">蚊子传播那么多疾病，自己怎么没事？</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

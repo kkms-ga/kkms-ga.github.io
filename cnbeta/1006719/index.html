@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>新版 Edge 为 Internet Explorer 模式添加专用选项 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="新版 Edge 为 Internet Explorer 模式添加专用选项" />
+<meta property="og:description" content="Microsoft Edge Canary 通道的最新版本添加了一个新的专用选项，用于在 Internet Explorer 模式下加载网页。通过&quot;selecting Menu &gt; More Tools &gt; Reload in Internet Explorer mode&quot;启用此选项后，用户可以在 Microsoft Edge 中使用 IE 模式加载需要 IE 浏览器打开的网站。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1006719/" />
+<meta property="article:published_time" content="2020-07-23T10:43:36+08:00" />
+<meta property="article:modified_time" content="2020-07-23T10:43:36+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">新版 Edge 为 Internet Explorer 模式添加专用选项</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-23T10:43:36&#43;08:00">July 23, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Microsoft Edge Canary 通道的最新版本添加了一个新的专用选项，用于在 Internet Explorer 模式下加载网页。通过&quot;selecting Menu &gt; More Tools &gt; Reload in Internet Explorer mode&quot;启用此选项后，用户可以在 Microsoft Edge 中使用 IE 模式加载需要 IE 浏览器打开的网站。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0723/33ce16a3054a2c2.png" alt="img:新版 Edge 为 Internet Explorer 模式添加专用选项"></p>
+<p>此模式诞生之初就被设计成模拟原生的 Internet Explorer 体验，因此它支持所有文档和企业模式、ActiveX 控件、Browser Helper Objects、用于 IE 的 F12 开发者工具以及 Internet Explorer 设置和组策略。</p>
+<p>不过使用 IE 模式前需要先在设置中进行配置：</p>
+<p>1.在地址栏输入 edge://settings/defaultBrowser</p>
+<p>2.通过切换开关启用&quot;Allow sites to be reloaded in Internet Explorer mode&quot;选项</p>
+<p>3.重启浏览器</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0723/c07246adf0bf2b1.png" alt="img:新版 Edge 为 Internet Explorer 模式添加专用选项"></p>
+<p>对于现代网站，Microsoft Edge 会使用 Chromium 引擎进行渲染，而对于传统网站则可以使用来自 IE11 的 Trident MSHTML 引擎。当网站在 IE 模式下加载时，IE logo 指示器会显示在导航栏的左侧。用户可以点击 IE logo 指示器以查看其他信息。可以看到，地址栏下方还会显示提醒进入 IE 模式的浮窗，以及退出 IE 模式的按钮。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0723/1dd10e3e79ca342.png" alt="img:新版 Edge 为 Internet Explorer 模式添加专用选项"></p>
+<p>微软如此看重此项功能主要还是为了照顾体量不小的传统企业网站应用，要知道，部分公司和组织曾经开发的网页和应用，以及服务是专为支持 IE 而打造的。现在为了兼容旧网站和应用，微软对此也可以说是责无旁贷。微软提供的解决方案是 IE 模式，该模式与 Chromium 版本的 Microsoft Edge 绑定在一起，它允许用户在不离开其现代浏览器的情况下，使用传统的 Windows 浏览器模式加载网站。</p>
+<p>要注意，此项变更目前只在 Canary 通道的新版上线，它最终可能会在稳定版本中提供，不过也有可能在被广泛使用之前从浏览器中移除。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1006683/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">J.D.Power APEAL调查公布：特斯拉获最高分</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1006709/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">三星或为Chromebook Nightfury配备QLED显示屏</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1008535/">暴雪官方重申：《魔兽世界》不会登陆主机</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1008525/">Analogue宣布Pocket掌机延期至明年上市 但预购将很快开启</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1008533/">研究：即便是最好的人脸识别算法也会受到口罩干扰</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1008545/">美CDC：1/3新冠肺炎幸存者在经历着挥之不去的症状</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1008547/">美航司要求旅客严格遵从佩戴口罩的要求 否则或被加入内部禁飞名单</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

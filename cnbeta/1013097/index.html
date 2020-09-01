@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>PHP 7.4.9 发布 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="PHP 7.4.9 发布" />
+<meta property="og:description" content="PHP 是一种广泛使用的通用脚本语言，特别适合于 Web 开发，并且可以嵌入 HTML 中。
+PHP 7.4.9 版本现已发布，具体更新内容如下：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1013097/" />
+<meta property="article:published_time" content="2020-08-08T08:45:45+08:00" />
+<meta property="article:modified_time" content="2020-08-08T08:45:45+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">PHP 7.4.9 发布</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-08T08:45:45&#43;08:00">August 08, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>PHP 是一种广泛使用的通用脚本语言，特别适合于 Web 开发，并且可以嵌入 HTML 中。</p>
+<p>PHP 7.4.9 版本现已发布，具体更新内容如下：</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0421/09becf1df0d33e2.jpg" alt="img:PHP 7.4.9 发布"></p>
+<p>Apache：</p>
+<p>修复了错误＃79030（升级 apache2handler 的 php_apache_sapi_get_request_time 以返回 usec）。</p>
+<p>COM：</p>
+<p>修复了错误＃63208（BSTR 到 PHP字 符串转换不是 binary safe）。</p>
+<p>修复了错误＃63527（DCOM 无法使用用户名、密码参数。）。</p>
+<p>Core ：</p>
+<p>修复了错误＃79740（不能静态调用 serialize() 和 unserialize() methods）。</p>
+<p>修复了错误＃79783（php_str_replace_common 中的段错误）。</p>
+<p>修复了错误＃79778（如果转储带有未解决的静态变量的闭包，则断言失败）。</p>
+<p>修复了错误＃79779（通过引用分配字符串偏移量的属性时断言失败）。</p>
+<p>修复了错误＃79792（如果销毁了空数组，则不会删除 HT 迭代器）。</p>
+<p>修复了错误＃78598（在 undef index RW error segfaults 期间更改数组）。</p>
+<p>修复了错误＃79784（如果在数组写获取期间的 undef var 期间更改数组，则在 free 后使用）。</p>
+<p>修复了错误＃79793（如果更改了未定义索引警告中使用的字符串，则 free 后使用）。</p>
+<p>修复了错误＃79862（子级中的公共非静态属性应优先于私有静态）。</p>
+<p>修复了错误＃79877（getimagesize 函数在一个空字节后 silently truncates）（cmb）</p>
+<p>Fileinfo：</p>
+<p>修复了错误＃79756（finfo_file 崩溃（FILEINFO_MIME））。</p>
+<p>FTP：</p>
+<p>修复了错误＃55857（大文件上的 ftp_size）。</p>
+<p>Mbstring：</p>
+<p>修复了错误＃79787（mb_strimwidth 不会修剪字符串）。</p>
+<p>Phar：</p>
+<p>修复了错误＃79797（在 phar_parse_zipfile 函数中使用 freed hash key）。（CVE-2020-7068）</p>
+<p>Reflection：</p>
+<p>修复了错误＃79487（::getStaticProperties() 忽略属性修改）。</p>
+<p>修复了错误＃69804（::getStaticPropertyValue() throws on protected props）。</p>
+<p>修复了错误＃79820（当复制到 ReflectionProperty 的类型被解析时，在 free 之后使用）。</p>
+<p>Standard：</p>
+<p>修复了错误＃70362（Can&rsquo;t copy() large &lsquo;data://&rsquo; with open_basedir）。</p>
+<p>修复了错误＃78008（dns_check_record() 在 Alpine 上始终返回 true）。</p>
+<p>修复了错误＃79839（array_walk() 不 respect 属性类型）。</p>
+<p>更新说明：</p>
+<p><a href="https://www.php.net/ChangeLog-7.php#PHP_7_4">https://www.php.net/ChangeLog-7.php#PHP_7_4</a></p>
+<p>下载地址：</p>
+<p><a href="https://www.php.net/downloads.php">https://www.php.net/downloads.php</a></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1013091/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">美疾控中心更新口罩使用指南</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1014983/">富士康董事长：正逐步扩大中国以外的产能</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015009/">Canalys：美国二季度手机出货3190万部 环比增长11%</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1014999/">研究表明新冠气溶胶可包含仍存活的病毒  传播距离远超6英尺安全距离</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015015/">电视市场复苏 大型LCD面板价格创下今年以来新高</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015019/">腾讯：正寻求美方解释微信禁令，应该是指美国地区</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

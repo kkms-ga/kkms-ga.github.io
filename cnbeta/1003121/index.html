@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Chrome遭遇无法在Windows 10上正常播放HDR视频的bug - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Chrome遭遇无法在Windows 10上正常播放HDR视频的bug" />
+<meta property="og:description" content="Reddit 网友抱怨称，他们在使用 Chrome（v81&#43;）和系统自带的 Edge 浏览器的时候，遇到了浏览器无法正常播放 HDR 内容的问题。有网友写道：在对“视频播放”设置项中的滑块进行调节之后，YouTube 上的 HDR 内容的亮度级别就出现了不准确的问题。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1003121/" />
+<meta property="article:published_time" content="2020-07-14T17:37:27+08:00" />
+<meta property="article:modified_time" content="2020-07-14T17:37:27+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Chrome遭遇无法在Windows 10上正常播放HDR视频的bug</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-14T17:37:27&#43;08:00">July 14, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Reddit 网友抱怨称，他们在使用 Chrome（v81+）和系统自带的 Edge 浏览器的时候，遇到了浏览器无法正常播放 HDR 内容的问题。有网友写道：在对“视频播放”设置项中的滑块进行调节之后，YouTube 上的 HDR 内容的亮度级别就出现了不准确的问题。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0714/a3b7aa65533d94d.jpg" alt="img:Chrome遭遇无法在Windows 10上正常播放HDR视频的bug"></p>
+<p>（来自：MSPU）</p>
+<p>在理想情况下，调节“SDR 内容外观”的滑块只会影响 SDR 内容、而不会波及 HDR 视频内容。</p>
+<p>然而 Windows 10 的问题在与，若在“HD 颜色设置”中将该滑块调到最大，也将自动增加 YouTube 上 HDR 内容的亮度级别。</p>
+<p>某位 Reddit 网友描述其使用的是 Windows 10 1909 系统和最新版的英伟达 RTX 2080 Ti 独显驱动，但却在播放 YouTube HDR 视频时被亮瞎了眼。</p>
+<p>在典型设置下，游戏、媒体播放器和观看 4K HDR 蓝光资源都一切正常。但修改了系统颜色设置中的 SDR 外观滑块，就会波及 Chrome 中播放 YouTube HDR 内容的亮度。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0714/5d70f7ef0fce31f.jpg" alt="img:Chrome遭遇无法在Windows 10上正常播放HDR视频的bug"></p>
+<p>（图 via Techdows）</p>
+<p>许多网友在评论中反馈遇到了同样的问题，有人将滑块调到 100% 以增加桌面亮度，结果后来在播放 YouTube HDR 视频时被亮瞎了眼。</p>
+<p>另一位 Reddit 网友指出，即便将滑块降低到 50，同一视频的亮度也会伴随着降低，这种情况是本不该发生的。</p>
+<p>庆幸的是，Chromium 团队已知晓该问题，并做好了推出修复程序的准备，预计很快就会向 Canary 频道推送。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0714/4e3baac036e4b2c.png" alt="img:Chrome遭遇无法在Windows 10上正常播放HDR视频的bug"></p>
+<p>（来自：Reddit）</p>
+<p>想要复现这个问题，可先准备好一台支持 HDR 的显示器，然后再最新版的 Chrome 浏览器中启用 HDR 。</p>
+<p>方法是在桌面上点击鼠标右键，选择“Windows 桌面 -&gt; 显示设置 -&gt; 播放 HDR 游戏和应用”。</p>
+<p>接着在这个显示设置窗口中点击“Windows HD Color 设置”，选中“播放 HDR 游戏和应用”与“流式传输 HDR 视频”，向下滚动并将“SDR 内容外观”滑块拉到最高。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0714/393d6364b3b013b.png" alt="img:Chrome遭遇无法在Windows 10上正常播放HDR视频的bug"></p>
+<p>完成上述操作后，可在 Chrome 或 Edge 浏览器中点开某个 HDR 视频（比如 LTT 介绍 Pro Display XDR 这款 HDR 显示器的这篇）。</p>
+<p>在被亮瞎之后，还请及时返回 Windows 10 显示设置，并将滑块调回最低。尽管桌面上其余部分会因太暗而看起来有些难受，但至少 Chrome 上播放 HDR 视频时不会再亮瞎眼。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1003133/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">苹果推出夏令营居家版:线上指导 充实孩子的暑期生活</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1003127/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">腾讯申请多个有关“拍一拍”的商标 均处于等待实质审查状态</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005169/">现在好像没有谁再提什么“单机游戏已死”了</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005157/">特朗普政府试图阻止新法案向CDC拨付疫情应对资金</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005183/">消息称谷歌正研发双屏Chromebook以回应微软Surface Neo</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005161/">英国去年对《小丑》电影分级投诉最多 大家认为应18&#43;</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005163/">《骷髅战士》PS4版内置PS1模拟器 现已非正式发布</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

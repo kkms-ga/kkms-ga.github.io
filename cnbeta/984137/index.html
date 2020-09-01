@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>ARM宣布Ethos-N78 NPU 配置和效率超越前代产品 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="ARM宣布Ethos-N78 NPU 配置和效率超越前代产品" />
+<meta property="og:description" content="昨天ARM发布了全新的Cortex-A78、Cortex-X1 CPU和全新的Mali-G78 GPU。同时，我们还看到了最新Ethos-N78 NPU曝光。在过去的几年里，机器学习加速器在行业内的爆发式增长，不同的IP解决方案层出不穷。尤其是在移动领域，有大量不同的SoC厂商自主开发的定制解决方案，其中包括高通、海思、联发科和三星LSI等厂商的设计。对于没有设计能力的厂商来说，如果没有自己的IP部署能力，还可以从ARM这样的IP厂商那里获得授权。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/984137/" />
+<meta property="article:published_time" content="2020-05-28T05:34:44+08:00" />
+<meta property="article:modified_time" content="2020-05-28T05:34:44+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">ARM宣布Ethos-N78 NPU 配置和效率超越前代产品</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-28T05:34:44&#43;08:00">May 28, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>昨天ARM发布了全新的Cortex-A78、Cortex-X1 CPU和全新的Mali-G78 GPU。同时，我们还看到了最新Ethos-N78 NPU曝光。在过去的几年里，机器学习加速器在行业内的爆发式增长，不同的IP解决方案层出不穷。尤其是在移动领域，有大量不同的SoC厂商自主开发的定制解决方案，其中包括高通、海思、联发科和三星LSI等厂商的设计。对于没有设计能力的厂商来说，如果没有自己的IP部署能力，还可以从ARM这样的IP厂商那里获得授权。</p>
+<p>ARM的 &ldquo;Ethos &ldquo;机器学习IP针对客户端推理工作负载，最初被描述为 &ldquo;Project Trillium&rdquo;，第一个设计实现形式是Ethos-N77。从第一代发布到现在已经有一年了，ARM一直在为这个架构的下一个迭代而努力，这就是全新的Ethos-N78及其&quot;Scylla &ldquo;架构。</p>
+<p>N78性能和效率上都有相当大的提升。新的设计比最大的N77配置要高得多，现在能够在高达10TOPs的原始计算吞吐量下提供2倍的峰值性能。ARM对NPU的设计进行了改进，采用各种新的压缩技术，每条推理的外部内存带宽提高了40%，从而提高了N78的功耗效率。N78的强项是该IP在不同配置选项中的性能扩展能力。该IP有4个不同的性能点，或者说是4种不同的引擎配置，从最小的1TOPs配置，到2、5，再到最大的10TOPs配置。这对应的是512、1024、2048和4096个单元的MAC配置整体设。</p>
+<p>在架构上，N78最大的改进在于它在引擎中处理数据的方式，使得新的压缩方式，不仅可以对NPU之外的数据进行全新压缩，提升DRAM带宽，还可以对NPU本身内部的数据进行移动，提高了性能和功耗效率。得益于更高的性能密度和功率效率，代代性能提升平均为25%，再加上双倍的峰值性能配置，意味着它有可能代表着终端设性能大幅提升。</p>
+<p>分析NPU在竞争格局中的表现如何是相当困难的，尤其是在ARM的情况下，因为我们还没有看到第一代NPU的硅片设计。ARM提出的一个有趣的观点是，在这个领域，软件比其他任何东西都重要，一个糟糕的软件栈可能会毁掉一个好的硬件设计。ARM提到，他们已经看到有厂商采用了自己的Ethos IP，并因此放弃了竞争对手的设计。ARM表示，他们在软件方面投入了大量的资源，以方便客户真正正确地利用他们的硬件设计。</p>
+<p>ARM公司的新Ethos-N78已经被授权给客户，他们正在用它进行设计，最早一批产品将在2021年华出现在公众面前。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0528/bc1d5038b34acdf.png" alt="img:ARM宣布Ethos-N78 NPU 配置和效率超越前代产品"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0528/787cde823a0b012.png" alt="img:ARM宣布Ethos-N78 NPU 配置和效率超越前代产品"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0528/f094cbf4d16c9d6.png" alt="img:ARM宣布Ethos-N78 NPU 配置和效率超越前代产品"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0528/f47e35fbce0e337.png" alt="img:ARM宣布Ethos-N78 NPU 配置和效率超越前代产品"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0528/aa7f505ae8f5816.png" alt="img:ARM宣布Ethos-N78 NPU 配置和效率超越前代产品"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0528/02525cc6e7d8068.png" alt="img:ARM宣布Ethos-N78 NPU 配置和效率超越前代产品"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/984131/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">受TikTok启发 Facebook推出一个名为Collab的音乐制作平台</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/984141/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">“双重犯罪”裁定公布 孟晚舟引渡战役继续</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/985821/">iOS和iPadOS 13.5.1发布 修复越狱漏洞带来的安全问题</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/985827/">香港八达通卡现已支持通过Apple Pay服务</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/985823/">索尼因美国境内的持续抗议和骚乱而推迟PS5游戏展示会</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/985825/">Uber、Lyft与DoorDash因宵禁在美国一些城市暂停运营</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/985819/">被动散热撑住8核5.1GHz 高玩挑战酷睿i7-10700K无风扇玩游戏</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

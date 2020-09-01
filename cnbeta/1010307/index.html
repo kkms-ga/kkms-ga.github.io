@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[图]微软分享Surface Duo上的应用运行细节 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[图]微软分享Surface Duo上的应用运行细节" />
+<meta property="og:description" content="根据上月中旬微软官方博客更新的内容，微软计划在 Surface Duo 上添加对谷歌 Android Jetpack WindowManager 的支持，从而允许开发者使用谷歌支持的 Jetpack 库来为 Duo 创建和更新应用程序。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1010307/" />
+<meta property="article:published_time" content="2020-08-01T08:52:32+08:00" />
+<meta property="article:modified_time" content="2020-08-01T08:52:32+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[图]微软分享Surface Duo上的应用运行细节</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-01T08:52:32&#43;08:00">August 01, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>根据上月中旬微软官方博客更新的内容，微软计划在 Surface Duo 上添加对谷歌 Android Jetpack WindowManager 的支持，从而允许开发者使用谷歌支持的 Jetpack 库来为 Duo 创建和更新应用程序。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0801/a4f694a1066aa17.jpg" alt="img:[图]微软分享Surface Duo上的应用运行细节"></p>
+<p>此外，微软也积极地做出各项调整，从而让开发者更好地为双屏设备优化他们的应用程序。例如，开发者可以使用“helper class”来确定诸如铰链区域等设备状态，Surface Duo 还可以检测应用何时以及是否跨越两块屏幕，在应用选项内进行控制。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0801/1df6567ad2b020e.jpg" alt="img:[图]微软分享Surface Duo上的应用运行细节"></p>
+<p>Surface Duo 允许应用对跨屏或不跨屏等事件做出响应，从而相应改变应用布局。与Galaxy Fold 不同，Surface Duo 有两个独立的显示屏，这可能会导致应用内的一个导航选项被铰链遮挡。幸运的是，Surface Duo 内置的底部导航有配置控制，可以选择导航选项的显示时间和位置。</p>
+<p>同样，在 Surface Duo 的双屏上，应用标签（页面）也可能被铰链隐藏。为了解决这个问题，微软创建了一个名为“双屏标签布局”（dual-screen tab layout）的布局，允许开发者配置标签，并将其分组在任一屏幕上，以便所有选项都能看到。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0801/0288f3fbab89870.jpg" alt="img:[图]微软分享Surface Duo上的应用运行细节"></p>
+<p>另一项功能名为“碎片处理程序”（Fragment handler），允许设备在屏幕过渡后恢复需要的碎片。这样就可以在从单屏切换到双屏时实现应用UI的平滑过渡。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0801/232c66b3dc7a3ef.jpg" alt="img:[图]微软分享Surface Duo上的应用运行细节"></p>
+<p>此外通过对“框架布局”（frame layout）的支持，让开发者更容易迁移现有应用。正如之前报道的那样，Surface Duo搭载了Android 10、骁龙855、6GB内存、最高256GB存储空间、手势和支持手写笔。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1010303/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Twitter正在调查用户想要从付费订阅服务获得的功能</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1010327/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">科学家利用LiDAR技术探测到海洋更深处</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1012191/">黄金期货逼近2050美元 再创历史新高</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1012225/">宾利“章鱼项目”或将为电动汽车带来突破性技术</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1012227/">三星Galaxy Watch 3智能手表的心电监测功能已获FDA认可</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1012231/">[图]Your Phone新功能：Android和Windows 10应用可分屏操作</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1012193/">日本部分地方政府停用TikTok账号 专家：不排除是美国施压</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

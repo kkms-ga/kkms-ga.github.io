@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Linux Kernel 5.9-rc3 发布 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Linux Kernel 5.9-rc3 发布" />
+<meta property="og:description" content="Linux Kernel 5.9-rc3 已发布，此版本最大的变化是整个代码树范围内利用 fallthrough 宏进行的转换。这个变化本身就增加了两千多个宏的实例。在该初始拉取之后，最近又有一个二次拉取请求，主要是合并部分 fallout fix。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1022935/" />
+<meta property="article:published_time" content="2020-09-01T08:04:16+08:00" />
+<meta property="article:modified_time" content="2020-09-01T08:04:16+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Linux Kernel 5.9-rc3 发布</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-09-01T08:04:16&#43;08:00">September 01, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Linux Kernel 5.9-rc3 已发布，此版本最大的变化是整个代码树范围内利用 fallthrough 宏进行的转换。这个变化本身就增加了两千多个宏的实例。在该初始拉取之后，最近又有一个二次拉取请求，主要是合并部分 fallout fix。</p>
+<p>Linus Torvalds 介绍了关于 5.9-rc3 的整体情况，“尽管&quot;fallhtough&quot;注释具有部分相当广泛的背景噪音，但还是如往常一样提供了所有常见的驱动程序修复程序（GPU, USB 等），以及架构方面的更新（arm64 突出的是 kvm 修复和 DT 更新，但也有部分关于 x86 和 powerpc 的变化）和其他方面的变更。总体来说，5.9-rc3 改动较小，可能是最近发布的最小版本。”</p>
+<p>因为 AMD 的下一代 GPU 将于今年晚些时候发布，Linux Kernel 5.9 还加入了对 AMD Sienna Cichlid 和 Navy Flounder 的支持。</p>
+<p><img src="https://static.cnbetacdn.com/article/2019/1228/199fd2974f4358e.jpg" alt="img:Linux Kernel 5.9-rc3 发布"></p>
+<p>其他值得关注的变化：</p>
+<p>支持 FSGSBASE</p>
+<p>AMD Zen CPU 启用 P2PDMA（peer-to-peer direct memory access）</p>
+<p>支持英特尔 Rocket Lake CPU</p>
+<p>支持英特尔 SERIALIZE 指令</p>
+<p>实现更多 RISC-V 架构特性</p>
+<p>支持 NVMe ZNS</p>
+<p>ARM/ARM6 变频调控器默认使用 Schedutil</p>
+<p>引入彩色 LED 框架</p>
+<p>改进驱动和文件系统等</p>
+<p>Linux Kernel 5.9 稳定版应该会在 10 月初到中旬发布，具体取决于发布周期的最终情况。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1022949/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">墨西哥毒贩使用携带炸弹的无人机执行暗杀活动</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1022933/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">消息称苹果今年年内量产A14X：性能叫板Intel i9-9880H</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023151/">《精灵宝可梦Go》将于10月停止对旧版iOS和Android平台的支持</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023149/">iOS版谷歌相册应用更新 支持修剪编辑和添加视频滤镜</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023147/">[图]科学家克服硅融入锂电池难题 可打造轻便、高容量电池</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023097/">吃胡萝卜能让你获得夜视能力？并不能，但是背后有个好玩的历史</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023101/">蚊子传播那么多疾病，自己怎么没事？</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

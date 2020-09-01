@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>苹果蓝牙保护框架MagicPairing被爆出10个0day漏洞未修复 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="苹果蓝牙保护框架MagicPairing被爆出10个0day漏洞未修复" />
+<meta property="og:description" content="让人感到惊讶的是，苹果居然未修复只需检查就能找到的 bug 。近日，来自德国达姆施塔特大学的研究人员检查了 MagicPairing 协议，发现它的三种实现方式 iOS、macOS 和 RTKIT——在它们之间存在十个公开的缺陷，这些缺陷至今尚未得到解决。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/981445/" />
+<meta property="article:published_time" content="2020-05-20T20:42:59+08:00" />
+<meta property="article:modified_time" content="2020-05-20T20:42:59+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">苹果蓝牙保护框架MagicPairing被爆出10个0day漏洞未修复</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-20T20:42:59&#43;08:00">May 20, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>让人感到惊讶的是，苹果居然未修复只需检查就能找到的 bug 。近日，来自德国达姆施塔特大学的研究人员检查了 MagicPairing 协议，发现它的三种实现方式 iOS、macOS 和 RTKIT——在它们之间存在十个公开的缺陷，这些缺陷至今尚未得到解决。</p>
+<p>访问:</p>
+<p>苹果在线商店(中国)</p>
+<p>苹果蓝牙保护框架：MagicPairing 协议</p>
+<p>在了解这项研究成果之前，我们先来了解下 MagicPairing 协议是什么。</p>
+<p>MagicPairing 是苹果的一种专有协议，它能够提供无缝的配对功能，例如在用户的 Airpods 和他们所有的苹果设备之间是通过通过苹果的云服务 iCloud 同步键来实现的。MagicPair 协议的最终目标是派生一个蓝牙链路密钥 (LK) ，用于单个设备和 Airpods 之间。为每个连接创建一个新的 LK ，这意味着可以有效地缩短此 LK 的生存期。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0520/7cf09adff3f8a63.png" alt="img:苹果蓝牙保护框架MagicPairing被爆出10个0day漏洞未修复"></p>
+<p>当一个新的或重置的一对 Airpods 最初与苹果设备属于 iCloud 帐户，安全简单配对(SSP)被使用，所有后续连接到 iCloud 帐户的 Airpod 和设备将使用作为配对机制的 Magicpair 协议。MagicPair 包含多个键和派生函数。它依赖于综合初始化向量( SIV )模式下的高级加密标准( AES )进行认证加密。</p>
+<p>Magic Pairing 的一般逻辑是可以集成到任何基于的物联网生态系统中，从而增加对整个安全社区的相关性。</p>
+<p>尽管 MagicPairing 协议克服了蓝牙设备配对的两个缺点:即可扩展性差和易崩溃安全模型缺陷。（如果永久密钥 Link Layer 或 Long-Term Key 受陷则会崩溃。）</p>
+<p>但研究人员使用名为 ToothPicker 的代码执行无线模糊测试和进程内模糊测试后发现了 8 个 MagicPairing 和 2 个 L2CAP 漏洞，它们可导致崩溃、CPU 过载且配对设备关联取消。据外媒报道，这些信息是在2019 年 10 月 30 日至 2020 年 3 月 13 日期间披露的，目前尚未确定。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0520/8304807a04d4570.png" alt="img:苹果蓝牙保护框架MagicPairing被爆出10个0day漏洞未修复"></p>
+<p>“由于 MagicPair 用于配对和加密前，因此它提供了庞大的零点击无线攻击面。我们发现所有的有不同实施都有不同的问题，包括锁定攻击和可导致百分之百 CPU 负载的拒绝服务。我们在开展通用的无线测试和 iOS 进程内模糊测试时发现了这些问题。”</p>
+<p>研究人员如是说。</p>
+<p>10 个 0day 漏洞一直未修复，苹果未予置评</p>
+<p>那么，这些漏洞本身的威胁来自哪里呢？</p>
+<p>首先是蓝牙堆栈本身的安全性。</p>
+<p>苹果的每个堆栈都是针对单个设备类型的，并且支持一个特性子集。因此，它们支持的协议有重复的实现。虽然这种情况有助于逆转这些协议，但它增加了苹果公司的维护成本。从安全的角度来看，这会导致在这些堆栈中出现双向安全问题。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0520/b8bf7c86514dea2.png" alt="img:苹果蓝牙保护框架MagicPairing被爆出10个0day漏洞未修复"></p>
+<p>例如，RTKit 是一个单独的资源约束嵌入设备框架。用于苹果 AirPods 1、2和 Pro，Siri Remote 2，Apple Pencil 2 和 Smart Keyboard Folio 中，虽然这种分离用来减少功能是有意义的，但 iOS 和 MacOS 也有各自的蓝牙堆栈，由于它们是封闭的，而且只有很少的公开文档。但它在速度上是有限的，不提供覆盖。相比之下，iOS 进程中的模糊处理程序速度更快，不受连接重置的限制，但需要大量的平台专用接口调整。</p>
+<p>也就是说，这三个蓝牙堆栈在实际实施中所面临的的攻击和 bug 也会不同。</p>
+<p>其次是，零点击无线攻击面大。</p>
+<p>Magicpairing 的无线攻击面相当大。首先，它是在配对和加密之前使用的。通过逻辑链路控制和适配协议( L2CAP )提供的 MagicPairing Providesa 连接，用于蓝牙内部的各种数据传输；第二, 通过对 IOS、MacOS、RTKit 的实现，进一步扩大了 MagicPair 攻击面。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0520/c3f3652894f5df1.png" alt="img:苹果蓝牙保护框架MagicPairing被爆出10个0day漏洞未修复"></p>
+<p>最后是代码居然有拼写错误问题。</p>
+<p>研究人员发现，苹果在 iOS 和 macOS 中的 MagicPairing 实现的日志信息和 macOS Bluetooth 守护进程 bluetoothd 函数名称中存在大量拼写错误。例如，棘轮和 upload 这两个单词在不同的时间被拼成了 diff。但研究人员认为，由于这些误读随堆栈的不同而不同，每个栈可能是由不同的开发人员实现的。虽然拼写错误和实现中的缺陷之间并不直接相关，但这让人认为代码并未仔细审查，开发工作很可能是外包完成的。</p>
+<p>但总的来说，这些漏洞虽然存在，也并未修复，但影响不大。苹果也对此问题未予置评。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/981429/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">刘慈欣小说改编 电影《超新星纪元》十月开机拍摄</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/981441/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">为高效商务办公而生 ThinkPad X1家族超便捷专业旗舰国行正式发布</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/983159/">16nm 8核、性能可战酷睿i5 国产x86 CPU获上海大奖</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/983157/">2019年游戏公司收入排名 索尼第一腾讯第二老任第三</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/983153/">比亚迪与宁德时代为一根钢针开撕了</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/983155/">IFR：京东增选逾10家银行为其安排香港上市事宜</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/983151/">SpaceX Crew Dragon将于周三首次搭载宇航员升空</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

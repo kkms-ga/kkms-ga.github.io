@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Redis 6.0.0 GA 稳定版本发布 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Redis 6.0.0 GA 稳定版本发布" />
+<meta property="og:description" content="Redis 创始人宣布 Redis 6.0.0 稳定版正式 GA。从首个 RC 版本到正式 GA 经历了四个月左右的时间，正如 Redis 作者 antirez 所说，这是迄今最“企业”化的版本（SSL 与 ACL 等特性与企业极相关），也是最大的版本，同时也是参与人数最多的版本。GA 版本除了比 RC1 更稳定，还对部分功能进行了重新设计或是进一步的改进。重要的新特性已在 RC1 中公布过：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/973703/" />
+<meta property="article:published_time" content="2020-05-01T03:49:16+08:00" />
+<meta property="article:modified_time" content="2020-05-01T03:49:16+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Redis 6.0.0 GA 稳定版本发布</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-01T03:49:16&#43;08:00">May 01, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Redis 创始人宣布 Redis 6.0.0 稳定版正式 GA。从首个 RC 版本到正式 GA 经历了四个月左右的时间，正如 Redis 作者 antirez 所说，这是迄今最“企业”化的版本（SSL 与 ACL 等特性与企业极相关），也是最大的版本，同时也是参与人数最多的版本。GA 版本除了比 RC1 更稳定，还对部分功能进行了重新设计或是进一步的改进。重要的新特性已在 RC1 中公布过：</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0501/754baded11a6ff5.png" alt="img:Redis 6.0.0 GA 稳定版本发布"></p>
+<p>许多新的模块 API（modules API）</p>
+<p>更好的过期周期（expire cycle）</p>
+<p>SSL</p>
+<p>ACL</p>
+<p>RESP3</p>
+<p>客户端缓存</p>
+<p>线程 I/O</p>
+<p>在副本上进行无盘复制</p>
+<p>Redis-benchmark 集群支持与 Redis-cli 改进</p>
+<p>Systemd 支持重写</p>
+<p>Redis 集群代理与 Redis 6 一起发布（位于不同仓库）</p>
+<p>Disque 模块与 Redis 6 一起发布（位于不同仓库）</p>
+<p>对客户端缓存某方面的功能进行了重新设计，主要是放弃了“缓存插槽”（caching slot）改为使用键名（key
+name）。另外还新增了“广播模式”（broadcasting mode），当使用广播模式时，服务器不需要记住每个客户端请求的
+key。相反，客户端会订阅 key 的前缀：每当有匹配前缀的 key 被修改时，客户端就会收到通知。</p>
+<p>用于主从复制的 RDB 文件如果不再使用会被删除</p>
+<p>新的 ACL LOG 命令，可查看不遵循 ACL 权限的客户端（例如访问了无权限的命令和 key，以及验证失败），主要用于调试 ACL 问题。此外还有重新实现的 ACL GENPASS，它使用了基于 SHA256 的 HMAC 加密算法。</p>
+<p>改进 PSYNC2 主从复制协议</p>
+<p>改进 Redis 命令行的超时选项</p>
+<p>提升 RDB 文件的加载速度（～20/30% 的提升）</p>
+<p>新的 STRALGO 命令，实现了复杂的字符串算法。这是一个重要的算法，主要用于比较冠状病毒的 RNA（以及其他生物体的 DNA 和 RNA）</p>
+<p>重要新特性介绍</p>
+<p>RESP3</p>
+<p>这是 Redis 6 中的新网络协议，但它是可选的，连接以 RESP2 模式开始，只有使用新的 HELLO
+命令进行握手时，才进入新的协议模式。为什么要使用新协议？因为旧的语义不够。此外，RESP3 中还有其它功能，但是主要能力还是直接从 Redis
+返回复杂的数据类型，而客户端对于数据类型的转换是透明的。</p>
+<p>ACL</p>
+<p>作者认为 Redis 需要 ACL，因为人们在更大的环境中需要更好地控制哪些客户端可以执行某些操作。同时，向 Redis 添加 ACL
+的另一个要点是隔离，以保护数据免受应用程序错误的侵害。Redis 中还为 ACL 提供了 Redis
+模块接口，因此开发者可以编写自定义身份验证方法。</p>
+<p>SSL</p>
+<p>这一特性值得一提的是，工作是完全在没有 antirez 参与的情况下完成的，这显示了 Redis
+开发过程的变化。这可能需要简单结合一下背景：Redis 6 中 commit 次数最多的是 antirez，达到 685 次，而排在第二位的
+zhaozhao.zz commit 数量是 81。</p>
+<p>客户端缓存</p>
+<p>antirez 此前已经详细介绍过该特性，我们也有相关分享：Redis 6 将采用全新协议 RESP3，以提供客户端缓存功能。当使用者需要进行快速存储或快速取操作时，就需要在客户端内存中存储一小部分信息，这可以降低程序获取数据时的延迟。</p>
+<p>但是现在 antirez 认为这是 Redis 6 最不成熟的特性，他想在 Redis 6 GA
+之前对此进行改进。可能会添加一个新模式，该新模式要求服务器不维护有关客户端的状态，或者根本不维护任何状态，并与更多消息进行交易。目前某些“缓存插槽”中过期的信息无法单一合并，antirez
+表示一月份关于此特性还有更多工作要做。</p>
+<p>Disque 成为模块</p>
+<p>Disque 目的是构建分布式的内存中消息代理，此前它是一项实验功能，现在在 Redis 6 中成为模块，它可以支持集群消息总线 API，可以阻止和恢复客户端、支持计时器、模块私有数据的 AOF 和 RDB 控制功能。</p>
+<p>集群代理</p>
+<p>在 Redis 集群中，客户端会非常分散，现在为此引入了一个集群代理，可以为客户端抽象 Redis 群集，使其像正在与单个实例进行对话一样。同时在简单且客户端仅使用简单命令和功能时执行多路复用。</p>
+<p>模块</p>
+<p>Redis 6 的模块 API 达到了一个新高度，发展迅速，因为 Redis Labs 从零开始就使用模块系统来开发非常复杂的内容，使得 Redis 实际上变成一个框架，可以将系统作为模块来编写，而不必从头开始发明所有东西。</p>
+<p>详情查看 http://www.antirez.com/news/132下载地址 https://redis.io/download</p>
+<p>访问:</p>
+<p>阿里云 - 最高1888元通用代金券立即可用</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/973705/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">苹果今日发布财报 揭晓新冠疫情对iPhone销量的影响</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/975221/">传白宫考虑逐步解散新冠疫情应对特别工作组</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/975219/">辉瑞在美国开始新冠疫苗人体试验</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/975217/">128核心CPU问世：12通道DDR5＋PCIe5.0、性能超顶级Intel至强</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/975213/">苹果线上WWDC20开发者大会将于6月22日开幕</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/975215/">微软Xbox Series X第一方游戏将于7月左右公布情报</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

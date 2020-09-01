@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>如何用不到 2KB的JavaScript代码写一个3D赛车游戏？ - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="如何用不到 2KB的JavaScript代码写一个3D赛车游戏？" />
+<meta property="og:description" content="几个月前，JS1k游戏制作节（JS1K game jam）传出不再举办消息后，许多游戏迷开始哀嚎。Frank Force 也是其中一位，但他还有另一层身份——一位德克萨斯州奥斯汀的独立游戏设计师。Frank Force 在游戏行业工作了20年，参与过9款主流游戏、47个独立游戏的设计。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/975075/" />
+<meta property="article:published_time" content="2020-05-05T13:54:53+08:00" />
+<meta property="article:modified_time" content="2020-05-05T13:54:53+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">如何用不到 2KB的JavaScript代码写一个3D赛车游戏？</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-05T13:54:53&#43;08:00">May 05, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>几个月前，JS1k游戏制作节（JS1K game jam）传出不再举办消息后，许多游戏迷开始哀嚎。Frank Force 也是其中一位，但他还有另一层身份——一位德克萨斯州奥斯汀的独立游戏设计师。Frank Force 在游戏行业工作了20年，参与过9款主流游戏、47个独立游戏的设计。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0505/9990afd343cb037.jpg" alt="img:如何用不到 2KB的JavaScript代码写一个3D赛车游戏？"></p>
+<p>在听到这个消息后，他马上和其他开发朋友讨论了这个问题，并决定做点什么为此纪念。</p>
+<p>在此期间，他们受到三重因素的启发。一是赛车游戏，包括怀旧向的80年代赛车游戏，他们在非常早期的硬件上推动实时 3D 图形，所以作者沿用了相同的技术，用纯 JavaScript 从头开始实现做 3D 图形和物理引擎；还有一些现代赛车游戏带来了视觉设计的灵感，比如《Distance》和《Lonely Mountains: Downhill》；二是之前 Jake Gordon 用 JavaScript 创建一个虚拟3D赛车的项目，并分享了代码；三是 Chris Glover 曾经做过一款小到只有 1KB 的 JS1k 赛车游戏《Moto1kross by Chris Glover》。</p>
+<p>于是 Frank 和他的朋友们决定做一个压缩后只有 2KB 的 3D 赛车游戏。2KB 到底有多小呢？提供一个参考，一个3.5英寸软盘可以容纳700多个这样的游戏。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0505/fe2bf40a3df3e1f.jpg" alt="img:如何用不到 2KB的JavaScript代码写一个3D赛车游戏？"></p>
+<p>他给这个游戏取名 Hue Jumper。关于名字的由来，Frank 表示，游戏的核心操作是移动。当玩家通过一个关卡时，游戏世界就会换一个颜色色调。“在我想象中，每通过过一个关卡，玩家都会跳转到另一个维度，有着完全不同的色调。”</p>
+<p>做完这个游戏后，Frank 将包含了游戏的全部 JavaScript 代码都发布在他的个人博客上，其中用到的软件主要也是免费或开源软件的。游戏代码发布在 CodePen，可以在 iframe 中试玩，有兴趣的朋友可以去看看。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0505/e6a0261ee74d635.png" alt="img:如何用不到 2KB的JavaScript代码写一个3D赛车游戏？"></p>
+<p>以下是原博内容，AI源创评论进行了不改变原意的编译：</p>
+<p>确定最高目标</p>
+<p>因为严格的大小限制，我需要非常仔细对待我的程序。我的总体策略是尽可能保持一切简单，为最终目标服务。</p>
+<p>为了帮助压缩代码，我使用了 Google Closure Compiler，它删除了所有空格，将变量重命名为1个字母字符，并进行了一些轻量级优化。</p>
+<p>用户可以通过 Google Closure Compiler 官网在线跑代码。不幸的是，Closure Compiler 做了一些没有帮助的事情，比如替换模板字符串、默认参数和其他帮助节省空间的ES6特性。所以我需要手动撤销其中一些事情，并执行一些更“危险”的压缩技术来挤出最后一个字节空间。在压缩方面，这不算很成功，大部分挤出的空间来自代码本身的结构优化。</p>
+<p>代码需要压缩到2KB。如果不是非要这么做不可，有一个类似的但功能没那么强的工具叫做 RegPack 。</p>
+<p>无论哪种方式，策略都是一样的：尽最大可能重复代码，然后用压缩工具压缩。最好的例子是 c.width，c.height和 Math。因此，在阅读这段代码时，请记住，你经常会看到我不断重复一些东西，最终目的就是为了压缩。</p>
+<p>HTML</p>
+<p>其实我的游戏很少使用 html ，因为它主要用到的是 JavaScript 。但这是创建全屏画布 Canvas ，也能将画布 Canvas 设为窗口内部大小的代码最小方法。我不知道为什么在 CodePen 上有必要添加 overflow:hiddento the body，当直接打开时按理说也可以运行。</p>
+<p>我将 JavaScript 封装在一个 onload 调用，得到了一个更小的最终版本…&lt; body style = margin:0 onload = &quot; code _ goes _ here &quot; &gt; &lt; canvas id = c &gt;但是，在开发过程中，我不喜欢用这个压缩设置，因为代码存储在一个字符串中，所以编辑器不能正确地高亮显示语法。</p>
+<!-- raw HTML omitted -->
+<p>context.fillStyle = LSHA(99,0,0,.5); // set font color</p>
+<p>context.fillText(text, posX, 129);   // fill text</p>
+<p>context.lineWidth = 3;               // line width</p>
+<p>context.strokeText(text, posX, 129); // outline text</p>
+<p>}</p>
+<p>设计轨道</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0505/738988dfacebcdb.png" alt="img:如何用不到 2KB的JavaScript代码写一个3D赛车游戏？"></p>
+<p>首先，我们必须生成完整的轨道，而且准备做到每次游戏轨道都是不同的。如何做呢？我们建立了一个道路段列表，存储道路在轨道上每一关卡的位置和宽度。轨道生成器是非常基础的操作，不同频率、振幅和宽度的道路都会逐渐变窄，沿着跑道的距离决定这一段路有多难。</p>
+<p>atan2 函数可以用来计算道路俯仰角，据此来设计物理运动和光线。</p>
+<p>roadGenLengthMax =                     // end of section</p>
+<p>roadGenLength =                        // distance left</p>
+<p>roadGenTaper =                         // length of taper</p>
+<p>roadGenFreqX =                         // X wave frequency</p>
+<p>roadGenFreqY =                         // Y wave frequency</p>
+<p>roadGenScaleX =                        // X wave amplitude</p>
+<p>roadGenScaleY = 0;                     // Y wave amplitude</p>
+<p>roadGenWidth = roadWidth;              // starting road width</p>
+<p>startRandSeed = randSeed = Date.now(); // set random seed</p>
+<p>road = [];                             // clear road</p>
+<p>// generate the road</p>
+<p>for( i = 0; i &lt; roadEnd*2; ++i )          // build road past end</p>
+<p>{</p>
+<p>if (roadGenLength++ &gt; roadGenLengthMax) // is end of section?</p>
+<p>{</p>
+<p>// calculate difficulty percent</p>
+<p>d = Math.min(1, i/maxDifficultySegment);</p>
+<p>// randomize road settings</p>
+<p>roadGenWidth = roadWidth<em>R(1-d</em>.7,3-2*d);        // road width</p>
+<p>roadGenFreqX = R(Lerp(d,.01,.02));               // X curves</p>
+<p>roadGenFreqY = R(Lerp(d,.01,.03));               // Y bumps</p>
+<p>roadGenScaleX = i&gt;roadEnd ? 0 : R(Lerp(d,.2,.6));// X scale</p>
+<p>roadGenScaleY = R(Lerp(d,1e3,2e3));              // Y scale</p>
+<p>// apply taper and move back</p>
+<p>roadGenTaper = R(99, 1e3)|0;                 // random taper</p>
+<p>roadGenLengthMax = roadGenTaper + R(99,1e3); // random length</p>
+<p>roadGenLength = 0;                           // reset length</p>
+<p>i -= roadGenTaper;                           // subtract taper</p>
+<p>}</p>
+<p>// make a wavy road</p>
+<p>x = Math.sin(i*roadGenFreqX) * roadGenScaleX;</p>
+<p>y = Math.sin(i*roadGenFreqY) * roadGenScaleY;</p>
+<p>road[i] = road[i]? road[i] : {x:x, y:y, w:roadGenWidth};</p>
+<p>// apply taper from last section and lerp values</p>
+<p>p = Clamp(roadGenLength / roadGenTaper, 0, 1);</p>
+<p>road[i].x = Lerp(p, road[i].x, x);</p>
+<p>road[i].y = Lerp(p, road[i].y, y);</p>
+<p>road[i].w = i &gt; roadEnd ? 0 : Lerp(p, road[i].w, roadGenWidth);</p>
+<p>// calculate road pitch angle</p>
+<p>road[i].a = road[i-1] ?</p>
+<p>Math.atan2(road[i-1].y-road[i].y, segmentLength) : 0;</p>
+<p>}</p>
+<p>启动游戏</p>
+<p>现在跑道就绪，我们只需要预置一些变量就可以开始游戏了。</p>
+<p>// reset everything</p>
+<p>velocity = new Vec3</p>
+<p>( pitchSpring =  pitchSpringSpeed =  pitchRoad = hueShift = 0 );</p>
+<p>position = new Vec3(0, height);      // set player start pos</p>
+<p>nextCheckPoint = checkPointDistance; // init next checkpoint</p>
+<p>time = maxTime;                      // set the start time</p>
+<p>heading = randSeed;                  // random world heading</p>
+<p>更新玩家</p>
+<p>这是主要的更新功能，用来更新和渲染游戏中的一切！一般来说，如果你的代码中有一个很大的函数，这不是好事，为了更简洁易懂，我们会把它分几个成子函数。</p>
+<p>首先，我们需要得到一些玩家所在位置的道路信息。为了使物理和渲染感觉平滑，需要在当前和下一个路段之间插入一些数值。</p>
+<p>玩家的位置和速度是 3D 向量，并受重力、dampening 和其他因素等影响更新。如果玩家跑在地面上时，会受到加速度影响；当他离开这段路时，摄像机还会抖动。另外，在对游戏测试后，我决定让玩家在空中时仍然可以跑。</p>
+<p>接下来要处理输入指令，涉及加速、刹车、跳跃和转弯等操作。双击通过 mouseUpFrames 测试。还有一些代码是来跟踪玩家在空中停留了多少帧，如果时间很短，游戏允许玩家还可以跳跃。</p>
+<p>当玩家加速、刹车和跳跃时，我通过spring system展示相机的俯仰角以给玩家动态运动的感觉。此外，当玩家驾车翻越山丘或跳跃时，相机还会随着道路倾斜而倾斜。</p>
+<p>Update=()=&gt;</p>
+<p>{</p>
+<p>// get player road segment</p>
+<p>s = position.z / segmentLength | 0; // current road segment</p>
+<p>p = position.z / segmentLength % 1; // percent along segment</p>
+<p>// get lerped values between last and current road segment</p>
+<p>roadX = Lerp(p, road[s].x, road[s+1].x);</p>
+<p>roadY = Lerp(p, road[s].y, road[s+1].y) + height;</p>
+<p>roadA = Lerp(p, road[s].a, road[s+1].a);</p>
+<p>// update player velocity</p>
+<p>lastVelocity = velocity.Add(0);</p>
+<p>velocity.y += gravity;</p>
+<p>velocity.x *= lateralDamp;</p>
+<p>velocity.z = Math.max(0, time?forwardDamp*velocity.z:0);</p>
+<p>// add velocity to position</p>
+<p>position = position.Add(velocity);</p>
+<p>// limit player x position (how far off road)</p>
+<p>position.x = Clamp(position.x, -maxPlayerX, maxPlayerX);</p>
+<p>// check if on ground</p>
+<p>if (position.y &lt; roadY)</p>
+<p>{</p>
+<p>position.y = roadY; // match y to ground plane</p>
+<p>airFrame = 0;       // reset air frames</p>
+<p>// get the dot product of the ground normal and the velocity</p>
+<p>dp = Math.cos(roadA)*velocity.y + Math.sin(roadA)*velocity.z;</p>
+<p>// bounce velocity against ground normal</p>
+<p>velocity = new Vec3(0, Math.cos(roadA), Math.sin(roadA))</p>
+<p>.Multiply(-elasticity * dp).Add(velocity);</p>
+<p>// apply player brake and accel</p>
+<p>velocity.z +=</p>
+<p>mouseDown? playerBrake :</p>
+<p>Lerp(velocity.z/maxSpeed, mousePressed*playerAccel, 0);</p>
+<p>// check if off road</p>
+<p>if (Math.abs(position.x) &gt; road[s].w)</p>
+<p>{</p>
+<p>velocity.z *= offRoadDamp;                    // slow down</p>
+<p>pitchSpring += Math.sin(position.z/99)**4/99; // rumble</p>
+<p>}</p>
+<p>}</p>
+<p>// update player turning and apply centrifugal force</p>
+<p>turn = Lerp(velocity.z/maxSpeed, mouseX * turnControl, 0);</p>
+<p>velocity.x +=</p>
+<p>velocity.z * turn -</p>
+<p>velocity.z ** 2 * centrifugal * roadX;</p>
+<p>// update jump</p>
+<p>if (airFrame++&lt;6 &amp;&amp; time</p>
+<p>&amp;&amp; mouseDown &amp;&amp; mouseUpFrames &amp;&amp; mouseUpFrames&lt;9)</p>
+<p>{</p>
+<p>velocity.y += jumpAccel; // apply jump velocity</p>
+<p>airFrame = 9;            // prevent jumping again</p>
+<p>}</p>
+<p>mouseUpFrames = mouseDown? 0 : mouseUpFrames+1;</p>
+<p>// pitch down with vertical velocity when in air</p>
+<p>airPercent = (position.y-roadY) / 99;</p>
+<p>pitchSpringSpeed += Lerp(airPercent, 0, velocity.y/4e4);</p>
+<p>// update player pitch spring</p>
+<p>pitchSpringSpeed += (velocity.z - lastVelocity.z)/2e3;</p>
+<p>pitchSpringSpeed -= pitchSpring * springConstant;</p>
+<p>pitchSpringSpeed *= pitchSpringDamp;</p>
+<p>pitchSpring += pitchSpringSpeed;</p>
+<p>pitchRoad = Lerp(pitchLerp, pitchRoad, Lerp(airPercent,-roadA,0));</p>
+<p>playerPitch = pitchSpring + pitchRoad;</p>
+<p>// update heading</p>
+<p>heading = ClampAngle(heading + velocity.z<em>roadX</em>worldRotateScale);</p>
+<p>cameraHeading = turn * cameraTurnScale;</p>
+<p>// was checkpoint crossed?</p>
+<p>if (position.z &gt; nextCheckPoint)</p>
+<p>{</p>
+<p>time += checkPointTime;               // add more time</p>
+<p>nextCheckPoint += checkPointDistance; // set next checkpoint</p>
+<p>hueShift += 36;                       // shift hue</p>
+<p>}</p>
+<p>预渲染</p>
+<p>在渲染之前，canvas 每当高度或宽度被重设时，画布内容就会被清空。这也适用于自适应窗口的画布。</p>
+<p>我们还计算了将世界点转换到画布的投影比例。cameraDepth 值代表摄像机的视场(FOV)。这个游戏是90度。计算结果是 1/Math.tan(fovRadians/2) ，FOV 是90度的时候，计算结果正好是1。另外为了保持屏幕长宽比，投影按 c.width 缩放。</p>
+<p>// clear the screen and set size</p>
+<p>c.width = window.innerWidth, c.height = window.innerHeight;</p>
+<p>// calculate projection scale, flip y</p>
+<p>projectScale = (new Vec3(1,-1,1)).Multiply(c.width/2/cameraDepth);</p>
+<p>给世界画上天空、太阳和月亮</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0505/f1958df49c21d03.jpg" alt="img:如何用不到 2KB的JavaScript代码写一个3D赛车游戏？"></p>
+<p>空气背景是用全屏的 linear gradient （径向渐变）绘制的，它还会根据太阳的位置改变颜色。</p>
+<p>为了节省存储空间，太阳和月亮在同一个循环中，使用了一个带有透明度的全屏 radial gradient（线性渐变)。</p>
+<p>线性和径向渐变相结合，形成一个完全包围场景的天空背景。</p>
+<p>// get horizon, offset, and light amount</p>
+<p>horizon = c.height/2 - Math.tan(playerPitch)*projectScale.y;</p>
+<p>backgroundOffset = Math.sin(cameraHeading)/2;</p>
+<p>light = Math.cos(heading);</p>
+<p>// create linear gradient for sky</p>
+<p>g = context.createLinearGradient(0,horizon-c.height/2,0,horizon);</p>
+<p>g.addColorStop(0,LSHA(39+light<em>25,49+light</em>19,230-light*19));</p>
+<p>g.addColorStop(1,LSHA(5,79,250-light*9));</p>
+<p>// draw sky as full screen poly</p>
+<p>DrawPoly(c.width/2,0,c.width/2,c.width/2,c.height,c.width/2,g);</p>
+<p>// draw sun and moon (0=sun, 1=moon)</p>
+<p>for( i = 2 ; i&ndash;; )</p>
+<p>{</p>
+<p>// create radial gradient</p>
+<p>g = context.createRadialGradient(</p>
+<p>x = c.width*(.5+Lerp(</p>
+<p>(heading/PI/2+.5+i/2)%1,</p>
+<p>4, -4)-backgroundOffset),</p>
+<p>y = horizon - c.width/5,</p>
+<p>c.width/25,</p>
+<p>x, y, i?c.width/23:c.width);</p>
+<p>g.addColorStop(0, LSHA(i?70:99));</p>
+<p>g.addColorStop(1, LSHA(0,0,0,0));</p>
+<p>// draw full screen poly</p>
+<p>DrawPoly(c.width/2,0,c.width/2,c.width/2,c.height,c.width/2,g);</p>
+<p>}</p>
+<p>给世界画上山峰、地平线</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0505/f3177123d7871b7.jpg" alt="img:如何用不到 2KB的JavaScript代码写一个3D赛车游戏？"></p>
+<p>山脉是通过在地平线上画50个三角形，然后根据程序自己生成的。</p>
+<p>因为用了光线照明，山脉在面对太阳时会更暗，因为它们处于阴影中。此外，越近的山脉颜色越暗，我想以此来模拟雾气。这里我有个诀窍，就是微调大小和颜色的随机值。</p>
+<p>背景的最后一部分是绘制地平线，再用纯绿填充画布的底部。</p>
+<p>// set random seed for mountains</p>
+<p>randSeed = startRandSeed;</p>
+<p>// draw mountains</p>
+<p>for( i = mountainCount; i&ndash;; )</p>
+<p>{</p>
+<p>angle = ClampAngle(heading+R(19));</p>
+<p>light = Math.cos(angle-heading);</p>
+<p>DrawPoly(</p>
+<p>x = c.width*(.5+Lerp(angle/PI/2+.5,4,-4)-backgroundOffset),</p>
+<p>y = horizon,</p>
+<p>w = R(.2,.8)**2*c.width/2,</p>
+<p>x + w*R(-.5,.5),</p>
+<p>y - R(.5,.8)*w, 0,</p>
+<p>LSHA(R(15,25)+i/3-light*9, i/2+R(19), R(220,230)));</p>
+<p>}</p>
+<p>// draw horizon</p>
+<p>DrawPoly(</p>
+<p>c.width/2, horizon, c.width/2, c.width/2, c.height, c.width/2,</p>
+<p>LSHA(25, 30, 95));</p>
+<p>将路段投影到画布空间</p>
+<p>在渲染道路之前，我们必须首先获得投影的道路点。第一部分有点棘手，因为我们的道路的 x 值需要转换成世界空间位置。为了使道路看起来蜿蜒曲折，我们把x值作为二阶导数。这就是为什么有奇怪的代码“x+=w+=”出现的原因。由于这种工作方式，路段没有固定的世界空间位置，每一帧都是根据玩家的位置重新计算。</p>
+<p>一旦我们有了世界空间位置，我们就可以从道路位置中知道玩家的位置，从而得到本地摄像机空间位置。代码的其余部分，首先通过旋转标题、俯仰角来应用变换，然后通过投影变换，做到近大远小的效果，最后将其移动到画布空间。</p>
+<p>for( x = w = i = 0; i &lt; drawDistance+1; )</p>
+<p>{</p>
+<p>p = new Vec3(x+=w+=road[s+i].x,     // sum local road offsets</p>
+<p>road[s+i].y, (s+i)*segmentLength) // road y and z pos</p>
+<p>.Add(position.Multiply(-1));    // get local camera space</p>
+<p>// apply camera heading</p>
+<p>p.x = p.x<em>Math.cos(cameraHeading) - p.z</em>Math.sin(cameraHeading);</p>
+<p>// tilt camera pitch and invert z</p>
+<p>z = 1/(p.z<em>Math.cos(playerPitch) - p.y</em>Math.sin(playerPitch));</p>
+<p>p.y = p.y<em>Math.cos(playerPitch) - p.z</em>Math.sin(playerPitch);</p>
+<p>p.z = z;</p>
+<p>// project road segment to canvas space</p>
+<p>road[s+i++].p =                         // projected road point</p>
+<p>p.Multiply(new Vec3(z, z, 1))         // projection</p>
+<p>.Multiply(projectScale)               // scale</p>
+<p>.Add(new Vec3(c.width/2,c.height/2)); // center on canvas</p>
+<p>}</p>
+<p>绘制路段</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0505/e83f0d680847d01.png" alt="img:如何用不到 2KB的JavaScript代码写一个3D赛车游戏？"></p>
+<p>现在我们有了每个路段的画布空间点，渲染就相当简单了。我们需要从后向前画出每一个路段，或者更具体地说，连接上一路段的梯形多边形。</p>
+<p>为了创建道路，这里有4层渲染：地面，条纹路边缘，道路本身和白色虚线。每一个都是基于路段的俯仰角和方向来加阴影，并且根据该层的表现还有一些额外的逻辑。</p>
+<p>有必要检查路段是在近还是远剪辑范围，以防止渲染出现 bug 。此外，还有一个很好的优化方法是，当道路变得很窄时，可以通过 distance 来减小道路的分辨率。如此，不仅减少了 draw count 一半以上，而且没有明显的质量损失，这是一次性能胜利。</p>
+<p>let segment2 = road[s+drawDistance]; // store the last segment</p>
+<p>for( i = drawDistance; i&ndash;; )        // iterate in reverse</p>
+<p>{</p>
+<p>// get projected road points</p>
+<p>segment1 = road[s+i];</p>
+<p>p1 = segment1.p;</p>
+<p>p2 = segment2.p;</p>
+<p>// random seed and lighting</p>
+<p>randSeed = startRandSeed + s + i;</p>
+<p>light = Math.sin(segment1.a) * Math.cos(heading) * 99;</p>
+<p>// check near and far clip</p>
+<p>if (p1.z &lt; 1e5 &amp;&amp; p1.z &gt; 0)</p>
+<p>{</p>
+<p>// fade in road resolution over distance</p>
+<p>if (i % (Lerp(i/drawDistance,1,9)|0) == 0)</p>
+<p>{</p>
+<p>// ground</p>
+<p>DrawPoly(c.width/2, p1.y, c.width/2,</p>
+<p>c.width/2, p2.y, c.width/2,</p>
+<p>LSHA(25 + light, 30, 95));</p>
+<p>// curb if wide enough</p>
+<p>if (segment1.w &gt; 400)</p>
+<p>DrawPoly(p1.x, p1.y, p1.z*(segment1.w+curbWidth),</p>
+<p>p2.x, p2.y, p2.z*(segment2.w+curbWidth),</p>
+<p>LSHA(((s+i)%19&lt;9? 50: 20) + light));</p>
+<p>// road and checkpoint marker</p>
+<p>DrawPoly(p1.x, p1.y, p1.z*segment1.w,</p>
+<p>p2.x, p2.y, p2.z*segment2.w,</p>
+<p>LSHA(((s+i)*segmentLength%checkPointDistance &lt; 300 ?</p>
+<p>70 : 7) + light));</p>
+<p>// dashed lines if wide and close enough</p>
+<p>if ((segment1.w &gt; 300) &amp;&amp; (s+i)%9==0 &amp;&amp; i &lt; drawDistance/3)</p>
+<p>DrawPoly(p1.x, p1.y, p1.z*dashLineWidth,</p>
+<p>p2.x, p2.y, p2.z*dashLineWidth,</p>
+<p>LSHA(70 + light));</p>
+<p>// save this segment</p>
+<p>segment2 = segment1;</p>
+<p>}</p>
+<p>绘制路边的树和石头</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0505/daf288cd3c83544.png" alt="img:如何用不到 2KB的JavaScript代码写一个3D赛车游戏？"></p>
+<p>游戏有两种不同类型的物体：树和石头。首先，我们通过使用 R() 函数来确定是否加一个对象。这是随机数和随机数种子特别有意思的地方。我们还将使用 R() 为对象随机添加不同的形状和颜色。</p>
+<p>最初我还想涉及其他车型，但为了达到 2KB 的要求，必须要进行特别多的削减，因此我最后放弃了这个想法，用风景作为障碍。这些位置是随机的，也比较靠近道路，不然它们太稀疏，就很容易行驶。为了节省空间，对象高度还决定了对象的类型。</p>
+<p>这是通过比较玩家和物体在 3D 空间中的位置来检查它们之间的碰撞位置。当玩家撞到一个物体时，玩家减速，该物体被标记为“ hit ”，这样它就可以安全通过。</p>
+<p>为了防止对象突然出现在地平线上，透明度会随着距离的接近而削弱。梯形绘图函数定义物体的形状和颜色，另外随机函数会改变这两个属性。</p>
+<p>if (R()&lt;.2 &amp;&amp; s+i&gt;29)                  // is there an object?</p>
+<p>{</p>
+<p>// player object collision check</p>
+<p>x = 2*roadWidth * R(10,-10) * R(9);  // choose object pos</p>
+<p>const objectHeight = (R(2)|0) * 400; // choose tree or rock</p>
+<p>if (!segment1.h                      // dont hit same object</p>
+<p>&amp;&amp; Math.abs(position.x-x)&lt;200                      // X</p>
+<p>&amp;&amp; Math.abs(position.z-(s+i)*segmentLength)&lt;200    // Z</p>
+<p>&amp;&amp; position.y-height&lt;segment1.y+objectHeight+200)  // Y</p>
+<p>{</p>
+<p>// slow player and mark object as hit</p>
+<p>velocity = velocity.Multiply(segment1.h = collisionSlow);</p>
+<p>}</p>
+<p>// draw road object</p>
+<p>const alpha = Lerp(i/drawDistance, 4, 0);  // fade in object</p>
+<p>if (objectHeight)</p>
+<p>{</p>
+<p>// tree trunk</p>
+<p>DrawPoly(x = p1.x+p1.z * x, p1.y, p1.z*29,</p>
+<p>x, p1.y-99<em>p1.z, p1.z</em>29,</p>
+<p>LSHA(5+R(9), 50+R(9), 29+R(9), alpha));</p>
+<p>// tree leaves</p>
+<p>DrawPoly(x, p1.y-R(50,99)<em>p1.z, p1.z</em>R(199,250),</p>
+<p>x, p1.y-R(600,800)*p1.z, 0,</p>
+<p>LSHA(25+R(9), 80+R(9), 9+R(29), alpha));</p>
+<p>}</p>
+<p>else</p>
+<p>{</p>
+<p>// rock</p>
+<p>DrawPoly(x = p1.x+p1.z<em>x, p1.y, p1.z</em>R(200,250),</p>
+<p>x+p1.z*(R(99,-99)), p1.y-R(200,250)*p1.z, p1.z*R(99),</p>
+<p>LSHA(50+R(19), 25+R(19), 209+R(9), alpha));</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>}</p>
+<p>画上 HUD，更新时间，请求下一次更新</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0505/d3529aa9bb15c9b.png" alt="img:如何用不到 2KB的JavaScript代码写一个3D赛车游戏？"></p>
+<p>游戏的标题、时间和距离是用一个非常基础的字体渲染系统显示出来的，就是之前设置的 DrawText 函数。在玩家点击鼠标之前，它会在屏幕中央显示标题。</p>
+<p>按下鼠标后，游戏开始，然后 HUD 会显示剩余时间和当前距离。时间也在这块更新，玩过此类游戏的都知道，时间只在比赛开始后减少。</p>
+<p>在这个 massive Update function 结束后，它调用 requestAnimationFrame (Update) 来触发下一次更新。</p>
+<p>if (mousePressed)</p>
+<p>{</p>
+<p>time = Clamp(time - timeDelta, 0, maxTime); // update time</p>
+<p>DrawText(Math.ceil(time), 9);               // show time</p>
+<p>context.textAlign = &lsquo;right&rsquo;;                // right alignment</p>
+<p>DrawText(0|position.z/1e3, c.width-9);      // show distance</p>
+<p>}</p>
+<p>else</p>
+<p>{</p>
+<p>context.textAlign = &lsquo;center&rsquo;;      // center alignment</p>
+<p>DrawText(&lsquo;HUE JUMPER&rsquo;, c.width/2); // draw title text</p>
+<p>}</p>
+<p>requestAnimationFrame(Update); // kick off next frame</p>
+<p>} // end of update function</p>
+<p>代码的最后一位</p>
+<p>HTML 需要一个结束脚本标签来让所有的代码能够跑起来。</p>
+<p>Update(); // kick off update loop</p>
+<p><!-- raw HTML omitted --></p>
+<p>压缩</p>
+<p>这就是整个游戏啦！下方的一小段代码就是压缩后的最终结果，我用不同的颜色标注了不同的部分。完成所有这些工作后，你能感受到我在2KB内就做完了整个游戏是多么让我满意了吗？而这还是在zip之前的工作，zip还可以进一步压缩大小。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0505/7c4aa631caf674a.png" alt="img:如何用不到 2KB的JavaScript代码写一个3D赛车游戏？"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0505/d5230be90a3890e.png" alt="img:如何用不到 2KB的JavaScript代码写一个3D赛车游戏？"></p>
+<p>警告 Caveats</p>
+<p>当然，还有很多其他 3D 渲染方法可以同时保证性能和视觉效果。如果我有更多的可用空间，我会更倾向于使用一个 WebGL API 比如 three.js ，我在去年制作的一个类似游戏“Bogus Roads”中用过这个框架。此外，因为它使用的是 requestAnimationFrame ，所以需要一些额外的代码来确保帧速率不超过60 fps，增强版本中我会这么用，尽管我更喜欢使用 requestAnimationFrame 而不是 setInterval ，因为它是垂直同期的（VSyn，VerticalSynchronization），所以渲染更丝滑。这种代码的一个主要好处是它非常兼容，可以在任何设备上运行，尽管在我旧 iPhone 上运行有点慢。</p>
+<p>游戏代码被我放到了 GitHub 上的 GPL-3.0 下（https://github.com/KilledByAPixel/HueJumper2k），所以你可以在自己的项目中自由使用它。该库中还包含 2KB 版本的游戏，准确说是2031字节！欢迎你添加一些其他的功能，比如音乐和音效到“增强”版本中。</p>
+<p>后记</p>
+<p>Frank Force 在个人博客发了这篇文章后，在内容、标题的加持下，这篇文章后来被不少国外媒体转载。在盛赞之余，也有质疑的声音。网友“Anon”在原文下评论：你是如何在 2KB 安装一个完整的 javascript 的，除非你可以随意忽略 dependencies 插件库的大小，或者你将整个游戏作为 dependency，大小才有可能控制到 2KB，否则就是欺骗。</p>
+<p>Frank 回复表示，大多数 small demos 都需要某种运行环境，即使它是可执行的。在这种情况下，就是 javascript 运行时环境，没有其他 dependencies.。因为 javascript 是解释的，所以也可以说压缩后的代码是在2KB以内的。</p>
+<p>访问:</p>
+<p>阿里云 - 最高1888元通用代金券立即可用</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/975077/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">全球最快相机诞生：每秒可捕捉到70万亿帧</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/975073/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">阅文集团：没有采取任何包括修改更新时间、断更不推荐等措施</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976489/">被炒员工谈亚马逊工作体验：贝佐斯已脱离“群众”</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976493/">MeerKAT望远镜图像：原来“x星系”背后还有这样的秘密</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976491/">比特大陆内斗升级到“抢营业执照”，吴忌寒：就是干，不要怂</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976475/">科学家首次发现新冠病毒可能还潜伏在精液中</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976473/">官方公布首批登陆 Xbox Series X 的第三方游戏</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

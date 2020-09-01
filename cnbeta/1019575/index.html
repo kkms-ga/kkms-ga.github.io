@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>教程：如何使用NVMe硬盘升级旧款Mac的SSD - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="教程：如何使用NVMe硬盘升级旧款Mac的SSD" />
+<meta property="og:description" content="对于拥有老款 MacBook Air/Pro 的用户来说，除了花费 1000
+多美元购买新设备之外，还可以通过扩展内部存储空间来“续命”几年时间。外媒 AppleInsider 去年购买了一台 2015 年款
+MacBook Air，内存为 8GB，存储空间为 128GB，在使用过程中内置存储已经无法满足日常需求，因此带来了一篇详细的扩容教程。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1019575/" />
+<meta property="article:published_time" content="2020-08-24T11:57:06+08:00" />
+<meta property="article:modified_time" content="2020-08-24T11:57:06+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">教程：如何使用NVMe硬盘升级旧款Mac的SSD</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-24T11:57:06&#43;08:00">August 24, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>对于拥有老款 MacBook Air/Pro 的用户来说，除了花费 1000
+多美元购买新设备之外，还可以通过扩展内部存储空间来“续命”几年时间。外媒 AppleInsider 去年购买了一台 2015 年款
+MacBook Air，内存为 8GB，存储空间为 128GB，在使用过程中内置存储已经无法满足日常需求，因此带来了一篇详细的扩容教程。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0824/a14e4e8c903fea4.jpg" alt="img:教程：如何使用NVMe硬盘升级旧款Mac的SSD"></p>
+<p>外媒在升级过程中使用到的工具包括</p>
+<p>● 2015 年或者更新的 MacBook Air</p>
+<p>● 可启动的 macOS USB 磁盘用于重新安装 macOS</p>
+<p>● Sintech NVMe 适配器</p>
+<p>● Crucial P1 1TB 固态硬盘</p>
+<p>● P5 螺丝刀</p>
+<p>● T5 螺丝刀</p>
+<p>支持扩容的型号</p>
+<p>用户手头上的旧设备可能并不是 MacBook Air，可能是 MacBook Pro 或者 Mac Mini。通常情况下，2013-2017 年的 MacBook Air、2013-2015 年的 MacBook Pro 以及 2014 年的 Mac Mini 都是可以升级的，而且效果明显。当你点击 &ldquo;关于这台 Mac&rdquo;、&ldquo;系统报告 &ldquo;时，&ldquo;硬件概览 &ldquo;部分有一个型号识别码，你可以用它来判断兼容性。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0824/a8e214141ec0844.jpg" alt="img:教程：如何使用NVMe硬盘升级旧款Mac的SSD"></p>
+<p>可以升级的型号如下：</p>
+<p>MacBook Pro</p>
+<p>MacBook Pro (15英寸Retina显示屏2015年中) 型号ID: MacBookPro11,5</p>
+<p>MacBook Pro（15英寸Retina显示屏2015年中）型号ID：MacBookPro11,4。</p>
+<p>MacBook Pro（13英寸Retina显示屏2015年初）型号ID：MacBookPro12,1。</p>
+<p>MacBook Pro (15英寸Retina Display 2014) 型号ID: MacBookPro11,3</p>
+<p>MacBook Pro (15英寸Retina Display 2014) 型号ID: MacBookPro11,2</p>
+<p>MacBook Pro (13英寸Retina Display 2014) 型号ID: MacBookPro11,1</p>
+<p>MacBook Pro (15吋Retina Display 2013) 型号 ID: MacBookPro11,3</p>
+<p>MacBook Pro (15吋Retina Display 2013) 型号 ID: MacBookPro11,2</p>
+<p>MacBook Pro (13英寸Retina Display 2013) 型号 ID: MacBookPro11,1</p>
+<p>MacBook Air</p>
+<p>MacBook Air（13英寸2017年中）型号ID：MacBookAir7,2。</p>
+<p>MacBook Air（13英寸2015年初）型号ID：MacBookAir7,2。</p>
+<p>MacBook Air（11英寸2015年初）型号ID：MacBookAir7,1。</p>
+<p>MacBook Air (13英寸 2014年初) 型号ID: MacBookAir6,2</p>
+<p>MacBook Air (11英寸 2014年初) 型号ID: MacBookAir6,1</p>
+<p>MacBook Air (13英寸 2013年中) 型号 ID: MacBookAir6,2</p>
+<p>MacBook Air (11英寸 2013年中) 型号 ID: MacBookAir6,1</p>
+<p>Mac mini</p>
+<p>Mac mini（2014年末）型号ID：Macmini7,1。</p>
+<p>待机的问题</p>
+<p>在写道“效果明显”的时候，这里有个注意事项：2013-2014 年的机器和2015年及以后的机器对待休眠的方式不同。苹果有不同的电源管理模式来增加电池寿命。其中有一种模式会给在2013-2014年机器中升级到 NVMe 硬盘的用户带来问题。</p>
+<p>解决方案是防止电脑进入待机状态，操作步骤如下</p>
+<p>1.打开终端应用程序</p>
+<p>2.输入 sudo pmset -a standby 0。</p>
+<p>3.按回车键</p>
+<p>4.退出终端</p>
+<p>电脑仍然会休眠或睡眠，而不会将电脑的当前状态保存到U盘中。你仍然会有电池寿命，虽然可能不是30天不充电的那种电池寿命。2015年及以后的机器完全不需要这样的修改。</p>
+<p>支持的操作系统</p>
+<p>● High Sierra</p>
+<p>● Mojave</p>
+<p>● Catalina</p>
+<p>● Big Sur (可能)</p>
+<p>支持的硬盘</p>
+<p>● Crucial P1</p>
+<p>● 三星 970 Evo Pro (带固件升级)</p>
+<p>● 三星 970 Evo Plus (带固件升级)</p>
+<p>● WD Black SN750</p>
+<p>虽然WD Black SN750的传输速度可以达到额定的3400 MB/s，但如果Mac不能支持这些速度，它就没有用。三星硬盘在应用固件更新后，有工作的历史。固件更新的问题是，它们需要 Windows 机器来安装。如果你正在为学生准备一台电脑，这可能超出你的舒适度。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0824/eb432cba1863b43.jpg" alt="img:教程：如何使用NVMe硬盘升级旧款Mac的SSD"></p>
+<p>这里外媒选择了 1TB 的 Crucial P1，它在MacBook Air上的读取速度达到了1476 MB/s，写入速度达到了1323 MB/s。未升级前的 2015 年款 MacBook Pro 上，我们得到的读取速度只有 529 MB/s，写入速度 482 MB/s。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0824/922fc768769fa87.jpg" alt="img:教程：如何使用NVMe硬盘升级旧款Mac的SSD"></p>
+<p>好了，所有东西都准备好了，我们开始动手更换</p>
+<p>关闭电脑，使用 P5 取下 MacBook Air 的底座，并非所有的螺丝都是相同的长度，重要的是要让每个螺丝回到它出来的同一个孔中。你可以拿纸板把螺丝钉按类似螺丝孔的方向戳进纸板里。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0824/c299228a50e8452.jpg" alt="img:教程：如何使用NVMe硬盘升级旧款Mac的SSD"></p>
+<p>或者你可以把双面胶条贴下来，然后把它们组织在上面。无论你做哪种，做完后要确保螺丝钉进入它们出来的孔里。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0824/021908ae9d5f11a.jpg" alt="img:教程：如何使用NVMe硬盘升级旧款Mac的SSD"></p>
+<p>在盖子松动之后，在机器两侧的中间有一种锁扣，在这里你会感觉到盖子弹开，然后掀开。</p>
+<p>拆除原硬盘</p>
+<p>找到 SSD 的位置，它在 MacBook Air 的中间位置，有一个固定它的Torx螺丝。拧开后取出硬盘，放在一边。取出Sintech NGFF转M.2 NVMe适配器，插入原硬盘的位置。然后，将新的NVMe硬盘插入适配器。当所有的东西都对齐后，NVMe硬盘末端的凹槽将与Torx螺钉出来的柱子对齐。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0824/7fa8ba976fb5d88.jpg" alt="img:教程：如何使用NVMe硬盘升级旧款Mac的SSD"></p>
+<p>移除原硬盘</p>
+<p>确保将适配器和驱动器正确地对准Torx螺钉所在的支座。这可能需要小心翼翼地将适配器和驱动器完全插入其插槽中。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0824/e29b5233477b9b7.jpg" alt="img:教程：如何使用NVMe硬盘升级旧款Mac的SSD"></p>
+<p>将电脑的盖子重新盖上，注意将螺丝替换到它们出来的孔中。通常在Mac上，最长的螺丝钉会在铰链区域附近，或者靠近该铰链边缘的中心。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0824/f7679373bb99fc9.jpg" alt="img:教程：如何使用NVMe硬盘升级旧款Mac的SSD"></p>
+<p>重新安装 macOS</p>
+<p>插入之前制作的USB macOS硬盘。开机，同时按住Option键。当出现驱动器列表时，选择USB驱动器。电脑将启动恢复。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0824/a3079aa878f770d.jpg" alt="img:教程：如何使用NVMe硬盘升级旧款Mac的SSD"></p>
+<p>打开磁盘实用程序，将新的SSD硬盘格式化为GUID分区方案和macOS日志文件系统。完成后，退出磁盘工具，继续安装macOS。结果是电脑的速度会比原厂配置快，存储空间更大，而且硬盘会在系统报告中显示在NVMExpress下。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0824/9354e010b59ebe2.jpg" alt="img:教程：如何使用NVMe硬盘升级旧款Mac的SSD"></p>
+<p>接下来我们来总结下本次的升级费用:</p>
+<p>外媒 AppleInsider 表示 2015 年款 MacBook Air 的购入价格为 280 美元，2017 年款 MacBook Air 的售价为 420 美元。而且在 Craigslist 平台上还有很多折扣非常大的二手 MacBook 产品，不过需要你会自己去挑。</p>
+<p>Crucial P1硬盘的价格是104.99美元。WD Black硬盘为134.99美元。Sintech NGFF M.2 NVMe适配器是16.99美元。你还需要一把Pentalobe螺丝刀来打开电脑。一个合适的工具箱是6.99美元，使得所有的成本比电脑的成本高出 130 美元左右。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1019577/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">德激光等离子加速器创新纪录 连续产生电子束首超三十小时</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1019617/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">拼多多关联公司申请夕夕饼、夕夕糕商标</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1022049/">Axon推出无证也能在市区飞行的系绳式Fotokite无人机</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1022051/">TCL科技上半年净利润12亿 以10.8亿美元收购苏州三星8.5代线</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1022073/">大众的抉择：落地Robotaxi 看好中国自动驾驶</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1022075/">谷歌将从Play Store中下架Fediverse应用  因其可被用来访问仇恨言论</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1022077/">无人拯救暴风</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

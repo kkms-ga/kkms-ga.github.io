@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>AI 模型 GameGAN 重写《吃豆人》，目标：看视频就能学习的 AI - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="AI 模型 GameGAN 重写《吃豆人》，目标：看视频就能学习的 AI" />
+<meta property="og:description" content="英伟达称稍后会放出一个使用 AI 模型 GameGAN 复刻的《吃豆人》游戏，以致敬诞生40周年的街机版《吃豆人》。根据英伟达发布的研究报告，GameGAN 目标是用神经网络取代游戏引擎。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/984227/" />
+<meta property="article:published_time" content="2020-05-28T10:36:26+08:00" />
+<meta property="article:modified_time" content="2020-05-28T10:36:26+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">AI 模型 GameGAN 重写《吃豆人》，目标：看视频就能学习的 AI</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-28T10:36:26&#43;08:00">May 28, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>英伟达称稍后会放出一个使用 AI 模型 GameGAN 复刻的《吃豆人》游戏，以致敬诞生40周年的街机版《吃豆人》。根据英伟达发布的研究报告，GameGAN 目标是用神经网络取代游戏引擎。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0528/d32c7d60201bec9.gif" alt="img:AI 模型 GameGAN 重写《吃豆人》，目标：看视频就能学习的 AI"></p>
+<p>它不同于以往用 AI 做游戏的例子。之前的谷歌 DeepMind 和 Open AI 还是在现有游戏框架中，被用来“玩游戏”，相当于是智能生成一个游戏对手。比如 OpenAI 被用来在 Dota2 5v5中对战人类，OpenAI 2018年通过学习人类演示，在蒙特祖玛的复仇游戏中刷出了74500分的高分。</p>
+<p>GameGAN 则被用来“创作”游戏，是对现有游戏代码的取代。它在训练过程中摄入大量游戏剧本和键盘动作，通过观察场景和玩家的操作动作，预测下一帧游戏画面，而不访问底层游戏逻辑或引擎。</p>
+<p>“当玩家按下左键的时候，这个 AI 会猜测画面的变化，并且生成一个“看起来是角色在往左走”的图像。 中间发生的事情，全部都在 AI 的黑盒中。 没人知道 AI 是怎么理解玩家操作的，得到的只有最终的输出结果。”</p>
+<p>除了生成下一帧游戏画面，GameGAN 还学习环境的内在动力学，“我们有兴趣训练一个游戏模拟器，它可以模拟环境的确定性和随机性”。</p>
+<p>GameGAN包括动力引擎；记忆模块；渲染引擎；对抗性损失、循环损失训练和培训计划。</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-898b7a82963427543fe70039ff4e10aa99d.png" alt="img:AI 模型 GameGAN 重写《吃豆人》，目标：看视频就能学习的 AI"></p>
+<p>首先GameGAN要学习环境会如何跟随用户操作变化而改变，这涉及一些基本的规则，比如不能穿过墙壁。同时还要通过访问历史，产生一致性模拟。场景中的长期一致性实现通过记忆模块实现，GameGAN使用内存模块，记住生成的静态元素，如背景，并在需要的时候适当检索。神经渲染引擎负责渲染模拟图像。此外，对抗训练用来完成图像和视频的合成任务，GameGAN用对抗性训练学习环境动力学，并产生真实的时间相关模拟。</p>
+<p>这次复刻《吃豆人》，主要训练的细节包括吃豆人的速度和移动能力；鬼魂的运作方式；吃豆人吃下大力丸后的变化；鬼魂与吃豆人相遇的场景。据了解，GameGAN基于PyTorch开发，模型研发已经进行了8个月，关于复刻《吃豆人》只用了4天。</p>
+<p>游戏开发商万代南宫梦为此次训练提供了总计几百万帧、50000集的《吃豆人》剧本。该公司的 Koichiro Tsutsumi 表示：“在看到这个结果时，我们都感到震惊，大家都无法相信可以在没有游戏引擎的情况下再现了南梦宫的经典游戏《吃豆人》。这项研究将帮助游戏开发人员加快新关卡、角色甚至游戏的开发。一想到这一点，我们就感到十分兴奋。”</p>
+<p>不过，复刻游戏只是开始，英伟达的目标是扩展模型来捕捉更复杂的现实世界环境。英伟达多伦多研究实验室主任 Sanja Fidler 表示：“我们最终将训练出一个 AI，其只需通过观看视频和观察目标在环境中所采取的行动，就能模仿驾驶规则或物理定律。” 而 GameGAN 只是第一步。</p>
+<p>Nvidia GameGAN Research：</p>
+<p><a href="https://cdn.arstechnica.net/wp-content/uploads/2020/05/Nvidia_GameGAN_Research.pdf">https://cdn.arstechnica.net/wp-content/uploads/2020/05/Nvidia_GameGAN_Research.pdf</a></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/984245/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">福奇多日不见后现身 称新冠疫苗有望年底前面世</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/984267/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">iOS 13.5发布后 苹果已关闭iOS 13.4.1降级通道</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/985933/">Apple Card宣布用户可延期至6月还款 累计利息但无罚金</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/985915/">[图]索尼高管：PlayStation 5游戏制作成本将更加昂贵</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/985937/">新研究显示瑞德西韦在新冠病毒治疗中的作用  但可能还不够</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/985943/">四大出版商因“开放图书馆”的电子书租借服务而起诉互联网档案馆</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/985935/">南大西洋区域磁场异常变化：强度加剧减弱</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

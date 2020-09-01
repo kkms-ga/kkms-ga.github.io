@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>英特尔为Tiger Lake移动CPU带来新颖的CET安全技术 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="英特尔为Tiger Lake移动CPU带来新颖的CET安全技术" />
+<meta property="og:description" content="英特尔今天宣布，将在即将推出的Tiger Lake移动CPU中集成实验性的CET安全功能。英特尔自2016年首次发布第一版CET规范以来，一直在研究CET，CET是控制流执行技术的缩写。正如它的名字所暗示的那样，CET处理的是 &ldquo;控制流&rdquo;，这是一个技术术语，用于描述CPU内部执行操作的顺序。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/991407/" />
+<meta property="article:published_time" content="2020-06-16T03:56:59+08:00" />
+<meta property="article:modified_time" content="2020-06-16T03:56:59+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">英特尔为Tiger Lake移动CPU带来新颖的CET安全技术</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-16T03:56:59&#43;08:00">June 16, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>英特尔今天宣布，将在即将推出的Tiger Lake移动CPU中集成实验性的CET安全功能。英特尔自2016年首次发布第一版CET规范以来，一直在研究CET，CET是控制流执行技术的缩写。正如它的名字所暗示的那样，CET处理的是 &ldquo;控制流&rdquo;，这是一个技术术语，用于描述CPU内部执行操作的顺序。</p>
+<p>在设备上运行的恶意软件可以利用其他应用中的漏洞劫持其控制流，并插入其恶意代码在另一个应用的上下文中运行。在英特尔未来的Tiger Lake移动CPU上，CET将通过两种新的安全机制来保护控制流，即影子堆栈、间接分支跟踪。影子堆栈指的是将一个应用的预定控制流复制出来，将影子堆栈存储在CPU的一个安全区域，并利用它来确保应用的预定执行顺序不会发生未经授权的改变。</p>
+<p>英特尔表示，CET影子堆栈将保护用户免遭一种被称为 &ldquo;面向返回编程&rdquo;（ROP）的技术伤害，这种技术即恶意软件滥用RET（返回）指令，将其恶意代码附加到合法应用的控制流中。另一方面，间接分支跟踪指的是限制和增加额外的保护，使应用程序能够使用CPU &ldquo;跳转表&rdquo;，这是一个包含跨应用程序控制流（重新）使用的内存位置表。</p>
+<p>英特尔表示，间接分支跟踪可以防止两种被称为面向跳转编程(JOP)和面向调用编程(COP)的技术，即恶意软件滥用JMP(跳转)或CALL指令来劫持合法应用程序的跳转表。由于英特尔早在2016年就发布了CET规范，软件制造商有时间为第一批支持CET的英特尔CPU系列调整代码。</p>
+<p>CET支持已经进入了Glibc，微软也为Windows Insiders增加了CET支持，作为一项名为Hardware-enforced Stack Protection的功能。现在所需要的就是英特尔出货支持CET指令的CPU，这样应用程序和操作系统就可以激活支持并选择加入CET提供的保护。英特尔公司客户端计算集团副总裁、安全战略与计划(SSI)总经理Tom Garrison今天表示，CET今天针对英特尔Tiger Lake微架构的移动CPU系列推出，但该技术也将用于台式机和服务器平台。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0616/42c8c181ab27918.png" alt="img:英特尔为Tiger Lake移动CPU带来新颖的CET安全技术"></p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0616/790adecaca73e85.jpg" alt="img:英特尔为Tiger Lake移动CPU带来新颖的CET安全技术"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/991401/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">孟晚舟案再次开庭 未能就程序性安排作出决定</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993645/">穷途末路？报道称陆正耀所持数千万美元瑞幸股票将被清算</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993641/">零预算电影《Unsubscribe》成为美国票房冠军</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993643/">Google Photos结束了8美元/月打印订阅的试用 服务暂时不再提供</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993633/">索尼一方工作室发推庆祝《最后生还者2》发行</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993635/">空中客车在更广泛裁员之前寻求员工自愿离职</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

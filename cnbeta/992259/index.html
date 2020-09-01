@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>FreeBSD 11.4发布：支持重命名ZFS书签 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="FreeBSD 11.4发布：支持重命名ZFS书签" />
+<meta property="og:description" content="FreeBSD 的发布工程负责人 Glen Barber 今天宣布了 FreeBSD 11-STABLE分支的最五个、也是最后一个维护版本更新。全新的 FreeBSD 11.4 包含了多项调整，并对用户区应用程序、硬件支持、设备和设备驱动进行了更新。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/992259/" />
+<meta property="article:published_time" content="2020-06-17T17:12:44+08:00" />
+<meta property="article:modified_time" content="2020-06-17T17:12:44+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">FreeBSD 11.4发布：支持重命名ZFS书签</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-17T17:12:44&#43;08:00">June 17, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>FreeBSD 的发布工程负责人 Glen Barber 今天宣布了 FreeBSD 11-STABLE分支的最五个、也是最后一个维护版本更新。全新的 FreeBSD 11.4 包含了多项调整，并对用户区应用程序、硬件支持、设备和设备驱动进行了更新。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0617/04993b74d6f446a.jpg" alt="img:FreeBSD 11.4发布：支持重命名ZFS书签"></p>
+<p>FreeBSD 11.4 对 ZFS 文件系统的支持要远超其他发行版本。为进一步增强在 FreeBSD 中的功能，11.4 版本中添加了对 ZFS 书签重命名的支持。此外，它还改善了 128KB 同步写入的延迟，从而让性能提升了 15-20%。</p>
+<p>在网络、存储和硬件支持方面，11.4 增加了对 D-Link DWM-222 LTE dongle, JMicron JMB582/JMB585 AHCI主控，以及英特尔 Cannon Lake PCH 的支持。</p>
+<p>此外，11.4 版本还升级了多款实用软件。例如，camcontrol 实用程序现在包括支持可访问最大地址配置（AMA）和块描述，usbconfig 实用程序增加了 detach_kernel_driver 命令。另外，jot 实用程序现在允许在指定的范围内无休止的随机数据流和yp子系统中的ypMAXRECORD值增加，以兼容Linux。</p>
+<p>其他更新的实用工具、驱动和软件包如下：</p>
+<p>● 桌面环境KDE 5.18.4 and GNOME 3.28</p>
+<p>● freebsd-update utility update introduces two new commands</p>
+<p>● cron实用工具在Crontab中增加了两个新的命令</p>
+<p>● 从服务中删除Netatalk协议</p>
+<p>● bzip2 1.0.8, tcsh 6.21.0, less 551, tcpdump 4.9.3, pkg 1.13.2实用工具更新</p>
+<p>● ng_nat, ena 2.2.0, crypto驱动更新</p>
+<p>● ubsec驱动被标记为过时的</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/992273/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">罗伯特·帕丁森：演《蝙蝠侠》时曾向多位漫威大牌取经</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/992245/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[图]iPhone端Outlook新增Report Junk功能 可报告可疑垃圾/钓鱼邮件</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/994169/">库克：今年WWDC会展示技术和人文的交叉融汇</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/994175/">作家王小山发长微博控诉携程欠钱不还：跪求梁建章退租</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/994155/">七彩虹发布国创战戟内存条 采用长鑫国产颗粒</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/994167/">盖茨基金会CEO：为下一次疫情未雨绸缪</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/994163/">美国政府预计将暂停H-1B等临时工作签证至年底</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>三星Exynos团队首次披露M6 CPU内核设计：史上最强“胎死腹中” - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="三星Exynos团队首次披露M6 CPU内核设计：史上最强“胎死腹中”" />
+<meta property="og:description" content="ISCA（国际计算机体系结构研讨会）是IEEE举办的一个会议，关于这个会议，通常我们不会在公众场合听到很多。造成这种情况的主要原因是，大多数会议和论文都倾向于以学术为导向，而与实际产品中的实际操作相距甚远。
+但到了今年，会议改变了形式，他们增加了行业会议的比重，并提供了行业内各公司的演讲和论文，讨论的范围涵盖了实际的商业产品。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/986905/" />
+<meta property="article:published_time" content="2020-06-04T12:26:44+08:00" />
+<meta property="article:modified_time" content="2020-06-04T12:26:44+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">三星Exynos团队首次披露M6 CPU内核设计：史上最强“胎死腹中”</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-04T12:26:44&#43;08:00">June 04, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>ISCA（国际计算机体系结构研讨会）是IEEE举办的一个会议，关于这个会议，通常我们不会在公众场合听到很多。造成这种情况的主要原因是，大多数会议和论文都倾向于以学术为导向，而与实际产品中的实际操作相距甚远。</p>
+<p>但到了今年，会议改变了形式，他们增加了行业会议的比重，并提供了行业内各公司的演讲和论文，讨论的范围涵盖了实际的商业产品。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p>访问购买页面:</p>
+<p>SAMSUNG - 三星旗舰店</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0604/0de7ac62136838c.png" alt="img:三星Exynos团队首次披露M6 CPU内核设计：史上最强“胎死腹中”"></p>
+<p>在会议中，三星的SARC（三星奥斯汀研发中心）CPU开发团队发表了一篇题为“三星Exynos
+CPU架构的演变”的论文，详细介绍了该团队在其8年的发展过程中所做的努力，并介绍了其定制Arm的一些关键特征。在这期间，其CPU内核也从Exynos
+M1迭代到最新的Exynos M5 CPU。当然，未发布的M6设计在本文也有涉猎。</p>
+<p>资料显示，三星的SARC CPU团队成立于2011年，公司致力于开发定制的CPU内核，然后三星LSI将其部署到其Exynos
+SoC中，从2015年在Galaxy S7中发布的第一代Exynos 8890开始，到现在应用在Galaxy
+S20上的拥有M5内核的Exynos 990,三星团队已经进行了五代产品的更新。现在，SARC已完成M6微体系结构。</p>
+<p>据报道，这些工作是在该公司的CPU团队被传于2019年10月解散的消息（从去年12月开始生效）传出来之前完成的。ISCA的论文是三星愿意发布一些开发团队的想法的结果，这些想法被认为值得在公众中保存，这实质上代表了8年开发工作的高层成果。</p>
+<p>从M1到M6：持续变型的CPU</p>
+<p>本文提供了三星定制CPU内核之间的微体系结构差异的总体概览表：</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0604/600538ea61755ab.png" alt="img:三星Exynos团队首次披露M6 CPU内核设计：史上最强“胎死腹中”"></p>
+<p>披露内容涵盖了设计的一些众所周知的特征，如三星在HotChips 2016的最初M1 CPU微体系结构的深挖以及在HotChips
+2018的最新M3所披露的那样。它使我们可以洞悉我们在S10和S20评测中测得的新M4和M5微体系结构，以及对M6外观的一瞥。</p>
+<p>三星设计的一个关键特征是多年来，他们都是基于2011年开发的M1内核蓝图RTL为基础，多年来不断改进内核的功能模块。但到了M3，内核的设计发生了很大的变化。他们从几个方面大幅扩展了内核，例如从4宽设计到6宽中核。之前尚未公开的新披露内容将涉及新的M5和M6内核。</p>
+<p>对于M5，三星对内核的缓存层次进行了较大的更改，例如用新的更大的共享缓存替换了私有L2缓存，以及公开了L3结构从3组设计到2组的变化，这样做可以获得较小的延迟。就微体系结构而言，正在开发中的尚未发布的M6内核似乎是一个更大的飞跃。</p>
+<p>SARC团队在这里进行了较大的改进，例如将L1指令和数据缓存从64KB增加到128KB，这一设计选择目前仅在苹果的CPU内核（从A12开始）之前实现。据说L2的带宽能力提高了一倍，最高可达64B
+/周期，L3的带宽也将从3MB增加到4MB。M6可能是8宽解码核心，据我们所知，它至少是我们所知道的最宽的商业微体系结构，至少在解码方面。</p>
+<p>有趣的是，即使内核要宽得多，整数执行单元也不会发生太大变化，只是看到一个复杂的管道增加了第二个整数除法功能，而加载/存储管道将保持与上一个架构相同。具有1个加载单元，1个存储单元和1个1加载/存储单元的M5。在浮点/
+SIMD管道上，我们将看到具有FMAC功能的第四个单元。TLB可能会发生一些大变化，例如L1
+DTLB从48页（pages）增加到128页，而主TLB从4K页增加到8K页（32MB覆盖）。</p>
+<p>自M3以来，M6也是第一次，它将增加内核的乱序窗口，并使用更大的整数和浮点物理寄存器文件，以及从以下时间开始增加ROB（重排序缓冲区）。据透露，这将从228增加至256。SARC内核的一个主要弱点似乎仍然存在于M5和即将推出的M6内核中，那就是其更深层次的流水线阶段导致相对昂贵的16周期错误预测损失的结果，远高于Arm最新设计（11级）的周期。</p>
+<p>这篇论文更深入地介绍了分支预测器设计，展示了基于核的可缩放哈希感知器（Scaled Hashed Perceptron
+）设计。这些年来，设计一直在不断改进，提高了分支的准确性，从而不断降低了MPKI（mis-predicts per
+kilo-instructions）。展示的一个有趣的表是分支预测变量在前端内占用的存储结构量，以KB为单位：</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0604/0d590846d89af35.png" alt="img:三星Exynos团队首次披露M6 CPU内核设计：史上最强“胎死腹中”"></p>
+<p>IPC每年增加20％，6年内达到2.71倍</p>
+<p>本文进一步描述了SARC团队为改进各代产品的内存延迟所做的努力。在M4内核中，团队采用了负载－负载级联机制（ load-load
+cascade mechanism），将后续负载的有效L1周期延迟从4个周期减少到3个。M4还引入了带有新接口的path
+bypass，从CPU核心直接到内存控制器，避免了通过互连的 traffic，这解释了我们在Exynos 9820中看到的一些更大的延迟改进。</p>
+<p>M5引入了推测性高速缓存lookup bypasses，同时向互连和高速缓存标签发出了一个请求，这可能节省了高速缓存未命中的等待时间，因为内存请求已经在进行中。从M1的14.9个周期降低到M6的8.3个周期，平均负载等待时间已经持续改进了几代人。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0604/882836c0a89a190.png" alt="img:三星Exynos团队首次披露M6 CPU内核设计：史上最强“胎死腹中”"></p>
+<p>在IPC改进方面，SARC团队在过去8年的开发中设法实现了平均每年20％的改进。如图所示，M3的IPC实现了大幅度飞跃。M5与我们在基准测试中看到的大致相关，大约提高了15-17％。据披露，M6的IPC平均值为2.71，而M1的平均值为1.06，此处的图表通常似乎表明与M5相比提高了20％。</p>
+<p>在会议的问答环节中，论文的主持人布莱恩·格雷森（Brian Grayson）回答了有关自研该计划取消的原因。他透露，团队始终如一地按时按计划执行，并且每一代的性能和效率都有所提高。但他表示，团队最大的困难在于对未来的设计更改要非常谨慎，因为团队永远没有资源完全从头开始或完全重写代码块。</p>
+<p>据说，事后看来，该团队过去会在某些设计方向上做出不同的选择。这种串行设计方法与Arm的职位形成鲜明对比，ARM拥有多个跨越式设计中心和CPU团队，使他们能够进行诸如彻底重新设计之类的事情，例如Cortex-A76。团队对于M7等即将到来的内核有很多改进的想法，但是据说取消该计划的决定是三星公司高层的决定。与Arm的设计相比，SARC</p>
+<p>CPU内核从未真正具有过竞争力，因为它们的功率效率，性能和面积使用率下降。随着ARM最新的Cortex-X1上周透露去为全力以赴的表现，它看起来对我来说，SARC的M6设计将不得不反对竞争的问题。</p>
+<p>该论文的作者非常感谢三星公司慷慨地允许发表该论文，并感谢SARC领导层多年来对这个“moonshot”  CPU项目的管理。SARC当前仍在设计自定义互连，内存控制器，以及在自定义GPU架构上工作。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/986915/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">韩国检方申请对三星继承人李在镕的逮捕令</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/986913/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">B站患癌UP主回应质疑：已经够惨了 不需要再卖惨</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/988707/">Forrest Fenn十年前藏于落基山脉的宝藏已被发现 价值200万刀</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/988715/">《釜山行2：半岛》女主新剧照 李贞贤持枪神情恍惚</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/988699/">贝佐斯怼人名场面：马斯克、白宫高官、用户都中枪</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/988695/">研究警告称长期有负面情绪的人或面临更高的痴呆风险</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/988713/">苦等多时：《荒野乱斗》国服正式上线 腾讯代理</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

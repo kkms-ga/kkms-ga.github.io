@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[图]微软骚操作：通过Outlook在Android长按菜单中嵌入Bing搜索 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[图]微软骚操作：通过Outlook在Android长按菜单中嵌入Bing搜索" />
+<meta property="og:description" content="向 Android 平台输出 Microsoft Launcher 等优秀应用的同时，微软也采取激进的方式来推广自己的应用程序。去年，微软就在
+Android 的分享列表中插入了 OneDrive 广告，而援引外媒近日报道，微软现在通过 Android 端的 Outlook 应用，选中任意文本之后长按菜单中会有
+Bing 搜索的选项。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1002949/" />
+<meta property="article:published_time" content="2020-07-14T11:34:32+08:00" />
+<meta property="article:modified_time" content="2020-07-14T11:34:32+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[图]微软骚操作：通过Outlook在Android长按菜单中嵌入Bing搜索</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-14T11:34:32&#43;08:00">July 14, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>向 Android 平台输出 Microsoft Launcher 等优秀应用的同时，微软也采取激进的方式来推广自己的应用程序。去年，微软就在
+Android 的分享列表中插入了 OneDrive 广告，而援引外媒近日报道，微软现在通过 Android 端的 Outlook 应用，选中任意文本之后长按菜单中会有
+Bing 搜索的选项。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0714/f2d8bb94aa10fd2.jpg" alt="img:[图]微软骚操作：通过Outlook在Android长按菜单中嵌入Bing搜索"></p>
+<p>援引外媒 Android Police 报道，Pixel 社区论坛上部分已在设备上安装 Outlook 的用户反馈，在长按菜单中新增了“Bing Search”的新选项。但令人困扰的是，用户不仅没有安装 Bing 应用程序，而且该 Bing 搜索选项是系统级别的，选中任意文字长按都会出现这个选项。点开该选项，会通过 Outlook 的内置浏览器访问 Bing 搜索。</p>
+<p>外媒 XDA-Developers 随后对 Outlook 应用进行了分析，确认这种行为来自于该应用程序。不过，它似乎还需要安装 Edge 浏览器才能触发。</p>
+<p>Outlook在其Manifest文件中有一个 intent-filter，可以使其在高亮显示文本时出现在长按上下文菜单中。但是，除非启用了“Edge Integration”功能标志，否则这个 intent-filter 是被禁用的。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0714/a0f714350ea20e7.jpg" alt="img:[图]微软骚操作：通过Outlook在Android长按菜单中嵌入Bing搜索"></p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0714/aa3e44e2cd89743.jpg" alt="img:[图]微软骚操作：通过Outlook在Android长按菜单中嵌入Bing搜索"></p>
+<p>用户在安装 Outlook 和 Edge 之后，并将 Edge 作为默认浏览器之后，就能将 Bing 选项显示出来。在卸载 Outlook 之后，Bing 搜索方式就消失了。随后外媒再次尝试安装，发现一直无法让它再次显示。</p>
+<p>无论如何，这是一个相当公然滥用上下文菜单的行为，也是一种不恰当的宣传 Bing 的方式。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1002955/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">美国大学出奇招 搭帐篷上课</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1002953/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">全球第一即将易主？苹果市值逼近沙特阿美</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005103/">有那种质感了 《对马岛之鬼》黑泽明模式 VS 普通模式</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005087/">推特公布调查新进展：130个账号被攻击 45个被重置 8个数据被下载</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005085/">[图]EFF呼吁Twitter对所有私信施行端到端加密</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005107/">三丽鸥联动东方同人策划公开 博丽灵梦化身凯蒂猫形象更可爱</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005111/">“实验6”号成功下水 我国海洋科考再添利器</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

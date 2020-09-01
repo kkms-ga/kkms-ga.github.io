@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Linus Torvalds删除AWS工程师提交的补丁 表示这是愚蠢的行为 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Linus Torvalds删除AWS工程师提交的补丁 表示这是愚蠢的行为" />
+<meta property="og:description" content="“大神” Linus Torvalds 又来怼人了。据开源中国报道，近日，Linux 内核项目负责人 Linus Torvalds 删除了
+AWS 工程师提交的一个补丁，他认为这将导致所有使用该补丁的 Linux 用户的 CPU 性能下降(无论他们是否使用英特尔 CPU)
+。在回复该邮件时表示：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/988901/" />
+<meta property="article:published_time" content="2020-06-09T19:05:13+08:00" />
+<meta property="article:modified_time" content="2020-06-09T19:05:13+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Linus Torvalds删除AWS工程师提交的补丁 表示这是愚蠢的行为</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-09T19:05:13&#43;08:00">June 09, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>“大神” Linus Torvalds 又来怼人了。据开源中国报道，近日，Linux 内核项目负责人 Linus Torvalds 删除了
+AWS 工程师提交的一个补丁，他认为这将导致所有使用该补丁的 Linux 用户的 CPU 性能下降(无论他们是否使用英特尔 CPU)
+。在回复该邮件时表示：</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>天翼云高性能云主机1折起 低至74元/年</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0609/8775ffedc05dc85.png" alt="img:Linus Torvalds删除AWS工程师提交的补丁 表示这是愚蠢的行为"></p>
+<p>在我看来，这基本上是将缓存刷新指令导出到用户空间，并为进程提供了一种方式，可以说让与这事情无关的其他人也慢了下来。</p>
+<p>换言之，据我所知，这就是疯狂的 Intel 发布了有缺陷的 CPU，它给虚拟化代码带来了问题（我对此并不太在意），但现在要因为它的问题影响到本来就没有这些问题的 Linux 用户，这是完全没有意义的。</p>
+<p>我不想某个应用程序跑起来就像在说 ‘哦，我是一个特别的，漂亮的，如此娇嫩的花，我想刷新 L1D 上的每一个任务缓存，无论我在什么 CPU 上，无论它是否有漏洞’。因为这个应用程序不仅会降低自身速度，还会降低其他应用程序的速度。</p>
+<p>也就是说，漏洞确实存在，影响不大，但如果利用这个补丁来修复反而会让用户的电脑变得更慢。</p>
+<p>同时，他也指出，Linus 对虚拟化的引用其实也是针对 AWS 的，AWS 和其他云服务提供商一样，销售的虚拟 cpu 通常启用了同步多线程（simultaneous multithreading，SMT）功能。</p>
+<p>“在启用 SMT 的情况下，任务调度是分布式进行的，所以说，在任务结束与新任务开始之间刷新 L1D 缓存是非常愚蠢的。”</p>
+<p>对此，有网友表示赞成，认为这是典型的 AOE 补丁，打补丁之后，无论是 AMD 还是 Intel ，都会降低性能，不能通过是正常的。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0609/fb4999cae2a82c9.jpg" alt="img:Linus Torvalds删除AWS工程师提交的补丁 表示这是愚蠢的行为"></p>
+<p>也有些网友纯碎是来吃瓜的，表示 Linus 又口吐芬芳了，我的青春又回来了！（手动狗头）</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0609/47de6312e60637d.jpg" alt="img:Linus Torvalds删除AWS工程师提交的补丁 表示这是愚蠢的行为"></p>
+<p>新型攻击方式 Snoop </p>
+<p>那么，让大神吐槽的这个漏洞补丁是啥？</p>
+<p>据开源中国介绍，这种新型攻击名为“探听辅助 L1 数据采样攻击”，简称 Snoop （CVE-2020-0550）。</p>
+<p>今年 3 月，来自 AWS 的软件工程师 Pawel Wieczorkiewicz 发现了 Intel 处理器的这一漏洞，称它可能会泄露 CPU 内部存储器或缓存中的数据，涉及 CPU 包括 Intel 旗下流行的 Xeon 和 Core 系列处理器。Pawel 迅速向 Intel 报告了此问题，随后该漏洞被 Intel 定位为中等严重性漏洞。</p>
+<p>Snoop 攻击利用 Intel CPU 多级缓存、缓存一致性和总线监听等特性，通过位于 CPU 内核中的一级数据缓存（L1D），通过“总线监听”（bus snooping）功能 —— 在 L1D 中修改数据时发生的缓存更新操作，将数据从 CPU 中泄漏出来。</p>
+<p>所以，这个漏洞到底重不重要呢？</p>
+<p>在讲这个问题之前，先要明白三级缓存的概念。</p>
+<p>百度百科显示，通常，计算机会采用三级缓存的设计来提高 CPU 的运行效率，三级缓存包括 L1 一级缓存、L2 二级缓存、L3 三级缓存，这些缓存都集成在 CPU 内，它们的作用是作为 CPU 与主内存之间的高速数据缓冲区。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0609/c7a534a1ba751ee.png" alt="img:Linus Torvalds删除AWS工程师提交的补丁 表示这是愚蠢的行为"></p>
+<p>图片来源自网络（侵删）</p>
+<p>其中 L1 最靠近 CPU 核心；L2 其次；L3 再次。运行速度方面：L1 最快、L2 次快、L3 最慢；在执行一项任务时，CPU 会先在最快的 L1 中寻找需要的数据，找不到再去找次快的 L2，还找不到再去找 L3，L3 都没有才去内存找。</p>
+<p>一级缓存又可以分为一级数据缓存（Data Cache，D-Cache，L1D）和一级指令缓存(Instruction Cache，I-Cache，L1I)，分别用于存放数据及执行数据的指令解码，两者可同时被 CPU 访问，减少了 CPU 多核心、多线程争用缓存造成的冲突，提高了处理器的性能。</p>
+<p>也就是说，这个漏洞一旦被攻击者利用就会直接攻击电脑的核心，所以，Pawel 认为这一攻击方式是危险的，补丁是必要的。</p>
+<p>但 Linus Torvalds 却不这样认为。</p>
+<p>Intel 官方也给出了解释，表示这种新攻击很难实施，并且不会泄露大量数据，因为 L1D 缓存中的数据非常有限，并且只有在任务运行时调用数据的短暂时间内才会存在。</p>
+<p>我们不认为 Snoop 攻击在可信赖的操作系统环境下是一种实用的攻击方法，因为要利用这一漏洞需要同时满足很多苛刻的条件，比如攻击的时间要正好与用户打开程序的时间吻合，且程序调用的数据正好是攻击者想要窃取的数据。</p>
+<p>至于这个补丁是否真的没多大用处，我们也只能等待时间来证明了。</p>
+<p>“暴脾气”的开源之父： Linus Torvalds</p>
+<p>在开源世界，Linus Torvalds 是个如雷贯耳的名字。技术天才、大神、开源领袖……他开发的 linux 对开源软件运动功不可没，是所有 Geek 们的最爱。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0609/bf6af4ef0e315b5.jpg" alt="img:Linus Torvalds删除AWS工程师提交的补丁 表示这是愚蠢的行为"></p>
+<p>Linux 是一种自由和开放源代码的类 UNIX 操作系统。该操作系统的内核由 Linus Benedict Torvalds 在 1991 年 10 月 5 日首次发布。在加上用户空间的应用程序之后，成为 Linux 操作系统。</p>
+<p>但是，伟大的人总有点怪脾气，这位开源之父就经常因为讲话带有情绪，甚至是因为带有脏话的意见而饱受非议。但大多数情况下 Linus Torvalds 愤怒的主要原因都与技术有关，并不针对人。</p>
+<p>比如，2018 年，为了修补 Spectre 漏洞，Intel 工程师提供了一个间接分支限制推测（indirect branch restricted speculation, IBRS）功能的补丁。Linus Torvalds 当时就在邮件列表中公开指出 IBRS 会造成系统性能大幅降低，直言该补丁“就是彻彻底底的垃圾”，“Intel 真的要做这个 X 一样的东西？”</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0609/bf2a49be87b31c8.jpg" alt="img:Linus Torvalds删除AWS工程师提交的补丁 表示这是愚蠢的行为"></p>
+<p>再比如，他曾经是这样评价C++：“坦白的说，C++ 是一个非常可怕的语言，并且很多不合格的程序员都在使用它，这让它变得更可怕。即使你用C语言不做任何事情也可以把那些用 C++ 的程序员干掉。”</p>
+<p>甚至连 Windows 也没逃过他的吐槽。</p>
+<p>在一次采访中，记者问他对微软 Windows 操作系统的看法时，他回答道：Windows 作为一个操作系统，确实打造了许多还算 OK 的应用，其中有些还是非常不错的。但是从操作系统跟这个角度来看的话，Windows 真的是一个很烂的操作系统。从道德角度来看，他的影响会更大些。微软确实是在影响着世界，但是我觉得他们不应该涉及那么广，只顾着赚钱。”</p>
+<p>还有，在一次课堂上，当有学生问及英伟达芯片相关的问题时，Linus 更是简单粗暴，并且直接对着镜头来了这么个动作：</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0609/8130df9e55d4c3c.gif" alt="img:Linus Torvalds删除AWS工程师提交的补丁 表示这是愚蠢的行为"></p>
+<p>尽管他自己也意识到了自己的这个坏毛病，曾经还表示闭关反省，但网友们认为这也并非什么大问题，毕竟比起他做出的贡献，这些反而是大神的人格魅力。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0609/0d41ea8d4c93632.jpg" alt="img:Linus Torvalds删除AWS工程师提交的补丁 表示这是愚蠢的行为"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/988905/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">PS5用SSD硬盘预计可推动全球闪存行业需求大涨5%</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/988911/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">索尼建议PS5发布会观众戴耳机观看 以体验“酷炫音效”</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990273/">“智迎”新基建时代 戴尔携全新商用客户端产品及解决方案亮相中国</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990265/">首例儿童骑共享单车身亡案宣判 ofo被判赔6.7万</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990253/">以色列VTOL出租车开发商宣布将在CityHawk中使用氢燃料电池</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990269/">TCL新智能机外观专利曝光 或采用屏下隐藏式前摄方案</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990263/">OPPO Reno4 Pro 评测：亮点槽点并存，但依旧无缘性价比</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

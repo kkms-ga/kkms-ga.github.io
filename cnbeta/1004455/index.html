@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[技巧]如何在树莓派4开发板上使用Windows 10 IoT Core？ - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[技巧]如何在树莓派4开发板上使用Windows 10 IoT Core？" />
+<meta property="og:description" content="作为一款体积小巧的开发板，树莓派已经提供了预配置的系统环境。但对于追求更丰富的功能体验的用户来说，Windows 10 IoT Core 显然也是一个不错的选择。好消息是，曾于去年为树莓派 3 创建了 Windows on ARM 安装程序的开发者 José Manuel Nieto，现在又为树莓派 4 开发板的用户带来了 Windows 10 IoT Core 的轻松部署解决方案。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1004455/" />
+<meta property="article:published_time" content="2020-07-17T12:01:44+08:00" />
+<meta property="article:modified_time" content="2020-07-17T12:01:44+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[技巧]如何在树莓派4开发板上使用Windows 10 IoT Core？</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-17T12:01:44&#43;08:00">July 17, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>作为一款体积小巧的开发板，树莓派已经提供了预配置的系统环境。但对于追求更丰富的功能体验的用户来说，Windows 10 IoT Core 显然也是一个不错的选择。好消息是，曾于去年为树莓派 3 创建了 Windows on ARM 安装程序的开发者 José Manuel Nieto，现在又为树莓派 4 开发板的用户带来了 Windows 10 IoT Core 的轻松部署解决方案。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0717/3f4ff749999d0e6.jpg" alt="img:[技巧]如何在树莓派4开发板上使用Windows 10 IoT Core？"></p>
+<p>（图自：树莓派基金会）</p>
+<p>据悉，树莓派 4 的入门价格为 35 美元（约 245 RMB），顶配版则是 55 美元（约 385 RMB）。</p>
+<p>对于动手能力强的开发者来说，可通过 WoA Installer 在这款开发板上手动安装 Windows 10 IoT Core 操作系统。</p>
+<p>受硬件性能的限制，此前在树莓派上运行 Windows 10 的体验可能会让不少人感到抓狂。</p>
+<p>因为该项目最初仅支持 1GB RAM，从‘开始’菜单到 ARM64 版 Edge 浏览器的各种操作都很是卡顿，更别提恼人的‘蓝屏死机’问题。</p>
+<p>庆幸的是，开发者 Amir Dahan 现已设法突破了相关限制，让 DIY 爱好者可在具有 4GB RAM 的树莓派开发板上尽情体验流畅的 Windows 10 ARM 。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0717/26dacf98fc7e79a.jpg" alt="img:[技巧]如何在树莓派4开发板上使用Windows 10 IoT Core？"></p>
+<p>（图 via MSPU）</p>
+<p>以下是在树莓派 4 上安装 Windows 10 后的已知可用功能：</p>
+<p>● 板载的 USB 端口；</p>
+<p>● micro-HDMI 视频输出；</p>
+<p>● 3GB RAM 运存；</p>
+<p>● 蓝牙+以太网（需要 USB 接口的适配器）；</p>
+<p>● YouTube、Microsoft Edge、Paint.net 和 Microsoft Store；</p>
+<p>● 支持基于 x86 的应用程序，以及大多数 ARM64 应用程序。</p>
+<p>以下是尚未解决的问题：</p>
+<p>● 板载以太网卡、音频插孔和第二个 HDMI 端口不可用；</p>
+<p>● 图形卡加速还没搞定；</p>
+<p>● 板载的 Wi-Fi 和蓝牙功能暂不可用；</p>
+<p>● 基于仿真的 X64 应用程序无法运行，禁用补丁后的 VLC 无法播放 1080p @ 60fps 视频，大多数 Steam 游戏也没指望。</p>
+<p>如果能一路克服以上障碍，完成所有必须的硬件和驱动，便可在树莓派 4 上获得最佳的 Windows 10 性能体验，比如通过 USB 网卡来观看 YouTube 视频。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0717/14e6dfc9ee79a96.jpg" alt="img:[技巧]如何在树莓派4开发板上使用Windows 10 IoT Core？"></p>
+<p>资料图（来自：Microsoft）</p>
+<p>软硬件方面，最好通过 Minitool 或 Easeus 分区管理器，将系统安装在 Class 10 及以上的 32 / 64GB microSD 存储卡上，镜像文件可从 Discord 服务器上获取。</p>
+<p>● 下载完成后，在 .rar 压缩包中提取 OS 文件。</p>
+<p>● 找到选定的 Windows 10 编译版本所在的路径。</p>
+<p>● 打开 Ether for Windows 软件，将系统文件写入到 microSD 存储卡中。</p>
+<p>● 使用分区管理器软件，将 microSD 卡上的未分配空间扩展出来。</p>
+<p>● 在树莓派 4 上插入 microSD 卡，连接键鼠和显示器。</p>
+<p>● 运行补丁以解锁 3GB RAM 运存（可在同一个 Discord 服务器上获取补丁）。</p>
+<p>需要指出的是，写入和安装 Windows 10 的整个过程，可能需要耗费一个小时的时间。想要加快这一流程的话，还是建议使用 Class 10 及以上标称速率的存储卡。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1004449/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">当当成立权益保护部：重点招募有司法经验人员 防李国庆再抢公章</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1004453/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">渭南上百辆共享单车被当垃圾倾倒 城管：防单车公司“偷盗”</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006277/">调查发现英国超四分之一人不愿意接种新冠疫苗 专家：极其自私</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006283/">iPhone 12原装线有惊喜？ C to Lightning快充编织线评测</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006291/">《对马岛之鬼》赞誉宣传片：具有美感和深意的武士英雄史诗</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006293/">爆料称Galaxy Note 20 Ultra将支持微软xCloud云端游戏串流</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006299/">COVID-19：病毒如何关闭了我们的蛋白质合成，导致免疫系统全面瘫痪</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

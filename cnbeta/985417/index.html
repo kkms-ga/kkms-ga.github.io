@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>苹果为ID验证漏洞 支付十万美元赏金 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="苹果为ID验证漏洞 支付十万美元赏金" />
+<meta property="og:description" content="近日，苹果最近向印度漏洞研究人员Bhavuk
+Jain支付了100,000美元赏金，奖励其发现影响“ 使用Apple登录 ”系统的严重漏洞。该漏洞是Bhavuk上个月向苹果安全团队报告，目前苹果现在已修复此漏洞。这个已修补的漏洞，可以使远程攻击者绕过身份验证，接管使用“使用Apple登录”选项注册的第三方服务和应用程序上的帐户。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/985417/" />
+<meta property="article:published_time" content="2020-05-31T23:58:55+08:00" />
+<meta property="article:modified_time" content="2020-05-31T23:58:55+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">苹果为ID验证漏洞 支付十万美元赏金</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-31T23:58:55&#43;08:00">May 31, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>近日，苹果最近向印度漏洞研究人员Bhavuk
+Jain支付了100,000美元赏金，奖励其发现影响“ 使用Apple登录 ”系统的严重漏洞。该漏洞是Bhavuk上个月向苹果安全团队报告，目前苹果现在已修复此漏洞。这个已修补的漏洞，可以使远程攻击者绕过身份验证，接管使用“使用Apple登录”选项注册的第三方服务和应用程序上的帐户。</p>
+<p>访问:</p>
+<p>苹果在线商店(中国)</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0531/6ef109372211513.jpg" alt="img:苹果为ID验证漏洞 支付十万美元赏金"></p>
+<p>去年，苹果公司在WWDC会议启动了“苹果ID ”登录第三方的保护隐私机制，该机制允许用户使用苹果ID注册第三方应用程序帐户，并且无需透露实际电子邮件地址。</p>
+<p>Bhavuk Jain 在向媒体表示，他发现的漏洞存在于Apple在启动过程中，与苹果服务器认证过程中。</p>
+<p>对于那些不了解实际情况的用户，在服务器上通过“使用Apple登录”进行用户身份验证时，可以生成JSON Web令牌（JWT），其中就包含第三方应用程序发来确认登录用户身份的机密信息。</p>
+<p>Bhavuk发现，尽管Apple会要求用户在发起请求之前，登录Apple帐户，但是并没有验证是否是同一个人在身份验证服务器请求JSON Web令牌（JWT）。</p>
+<p>所以，该机制中缺少的验证问题，可能允许攻击者获取属于受害者的单独Apple ID，从而诱骗Apple服务器生成有效的JWT，最终导致受害者的身份信息被其他人从第三方获取。</p>
+<p>Bhavuk表示：“我发现可以向JWT请求来自Apple的任何电子邮件ID，并且使用Apple公钥验证获取的令牌签名后，就可以登录。这意味攻击者可以通过链接获取任何Email ID 并通过访问权限伪造JWT，进而访问受害者帐户。”</p>
+<p>即使在第三方服务中隐藏电子邮件ID，该漏洞仍然有效，并且黑客可以利用该漏洞利用受害者的Apple ID来注册新帐户。</p>
+<p>Bhavuk还补充说：“此漏洞的影响非常严重，因为它可能导致整个帐户被黑客接管。”</p>
+<p>现在许多开发人员已将Sign In与Apple集成在一起，因为这种方式可以帮助其他社交工具减少获客成本。</p>
+<p>开发人员表示，尽管该漏洞存在于Apple代码端，但是用户“使用Apple登录”的服务和应用程序中并不受到影响，而且苹果公司现在已修复此漏洞。</p>
+<p>在发放奖金之后，苹果公司正在公司的服务器进行调查，从而确定过去因为该漏洞被影响和破坏的帐户。</p>
+<p>需要注意的是，除了这次漏洞，本月早些时候德国达姆施塔特大学的研究人员检查了 MagicPairing 协议中，还发现了iOS、macOS 和它们之间的十个公开漏洞，这些漏洞至今尚未得到解决。</p>
+<p>相关文章:</p>
+<p>Sign in with Apple被爆高危漏洞：可远程劫持任意用户帐号</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/985419/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">ThinkPad新品集体上架开售：LTE版X1 Carbon、锐龙版14s/E14</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/987591/">锐龙3000XT在招手 锐龙7 3700X降价500清仓了？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/987587/">中国移动公示整改进度：下线大批套餐、解决选择难题</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/987589/">亩产可达500公斤 今年海水稻推广扩大到10万亩</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/987581/">反腐组织呼吁调查 Moderna 高管的股票交易</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/987583/">美国竞选筹款新路子：Zoom会议20分钟筹400万美元</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

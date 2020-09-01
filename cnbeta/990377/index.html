@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>NVIDIA揭秘：安培GPU开发了4年 826mm已达7nm极限 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="NVIDIA揭秘：安培GPU开发了4年 826mm已达7nm极限" />
+<meta property="og:description" content="NVIDIA的Ampere安培GPU发布就要1个月了，目前问世的主要是面向数据中心市场的A100核心，540亿晶体管、826mm2核心面积的它绝对是怪兽级GPU。NVIDIA表示，安培GPU开发花了他们4年时间，这么大的核心已经达到了台积电7nm极限了。NVIDIA官方网站上今天发了一篇博客，GPU工程部门的联席主管Jonah
+Alben谈到了安培GPU的很多内幕信息。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/990377/" />
+<meta property="article:published_time" content="2020-06-12T20:38:26+08:00" />
+<meta property="article:modified_time" content="2020-06-12T20:38:26+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">NVIDIA揭秘：安培GPU开发了4年 826mm已达7nm极限</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-12T20:38:26&#43;08:00">June 12, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>NVIDIA的Ampere安培GPU发布就要1个月了，目前问世的主要是面向数据中心市场的A100核心，540亿晶体管、826mm2核心面积的它绝对是怪兽级GPU。NVIDIA表示，安培GPU开发花了他们4年时间，这么大的核心已经达到了台积电7nm极限了。NVIDIA官方网站上今天发了一篇博客，GPU工程部门的联席主管Jonah
+Alben谈到了安培GPU的很多内幕信息。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>天翼云“年中上云节”已上线 云产品全场0.6折起 8888元礼包全场可用</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p>访问购买页面:</p>
+<p>京东NVIDIA系列商品汇总</p>
+<p>根据Jonah Alben所说，在安培GPU的研发过程中，他需要团结硬件、软件及系统团队一切可能的力量，花费了4年时间才研发出这个怪兽，A100 GPU的性能是上一代GPU的20倍（注：只是AI性能，实际性能提升没有这么夸张。）</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0612/c5c3e9fc601ab71.png" alt="img:NVIDIA揭秘：安培GPU开发了4年 826mm已达7nm极限"></p>
+<p>A100 GPU使用了台积电的7nm工艺，集成了540亿晶体管，核心面积826mm2，这几乎是7nm工艺的极限水平了，Jonah Alben面临的挑战就是在这样的核心中集成更多的功能单元，否则就要重新开发GPU架构。</p>
+<p>为了充分利用这些条件，NVIDIA在A100 GPU上设计了不少冗余单元，这也是现有的A100 GPU并非满血版的原因，完整的128组SMX、8196个流处理器中目前只启用了108组SMX单元、6912个CUDA核心，6组HBM2显存也只启用了5组HBM2，所以总容量为40GB，总位宽为5120-bit。</p>
+<p>至于未来会不会解锁完整版核心，NVIDIA倒是没有表态，但从之前的情况来看，大概率会再推一波Super系列。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0612/98b8b8c499a751a.jpg" alt="img:NVIDIA揭秘：安培GPU开发了4年 826mm已达7nm极限"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0612/c1c17f4926ff9d2.jpg" alt="img:NVIDIA揭秘：安培GPU开发了4年 826mm已达7nm极限"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/990389/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">索尼公布第一批PS5游戏：这5款不能错过</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/990361/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">浑水创始人回应为何做空跟谁学：它好得令人难以置信</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/992323/">波士顿动力商业化的里程碑 是只售价将近53万的天价网红机器狗</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/992339/">LG为削减新机成本找供应商砍价：除了高通、其它元件都降了5%</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/992341/">红旗H9申报信息曝光 搭载2.5T发动机？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/992331/">美国公司提供Switch破解芯片安装服务 任天堂发出警告信</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/992317/">挪威紧急挽回声誉  海产局否认新发地新冠病毒来自三文鱼</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Fedora 开发者讨论放弃支持 Legacy BIOS 的可能性 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Fedora 开发者讨论放弃支持 Legacy BIOS 的可能性" />
+<meta property="og:description" content="Fedora 开发者正在争论结束 Legacy BIOS 对这个 Linux 发行版的引导支持，只支持基于 UEFI 的安装的好处。考虑到 Fedora 33 GRUB 的变更计划，如果他们只是切换到基于 UEFI 的 systemd
+sd-boot，以及英特尔计划在2020年结束终止支持 Legacy BIOS，并且 UEFI 在 x86_64
+系统中已经非常普遍，那么事情会变得更加容易。Fedora 开发者正在讨论现在开始逐步取消支持 Legacy BIOS 是否为好时机。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/998549/" />
+<meta property="article:published_time" content="2020-07-03T09:10:52+08:00" />
+<meta property="article:modified_time" content="2020-07-03T09:10:52+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Fedora 开发者讨论放弃支持 Legacy BIOS 的可能性</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-03T09:10:52&#43;08:00">July 03, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Fedora 开发者正在争论结束 Legacy BIOS 对这个 Linux 发行版的引导支持，只支持基于 UEFI 的安装的好处。考虑到 Fedora 33 GRUB 的变更计划，如果他们只是切换到基于 UEFI 的 systemd
+sd-boot，以及英特尔计划在2020年结束终止支持 Legacy BIOS，并且 UEFI 在 x86_64
+系统中已经非常普遍，那么事情会变得更加容易。Fedora 开发者正在讨论现在开始逐步取消支持 Legacy BIOS 是否为好时机。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0703/707867f1a4bbbbb.png" alt="img:Fedora 开发者讨论放弃支持 Legacy BIOS 的可能性"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0703/67df1f357a6e466.jpg" alt="img:Fedora 开发者讨论放弃支持 Legacy BIOS 的可能性"></p>
+<p>当然，并不是所有人都同意 Fedora 放弃支持 Legacy BIOS 的想法。一些使用 2012~2013 年时期硬件的用户对可能无法在他们的无 UEFI 硬件上使用新的 Fedora 版本表示失望。</p>
+<p>他们还提出另外一个要点，即使大多数关键组件已经支持 UEFI 启动的虚拟机多年，部分虚拟化设置仍然默认使用或高度依赖 Legacy BIOS 引导。</p>
+<p>目前尚未提出正式的提案来终止支持 Legacy BIOS 并只支持 UEFI，不过 Fedora 团队已开始对该问题展开积极讨论。</p>
+<p>考虑到系统变更的最后期限已过，相信不会在今年晚些时候看到 Fedora 33 放弃支持 Legacy BIOS，但也许在明年或下一年，我们会看到他们放弃支持 Legacy BIOS 的计划，以更好地关注现代硬件，并探索其他可能性，如从 GRUB 转向 SD-BOOT。</p>
+<p>最后做个小调查，你使用哪种方式引导 Linux 安装？</p>
+<p>0：Legacy BIOS</p>
+<p>1：UEFI</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/998563/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">石油交易商试图利用苹果流动趋势数据预测市场复苏 结果令人失望</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/998537/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">特斯拉因涉及隐瞒电池包设计缺陷遭美国监管机构调查</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1000393/">Alphabet旗下Loon开始在肯尼亚提供首个商业互联网服务</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1000411/">Synaptics将以2.5亿美元收购博通的无线物联网业务</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1000395/">消息称美正考虑禁用部分中国社交媒体App TikTok回应</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1000401/">纯电版Macan呼之欲出 保时捷莱比锡工厂新车间完成外部施工</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1000413/">Binance完成对Swipe收购：将推动加密借记卡计划展开</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

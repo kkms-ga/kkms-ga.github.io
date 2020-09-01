@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>挑战树莓派：RISC-V 微型计算机 PicoRio 发布 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="挑战树莓派：RISC-V 微型计算机 PicoRio 发布" />
+<meta property="og:description" content="深圳商报报道，今年 7 月，RISC-V 国际开源实验室（RIOS）发布了首个可运行 Linux 系统的 RISC-V 架构微型计算机 PicoRio，成为继树莓派之后又一款开源的微型计算机系统。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1023001/" />
+<meta property="article:published_time" content="2020-09-01T09:05:37+08:00" />
+<meta property="article:modified_time" content="2020-09-01T09:05:37+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">挑战树莓派：RISC-V 微型计算机 PicoRio 发布</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-09-01T09:05:37&#43;08:00">September 01, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>深圳商报报道，今年 7 月，RISC-V 国际开源实验室（RIOS）发布了首个可运行 Linux 系统的 RISC-V 架构微型计算机 PicoRio，成为继树莓派之后又一款开源的微型计算机系统。</p>
+<p>据悉，PicoRio 基于最新的 RISC-V 指令集构建，从 CPU 设计到 PCB 电路板设计，再到操作系统核心软件全部开源。RIOS 方面表示，PicoRio 对标的正是基于 ARM 架构的开源微型计算机系统 Raspberry Pi （树莓派）。</p>
+<p>挑战树莓派</p>
+<p>作为最成功的微型计算机，开源的树莓派在技术圈和学术界一直广受编程爱好者的好评，各路大神基于树莓派制作的新奇玩意儿层出不穷，围绕这款微型计算机已经形成了一种独特的 DIY 文化，相关的开源软件生态建设也十分丰富。据统计，截至 2019 年 12 月，树莓派的全球销量已经突破 3000 万套 。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0901/8a74255e312e5b4.jpeg" alt="img:挑战树莓派：RISC-V 微型计算机 PicoRio 发布"></p>
+<p>业界认为，树莓派的成功对 ARM 架构的推广起到了积极的作用。自面世以来，树莓派就凭借其轻便小巧、低能耗、低成本的特点受到年轻一代技术爱好者的追捧，一款树莓派4 2G 版本仅售 35 美元。很多年轻的 ARM 开发者正是通过树莓派入门，成为 ARM 软硬件生态开发潜在的技术人才。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0901/64589e70250068d.jpeg" alt="img:挑战树莓派：RISC-V 微型计算机 PicoRio 发布"></p>
+<p>而与树莓派相比，PicoRio 最大的特点无疑是其开源得更加彻底：基于开源的 64 位RISC-V 多核处理器芯片。而在其他方面，据官方介绍，PicoRio 1.0 版本支持 Linux 和 Google V8 JavaScript 引擎。其预期功耗（待机 0.05 瓦，工作 0.5 瓦）比树莓派 4（待机 3.4，工作 7.6）更低，更适合一些对续航与低能耗要求高的场景，比如边缘计算和物联网终端。</p>
+<p>RIOS 联合主任谭章熹表示，构建 PicoRio 这样一个开源的硬件平台，将对 RISC-V 的推广带来非常积极的作用。</p>
+<p>“CPU 领域的 Linux”</p>
+<p>众所周知，目前全球的 CPU 市场几乎被 X86 和 ARM 两大架构垄断。X86 在英特尔和 AMD 的掌握下，统治了服务器、PC 端市场；而 ARM 则垄断了移动端和嵌入式设备市场。</p>
+<p>而正是在这样的环境下，一套名为 RISC-V 的全新指令集在 2010 年诞生，让开源的理念得以进一步延伸至硬件领域，甚至开始撬动全球芯片市场的格局。</p>
+<p>2010 年，美国伯克利的 Krste Asanovic 教授需要为科研项目选择一个指令集。但由于英特尔对X86 的授权十分严格，ARM 的授权费用又十分昂贵，于是 Krste 教授决定带领团队开发一个全新的指令集。Krste 的团队得到了 RISC 发明者之一，David Patterson 教授的支持。三个月后，在四名成员的协力研发下，RISC-V 指令集的雏形诞生了。</p>
+<p>虽然 Krste 的团队仅花费 3 个月时间就完成了 RISC-V 基础指令集的开发，但为了完善一系列的扩展指令以及进行流片测试，直到 2014 年，第一版 RISC-V 用户手册才正式发布。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0901/9349c7031d49d08.jpeg" alt="img:挑战树莓派：RISC-V 微型计算机 PicoRio 发布"></p>
+<p>Krste Asanovic</p>
+<p>RISC-V 指令集是基于精简指令集计算（RISC）原理建立的开放指令集架构（ISA），RISC-V 是在指令集不断发展和成熟的基础上建立的全新指令。RISC-V 指令集完全开源，设计简单，易于移植 Unix 系统，采用模块化设计，拥有完整的工具链，同时有大量的开源实现和流片案例，已在社区得到大力支持。</p>
+<p>很快，功能完善且完全开源的 RISC-V 受到了全球芯片开发者的关注。2016 年初，非盈利组织 RISC-V 基金会正式成立，RISC-V 创始人 Krste Asanovic 教授担任基金会主席。该基金会成立短短两年间，就已经有来自全球的 150 多个组织加入，其中包括谷歌、华为、英伟达、高通、麻省理工学院、普林顿大学、印度理工学院、中科院计算所等知名企业和高校机构。乘着开源的东风，RISC-V 进入了高速发展阶段。这个时候，甚至已经开始有人把 RISC-V 称作 “CPU 领域的 Linux”。</p>
+<p>RISC-V 在国内的发展</p>
+<p>近年来，随着国内“芯片独立”的呼声越来越高，RISC-V 开源的特性自然也受到了国内开发者的关注。</p>
+<p>2018 年，中国开放指令生态（RISC-V）联盟成立，联盟发起单位包括中科院计算所、北京大学、清华大学、阿里—中天微、百度、中芯国际等近 20 家国内研究机构和企业，由中国工程院院士倪光南担任理事长。联盟秘书长包云岗曾公开表示：“RISC-V 指令集有望像开源软件生态中的 Linux 那样，成为计算机芯片与系统创新的基石。”</p>
+<p>而在 2019 年 11 月，清华-伯克利深圳研究院建立 RISC-V 国际开源实验室 RIOS ，由图灵奖获得者 David Patterson 担任实验室主任，进一步推动 RISC-V 在全球范围内的普及与发展。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0901/f5a8f853bc2710e.jpeg" alt="img:挑战树莓派：RISC-V 微型计算机 PicoRio 发布"></p>
+<p>David Patterson</p>
+<p>自国内大力推动 RISC-V 以来，阿里平头哥等国内科技公司都基于 RISC-V 架构推出了自研的芯片产品，打破了国外长久以来在芯片领域的技术垄断。</p>
+<p>坚持开放治理</p>
+<p>RISC-V 在中国的活跃也让美国方面有所反应。</p>
+<p>2019 年，美国一些共和党议员曾表示，他们担心美国将失去对 RISC-V 芯片架构的影响力。美方认为，RISC-V 架构可用于为几乎每种类型的电子设备制造微处理器，从而使其成为现代经济的重要组成部分。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0901/05b20a0a042e8e3.png" alt="img:挑战树莓派：RISC-V 微型计算机 PicoRio 发布"></p>
+<p>美国商务部在给路透社的一份声明中表示，其控制措施旨在维护美国的国家安全，并“确保不良行为者不能获取损害美国公民或利益的技术，同时促进创新以促进美国继续保持技术领先地位”。</p>
+<p>考虑到中美贸易冲突引发的一系列问题，为保持项目的中立性，RISC-V 基金会于 2020 年 3 月将位于美国的总部迁往中立国瑞士。RISC-V 首席执行官 Calista Redmond 在接受路透社采访时表示，“希望确保美国以外的大学、政府和公司可以帮助开发 RISC-V 这一开源技术。自创建以来，中国公司就可以使用 RISC-V 架构，该架构是公开可用的。”</p>
+<p>Calista 表示该基金会的全球合作迄今尚未遇到任何限制，但成员“对可能的地缘政治破坏感到担忧”。她解释：“在世界各地，我们都听说‘如果公司不在美国，我们会更自在’。”</p>
+<p>未来</p>
+<p>在开源软件席卷全球的同时，开源代码硬件基础也在稳步发展，而被誉为“芯片界 Linux”的RISC-V 就是其中最为火热的项目。作为新兴的开源芯片架构，RISC-V 目前的生态还处在一个初级的阶段，但得益于其始终坚持开放治理的开源准则，吸引了大量科技巨头的进驻，生态建设发展很快。</p>
+<p>以目前 RISC-V 在业界掀起的巨大波澜来看，不少业内人士都十分看好 RISC-V 能在未来打破 ARM 和 X86 的垄断。PicoRio 的出现，正是 RISC-V 向年轻开发者普及过程中迈出的重要一步。</p>
+<p>“RISC-V 是非常好的，除了它本身的技术价值以外，它的开放特性决定了可以很容易的进行产业化。”中国开放指令生态联盟理事长倪光南表示，“中国的新一代信息技术，比如大数据、5G、物联网、VR、边缘计算都可以尝试采用 RISC-V，全世界都知道中国的产品很便宜，性价比很好，大家都用，那么基于 RISC-V 的 CPU 将会在世界范围内成为主流。”</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1023005/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">特斯拉电池日不断临近 马斯克暗示将会有重大容量增长</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1022997/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[视频]推特启用Quote功能：可显示带评论的推文数量</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023151/">《精灵宝可梦Go》将于10月停止对旧版iOS和Android平台的支持</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023149/">iOS版谷歌相册应用更新 支持修剪编辑和添加视频滤镜</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023147/">[图]科学家克服硅融入锂电池难题 可打造轻便、高容量电池</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023097/">吃胡萝卜能让你获得夜视能力？并不能，但是背后有个好玩的历史</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023101/">蚊子传播那么多疾病，自己怎么没事？</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

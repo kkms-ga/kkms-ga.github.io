@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>JavaScript 引擎 V8 发布 8.3 版本 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="JavaScript 引擎 V8 发布 8.3 版本" />
+<meta property="og:description" content="JavaScript 引擎 V8 发布了 8.3 版本（测试阶段），正式版本将在之后随 Chrome 83 一起推出。8.3 版本带来了一些面向开发人员的特性，主要亮点包括：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/974931/" />
+<meta property="article:published_time" content="2020-05-05T08:32:44+08:00" />
+<meta property="article:modified_time" content="2020-05-05T08:32:44+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">JavaScript 引擎 V8 发布 8.3 版本</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-05T08:32:44&#43;08:00">May 05, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>JavaScript 引擎 V8 发布了 8.3 版本（测试阶段），正式版本将在之后随 Chrome 83 一起推出。8.3 版本带来了一些面向开发人员的特性，主要亮点包括：</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0505/ef71abf4511ddf3.png" alt="img:JavaScript 引擎 V8 发布 8.3 版本"></p>
+<p>垃圾收集器中更快的 ArrayBuffer 跟踪</p>
+<p>ArrayBuffer 的后备存储是使用嵌入器提供的 ArrayBuffer::Allocator 在 V8 堆之外分配的。当垃圾收集器回收其 ArrayBuffer 对象时，需要释放这些后备存储。V8 v8.3 具有跟踪 ArrayBuffer 及其后备存储的新机制，该机制允许垃圾回收器迭代并同时将后备存储释放给应用程序。这将 ArrayBuffer 繁重的工作负载中的总 GC 暂停时间减少了 50％。</p>
+<p>更大的 Wasm 内存</p>
+<p>根据 WebAssembly 规范的更新，V8 v8.3 现在允许模块请求最大为 4GB 的内存，从而允许将更多内存密集型用例引入 V8 驱动的平台。要注意的是，这么多的内存可能并不总是在用户的系统上可用；建议以较小的大小创建内存，根据需要进行扩展，并适当地处理增长失败的情况。</p>
+<p>修复</p>
+<p>存储到原型链上具有类型数组的对象</p>
+<p>根据 JavaScript 规范，当将值存储到指定键时，需要查找原型链，以查看键是否已存在于原型中。这些密钥通常不存在于原型链中，因此 V8 安装了快速查找处理程序。</p>
+<p>但最近在某些特殊情况中，V8 错误地安装了此快速查找处理程序，从而导致了错误的行为。当 TypedArray 在原型链上时，所有存储到 TypedArray 的 OOB 的键都应被忽略。例如，在低于 v[2] 的情况下，不应向 v 添加属性，并且后续读取应返回 undefined。</p>
+<p>V8 的快速查找处理程序无法处理这种情况，因此在上例中，将返回 123 。V8 v8.3 通过在 TypedArrays 在原型链上时不使用快速查找处理程序来解决此问题。这种情况并不常见，在基准测试中尚未发现任何性能下降的情况。</p>
+<p>更新说明：</p>
+<p><a href="https://v8.dev/blog/v8-release-83">https://v8.dev/blog/v8-release-83</a></p>
+<p>访问:</p>
+<p>阿里云 - 最高1888元通用代金券立即可用</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/974923/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">苹果反对美国政府干预其对Corellium公司提起的诉讼</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/974929/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[图]Windows 10 May 2020将改善Chrome的通知功能</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976489/">被炒员工谈亚马逊工作体验：贝佐斯已脱离“群众”</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976493/">MeerKAT望远镜图像：原来“x星系”背后还有这样的秘密</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976491/">比特大陆内斗升级到“抢营业执照”，吴忌寒：就是干，不要怂</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976475/">科学家首次发现新冠病毒可能还潜伏在精液中</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976473/">官方公布首批登陆 Xbox Series X 的第三方游戏</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

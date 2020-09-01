@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Arm 计划将 SLS 补丁反向移植到 GCC 10 和 GCC 9 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Arm 计划将 SLS 补丁反向移植到 GCC 10 和 GCC 9" />
+<meta property="og:description" content="6 月份，Google 的 SafeSide 小组在 ARM 处理器的 Armv8-A（Cortex-A）CPU 体系结构中发现了一个名为 Straight-Line Speculation（SLS）的新漏洞（CVE-2020-13844），该漏洞可导致攻击者对ARM架构处理器进行侧信道攻击。彼时，Arm 对该漏洞进行了披露，不过并未引起公众太大的关注。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1006717/" />
+<meta property="article:published_time" content="2020-07-23T10:43:22+08:00" />
+<meta property="article:modified_time" content="2020-07-23T10:43:22+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Arm 计划将 SLS 补丁反向移植到 GCC 10 和 GCC 9</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-23T10:43:22&#43;08:00">July 23, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>6 月份，Google 的 SafeSide 小组在 ARM 处理器的 Armv8-A（Cortex-A）CPU 体系结构中发现了一个名为 Straight-Line Speculation（SLS）的新漏洞（CVE-2020-13844），该漏洞可导致攻击者对ARM架构处理器进行侧信道攻击。彼时，Arm 对该漏洞进行了披露，不过并未引起公众太大的关注。</p>
+<p>目前，该 SLS 漏洞似乎已经变得愈发严重起来。Arm 方面正在着手将 GCC 11 开发代码中的缓解措施反向移植到 GCC 10 甚至是 GCC 9。Arm 的一位工程师已经发布了一个 SLS 补丁程序，该补丁程序将反向移植到 GCC 9，而 GCC 10 的补丁则预计将在 GCC 10.2 发布后出现。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0723/d86c524f0776e24.png" alt="img:Arm 计划将 SLS 补丁反向移植到 GCC 10 和 GCC 9"></p>
+<p>Arm 于本月初将其最初的 SLS 缓解措施合并到了 GCC Git 中，涵盖 RET 和 BR 指令。用户现下可通过编译器在易受攻击的指令周围插入 speculation barrier（SB）指令来缓解 SLS。不过 Arm 方面表示，其不建议默认情况下启用这些基于编译器的缓解措施，理由是过度使用 SB 指令会对性能造成影响。</p>
+<p>可以通过 -mharden-sls= 来启用 GCC 的 Arm SLS 缓解。其中值为“all”时，可缓解所有易受攻击的指令，为“retbr”时则仅在 RET 和 BR 指令上插入 speculation barrier，而“blr”只用于缓解 BLR usage。当前，此 Arm SLS 缓解措施尚不支持 per-function basis 缓解。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1006693/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Altan K26功能机在墨西哥上市 预装KaiOS移动操作系统</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1006703/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">十铨推出EX2 Elite SATA SSD与201 Impression USB闪存盘</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1008535/">暴雪官方重申：《魔兽世界》不会登陆主机</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1008525/">Analogue宣布Pocket掌机延期至明年上市 但预购将很快开启</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1008533/">研究：即便是最好的人脸识别算法也会受到口罩干扰</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1008545/">美CDC：1/3新冠肺炎幸存者在经历着挥之不去的症状</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1008547/">美航司要求旅客严格遵从佩戴口罩的要求 否则或被加入内部禁飞名单</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

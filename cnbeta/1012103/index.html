@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Intel 12代酷睿冲上16核心8大8小、GPU很奇怪 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Intel 12代酷睿冲上16核心8大8小、GPU很奇怪" />
+<meta property="og:description" content="Tiger Lake、Rocket Lake 11代酷睿还没发布，Alder Lake
+12代酷睿就一直曝料不断，甚至官方都确认将在2021年下半年发布。Alder
+Lake将采用升级版的10nm&#43;&#43;工艺，也是Intel桌面平台首次转入10nm，同时首次使用大小核设计，其中大核来自Core酷睿家族，小核则来自Atom凌动家族，另外还有Xe架构的核芯显卡。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1012103/" />
+<meta property="article:published_time" content="2020-08-05T22:26:26+08:00" />
+<meta property="article:modified_time" content="2020-08-05T22:26:26+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Intel 12代酷睿冲上16核心8大8小、GPU很奇怪</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-05T22:26:26&#43;08:00">August 05, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Tiger Lake、Rocket Lake 11代酷睿还没发布，Alder Lake
+12代酷睿就一直曝料不断，甚至官方都确认将在2021年下半年发布。Alder
+Lake将采用升级版的10nm++工艺，也是Intel桌面平台首次转入10nm，同时首次使用大小核设计，其中大核来自Core酷睿家族，小核则来自Atom凌动家族，另外还有Xe架构的核芯显卡。</p>
+<p>Alder Lake的大小核配置之前有过一些说法，现在(应该)完整名单来了，分为Alder Lake-S、Alder Lake-P两大系列，但具体定位区别无法确认，看起来可能是根据GPU规模做的划分。</p>
+<p>Alder Lake-S系列拥有2-8个大核心、0-8个小核心，合计最多16核心、最烧2核心，同时都是1个GPU核心——架构升级到Xe之后，核心数量计算方式显然会和现在不一样，1个GPU核心到底对应多少执行单元还不得而知。</p>
+<p>Alder Lake-P系列则是2-6个大核心、0-8个小核心，合计最多14核心、最少2核心，同时都是2个GPU核心。</p>
+<p>此前说法成，Alder Lake-S系列的热设计功耗目前设定最高125W，但也在研究150W的可行性。</p>
+<p>由于接口又要变成新的LGA1700，配套芯片组也会是新的，这次也曝光了4个不同级别的个版本，包括Base基础款、Mainstream主流款、Premium高级款、Super超级款。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0805/1c03327e97a53db.png" alt="img:Intel 12代酷睿冲上16核心8大8小、GPU很奇怪"></p>
+<p>Alder Lake系列划分：</p>
+<p>{ CPUID_ALDERLAKE_S_A0, “Alderlake-S A0” },</p>
+<p>{ CPUID_ALDERLAKE_P_A0, “Alderlake-P A0” }</p>
+<p>Alder Lake-S CPU配置：</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_S_ID_1, “Alderlake-S (8+8+1)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_S_ID_2, “Alderlake-S (8+6+1)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_S_ID_3, “Alderlake-S (8+4+1)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_S_ID_4, “Alderlake-S (8+2+1)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_S_ID_5, “Alderlake-S (8+0+1)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_S_ID_6, “Alderlake-S (6+8+1)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_S_ID_7, “Alderlake-S (6+6+1)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_S_ID_8, “Alderlake-S (6+4+1)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_S_ID_9, “Alderlake-S (6+2+1)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_S_ID_10, “Alderlake-S (6+0+1)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_S_ID_11, “Alderlake-S (4+0+1)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_S_ID_12, “Alderlake-S (2+0+1)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_P_ID_1, “Alderlake-P (2+8+2)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_P_ID_2, “Alderlake-P (2+4+2)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_P_ID_3, “Alderlake-P (6+8+2)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_P_ID_4, “Alderlake-P (6+4+2)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_P_ID_5, “Alderlake-P (4+8+2)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_P_ID_6, “Alderlake-P (2+4+2)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_P_ID_7, “Alderlake-P (2+8+2)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_P_ID_8, “Alderlake-P (2+0+2)” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_P_ID_9, “Alderlake-P (2+0+2)” },</p>
+<p>Alder Lake GPU配置：</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_GT0, “Alderlake GT0” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_GT1, “Alderlake GT1” },</p>
+<p>[…]</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_P_GT2, “Alderlake P GT2” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADL_S_GT1, “Alderlake S GT1” },</p>
+<p>Alder Lake PCH芯片组配置：</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_P_ESPI_0, “Alderlake-P-Base SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_P_ESPI_1, “Alderlake-P-Super SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_P_ESPI_2, “Alderlake-P Premium SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_P_ESPI_3, “Alderlake-P Mainstream SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_P_ESPI_4, “Alderlake-P-Base SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_P_ESPI_5, “Alderlake-P-Base SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_P_ESPI_6, “Alderlake-P Super SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_P_ESPI_7, “Alderlake-P Premium SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_P_ESPI_8, “Alderlake-P-Base SKU” },</p>
+<p>[…]</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_P_ESPI_31, “Alderlake-P-Base SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_S_ESPI_0, “Alderlake-S-Base SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_S_ESPI_1, “Alderlake-S-Super SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_S_ESPI_2, “Alderlake-S Premium SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_S_ESPI_3, “Alderlake-S Mainstream SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_S_ESPI_4, “Alderlake-S-Base SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_S_ESPI_5, “Alderlake-S-Base SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_S_ESPI_6, “Alderlake-S Super SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_S_ESPI_7, “Alderlake-S Premium SKU” },</p>
+<p>{ PCI_DEVICE_ID_INTEL_ADP_S_ESPI_8, “Alderlake-S-Base SKU” },</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1012097/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">风云卫星实时监测“森拉克”“黑格比”双台风</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1013979/">MagicBook SE笔记本身份揭秘：上代锐龙本改名而来</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1013977/">国科大录取通知书带来宇宙深处的声音 首次向全世界发布</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1013971/">Prime Gaming将改名Twitch Prime的新名字 以实现品牌协同</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1013973/">微软发布Custom Translator第2版 翻译质量更高</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1013975/">美貌与实力并存！日本新晋电竞美少女大友美有引热议</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

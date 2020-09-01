@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[图]出于安全方面考虑 OpenSSH宣布放弃对SHA-1认证方案的支持 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[图]出于安全方面考虑 OpenSSH宣布放弃对SHA-1认证方案的支持" />
+<meta property="og:description" content="OpenSSH是最受欢迎的连接和管理远程服务器实用工具之一，近日团队宣布计划放弃对SHA-1认证方案的支持。OpenSSH在公告中引用了SHA-1散列算法中存在的安全问题，被业内认为是不安全的。该算法在2017年2月被谷歌密码学专家破解，可利用SHAttered技术将两个不同文件拥有相同的SHA-1文件签名。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/984693/" />
+<meta property="article:published_time" content="2020-05-29T11:44:42+08:00" />
+<meta property="article:modified_time" content="2020-05-29T11:44:42+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[图]出于安全方面考虑 OpenSSH宣布放弃对SHA-1认证方案的支持</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-29T11:44:42&#43;08:00">May 29, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>OpenSSH是最受欢迎的连接和管理远程服务器实用工具之一，近日团队宣布计划放弃对SHA-1认证方案的支持。OpenSSH在公告中引用了SHA-1散列算法中存在的安全问题，被业内认为是不安全的。该算法在2017年2月被谷歌密码学专家破解，可利用SHAttered技术将两个不同文件拥有相同的SHA-1文件签名。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0529/ed893d05ff08a9f.jpg" alt="img:[图]出于安全方面考虑 OpenSSH宣布放弃对SHA-1认证方案的支持"></p>
+<p>不过当时创建一个SHA-1碰撞被认为需要非常昂贵的计算成本，因此谷歌专家认为SHA-1在实际生活中至少还需要等待半年的时间，直到成本进一步下降。随后在在2019年5月和2020年1月发布的研究报告中，详细介绍了一种更新的方法，将SHA-1选择-前缀碰撞攻击的成本分别降低到11万美元和5万美元以下。</p>
+<p>对于像国家级别以及高端网络犯罪集团来说，让他们生成一个SSH认证密钥，从而让它们能够远程访问关键服务器而不被检测到，那么5万美元的代价是非常小的。OpenSSH开发者今天表示：“由于这个原因，我们将在不久的未来版本中默认禁用‘ssh-rsa’公钥签名算法。”</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0529/9bdebb13ad79740.jpg" alt="img:[图]出于安全方面考虑 OpenSSH宣布放弃对SHA-1认证方案的支持"></p>
+<p>OpenSSH应用程序使用 &ldquo;ssh-rsa &ldquo;模式来生成SSH验证密钥。这些密钥中的一个存储在用户要登录的服务器上，另一个存储在用户的本地OpenSSH客户端中，这样用户就可以在每次登录时不需要输入密码就可以访问服务器，而是以本地验证密钥来代替登录。</p>
+<p>在默认情况下，OpenSSH ssh-rsa模式通过使用SHA-1散列功能生成这些密钥，这意味着这些密钥容易受到SHAterred攻击，使威胁行为者能够生成重复的密钥。OpenSSH开发者今天表示：“遗憾的是，尽管存在更好的替代方案，但这种算法仍然被广泛使用，它是原始SSH RFCs规定的唯一剩下的公钥签名算法”。</p>
+<p>OpenSSH团队现在要求服务器所有者检查他们的密钥是否已经用默认的ssh-rsa模式生成，并使用不同的模式生成新的密钥。OpenSSH团队表示，推荐的模式是rsa-sha2-256/512（自OpenSSH 7.2以来支持）、ssh-ed25519（自OpenSSH 6.5以来支持）或ecdsa-sha2-nistp256/384/521（自OpenSSH 5.7以来支持）。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/984697/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">2017年首次发现的K2彗星正在奔向地球 预计2022年到访</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/984679/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[图]没有地址也能收快递：Google Maps优化显示Plus Code功能</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/986439/">非营利性组织Vitalant将为献血者提供免费新冠抗体检测服务</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/986445/">官方宣布将《赛博朋克2077》直播活动推迟至6月25日举办</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/986425/">[图]硬件加速 GPU 调度选项即将登陆 Windows 10 平台</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/986435/">人类记忆的形成和唤起可能因为一种脑电波振荡</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/986437/">抛掉繁琐的传感器们：新型智能织物靠传输线完成多项检测</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

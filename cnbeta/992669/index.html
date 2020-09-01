@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>亚马逊云服务在二月中旬挡下了2.3Tbps的DDoS攻击 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="亚马逊云服务在二月中旬挡下了2.3Tbps的DDoS攻击" />
+<meta property="og:description" content="亚马逊表示，其 AWS Shield 防火墙曾于今年 2 月中旬挡下了迄今为止最猛烈的分布式拒绝服务（DDoS）攻击。该公司在近日发布的《威胁纵览》（AWS Shield Threat Landscape）报告中进行了披露。与 2018 年 3 月记录的 1.7 Tbps 峰值相比，本次攻击的规模达到了创纪录的 2.3 Tbps 。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/992669/" />
+<meta property="article:published_time" content="2020-06-18T13:19:58+08:00" />
+<meta property="article:modified_time" content="2020-06-18T13:19:58+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">亚马逊云服务在二月中旬挡下了2.3Tbps的DDoS攻击</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-18T13:19:58&#43;08:00">June 18, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>亚马逊表示，其 AWS Shield 防火墙曾于今年 2 月中旬挡下了迄今为止最猛烈的分布式拒绝服务（DDoS）攻击。该公司在近日发布的《威胁纵览》（AWS Shield Threat Landscape）报告中进行了披露。与 2018 年 3 月记录的 1.7 Tbps 峰值相比，本次攻击的规模达到了创纪录的 2.3 Tbps 。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0618/c0e43189d74efc2.png" alt="img:亚马逊云服务在二月中旬挡下了2.3Tbps的DDoS攻击"></p>
+<p>（来自：Amazon）</p>
+<p>虽然没有提及客户的名称，但亚马逊透露本次攻击利用了被劫持的 CLDAP Web 服务器，该公司 AWS Shield 部门员工花了三天时间来应对威胁的升级。</p>
+<p>CLDAP 全称为“无连接轻量级目录访问协议”，作为较早的 LDAP 协议的替代，其主要被用于连接、搜索和修改互联网上的共享目录。</p>
+<p>自 2016 年底以来，该协议已被广泛应用于分布式拒绝服务攻击，因为 CLDAP 服务器会将 DDoS 流量放大到初始的 56~70 倍。</p>
+<p>2018 年 3 月的时候，Netscout Arbor 挡下了当时创纪录的 1.7 Tbps DDoS 攻击，一个月前袭击 GitHub 的攻击流量也达到了 1.3 Tbps 。</p>
+<p>这两起事件主要涉及互联网上暴露的 Memcached 服务器的滥用，当时这种攻击形式算是相当新颖，但很快被许多黑客和兜售 DDoS 服务的组织所盯上。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0618/2d7fd2e41838f5c.jpg" alt="img:亚马逊云服务在二月中旬挡下了2.3Tbps的DDoS攻击"></p>
+<p>（来自：Link11）</p>
+<p>好消息是，得益于互联网服务提供商（ISP）、内容交付网络（CDN）和其它互联网基础设施企业的共同努力，现下的大规模 DDoS 攻击已变得相当罕见。</p>
+<p>Link 11 在其 2020 年 1 季度报告中指出，其缓解的最大一次 DDoS 攻击的流量为 406 Gbps 。如果取平均值的话，今年 1 季度的单次 DDoS 攻击规模仅在 5 Gbps 左右。</p>
+<p>同期 Cloudflare 应付的 DDoS 攻击峰值略超 550 Gbps，Akamai 今早公布的 2020 年 6 月首周的那起 DDoS 攻击，挡下的流量也才 1.44 Tbps 。</p>
+<p>CloudFlare 表示，今年 1 季度的 DDoS 攻击中，有 92% 的流量低于 10 Gbps，其中 47% 甚至不到 500 Mbps 。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/992673/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">被苹果谷歌应用商店下架后 Zynn已推出无现金奖励的替代版本</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/992711/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">东航上线“周末随心飞” 3322 元即可一年无限次乘坐周末航班</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/994579/">微软正努力改善Windows 10驱动更新的质量</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/994581/">AMD与英伟达联手打造了Top7新超算Selene</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/994533/">胡润：疫情下财富增长最快企业家前五均来自中国，拼多多黄峥日均增10亿财富</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/994547/">《消逝的光芒2》编剧因性骚扰被解雇 而且还是个惯犯</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/994551/">Craig Federighi谈苹果隐私立场：一直都是公司核心宗旨</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

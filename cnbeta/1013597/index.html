@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[图]Windows 10 v2004引入杀手锏功能：托管运行Android、PWA等应用 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[图]Windows 10 v2004引入杀手锏功能：托管运行Android、PWA等应用" />
+<meta property="og:description" content="在 Windows 10 May 2020（20H1/Version 2004）功能更新中，微软引入了托管应用模型（Hosted App Model）。该技术可以为微软和终端用户解决各种各样的问题。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1013597/" />
+<meta property="article:published_time" content="2020-08-10T06:55:28+08:00" />
+<meta property="article:modified_time" content="2020-08-10T06:55:28+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[图]Windows 10 v2004引入杀手锏功能：托管运行Android、PWA等应用</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-10T06:55:28&#43;08:00">August 10, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>在 Windows 10 May 2020（20H1/Version 2004）功能更新中，微软引入了托管应用模型（Hosted App Model）。该技术可以为微软和终端用户解决各种各样的问题。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0810/3686b9c57410edb.jpg" alt="img:[图]Windows 10 v2004引入杀手锏功能：托管运行Android、PWA等应用"></p>
+<p>在该模型中，应用程序可以声明自己是其他应用程序的主机，同时允许这些应用程序保留其作为独立应用程序的身份。例如，一个需要主机的脚本文件（Powershell 或 Python）可以被 Windows 10 视为一个完整的应用程序，拥有自己的图标，在任务管理器和任务切换器中查看条目，并能够使用标准的 Windows 10 方法安装和卸载 &ldquo;应用程序&rdquo;。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0810/568a206a9e5e482.jpg" alt="img:[图]Windows 10 v2004引入杀手锏功能：托管运行Android、PWA等应用"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0810/cb3f10d84874159.jpg" alt="img:[图]Windows 10 v2004引入杀手锏功能：托管运行Android、PWA等应用"></p>
+<p>要实现这一点，主机只需要在其 manifest 中声明具备该能力就可以了。同样，一个托管应用也需要声明其对主机的依赖性，然后由主机负责执行该应用。到目前为止，我们主要看到该功能被用于 Progressive Web Apps，其中主机是 Chrome 浏览器，但 Windows 越来越多地将这些应用程序视为普通应用程序。</p>
+<p>在最新的 Your Phone 应用更新中，我们已经看到了“托管应用”的巨大潜力。Your Phone 可以作为一个主机，然后创建  Hosted Apps（托管应用）直接将手机端投屏到 PC 端，并且能够固定到任务栏或者开始菜单中。该功能成功地模糊了设备上的应用程序和从云端运行的应用程序之间的界限。</p>
+<p>外媒听到的消息是，微软可能会利用这项功能在 Windows 10X 上安全地运行 Win32 应用程序，或者通过云端向终端用户提供企业应用。我们畅享在不远的将来，通过 Your Phone 类似的应用程序，微软可以利用云服务器向 Windows 平板分发 Android 应用程序，而不需要让你的手机连接到相同的网络中。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1013595/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[图]IFA 2020依然线下举行：不对公众开放 每日访客 800 人以内</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1013607/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[图]Galaxy Note 20 Ultra/Z Fold 2确认采用LTPO屏幕：刷新率可降至1Hz</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015907/">Windows 10即将大改？聊聊未来比较靠谱的新变化</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015911/">加拿大对亚马逊展开反垄断调查：或打压第三方卖家</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015913/">全球新冠疫苗研发进度持续推进 距离上市还有多远？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015921/">分析师：继苹果和特斯拉后 越来越多的企业正权衡拆股选项</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015923/">爱奇艺股价重挫 分析师评估SEC调查可能带来的风险</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

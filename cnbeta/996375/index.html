@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>GCC 11将默认前端语言为 C&#43;&#43; 17，C&#43;&#43; 14 被替换 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="GCC 11将默认前端语言为 C&#43;&#43; 17，C&#43;&#43; 14 被替换" />
+<meta property="og:description" content="GCC 11 会将默认前端语言从 C&#43;&#43;14 变更为 C&#43;&#43; 17。从 GCC 9 开始，对 C&#43;&#43; 17 的支持已经不再是实验性质，C&#43;&#43; 前端实现了完整的 C&#43;&#43; 17 语言，并且 C&#43;&#43; 标准库支持几乎也完成了（不过目前还有两个库特性有待完善）。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/996375/" />
+<meta property="article:published_time" content="2020-06-28T09:30:01+08:00" />
+<meta property="article:modified_time" content="2020-06-28T09:30:01+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">GCC 11将默认前端语言为 C&#43;&#43; 17，C&#43;&#43; 14 被替换</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-28T09:30:01&#43;08:00">June 28, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>GCC 11 会将默认前端语言从 C++14 变更为 C++ 17。从 GCC 9 开始，对 C++ 17 的支持已经不再是实验性质，C++ 前端实现了完整的 C++ 17 语言，并且 C++ 标准库支持几乎也完成了（不过目前还有两个库特性有待完善）。</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-317d3a37c87154074cd764fe720d86a01c3.png" alt="img:GCC 11将默认前端语言为 C++ 17，C++ 14 被替换"></p>
+<p>目前在 GCC 中，当不指定任何版本 C++ 标准时，默认版本是 C++ 14（从 GCC 6.1 开始）。但是随着 GCC 对 C++ 17 的支持现在已经有一年以上的成熟期，并且 GCC 11 将于明年发布，开发团队认为是时候将 C++ 17 用作 GCC 11 的默认前端了。虽然可以在 GCC 10 中进行此更改，但是它已经进入周期的后期阶段，没有太多时间来解决可能出现的任何后果；而虽然 GCC 已经在不断支持 C++ 2a/C++ 20，但目前要进行默认的转换还为时过早。</p>
+<p>26 日，GCC 11 源码中已经将 C++ 17 更改为默认前端语言。C++ 17 有许多新的特性，包括：删除 trigraphs、在模板参数中允许使用 typename（作为替代类）、来自 braced-init-list 的新规则用于自动推导、UTF-8 字符文字与一些用于对齐内存分配的扩展等，迁移到 C++ 17 对于 GCC 与开发者来说有众多优势。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/996377/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">便宜不少！四款iPhone 12集体现身荷兰T-Mobile官网</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/996365/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">三星将于8月开始连发三款旗舰：Note20迎来骁龙865</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998561/">为无刘海iPhone做准备：专利显示苹果手握大量屏下指纹技术</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998571/">博士做游戏外挂赚12万获刑 被抓才知道帮人赚300万</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998573/">联邦快递要求华盛顿红皮队改名：涉歧视美国原住民</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998527/">JavaScript 引擎 V8 发布 8.4 版本</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998529/">[图]主打隐私保护：Purism推出14吋Librem 14 Linux笔记本电脑</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

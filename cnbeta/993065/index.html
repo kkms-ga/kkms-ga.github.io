@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>微软如何优化 Microsoft Edge 的内存使用？ - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="微软如何优化 Microsoft Edge 的内存使用？" />
+<meta property="og:description" content="一直以来，Google Chrome 都是资源消耗大户，尽管其背后的巨头对它进行了诸多改进，但 Chrome 仍是同时只运行少量标签页就会消耗大量内存的浏览器。但从另一方面来看，这并不只是 Chrome 的问题，CPU 和内存的高使用率也是其他基于 Chromium 的浏览器借鉴过去的“特色”。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/993065/" />
+<meta property="article:published_time" content="2020-06-19T11:27:29+08:00" />
+<meta property="article:modified_time" content="2020-06-19T11:27:29+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">微软如何优化 Microsoft Edge 的内存使用？</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-19T11:27:29&#43;08:00">June 19, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>一直以来，Google Chrome 都是资源消耗大户，尽管其背后的巨头对它进行了诸多改进，但 Chrome 仍是同时只运行少量标签页就会消耗大量内存的浏览器。但从另一方面来看，这并不只是 Chrome 的问题，CPU 和内存的高使用率也是其他基于 Chromium 的浏览器借鉴过去的“特色”。</p>
+<p>其中就包括 Microsoft Edge，作为 Windows 10 中新的默认浏览器，它使用与 Chrome 相同的内核，而且 Chromium 也将 Microsoft Edge 带到了 Windows 之外的平台，Microsoft Edge 不仅可以在 macOS 上使用，其 Linux 版本也即将发布。</p>
+<p>所以 Microsoft Edge 同样也会有内存占用率高的问题。但从用户主流的使用反馈来看，Microsoft Edge 占用的内存远低于 Chrome。甚至可以说和 Chrome 相比，大多数用户反而会因为 Edge 占用内存低而优先选择使用它。因此，虽然 Microsoft Edge 在 Windows 10 设备上也会消耗很多内存，但它依然比不上 Chrome 这种资源消耗大户。</p>
+<p>这其中当然离不开微软对 Microsoft Edge 进行的优化。</p>
+<p>微软表示，在 Windows 10 May 2020 中，他们专门针对 Microsoft Edge 的内存使用问题提供了改进。测试也显示了 Microsoft Edge 在这方面取得的重大进展。也就是说，如果在搭载 Windows 10 May 2020 的设备上运行新版 Microsoft Edge，得益于微软提供的改进，Edge 不会疯狂占用内存。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0619/4bef32fac9d8561.jpg" alt="img:微软如何优化 Microsoft Edge 的内存使用？"></p>
+<p>Microsoft Edge 首席项目经理 Kim Denny 解释称，微软在新版 Windows 10 中实现了对堆内内存段(segment heap memory)的改进，从而减少了程序的内存使用。</p>
+<p>通过 Windows 10 May 2020 中对 Win32 应用的堆内内存段(segment heap memory)的改进，Microsoft Edge 充分利用了这些更新，从而更有效地管理内存。Windows 10 May 2020 对设备进行的早起内部测试结果显示，使用 Microsoft Edge 浏览时，其内存使用量最多可减少 27%。</p>
+<p>当然，具体的优化效果由于设备的配置和使用情况不同而有所区别。</p>
+<p>可以看到，Microsoft Edge 不是唯一受益于这些改进的浏览器，因为这是系统层级的改进，所有基于 Chromium 的浏览器以及其他应用都可利用此改进去优化内存使用。微软作为 Chromium 的重要贡献者，这次的改进从长远来看是对用户有利的事情。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0619/4b403c115aa70d0.png" alt="img:微软如何优化 Microsoft Edge 的内存使用？"></p>
+<p>查看此页面了解更多开发者如何利用堆内内存段(segment heap memory)改进的信息。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/993071/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">“坏蛋恐龙”的足迹揭示了在澳洲发现的最大兽脚类恐龙</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/993063/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Chrome 团队：2020 年了，浏览器兼容性还是一个大问题</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/994991/">[视频]除了当车钥匙 iOS 14新版CarPlay还带来了哪些新功能？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/995003/">[图]适用于Linux的Microsoft Defender ATP 正式上线</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/995013/">20年风光不再：Segway电动平衡车宣布停产</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/995015/">研究人员开发尿液测试  揭示最适合人们身体的饮食习惯</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/994995/">更高效：吉利德计划展开瑞德西韦喷雾器试验</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

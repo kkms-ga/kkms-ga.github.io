@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Raspberry Pi支持Vulkan最新进展 通过70000项测试 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Raspberry Pi支持Vulkan最新进展 通过70000项测试" />
+<meta property="og:description" content="2 月份 Raspberry Pi 基金会曾表示，他们正在致力于为 Raspberry Pi 提供开源 Vulkan 驱动程序的支持，而如今，这项开发工作已经取得了不少可喜的进展。Raspberry Pi 基金会的博客指出，目前使用 Raspberry Pi 4 的 VideoCore VI GPU 渲染 RGB 三角形的里程碑已经通过 Vulkan 1.0 Khronos Conformance 测试套件超过 70,000 项测试，并且为 Vulkan 1.0 API 的重要子集提供了实现。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/990515/" />
+<meta property="article:published_time" content="2020-06-13T09:41:17+08:00" />
+<meta property="article:modified_time" content="2020-06-13T09:41:17+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Raspberry Pi支持Vulkan最新进展 通过70000项测试</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-13T09:41:17&#43;08:00">June 13, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>2 月份 Raspberry Pi 基金会曾表示，他们正在致力于为 Raspberry Pi 提供开源 Vulkan 驱动程序的支持，而如今，这项开发工作已经取得了不少可喜的进展。Raspberry Pi 基金会的博客指出，目前使用 Raspberry Pi 4 的 VideoCore VI GPU 渲染 RGB 三角形的里程碑已经通过 Vulkan 1.0 Khronos Conformance 测试套件超过 70,000 项测试，并且为 Vulkan 1.0 API 的重要子集提供了实现。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>天翼云“年中上云节”已上线 云产品全场0.6折起 8888元礼包全场可用</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p>为了展示效果，看看在 Raspberry Pi 4 上运行一些受欢迎的 Vulkan 演示拍摄图片：</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-4f8a13fef5c55a7162a37a15bfd55b35512.png" alt="img:Raspberry Pi支持Vulkan最新进展 通过70000项测试"></p>
+<p>尽管这些演示很不错，但与实际的游戏和应用还相距甚远，Raspberry Pi 基金会介绍，在驱动程序可以处理这些更复杂的工作负载之前，还有很多工作要做。甚至由于驱动程序错误或未实现的 Vulkan 功能，连 Sascha 的一些演示都无法运行。</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-ecac17a1d0e7870defa669628184e2ec1e1.png" alt="img:Raspberry Pi支持Vulkan最新进展 通过70000项测试"></p>
+<p>为此，接下来几个月的工作将集中在支持基本的 Vulkan 1.0 功能集，至少涉及支持计算着色器、输入附件、纹理像素缓冲区、存储镜像、pipeline 缓存和多重采样。在 Vulkan 1.0 中，还需要支持其它一些功能，例如健壮的缓冲区访问等。</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-059d215c8a9f3ed7012e7ea01ff994d4580.png" alt="img:Raspberry Pi支持Vulkan最新进展 通过70000项测试"></p>
+<p>一旦完成了功能开发，则可能会将重心转移到 CTS 一致性上，这将全部用于 bug 修复，并处理特殊情况。最后也会有许多性能调整和优化工作。</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-4ce13937a8091830182bd2e8b0c8854b616.png" alt="img:Raspberry Pi支持Vulkan最新进展 通过70000项测试"></p>
+<p>Raspberry Pi 基金会还介绍，目前已经将驱动程序的开发转移到一个开放的存储库中，开发者可以在其中找到有关如何构建和安装驱动的说明。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/990529/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">《精灵宝可梦Go》将很快停止支持三星Galaxy S4等旧款智能机</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/990519/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">泄露的手机壳图像暗示三星或为Galaxy Note 20配备平面显示屏</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/992509/">董明珠：个别产品是我自己提设计要求并研发的</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/992521/">又一项研究表明羟氯喹并不是有效的新冠病毒治疗方法</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/992505/">美国会议员质疑亚马逊人脸识别技术 要求披露详情</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/992507/">伯克希尔官方回应：巴菲特没有任何退休计划</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/992529/">受新冠疫情影响 Rimac C_Two电动超跑交付时间延至明年</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

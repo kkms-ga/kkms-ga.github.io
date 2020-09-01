@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>内存和性能不可兼得：Chrome 85将禁用Segment Heap内存管理 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="内存和性能不可兼得：Chrome 85将禁用Segment Heap内存管理" />
+<meta property="og:description" content="在 Windows 10 May 2020（20H1/Version 2004）功能更新中，微软引入了名为 Segment Heap
+的内存管理机制，能将基于 Chromium 的 Edge 浏览器内存使用率降低 27%。不过内存使用的改进是牺牲 CPU 使用率来换取的，因此
+Chromium 团队宣布在 Chrome 85 稳定版中禁用该功能。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1003347/" />
+<meta property="article:published_time" content="2020-07-15T09:41:42+08:00" />
+<meta property="article:modified_time" content="2020-07-15T09:41:42+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">内存和性能不可兼得：Chrome 85将禁用Segment Heap内存管理</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-15T09:41:42&#43;08:00">July 15, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>在 Windows 10 May 2020（20H1/Version 2004）功能更新中，微软引入了名为 Segment Heap
+的内存管理机制，能将基于 Chromium 的 Edge 浏览器内存使用率降低 27%。不过内存使用的改进是牺牲 CPU 使用率来换取的，因此
+Chromium 团队宣布在 Chrome 85 稳定版中禁用该功能。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0715/8d5cf360ba1aec6.jpg" alt="img:内存和性能不可兼得：Chrome 85将禁用Segment Heap内存管理"></p>
+<p>Segment Heap 是一种现代堆的实现方式，一般会降低整体内存使用量。谷歌在今年 6 月下旬宣布，Canary 通道的 Chrome 版本（version 85.0.4182.0）已经开始支持 Segment Heap 内存管理机制。实验发现，浏览器和网络服务实用程序进程等方面能节省数百兆内存。实际结果会有很大的不同，多核机上的节省幅度最大。</p>
+<p>不过在进一步的深入探索之后，发现会导致“Windows Segment Heap 的性能回归”：</p>
+<p>部署 <a href="https://chromium-review.googlesource.com/c/chromium/src/+/2163163">https://chromium-review.googlesource.com/c/chromium/src/+/2163163</a> 提议，在版本号高于 Build 19041（Windows 10 Version 2004）的版本中使用 Segment Heap 来替代 legacy heap。不过测试发现这会导致 WebXPRT3、Speedometer2 和 JetStream2 的性能倒退。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0715/a431382f002826d.jpg" alt="img:内存和性能不可兼得：Chrome 85将禁用Segment Heap内存管理"></p>
+<p>微软员工表示，无论是内存还是CPU的使用都会受到影响。在这种情况下，内存的改善伴随着CPU使用率的增加，并提出了两个方案来克服这个问题。</p>
+<p>1）减少浏览器的瞬时堆分配量。这将需要在整个浏览器代码库中进行重大改变。</p>
+<p>2）提高Segment堆本身的性能。这只能由Windows团队解决，我们正在调查我们的方案。</p>
+<p>Chromium 的 bruce 在该帖子中中指出：&rdquo; M85 已经有很多其他的优化，而同时部署这个变化（同时的改善内存和性能倒退），如何平衡变得有点困难。虽然我从实验室测试中听到了关于节省内存的令人鼓舞的事情，但我不认为我们有任何办法让这个启用，直到我们在 20H1 上有明确的遥测数据和实验室测试，这两者都不会及时发生在 M85 上。所以，我们的计划是在 M85 上禁用这个功能（从而给我们提供另一个遥测数据点），然后在未来重新考虑。&rdquo;</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1003349/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">科罗拉多州发现一只患有黑死病的松鼠：系所在县首例</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1003337/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">运营商之殇：5G的步伐 3G的服务</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005315/">苹果官网首页纪念国会议员和黑人民权运动领袖约翰·刘易斯</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005331/">Twitter史上最大安全漏洞：多个账户被黑，原因竟出自比特币钓鱼骗局</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005317/">[视频]微星Cubi 5开箱评测：英特尔第十代处理器 升级空间大</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005319/">特斯拉推出Model Y租赁服务  每月租金499美元起</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005329/">《微软飞行模拟器》即将8月18日登陆PC 最低/最佳配置公布</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>又说骚话 - Linus 再次严辞拒绝Intel CPU漏洞补丁 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="又说骚话 - Linus 再次严辞拒绝Intel CPU漏洞补丁" />
+<meta property="og:description" content="近日，Linux 内核项目负责人 Linus Torvalds 拒绝了 AWS 工程师提交的一个补丁，该补丁的目的是减轻 Intel CPU 遭遇一种新型窥探攻击而导致数据泄露的风险。这种新型攻击名为“探听辅助 L1 数据采样攻击”，简称 Snoop （CVE-2020-0550）。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/988599/" />
+<meta property="article:published_time" content="2020-06-09T08:59:32+08:00" />
+<meta property="article:modified_time" content="2020-06-09T08:59:32+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">又说骚话 - Linus 再次严辞拒绝Intel CPU漏洞补丁</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-09T08:59:32&#43;08:00">June 09, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>近日，Linux 内核项目负责人 Linus Torvalds 拒绝了 AWS 工程师提交的一个补丁，该补丁的目的是减轻 Intel CPU 遭遇一种新型窥探攻击而导致数据泄露的风险。这种新型攻击名为“探听辅助 L1 数据采样攻击”，简称 Snoop （CVE-2020-0550）。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>天翼云高性能云主机1折起 低至74元/年</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-19d3cf4fc5252a59c4e08fa135e11dc3ca2.png" alt="img:又说骚话 - Linus 再次严辞拒绝Intel CPU漏洞补丁"></p>
+<p>今年 3 月，来自 AWS 的软件工程师 Pawel Wieczorkiewicz 率先发现了 Intel 处理器的这一漏洞，它可能会泄露 CPU 内部存储器或缓存中的数据，涉及 CPU 包括 Intel 旗下流行的 Xeon 和 Core 系列处理器。Pawel 迅速向 Intel 报告了此问题，随后该漏洞被 Intel 定位为中等严重性漏洞。</p>
+<p>新的 Snoop 攻击利用了 Intel CPU 多级缓存、缓存一致性和总线监听等特性，通过位于 CPU 内核中的一级数据缓存（L1D），通过“总线监听”（bus snooping）功能 —— 在 L1D 中修改数据时发生的缓存更新操作，将数据从 CPU 中泄漏出来。</p>
+<p>以近代 CPU 的视角来说，计算机通常会采用三级缓存的设计来提高 CPU 的运行效率。三级缓存包括 L1 一级缓存、L2 二级缓存、L3 三级缓存，这些缓存都集成在 CPU 内，它们的作用是作为 CPU 与主内存之间的高速数据缓冲区。其中 L1 最靠近 CPU 核心；L2其次；L3再次。运行速度方面：L1最快、L2次快、L3最慢；容量大小方面：L1最小、L2较大、L3最大。在执行一项任务时，CPU 会先在最快的 L1 中寻找需要的数据，找不到再去找次快的 L2，还找不到再去找 L3，L3 都没有才去内存找。</p>
+<p>而一级缓存其实还分为一级数据缓存（Data Cache，D-Cache，L1D）和一级指令缓存(Instruction Cache，I-Cache，L1I)，分别用于存放数据及执行数据的指令解码，两者可同时被CPU 访问，减少了 CPU 多核心、多线程争用缓存造成的冲突，提高了处理器的性能。一般CPU 的 L1I 和 L1D 具备相同的容量，例如 I7-8700K 的 L1 即为 32KB+32KB。Snoop 攻击就是一种窃取 L1D 缓存中数据的攻击手段。</p>
+<p>不过 Intel 的用户也不用惊慌，据 Intel 官方解释说，这种新攻击“很难实施”，并且不会泄露大量数据，毕竟 L1D 缓存中的数据非常有限，并且只有在任务运行时调用数据的短暂时间内才会存在。“我们不认为 Snoop 攻击在可信赖的操作系统环境下是一种实用的攻击方法，因为要利用这一漏洞需要同时满足很多苛刻的条件，比如攻击的时间要正好与用户打开程序的时间吻合，且程序调用的数据正好是攻击者想要窃取的数据。”</p>
+<p>该漏洞披露之后，另一位来自 AWS 的软件工程师 Balbir Singh 为 Linux 内核提交了一个补丁，该补丁使 Linux 的应用程序能够选择在任务切换时自动刷新 L1D 的缓存，以降低 Linux 系统遭遇 Snoop 攻击的风险。</p>
+<p>Singh 在 4 月份曾解释说：“这个补丁可以防止他们的数据在任务结束后被监听或通过旁道泄露。”他原本打算该补丁可以随 Linux 内核的 5.8 版一起发布。“如果硬件支持，该特性将允许基于可选加入的应用程序调用 prctl() 功能来刷新任务关闭后残留在 CPU 中的 L1D 缓存。”</p>
+<p>但是，知名技术测试网站 Phoronix 指出，在任务结束后刷新 L1D 缓存会导致 CPU 的性能降低。Linux 内核项目负责人 Linus Torvalds 认为，这将导致使用该补丁的所有 Linux 用户（无论是否采用 Intel CPU）的 CPU 性能降低，严正拒绝了该补丁，同时还一如既往地说起了骚话。</p>
+<p>Torvalds 在回复该提交的邮件列表中写道：“因为在我看来，这基本上是将缓存刷新指令导出到用户空间，并为进程提供了一种方式，可以说让与这事情无关的其他人也慢了下来。”</p>
+<p>“换言之，据我所知，这就是疯狂的 Intel 发布了有缺陷的 CPU，它给虚拟化代码带来了问题（我对此并不太在意），但现在要因为它的问题影响到本来就没有这些问题的 Linux 用户，这是完全没有意义的。”</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-c14dfd609f6be54ad653142069ba428339e.png" alt="img:又说骚话 - Linus 再次严辞拒绝Intel CPU漏洞补丁"></p>
+<p>（Linus 在邮件列表中的原文）</p>
+<p>“我不想某个应用程序跑起来就像在说 ‘哦，我是一个特别的，漂亮的，如此娇嫩的花，我想刷新 L1D 上的每一个任务缓存，无论我在什么 CPU 上，无论它是否有漏洞’。因为这个应用程序不仅会降低自身速度，还会降低其他应用程序的速度。”</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-5b02954e05768d1ada535e5ee61697da82b.png" alt="img:又说骚话 - Linus 再次严辞拒绝Intel CPU漏洞补丁"></p>
+<p>在一番非常 Linus 式的回复下，Linus 对虚拟化的引用其实也是针对 AWS 的，AWS 和其他云服务提供商一样，销售的虚拟 cpu 通常启用了同步多线程（simultaneous multithreading，SMT）功能。Linus 接着指出，“在启用 SMT 的情况下，任务调度是分布式进行的，所以说，在任务结束与新任务开始之间刷新 L1D 缓存是非常愚蠢的。”</p>
+<p>值得一提的是，AWS 的首席工程师 Benjamin Herrenschmidt 在与 Red Hat Linux 内核贡献者 Ingo Molnar 的讨论中也为该补丁的争论添加了一些背景。Herrenschmidt 承认这个补丁对 SMT 来说毫无意义，但他敦促 Linux 内核开发人员不要“把婴儿和洗澡水一起扔掉”，并反驳了这个补丁是因为 AWS 想把超线程作为虚拟 cpu 出售的说法。Herrenschmidt 说，“这些补丁并不是要解决运行 SMT 的客户 VM 内部出现的问题，也不是要保护 VM 免受同一系统上其他 VM 的攻击。”</p>
+<p>事实上，Linus 已经不是第一次严辞拒绝与 Intel CPU 有关的补丁。2018 年初，为了修补 Spectre 漏洞，Intel 工程师提供了一个间接分支限制推测（indirect branch restricted speculation, IBRS）功能的补丁。Linus 当时就在邮件列表中公开指出 IBRS 会造成系统性能大幅降低，直言该补丁“就是彻彻底底的垃圾”，“Intel 真的要做这个 X 一样的东西？” 一顿口吐芬芳。</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-3414b668e2b24812057288c5dbdfd3f6fbf.png" alt="img:又说骚话 - Linus 再次严辞拒绝Intel CPU漏洞补丁"></p>
+<p>而就在上个月，Linus 对自己的私人电脑进行了升级，同时公开了自己最新的主力机器配置，他把自己的 CPU 换成了 AMD Ryzen Threadripper ，放弃使用了 15 年的 Intel 处理器。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/988601/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">欧洲空间局：过去200年 全球磁场强度下降了9%</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/988611/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">索尼PS5发布会时间确认：北京时间6月12日凌晨4点</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990273/">“智迎”新基建时代 戴尔携全新商用客户端产品及解决方案亮相中国</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990265/">首例儿童骑共享单车身亡案宣判 ofo被判赔6.7万</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990253/">以色列VTOL出租车开发商宣布将在CityHawk中使用氢燃料电池</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990269/">TCL新智能机外观专利曝光 或采用屏下隐藏式前摄方案</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990263/">OPPO Reno4 Pro 评测：亮点槽点并存，但依旧无缘性价比</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

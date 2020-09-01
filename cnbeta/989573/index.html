@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>FreeBSD 采用从 LLVM 衍生而来的新社区行为准则 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="FreeBSD 采用从 LLVM 衍生而来的新社区行为准则" />
+<meta property="og:description" content="FreeBSD 社区宣布接下来项目将采用新的从 LLVM 衍生而来的行为准则（Code of Conduct，CoC）。今年 6 月，通过审查其它开源行为准则，FreeBSD 核心团队进行了新一轮调查，不过将问题限定为：采用 LLVM 衍生的 CoC 还是 Go 衍生的版本，亦或是保持不变。结果是 63％ 的人赞成采用 LLVM 衍生的行为准则。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/989573/" />
+<meta property="article:published_time" content="2020-06-11T10:22:52+08:00" />
+<meta property="article:modified_time" content="2020-06-11T10:22:52+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">FreeBSD 采用从 LLVM 衍生而来的新社区行为准则</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-11T10:22:52&#43;08:00">June 11, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>FreeBSD 社区宣布接下来项目将采用新的从 LLVM 衍生而来的行为准则（Code of Conduct，CoC）。今年 6 月，通过审查其它开源行为准则，FreeBSD 核心团队进行了新一轮调查，不过将问题限定为：采用 LLVM 衍生的 CoC 还是 Go 衍生的版本，亦或是保持不变。结果是 63％ 的人赞成采用 LLVM 衍生的行为准则。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>天翼云“年中上云节”已上线 云产品全场0.6折起 8888元礼包全场可用</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-bb523f1005a919cc63b4e1a161129600dc8.png" alt="img:FreeBSD 采用从 LLVM 衍生而来的新社区行为准则"></p>
+<p>此前 2018 年对于 CoC 的调查中，FreeBSD 开发者给出的反馈是：</p>
+<p>94％ 的开发人员相信项目中尊重沟通很重要；1％ 的人不同意</p>
+<p>89％ 的人认为 FreeBSD 应该欢迎所有背景的人；2％ 反对</p>
+<p>73％ 的人表示行为不好的人应从项目中剔除，不论他们的技术贡献如何；9％ 反对</p>
+<p>35％ 的人不满意 2018 年通过的行为守则，34％ 保持中立，30％ 表示满意</p>
+<p>通过前后两次社区开发者的调查，FreeBSD 最终采用了基于 LLVM 的 CoC。该 CoC 要求社区开发者：</p>
+<p>友好耐心</p>
+<p>热情好客</p>
+<p>体贴</p>
+<p>相互尊敬</p>
+<p>对他人友善，并注意不要乱说话</p>
+<p>持不同见解时多换位思考</p>
+<p>具体内容可以查看：https://www.freebsd.org/internal/code-of-conduct.html</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/989589/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">马化腾每天刷 Leetcode？代码你打算写到几岁？</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/989567/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">新研究称COVID-19封锁期间人们的睡眠质量普遍变差</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991503/">Polestar 2预定开启：续航里程达443公里</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991523/">Google Chrome v83.0.4103.106 正式版发布</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991527/">科学家看见一颗中子星正在“启动”</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991543/">美四大通信运营商电话服务疑出现问题</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991497/">亚马逊上的清单还是泄露了PS5的售价和上市日期</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

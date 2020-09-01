@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>微软开源Rust/WinRT 方便使用Rust构建Windows应用 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="微软开源Rust/WinRT 方便使用Rust构建Windows应用" />
+<meta property="og:description" content="微软推出了基于
+Rust 的 Windows 运行时项目 Rust/WinRT。该项目和 C&#43;&#43;/WinRT 一脉相承，用标准语言和编译器为 Windows
+运行时构建语言投影，从而方便 Rust 开发人员调用 Windows API，更轻松地使用 Rust 构建各类 Windows 应用和组件。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/974393/" />
+<meta property="article:published_time" content="2020-05-03T08:07:13+08:00" />
+<meta property="article:modified_time" content="2020-05-03T08:07:13+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">微软开源Rust/WinRT 方便使用Rust构建Windows应用</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-03T08:07:13&#43;08:00">May 03, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>微软推出了基于
+Rust 的 Windows 运行时项目 Rust/WinRT。该项目和 C++/WinRT 一脉相承，用标准语言和编译器为 Windows
+运行时构建语言投影，从而方便 Rust 开发人员调用 Windows API，更轻松地使用 Rust 构建各类 Windows 应用和组件。</p>
+<p>访问:</p>
+<p>微软中国官方商城 - Visual Studio</p>
+<p>Windows 运行时基于内部的组件对象模型（Component Object Model，COM）API，需要通过诸如 C++/WinRT 和 Rust/WinRT 之类的语言投影进行访问。这些语言投影采用描述各种 API 的元数据，并为目标编程语言提供自然的绑定。这使开发人员可以使用所需的语言为 Windows 轻松构建应用程序和组件。</p>
+<p>Rust/WinRT 由来自 Windows 团队的工程师 Kenny Kerr 于去年十一月提出，并开始进行尝试。他在当时的博客文章中表示，Windows 运行时已开始增加对各种语言的支持，但这些都无法脱离 C++，直到 Rust 的出现。</p>
+<p>Kerr 认为，即便 Rust 的学习曲线可能令人望而却步，但它很有可能解决 C++ 与 WinRT 的关系中一些最棘手的问题。“想象一下不需要 IDL 的 C++/WinRT：更快的构建时间，以及简单而集成的构建系统。”</p>
+<p>根据微软的介绍，Rust/WinRT 能够将任意时间段内的 WinRT API 直接调用进 Rust 包，开发者可以像调用 Rust 模块一样调用它们。</p>
+<p>Rust 与 C++ 在编译和运行时模型等许多方面都非常类似，但 Rust 在安全性上更胜一筹，这也是微软一直强调和看重的地方。</p>
+<p>官方的介绍文章中还给出了一些关于 Rust/WinRT 的有趣示例，例如这个从 C++/WinRT 快速移植到 Rust/WinRT 的扫雷游戏 demo：</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0503/0d0c9fe9fd57b5b.gif" alt="img:微软开源Rust/WinRT 方便使用Rust构建Windows应用"></p>
+<p>目前 Rust/WinRT 还处于早期预览状态，微软希望它接下来与现有 Win32 和 COM API 提供更加无缝的互操作，包括对 com-rs crate 的支持。</p>
+<p>详情可见微软官方博客：https://blogs.windows.com/windowsdeveloper/2020/04/30/rust-winrt-public-preview/</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/974395/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">手握近10000亿现金 巴菲特疫情期间并未抄底</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/974397/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">告别24Pin 华擎推出首款ATX12VO标准的Z490主板</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976193/">一批特斯拉车主的隐私遭泄露，就因为一个小小的内存颗粒</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976201/">[图]Windows 10游戏模式导致部分游戏出现严重卡顿现象</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976199/">TCL科技：LCD在未来5-7年仍将是主流大屏首选</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976197/">首个新冠疫苗动物实验研究结果安全有效！但别着急…</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976203/">韩国新冠治疗费用：两万至四十万人民币</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

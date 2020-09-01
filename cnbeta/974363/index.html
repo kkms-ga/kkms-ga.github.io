@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>MySQL 8.0.20 GA 发布 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="MySQL 8.0.20 GA 发布" />
+<meta property="og:description" content="MySQL最新版本8.0.20正式发布。与之前8.0的系列版本一样，这次的发行版除了包含缺陷修复，也同样包括新功能。下面快速浏览一下。关键字：hash join、InnoDB双写缓冲、二进制日志事务压缩。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/974363/" />
+<meta property="article:published_time" content="2020-05-03T07:41:39+08:00" />
+<meta property="article:modified_time" content="2020-05-03T07:41:39+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">MySQL 8.0.20 GA 发布</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-03T07:41:39&#43;08:00">May 03, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>MySQL最新版本8.0.20正式发布。与之前8.0的系列版本一样，这次的发行版除了包含缺陷修复，也同样包括新功能。下面快速浏览一下。关键字：hash join、InnoDB双写缓冲、二进制日志事务压缩。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0503/03a965513605444.jpg" alt="img:MySQL 8.0.20 GA 发布"></p>
+<p>增加了SHOW_ROUTINE权限。使用该权限允许账户在最小权限下备份存储程序。</p>
+<p>改进hash join。现在可以使用hash join代替BNL，hash join现在支持半连接、反连接、外连接。</p>
+<p>加入新的索引级别的优化器提示。包括：JOIN_INDEX、NO_JOIN_INDEX、GROUP_INDEX、NO_GROUP_INDEX、ORDER_INDEX、NO_ORDER_INDEX、INDEX 及 NO_INDEX 。新的索引级别的优化器提示可以搭配SELECT， UPDATE和 DELETE语句使用，而以往的无法和DELETE一起使用。</p>
+<p>Performance Schema改良。为了减少错误检测的内存开销，Performance Schema放弃了在全局范围收集会话相关的错误统计信息。此外，针对每个线程，帐户，用户或主机报告的错误摘要中不再包含全局的错误信息。</p>
+<p>SQL语法改良。以前，语句的INTO子句 SELECT可能出现在以下两个位置之一：</p>
+<p>现在，INTO可以出现在SELECT的最后：</p>
+<p>此外，还针对进行 UNION 的 INTO进行了一些更改，下面的语句结果相同：</p>
+<p>X Plugin改良。在启动中创建管理会话，以供达到客户端连接限制时获取服务器配置。初始化后立即可以访问MySQL系统变量等缺陷修复。</p>
+<p>BLOB类型排序改变。改变了以往的非完整排序，服务器将BLOB类型转换为打包的插件进行排序，经测试，性能得到显著提升。</p>
+<p>InnoDB改良。双写缓冲区的存储从系表空间移至双写文件。将双写缓冲区存储区移出系统表空间可减少写延迟，增加吞吐量并在双写缓冲区页的放置方面提供灵活性。</p>
+<p>二进制日志事务压缩。从MySQL 8.0.20开始，您可以在MySQL服务器实例上启用二进制日志事务压缩。启用二进制日志事务压缩后，将使用zstd算法压缩事务有效负载，然后将其作为单个事件（Transaction_payload_event）写入服务器的二进制日志文件 。压缩后的事务有效负载在复制流中发送到从服务器，其他群组复制组成员或客户端（例如mysqlbinlog）时，保持压缩状态 。它们不会被接收器线程解压缩，并且仍以其压缩状态写入中继日志。因此，二进制日志事务压缩既可以节省事务的始发者，也可以节省接收者（及其备份）的存储空间，并在服务器实例之间发送事务时节省网络带宽。</p>
+<p>CHANGE MASTER TO语句的新选项REQUIRE_TABLE_PRIMARY_KEY_CHECK使复制的从服务器可以选择自己的策略来进行主键检查。</p>
+<p>MySQL 8.0.19开始，通过X协议连接发送的消息已支持压缩。MySQL 8.0.19开始，通过X协议连接发送的消息已支持压缩。在MySQL 8.0.19中，X协议对每种算法使用库默认压缩级别，客户端无法协商该默认压缩级别。从MySQL 8.0.20开始，客户端可以在协商期间为X协议连接请求特定的压缩级别。</p>
+<p>上面内容为MySQL8.0.20的新功能快速一览，访问以下地址阅读MySQL的在线手册获取完整的最新信息：</p>
+<p><a href="https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-20.html">https://dev.mysql.com/doc/relnotes/mysql/8.0/en/news-8-0-20.html</a></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/974361/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">它会挑战支付宝微信吗？揭秘“央行数字货币”</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/974367/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">技嘉确认Z490主板支持11代酷睿：最后的14nm？</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976153/">阅文再辟谣：新合同快出来了大家拭目以待</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976155/">拼音缩写反人类？让你秒懂网络黑话的神奇脚本</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976151/">马斯克：特斯拉新款Roadster将推迟交付</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976149/">黑客声称从微软GitHub私人数据库当中盗取500GB数据</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976147/">DJI Matrice 300无人机提供近1小时的飞行时间</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

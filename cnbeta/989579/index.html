@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>微软宣布对WSL2子系统内核进行更改 将通过系统更新推送新版 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="微软宣布对WSL2子系统内核进行更改 将通过系统更新推送新版" />
+<meta property="og:description" content="据微软官方博客消息，在微软最新推出的 Windows 10 vNEXT Build 19645 快速测试版中，微软已经对 Windows Subsystem for Linux 2 (WSL2) 中的 Linux 内核服务模型进行调整。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/989579/" />
+<meta property="article:published_time" content="2020-06-11T10:24:21+08:00" />
+<meta property="article:modified_time" content="2020-06-11T10:24:21+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">微软宣布对WSL2子系统内核进行更改 将通过系统更新推送新版</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-11T10:24:21&#43;08:00">June 11, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>据微软官方博客消息，在微软最新推出的 Windows 10 vNEXT Build 19645 快速测试版中，微软已经对 Windows Subsystem for Linux 2 (WSL2) 中的 Linux 内核服务模型进行调整。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>天翼云“年中上云节”已上线 云产品全场0.6折起 8888元礼包全场可用</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p>访问:</p>
+<p>微软中国官方商城 - Windows</p>
+<p>在 Windows 10 Version 2004 及早期版本中子系统的 Linux 内核是预装在 Windows 映像中的，不过从最新测试版开始微软从 Windows 系统映像中删除 Linux 内核。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0611/99a6ff65a4135dd.png" alt="img:微软宣布对WSL2子系统内核进行更改 将通过系统更新推送新版"></p>
+<p>删除 Linux 内核的原因是因为没有必要再进行预装，因为从新版本开始 Linux 内核以及周边软件都会通过 Windows Update 提供，也就是说微软可以随时通过 Windows Update 向用户推送新版内核。当然不只是 Linux 内核，周边软件包括第三方软件例如驱动程序、触摸板驱动等等也会通过 Windows Update 提供。这样做的好处是用户可以随时获得最新的内核和驱动程序确保 Linux 子系统可以稳定运行。</p>
+<p>当然推送归推送是否升级新版本内核或驱动程序还是用户自己决定的，现阶段微软还无法直接同步更新 Linux 官方内核，因为这些内核要经过微软工程师的适配后才可支持 Linux 子系统。微软也发布 WSL 内核更新页面供开发者们查看。</p>
+<p>最新提供的预发行版本内核为 4.19.121 版，添加对 GPU 计算的支持，具体可以参考该页面：https://docs.microsoft.com/en-us/windows/wsl/kernel-release-notes</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0611/d6e06af90dc91a1.png" alt="img:微软宣布对WSL2子系统内核进行更改 将通过系统更新推送新版"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/989389/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">美汽车经销商19辆历史悠久的汽车被盗</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/989499/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Facebook宣布解禁非医用口罩广告</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991503/">Polestar 2预定开启：续航里程达443公里</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991523/">Google Chrome v83.0.4103.106 正式版发布</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991527/">科学家看见一颗中子星正在“启动”</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991543/">美四大通信运营商电话服务疑出现问题</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991497/">亚马逊上的清单还是泄露了PS5的售价和上市日期</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

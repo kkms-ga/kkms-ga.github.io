@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Linux Kernel 5.8 将为 blk-mq 引入内联加密支持 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Linux Kernel 5.8 将为 blk-mq 引入内联加密支持" />
+<meta property="og:description" content="为了提供更好的加密性能，目前谷歌工程师正在为 Linux 文件系统加密管理工具 fscrypt 添加内联加密支持。而与之相关的开发包括在 Linux 5.8 的块设备队列管理 blk-mq 中引入内联加密。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/979791/" />
+<meta property="article:published_time" content="2020-05-16T09:12:09+08:00" />
+<meta property="article:modified_time" content="2020-05-16T09:12:09+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Linux Kernel 5.8 将为 blk-mq 引入内联加密支持</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-16T09:12:09&#43;08:00">May 16, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>为了提供更好的加密性能，目前谷歌工程师正在为 Linux 文件系统加密管理工具 fscrypt 添加内联加密支持。而与之相关的开发包括在 Linux 5.8 的块设备队列管理 blk-mq 中引入内联加密。</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-33c8e77e663f3359c2ab5b02eb6ad71dd09.png" alt="img:Linux Kernel 5.8 将为 blk-mq 引入内联加密支持"></p>
+<p>fscrypt 是用于 Linux 文件系统加密管理的高级工具，它管理元数据、密钥生成、密钥封装与 PAM 集成，并提供用于创建和修改加密目录的统一界面。fscrypt 的内核部分已集成到诸如 ext4 的文件系统中。</p>
+<p>blk-mq 则是 Linux 的块设备层多队列机制，它将 Linux 内核存储栈中请求层的单队列改成多队列，理论上提升性能。</p>
+<p>如果接下来 blk-mq 支持内联加密，那么它能够在存储栈中向下传递加密上下文，目前 Linux 内核源码 commit
+中解释：我们必须通过某种方式让存储设备驱动程序知道它应该用于加密/解密请求的加密上下文。而上层（例如文件系统/fscrypt）知道情况并且管理加密上下文。这样，当上层提交
+BIO 到块层，这个 BIO 最终到达的设备驱动程序支持内联加密，那么设备驱动程序则已经表明了 BIO 的加密上下文。</p>
+<p>代码上具体改动是将 struct bio_crypt_ctx 添加到 struct bio 中，用来表示加密上下文，同时引入各种用于操作 bio_crypt_ctx 并使 bio/request 合并函数逻辑知晓 bio_crypt_ctx。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/979781/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">研究人员计划将瑞德西韦与抗炎药联合使用 希望达到“一举两得”的疗效</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/979785/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">上游 Linux 开发者反对&#34;-O3&#34;级别的内核优化</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/981551/">苹果不忘老机型推出iOS 12.4.7安全更新：建议所有用户安装</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/981569/">马斯克为何一再上涨特斯拉全自动驾驶价格？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/981553/">Visual Studio 2019 for Mac 8.6 发布</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/981541/">仓鼠实验证明口罩能在防止新冠病毒传播上起到有效作用</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/981561/">发现最古老的恒星，几乎与宇宙同龄！</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

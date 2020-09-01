@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>IBM宣布SSD优化技术：性能、可靠性提升3倍 延迟降低50倍 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="IBM宣布SSD优化技术：性能、可靠性提升3倍 延迟降低50倍" />
+<meta property="og:description" content="随着技术的发展，SSD硬盘也面临着新的瓶颈，性能、可靠性及延迟等指标难以兼顾。IBM日前宣布推出一种新的SSD分区技术，它可以将SSD的性能及耐用性提升3倍，延迟足足降低了50倍。这个分区技术不是常说的C、D、E盘那样，而是相对传统SSD硬盘的FTL转换层而言，IBM开发了一种新的转换层技术SALSA(软件日志结构阵列)，可以更好地控制SSD硬盘上的数据操作。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1009313/" />
+<meta property="article:published_time" content="2020-07-30T00:34:05+08:00" />
+<meta property="article:modified_time" content="2020-07-30T00:34:05+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">IBM宣布SSD优化技术：性能、可靠性提升3倍 延迟降低50倍</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-30T00:34:05&#43;08:00">July 30, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>随着技术的发展，SSD硬盘也面临着新的瓶颈，性能、可靠性及延迟等指标难以兼顾。IBM日前宣布推出一种新的SSD分区技术，它可以将SSD的性能及耐用性提升3倍，延迟足足降低了50倍。这个分区技术不是常说的C、D、E盘那样，而是相对传统SSD硬盘的FTL转换层而言，IBM开发了一种新的转换层技术SALSA(软件日志结构阵列)，可以更好地控制SSD硬盘上的数据操作。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0729/8ee73c2370cb53c.png" alt="img:IBM宣布SSD优化技术：性能、可靠性提升3倍 延迟降低50倍"></p>
+<p>实际的结果如何呢？IBM也公布了一些测试结果，在RMS-350 U.2硬盘上对比了与传统FTL硬盘的性能及延迟结果，使用的是FIO Block级别的测试软件。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0729/a3b77a44db781c1.jpg" alt="img:IBM宣布SSD优化技术：性能、可靠性提升3倍 延迟降低50倍"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0729/f09242ff1ca496d.jpg" alt="img:IBM宣布SSD优化技术：性能、可靠性提升3倍 延迟降低50倍"></p>
+<p>性能方面，使用SALSA技术之后，读写速度从127MB/s提升到了301MB/s，而延迟降低的就更明显了，最多可以从815.1ms降至9.3ms，足足减少了99.99%，IBM表示延迟改善了有50倍之多。</p>
+<p>除了性能及延迟上的改善，SALSA技术还同样改善了SSD硬盘的寿命/可靠性，耐用性也是原来的3倍多。</p>
+<p>只不过IBM的测试估计很难让消费级SSD硬盘享受到这样的神优化，目前主要是针对的服务器环境。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1009317/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">MWC 2021大会将正常进行 但会更多体现线上元素</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1009327/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">16次熔断暴涨近600% 柯达成Robinhood散户投机新宠</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1011143/">武汉地铁屏蔽门被撞粉碎 官方：维保施工设备侵限</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1011129/">维珍银河发布拟议中的超音速喷气机渲染图 速度可达3马赫</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1011135/">收购TikTok，对微软有什么意义？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1011131/">谷歌中端智能手机Pixel 4a已经在澳大利亚上市 相关宣传材料曝光</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1011137/">瑞幸咖啡内斗继续：两名独董辞职 大钲要求9月开特别股东会</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

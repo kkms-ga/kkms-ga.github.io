@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Raspberry Pi 4从新固件Beta版本中获得USB Bootloader - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Raspberry Pi 4从新固件Beta版本中获得USB Bootloader" />
+<meta property="og:description" content="Raspberry Pi Foundation 宣布了一个 Beta 版本的新固件更新和一个引导加载程序，以用于从 USB 大容量存储设备引导
+Raspberry Pi 4。对于那些希望选择从更快的 USB 大容量存储设备进行引导，而不仅仅是使用 SD 卡进行引导的 Raspberry
+Pi 4 所有者来说，新的固件和引导加载程序可能会很有用。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/985031/" />
+<meta property="article:published_time" content="2020-05-30T09:51:20+08:00" />
+<meta property="article:modified_time" content="2020-05-30T09:51:20+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Raspberry Pi 4从新固件Beta版本中获得USB Bootloader</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-30T09:51:20&#43;08:00">May 30, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Raspberry Pi Foundation 宣布了一个 Beta 版本的新固件更新和一个引导加载程序，以用于从 USB 大容量存储设备引导
+Raspberry Pi 4。对于那些希望选择从更快的 USB 大容量存储设备进行引导，而不仅仅是使用 SD 卡进行引导的 Raspberry
+Pi 4 所有者来说，新的固件和引导加载程序可能会很有用。</p>
+<p>于 2019 年 6 月推出的 Raspberry Pi 4 拥有的功能亮点之一是 USB 3.0，与以前版本的计算机相比，其可以实现更快的存储速度。不过，与先前的型号不同的是，Raspberry Pi 4 不支持 USB 大容量存储启动，从而阻止了用户从 USB 大容量存储设备安装操作系统。对此，官方也曾承诺称，该差距将在将来的软件更新中消除。</p>
+<p>此次更新将提供完整的 USB 启动支持，从而完全不需要 microSD 卡。使用此 Beta 固件，Pi 4 所有者可以使用 USB 3.0 引导操作系统。感兴趣的可以在 Raspberry Pi 网站上查看有关引导程序配置的完整详细信息。</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-68082e8a88d177cad3068cdef975d7144ee.png" alt="img:Raspberry Pi 4从新固件Beta版本中获得USB Bootloader"></p>
+<p>如果你希望能够通过 USB 引导 Raspberry Pi，需要注意的是：由于这是一个测试版，因此早期采用者必须手动更新引导加载程序。用户需要将最新版本的 Raspbian 操作系统加载到 microSD 卡上，并从终端运行固件更新。重新引导后，新的 Beta 引导加载程序将生效。</p>
+<p>Raspberry Pi Trading 的首席软件工程师 Tim Gover 表示： “这是一个 beta 版本。如果你不熟悉手动固件更新，可等到标准版本发布再使用“。并称，”这一等待时间不会太长。”</p>
+<p>Raspberry Pi Foundation 称，“最初，我们建议使用 USB 笔式驱动器或 SSD。硬盘驱动器可能需要带电源的 HUB，并且在所有情况下，你都应该使用 SD 卡引导程序从 Raspbian 中验证设备是否正常运行。”</p>
+<p>访问:</p>
+<p>京东商城</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/985047/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">CCleaner v5.67.7763发布 系统清理工具</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/985035/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">OneDrive网页版迎来新功能 协作变得更轻松</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/986793/">[图]Edge Canary 85新版发布：支持 PWA 应用随 Windows 开机启动</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/986803/">YouTube与LGBTQ内容创作者展示首场真正较量</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/986781/">扎克伯格安抚不满员工：3月份曾删过特朗普的广告</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/986801/">SpaceX已将首次载人发射成功的猎鹰9号火箭助推器带回家</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/986785/">为何新冠病毒抗体检测呈阳性不代表有免疫力？</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

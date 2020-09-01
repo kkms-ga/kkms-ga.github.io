@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>DragonFlyBSD 从 FreeBSD 引入 AMD 温度驱动程序 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="DragonFlyBSD 从 FreeBSD 引入 AMD 温度驱动程序" />
+<meta property="og:description" content="除了部分主板方面的特定问题，DragonFlyBSD 在 AMD Zen 系统上通常都运行得十分正常。现在，它从 FreeBSD 引入了一些新的驱动，整体运行情况有了更好的改善。从 FreeBSD 引入的部分驱动中，amdtemp 驱动尤其值得关注。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1010815/" />
+<meta property="article:published_time" content="2020-08-03T09:02:10+08:00" />
+<meta property="article:modified_time" content="2020-08-03T09:02:10+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">DragonFlyBSD 从 FreeBSD 引入 AMD 温度驱动程序</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-03T09:02:10&#43;08:00">August 03, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>除了部分主板方面的特定问题，DragonFlyBSD 在 AMD Zen 系统上通常都运行得十分正常。现在，它从 FreeBSD 引入了一些新的驱动，整体运行情况有了更好的改善。从 FreeBSD 引入的部分驱动中，amdtemp 驱动尤其值得关注。</p>
+<p>此驱动支持对 AMD 0Fh, 10h, 11h, 12h, 14h, 15h, 16h, 和 17h 系列处理器的温度进行监控。其中对 AMD Family 17h 的支持涵盖了 Zen 1 以及 Zen 2，包括 Threadripper 和 EPYC 等。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0803/02572b1e4c84fe0.png" alt="img:DragonFlyBSD 从 FreeBSD 引入 AMD 温度驱动程序"></p>
+<p>除此之外还有 amdsmn 驱动。此驱动用于在 AMD Zen 系统上支持 AMD 系统管理网络（System Management Network，SMN）。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0803/97fc09e51a542ea.png" alt="img:DragonFlyBSD 从 FreeBSD 引入 AMD 温度驱动程序"></p>
+<p>DragonFlyBSD 团队引入这些驱动后，对它们的代码进行了小幅度改进，目前这些驱动程序位于 DragonFlyBSD 代码树中。</p>
+<p>与许多 BSD / Linux 社区一样，DragonFlyBSD 项目负责人 Matthew Dillon 对 AMD Zen 2 产品有着深刻的印象，或许这也是 DragonFlyBSD 项目持续优化在 AMD 上运行体验的原因。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1010817/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">FDA称遍及美国34个州的新沙门氏菌爆发或与洋葱有关</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1010809/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Google Doodle向菲律宾裔美国跳水运动员Vicki Draves致敬</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1013093/">特斯拉正在德克萨斯州奥斯汀市招聘人才  以建设新的超级工厂</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1013095/">Fedora 33 确认引入 Stratis 2.1</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1013099/">汽车油箱加满会“油耗油”？基本可以忽略不计</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1013107/">三星为Galaxy Note 20系列智能机发布首个软件更新</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1013103/">Evan Blass分享AT&amp;T版Surface Duo折叠屏智能机图像</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

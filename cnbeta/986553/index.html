@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>五角大楼使用创企研发的Mayhem工具搜索软件Bug - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="五角大楼使用创企研发的Mayhem工具搜索软件Bug" />
+<meta property="og:description" content="据《连线》(Wired)杂志报道，去年年底，互联网基础设施公司Cloudflare的安全工程师David Haynes发现自己正盯着一张奇怪的图像。“那纯粹是胡言乱语，”他说。“一大堆灰黑色的像素，由机器制造出来的。”他拒绝分享图片，称这将是一个安全风险。Haynes的谨慎是可以理解的。这张图片是由一个名为Mayhem的工具创建的，该工具可以探测软件以发现未知的安全漏洞，由卡内基梅隆大学的衍生创企ForAllSecure制作。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/986553/" />
+<meta property="article:published_time" content="2020-06-03T15:19:33+08:00" />
+<meta property="article:modified_time" content="2020-06-03T15:19:33+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">五角大楼使用创企研发的Mayhem工具搜索软件Bug</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-03T15:19:33&#43;08:00">June 03, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>据《连线》(Wired)杂志报道，去年年底，互联网基础设施公司Cloudflare的安全工程师David Haynes发现自己正盯着一张奇怪的图像。“那纯粹是胡言乱语，”他说。“一大堆灰黑色的像素，由机器制造出来的。”他拒绝分享图片，称这将是一个安全风险。Haynes的谨慎是可以理解的。这张图片是由一个名为Mayhem的工具创建的，该工具可以探测软件以发现未知的安全漏洞，由卡内基梅隆大学的衍生创企ForAllSecure制作。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p>Haynes一直在Cloudflare软件上进行测试，该软件可以调整图片的大小以加快网站的速度，并向它提供了几张照片样本。Mayhem将它们变异成了一些不正常的的图片，通过触发一个不被注意到的bug，使照片处理软件崩溃，这个漏洞可能会给付费给Cloudflare以保持网站正常运行的客户带来问题。</p>
+<p>此后，Cloudflare将Mayhem作为其安全工具的标准配置。美国空军、海军和陆军也使用了它。上个月，五角大楼授予ForAllSecure一份4500万美元的合同，让Mayhem在整个美军中推广使用。该部门有大量的Bug可供查找。2018年的一份政府报告发现，国防部在2012年至2017年期间测试的几乎所有武器系统都存在严重的软件漏洞。</p>
+<p>Mayhem还不够精密，不足以完全取代人类漏洞查找员的工作，他们利用软件设计知识、代码阅读技巧、创造力和直觉来寻找漏洞。但ForAllSecure联合创始人兼CEO David Brumley表示，该工具可以帮助人类专家完成更多的工作。世界上的软件有更多的安全漏洞，专家们没有时间去发现，而每分钟都有更多的漏洞出现。“安全并不在于是否安全或不安全，而在于你的行动速度有多快。”Brumley说。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0603/912f850d9f1ebd8.jpeg" alt="img:五角大楼使用创企研发的Mayhem工具搜索软件Bug"></p>
+<p>Mayhem起源于2016年在拉斯维加斯一家赌场举行的一场不寻常的黑客大赛。数以百计的人到场观看由五角大楼的研究机构Darpa主办的网络大挑战赛。但舞台上没有一个人，只有七台电脑服务器。每台服务器上都有一个机器人，它试图发现并利用其他服务器的漏洞，同时也发现并修补自己的漏洞。8个小时后，由Brumley所带领的卡内基梅隆大学安全实验室团队制作的 &ldquo;Mayhem &ldquo;获得了200万美元的最高奖项。</p>
+<p>目前仍是卡内基梅隆大学教授的Brumley说，这段经历让他相信，他的实验室创造的东西在现实世界中可以派上用场。他抛开了团队的机器人的进攻能力，认为防御更重要，并着手将其商业化。“网络安全挑战赛( Cyber Grand Challenge)表明，完全自主安全是可能的。”他说。“计算机可以做得相当不错。”</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0603/ce0bc0a0784234f.jpeg" alt="img:五角大楼使用创企研发的Mayhem工具搜索软件Bug"></p>
+<p>以色列等国政府都提出了合同，但ForAllSecure与美国政府签约。它得到了国防创新部门的合同，这是五角大楼的一个小组，试图将新技术快速引入美军。ForAllSecure受到了挑战，通过寻找美军使用的军用变体商用客机的控制软件中的漏洞来证明Mayhem的能力。在几分钟内，这个自动黑客就发现了一个漏洞，该漏洞随后被飞机制造商验证并修复了。</p>
+<p>Mayhem发现的其他漏洞还包括今年早些时候在数百万台网络设备中使用的OpenWRT软件中发现的一个漏洞。去年秋天，该公司的两名实习生从Netflix的漏洞赏金计划中获得了一笔奖金，因为他们利用Mayhem发现了软件中的一个漏洞，该软件可以让人们将视频从手机发送到电视上。</p>
+<p>Brumley表示，汽车和航空航天公司对这个工具的兴趣特别浓厚。汽车和飞机对软件的依赖性越来越强，而这些软件需要多年的可靠运行，而且很少更新。</p>
+<p>Mayhem只针对基于Linux操作系统的程序，发现漏洞的方式有两种，一种是随机的，另一种更有针对性。第一种称为模糊测试，它涉及到用随机生成的输入（如命令或照片）轰炸目标软件，并观察是否有触发可利用的漏洞。第二种被称为符号执行，涉及到创建一个目标软件的简化数学表示。可以对这个被简化的替身进行分析，以确定真实目标中的潜在弱点。</p>
+<p>近几年来，模糊测试工具在计算机安全领域的应用越来越广泛。去年，谷歌发布了一个模糊测试工具，并表示已经在其Chrome浏览器中发现了16000多个Bug。但Cloudflare公司的Haynes表示，该技术在行业内仍未得到普遍使用，因为模糊测试工具通常需要对每个目标程序进行太多仔细的调整。他说，ForAllSecure精心打造的Mayhem更具适应性，让Cloudflare可以更常规地使用模糊测试。Haynes说，符号执行可以找到更复杂的Bug，之前主要是在研究实验室中使用。</p>
+<p>亚利桑那州立大学教授Ruoyu Wang希望Mayhem只是计算机安全领域更自动化的未来的开始，但他说，这将需要bug查找机器人与人类进行更多的合作。</p>
+<p>Mayhem表明，自动化可以做有用的工作，Wang说，但现有的自动寻找漏洞的机器人在复杂的互联网服务或软件包中不能起到多大的作用。最好的软件还远远不能像人类那样聪明到理解程序的意图和功能。Mayhem比任何人类更快地尝试很多不同的东西的能力都无法替代。“很多自动查找漏洞的难点问题，现在还远远没有解决。”Wang说。</p>
+<p>Wang曾是一个名为Mechanical Phish的团队的一员，该团队在2016年Darpa锦标赛上获得了第三名。他现在正在从事该机构的一个名为CHESS的新研究项目，试图制造出更强大的Bug查找软件。“现在，最先进的自动化不知道什么时候会遇到障碍，”Wang说。“它应该意识到这一点，并向人类咨询。”</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/986533/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">中芯国际：美国修改政策 14nm等工艺可能无法为某些客户代工</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/986525/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">腾讯QQ企鹅是什么品种？官方首次回应：原来是它</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/988297/">Galaxy Note 20系列将不会采用三星自家的新传感器</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/988315/">过度营销？吉利豪越“强力淋雨”试验遭网友集体批评</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/988325/">《釜山行2：半岛》更新两张男主新剧照 7月正式上映</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/988305/">梧州共享电动车配备安全头盔带有防盗绳遭吐槽</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/988331/">海南省2030年将不再销售燃油车</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

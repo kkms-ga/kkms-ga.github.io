@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>全新设计的 Xcode 12 特性抢先看 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="全新设计的 Xcode 12 特性抢先看" />
+<meta property="og:description" content="苹果在 WWDC 2020 上除了发布最新的 macOS Big Sur 之外，还宣布未来 Mac 将会采用基于 ARM 架构的自研芯片 Apple silicon。因此，苹果也推出了相应的集成开发环境 Xcode 12。Xcode 12 采用了全新的设计，外观方面保持与 macOS Big Sur 一致的风格。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/996087/" />
+<meta property="article:published_time" content="2020-06-27T08:23:45+08:00" />
+<meta property="article:modified_time" content="2020-06-27T08:23:45+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">全新设计的 Xcode 12 特性抢先看</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-27T08:23:45&#43;08:00">June 27, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>苹果在 WWDC 2020 上除了发布最新的 macOS Big Sur 之外，还宣布未来 Mac 将会采用基于 ARM 架构的自研芯片 Apple silicon。因此，苹果也推出了相应的集成开发环境 Xcode 12。Xcode 12 采用了全新的设计，外观方面保持与 macOS Big Sur 一致的风格。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0627/cb0dac0cb954953.jpg" alt="img:全新设计的 Xcode 12 特性抢先看"></p>
+<p>部分新变化包括：侧边导航栏的字体可自定义大小、精简的代码补全功能、新的文档标签页可更快打开多个文件，并支持在各自的标签页中打开界面文件、日志文件和项目文件，以及重新设计的 organizer。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0627/4f971f714a9e488.jpg" alt="img:全新设计的 Xcode 12 特性抢先看"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0627/88f4784141865ed.jpg" alt="img:全新设计的 Xcode 12 特性抢先看"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0627/961896e5d966559.jpg" alt="img:全新设计的 Xcode 12 特性抢先看"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0627/cec9acf0143c592.jpg" alt="img:全新设计的 Xcode 12 特性抢先看"></p>
+<p>作为桥接新旧 Mac 架构的角色，Xcode 12 默认构建 macOS 通用 app (Universal app)，以支持搭载 Apple 芯片的新 Mac，该过程通常无需更改任何代码。</p>
+<p>事实上，Xcode 12 本身就是作为 Universal app 而构建，可以原生运行在 Intel x86_64 CPU 和基于 ARM 的 Apple 芯片上。Xcode 12 还提供了统一的 macOS SDK，其中包含所有框架、编译器、调试器和其他工具，以帮助构建在 Apple 芯片和 Intel x86_64 CPU 上原生运行的应用程序。</p>
+<p>当在 Xcode 12 中打开项目时，app 会自动更新，以生成作为 Universal app 的 release builds 和 archives。当构建 app 时，Xcode 会为苹果芯片和 Intel x86_64 CPU 分别生成一个二进制文件，然后把两者打包在一起，作为单个 app 发布或共享到 Mac App Store。开发者可以点击工具栏中的“Any Mac”选项来测试此项功能。在搭载苹果芯片的新 Mac 上，开发者可以选择工具栏上的“My Mac (Rosetta)”选项，模拟原生基础架构或是英特尔虚拟化，来执行并测试 app。</p>
+<p>在 Xcode 12 中，苹果还对用户界面 UI 框架 SwiftUI 进行了改进，除了优化性能还增加了一些新特性。由于保持了稳定的 API，因此开发者可以轻松地将现有的 SwiftUI 代码引入 Xcode 12。而针对使用 SwiftUI 构建的 app 的全新生命周期管理 API 让开发者可以在 SwiftUI 中完整编写 app，并在所有 Apple 平台上共享更多代码。</p>
+<p>基于 SwiftUI 构建的全新小组件平台让开发者可以构建在 iPad、iPhone 和 Mac 上运行良好的小组件。SwiftUI 视图现在支持与其他开发者共享，并作为一等(first-class) 控件出现在 Xcode 库中。现有的 SwiftUI 代码可以继续运行，同时提供了更快的性能、更好的诊断和对新控件的访问。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0627/9f766c16a2ec0e8.jpg" alt="img:全新设计的 Xcode 12 特性抢先看"></p>
+<p>更多变化查看 https://developer.apple.com/xcode/whats-new/</p>
+<p>目前 Xcode 12 的最新版本处于 Beta 阶段，详情查看发布说明。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/996059/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">担忧美国两极对立气氛 英企停止在脸书等社交平台投放品牌广告</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998063/">特朗普：支持新一轮逾1200美元抗疫支票发放</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998087/">新冠大流行期间美国试用OTT服务的新客户中   27%的人选择了Apple TV&#43;</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998035/">苹果、Facebook、谷歌和亚马逊CEO将出席反垄断听证会</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998039/">乐高停止30天社交媒体广告 抗议平台对内容监管不力</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998049/">英国最终或禁用华为设备 英国官员：正在商讨如何为新供应商削减成本</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

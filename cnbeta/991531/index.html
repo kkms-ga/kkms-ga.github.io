@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>微软的 Project Reunion 究竟是什么？ - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="微软的 Project Reunion 究竟是什么？" />
+<meta property="og:description" content="在上个月的 Build 2020 大会中，微软宣布了 Project Reunion，并大致介绍它可以用来构建统一的 Windows
+应用程序，能够更好地打破 Win32（即 Windows API）和通用 Windows 平台（UWP）API 之间的障碍。但很多开发者不清楚它的功能究竟有哪些、能够用来干些什么。于是，微软最近又更新了一份文档，对 Project Reunion 进行了更为详细的介绍。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/991531/" />
+<meta property="article:published_time" content="2020-06-16T09:58:57+08:00" />
+<meta property="article:modified_time" content="2020-06-16T09:58:57+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">微软的 Project Reunion 究竟是什么？</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-16T09:58:57&#43;08:00">June 16, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>在上个月的 Build 2020 大会中，微软宣布了 Project Reunion，并大致介绍它可以用来构建统一的 Windows
+应用程序，能够更好地打破 Win32（即 Windows API）和通用 Windows 平台（UWP）API 之间的障碍。但很多开发者不清楚它的功能究竟有哪些、能够用来干些什么。于是，微软最近又更新了一份文档，对 Project Reunion 进行了更为详细的介绍。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0616/a6fc7af015c5383.png" alt="img:微软的 Project Reunion 究竟是什么？"></p>
+<p>根据微软的最近介绍，“Project Reunion 是一组库、框架、组件和工具，你可以在应用程序中使用它们，以从各种应用程序中体验到强大的 Windows 平台功能。Project Reunion 结合了 Win32 本机应用程序的功能和现代 API 使用技术，因此这些应用程序可适用于不同 Windows 平台。”</p>
+<p>由此看来，开发者若想将自己的应用发布至不同 Windows 平台，通过 Project Reunion，就无需进行重写。Project Reunion 可自动适应首选应用程序模型和部署机制。</p>
+<p>Project Reunion 的功能分为三个主要类别——新 API、聚合 API 和 API 子集。开发者可以按照自己的需求使用每种不同级别的功能。</p>
+<p>目前，Project Reunion 中已有的组件包括：</p>
+<p>WinUI 3 for XAML 利用 XAML 的功能，可以帮助开发者为各种应用程序构建流畅的 UX。</p>
+<p>C++/WinRT、RUST/WinRT 和 C#/WinRT 提供自定义类型的语言本地投影，方便 C++/Rust/C# 开发人员调用 Windows API，更轻松地使用自己熟悉的语言构建各类 Windows 应用和组件。</p>
+<p>MSIX-Core 用于打包应用程序，以通过商店或自己的交付管道分发到 Windows 桌面计算机。</p>
+<p>微软表示，还有更多的组件在计划中，例如：</p>
+<p>支持 Edge/Chromium 的 WebView2，带来了一次用 HTML+JS 编写应用程序并在所有平台上重复使用的便利。</p>
+<p>Modern Lifecycle helpers 能够使应用程序对功耗更加敏感，并对运行时系统的功耗管理和用户状态的变化做出反应。</p>
+<p>Startup Tasks 可让应用程序在不过度使用资源的情况下开始工作，或准备快速使用时活跃起来。</p>
+<p>Update Scan Integration 有助于在与其他系统维护任务同时执行的同时，使应用程序自动保持最新。</p>
+<p>随着 Project Reunion 的发展，它提供的功能将不仅限于合并现有的 Win32 和 UWP 模型，而是将为所有应用程序提供附加功能以供使用。</p>
+<p>Project Reunion 是完全开源的，微软表示，希望依靠社区的力量来为它提供更好的发展。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/991493/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[图]CarKey即将上线：你可以用iPhone或Apple Watch替代车钥匙了</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/991525/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">日本新超算欲重夺“全球最快”</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993679/">苹果CEO：会在与特朗普总统会面时谈论民权话题</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993681/">谷歌前广告主管正在打造一款无广告的搜索引擎</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993685/">微软Your Phone应用已开始支持Surface Duo</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993683/">因量杯缺少测量标记 葛兰素史克召回多种儿童非处方药</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993659/">国产128层QLC闪存已问世 武汉国家存储器基地项目二期开工</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

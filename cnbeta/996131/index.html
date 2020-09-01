@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>微软在 ARM 上成功移植 OpenJDK for Windows 10 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="微软在 ARM 上成功移植 OpenJDK for Windows 10" />
+<meta property="og:description" content="去年微软宣布收购 jClarity，用在了 Azure 上的 Java 工作负载，以平台之势加大了对 Java
+的支持，而近期，开发团队完成了在基于 Arm（AArch64）的设备上移植适用于 Windows 10 的 OpenJDK
+的第一阶段。同时该工作正在与 Red Hat 合作提交给 OpenJDK 项目。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/996131/" />
+<meta property="article:published_time" content="2020-06-27T11:25:33+08:00" />
+<meta property="article:modified_time" content="2020-06-27T11:25:33+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">微软在 ARM 上成功移植 OpenJDK for Windows 10</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-27T11:25:33&#43;08:00">June 27, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>去年微软宣布收购 jClarity，用在了 Azure 上的 Java 工作负载，以平台之势加大了对 Java
+的支持，而近期，开发团队完成了在基于 Arm（AArch64）的设备上移植适用于 Windows 10 的 OpenJDK
+的第一阶段。同时该工作正在与 Red Hat 合作提交给 OpenJDK 项目。</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-22c06d0c53a3aeeb6186207c95259eedaec.png" alt="img:微软在 ARM 上成功移植 OpenJDK for Windows 10"></p>
+<p>微软 Java 工程组首席程序经理 Bruno Borges 介绍，凭借更高的能源效率，使用 ARM64 可以大大降低数据中心的成本并延长个人设备的电池寿命，而“对于许多工作负载和用户首选项，Windows 是首选的操作系统”，因此 Java 工程组借助此移植版以支持这一类用户。</p>
+<p>目前微软在该项目上提供了 2 个补丁，第一个补丁 Webrev P1 有助于在 Linux + AArch64 上集成对 Windows（LLP64）的支持；第二个补丁 Webrev P2 在 os_cpu 中添加了对 windows-aarch64 的支持。过程中还必须修改共享代码，具体细节包括：</p>
+<p>在 Windows_x86 中，例如在 os_windows_x86.cpp 中的 get_frame_at_stack_banging_point，</p>
+<p>os/windows os_windows.cpp 中，使其知晓 Windows + Arm64</p>
+<p>threadCritical_windows.cpp 中的 os/windows，</p>
+<p>Windbg 支持</p>
+<p>share/utilities 中的 globalDefinitions_visCPP.hpp</p>
+<p>还向 P2 添加了向量异常处理（Vectored Exception Handling，VEH），这是 Windows + Arm64 上的要求（由于 ABI 规范）。</p>
+<p>另外，Webrev P2 中还对 cpu/aarch64 进行了一些重要的更改，因为在 Windows + Arm64 上，将 R18 点指向 TEB。</p>
+<p>目前已经成功移植了 C2，并且可以构建服务器版本（交叉编译环境），同时另外两个补丁也正在开发中：</p>
+<p>Webrev P3：在 Windows 上将 VEH 扩展到 x86-64。</p>
+<p>Webrev P4：Windows 上共享跨平台代码的改进，将会尽快发送单独的补丁。</p>
+<p>尽管仍未 100％ 完成功能，但是此移植版本基于 OpenJDK tip branch（16+），可以运行大多数工作负载，包括 SPEC SERT 以及所有 SPEC Java 套件。开发人员可以开始使用最近发布的  Visual Studio Code for Windows ARM64 中添加的核心 Java 扩展，以及 Apache Maven、Gradle 等工具在 Windows 10 ARM64 兼容笔记本电脑上开发 Java 应用。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/996139/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">开车过积水路面溅湿路人司机被罚200引热议</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/996171/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">CDC：美国新冠实际感染人数可能比通过检测确诊的人数多10倍</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998211/">扎克伯格讲话曝光：越抵制越不变 不会屈服于营收损失压力</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998179/">简单实验证明了为什么口罩是降低COVID-19传播风险的关键工具</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998203/">华为正式宣布开源数据虚拟化引擎openLooKeng</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998193/">贾跃亭公开信：个人破产重组生效 将补偿乐视网股民</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998197/">Salesforce提出减轻AI性别偏见的新方法</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

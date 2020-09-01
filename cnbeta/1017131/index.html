@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>英特尔揭示11代Tiger Lake移动处理器核心细节 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="英特尔揭示11代Tiger Lake移动处理器核心细节" />
+<meta property="og:description" content="在本周的 HotChips 32 活动期间，英特尔揭示了下一代 Tiger Lake 移动 CPU 的更多细节。首先，其基于 10nm&#43;&#43; 工艺节点制造，辅以该公司最新的 Willow Cove 内核架构，与上一代 Sunny Cove 的基础相同。其次，Willow Cove 具有重新设计的芯片层次结构，可实现更高的吞吐性能。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1017131/" />
+<meta property="article:published_time" content="2020-08-18T14:07:25+08:00" />
+<meta property="article:modified_time" content="2020-08-18T14:07:25+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">英特尔揭示11代Tiger Lake移动处理器核心细节</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-18T14:07:25&#43;08:00">August 18, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>在本周的 HotChips 32 活动期间，英特尔揭示了下一代 Tiger Lake 移动 CPU 的更多细节。首先，其基于 10nm++ 工艺节点制造，辅以该公司最新的 Willow Cove 内核架构，与上一代 Sunny Cove 的基础相同。其次，Willow Cove 具有重新设计的芯片层次结构，可实现更高的吞吐性能。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0818/64c7f0993b93ab7.jpg" alt="img:英特尔揭示11代Tiger Lake移动处理器核心细节"></p>
+<p>英特尔还强调了 10nm SuperFin 晶体管设计，宣称可带来与适当的制程收缩相当的性能提升。与十代 Ice Lake 芯片上的标准 10nm 工艺节点相比，其性能提升约 17-18%，同时频率也能更高。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0818/88b54b7f09f34af.jpg" alt="img:英特尔揭示11代Tiger Lake移动处理器核心细节"></p>
+<p>为便于大家理解，英特尔分享了 Tiger Lake CPU 的方框图和模具照片。前者概述了 Ice Lake 芯片的所有功能，以及有哪些部件维持不变。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0818/c13a0d6337006cc.jpg" alt="img:英特尔揭示11代Tiger Lake移动处理器核心细节"></p>
+<p>首先是相似之处，Ice Lake 与 Tiger Lake CPU 的 DDR4 内存控制器都支持最高 64GB @ DDR4-3200，以及 SGX、Fuse、JTAG、SVID 和 OPIO 等控制器（USB-C 依然兼容 DP 1.4）。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0818/109ddb5cc791ec3.jpg" alt="img:英特尔揭示11代Tiger Lake移动处理器核心细节"></p>
+<p>其次我们可从框图中看到，Tiger Lake CPU 仅保留了几个与 Ice Lake 类似的结构块，其余芯片都是全新的。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0818/265e847ba56e0b7.jpg" alt="img:英特尔揭示11代Tiger Lake移动处理器核心细节"></p>
+<p>Tiger Lake CPU 主要新增了 Willow Cove 内核、Xe LP 图形和媒体引擎、12 MB 的 L3 缓存，支持 8K 显示的新引擎（4 管道 @ 64Gbps）、6 个摄像头传感器的 IPU6（视频最高 4K @ 90fps）。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0818/4a880d86dd0ef66.jpg" alt="img:英特尔揭示11代Tiger Lake移动处理器核心细节"></p>
+<p>内存控制器部分新增对 LPDDR5 的支持，最高 5400MHz 频率 @ 32GB 容量，其余部分较 Ice Lake 的变化不尽相同。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0818/7377764f8688faa.jpg" alt="img:英特尔揭示11代Tiger Lake移动处理器核心细节"></p>
+<p>英特尔 11 代 Tiger Lake CPU 示意（图自 @Locuza_）</p>
+<p>英特尔 Tiger Lake CPU 还使用了双环互连，其中 Tiger Lake-U 系列 CPY 最多提供 4 个 Willow Cove 核心和集成 Xe-LP GPU 引擎。总计 96 个执行单元（EU）或 768 个内核，运行频率约 1300MHz 。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0818/82b2a4bcc9429cd.jpg" alt="img:英特尔揭示11代Tiger Lake移动处理器核心细节"></p>
+<p>Tiger Lake CPU 本身有望实现高达 5 GHz 的瞬时睿频，这是 10nm++ 工艺给我们留下的另一个深刻的印象。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0818/d4b3c8d6b6f0d72.png" alt="img:英特尔揭示11代Tiger Lake移动处理器核心细节"></p>
+<p>英特尔将 Tiger Lake 称作第 11 代酷睿处理器，并将仅在笔记本 / 游戏本平台上使用，涵盖 Tiger Lake-Y、Tiger Lake-U、以及 Tiger Lake-H 三条产品线，各路 OEM 厂商正在对其展开测试。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0818/22b396e2fb2bc73.png" alt="img:英特尔揭示11代Tiger Lake移动处理器核心细节"></p>
+<p>Tiger Lake-U 系列中包括了热设计功耗（TDP）15~28W 的 SKU，提供 4 核心 / 8 线程，睿频可达 4.50 GHz 。</p>
+<p>辅以 GT2 等级的核显（12 代 Xe GPU），采用 UP3（BGA 1499）封装，且早前报道称 9 月 2 日就有新款笔记本问世。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0818/b30c39f1eed163f.png" alt="img:英特尔揭示11代Tiger Lake移动处理器核心细节"></p>
+<p>在英特尔的文档中，提到了 Tiger Lake-U 系列支持 LPDDR5，而其余产品阵容都只支持到 LPDDR4（X）内存。</p>
+<p>Tiger Lake-Y 系列 SKU 的热设计功耗在 4.5~9 W，同样有 4 核心 / 8 线程、集成 GT2 级别的 Gen 12 Xe 核显。采用 UP4（BGA 1598）封装，仅支持到 LPDDR4X 内存。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0818/54ec55b7ee534af.jpg" alt="img:英特尔揭示11代Tiger Lake移动处理器核心细节"></p>
+<p>至于高性能的 Tiger Lake-H 系列，其基于 Willow Cove 新内核，提供 8 核心 / 16 线程，总缓存可达 34MB（24MB L3 + 10MB L2），匀到每一个核心上就是 3MB L3 + 1.25MB L2 。</p>
+<p>值得一提的是，Tiger Lake CPU 还具有非对称的 48 / 32KB L1 高速缓存，提供了对 AVX2 / AVX-512 指令的完全支持，辅以额外的两级内存（2LM）和软件防护扩展（SGX），最高支持 DDR4-3200 内存。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0818/4854007f7293d27.png" alt="img:英特尔揭示11代Tiger Lake移动处理器核心细节"></p>
+<p>如果将 Tiger Lake-H 与 AMD 锐龙 H 系列高性能 CPU 摆在一起，你会看到这样的场景。最后，英特尔强调 Tiger Lake 移动处理器的 TDP 可从 9W ~ 65W 。</p>
+<p>目前已知英特尔将至少提供三档细分（Tiger Lake-Y、Tiger Lake-U、Tiger Lake-H），OEM 厂商将于下月率先投放搭载 -U 系列芯片的产品，然后在今年晚些时候推出搭载 -Y 系列芯片的产品。</p>
+<p>至于 -H 系列，则被安排到了上半年推出，预计 TDP 范围从 35~65W，并且所有 Tiger Lake CPU 都将支持 PCIe Gen 4、USB4、以及雷电 4 等特性。</p>
+<p>当 10nm Tiger Lake CPU 于 9 月 2 日正式发布时，英特尔终于可以全力应对基于 AMD 7nm Zen 2 打造的锐龙 4000 Renoir 系列竞品的挑战。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1017137/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">古力娜扎上手三星Galaxy Z Flip 5G美图曝光：颜值中毒</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1017187/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">董明珠潜在接班人裸辞，任财务总负责超12年突遭解聘</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019279/">2020年鸟类摄影年度大奖获奖作品公布</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019275/">Surface Duo工程机上手视频：第一印象不错</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019277/">三星数款无线耳机被曝存在因受热而无法播放问题</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019261/">LG Q92 5G陶瓷白版本实机照片曝光：后置四摄组合</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019267/">桥本环奈高票登顶 粉丝投票《鬼灭之刃》真人化弥豆子谁来演</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

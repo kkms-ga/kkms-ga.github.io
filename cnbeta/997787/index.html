@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>QLC闪存三星870 QVO SSD拆解探秘：缓存外写入速度惨不忍睹 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="QLC闪存三星870 QVO SSD拆解探秘：缓存外写入速度惨不忍睹" />
+<meta property="og:description" content="一年半之前，三星发布了旗下首款消费级QLC闪存SSD 860 QVO，现在第二带来了，它就是870 QVO。虽然很多人对于QLC闪存非常抗拒，但正如之前的TLC，这是不可逆转的趋势，只能慢慢接受，当然厂商在涉及产品的时候也会有相应的权衡，比如QLC闪存初期就不会用于高性能NVMe SSD，而是主打主流大容量，三星870 QVO就是SATA SSD，而且首次做到了8TB。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/997787/" />
+<meta property="article:published_time" content="2020-07-01T14:56:00+08:00" />
+<meta property="article:modified_time" content="2020-07-01T14:56:00+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">QLC闪存三星870 QVO SSD拆解探秘：缓存外写入速度惨不忍睹</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-01T14:56:00&#43;08:00">July 01, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>一年半之前，三星发布了旗下首款消费级QLC闪存SSD 860 QVO，现在第二带来了，它就是870 QVO。虽然很多人对于QLC闪存非常抗拒，但正如之前的TLC，这是不可逆转的趋势，只能慢慢接受，当然厂商在涉及产品的时候也会有相应的权衡，比如QLC闪存初期就不会用于高性能NVMe SSD，而是主打主流大容量，三星870 QVO就是SATA SSD，而且首次做到了8TB。</p>
+<p>870 QVO的诚意还是满满的，比如V-NAND闪存从64层升级到92层，单Die容量1Tb，只需八颗就能组成一颗1TB容量的闪存芯片，同时主控也从MJX升级到MKX，不过并未公布任何技术更新、固件变化，相信只是一次小更新。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0701/29cdfbb9dfc123d.jpg" alt="img:QLC闪存三星870 QVO SSD拆解探秘：缓存外写入速度惨不忍睹"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0701/6e02ccb8facb168.jpg" alt="img:QLC闪存三星870 QVO SSD拆解探秘：缓存外写入速度惨不忍睹"></p>
+<p>下边先看看拆解图，再了解一下性能，尤其是缓存之外的写入性能。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0701/b6afa4491632a0a.jpg" alt="img:QLC闪存三星870 QVO SSD拆解探秘：缓存外写入速度惨不忍睹"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0701/4e457b4ccddf4cb.jpg" alt="img:QLC闪存三星870 QVO SSD拆解探秘：缓存外写入速度惨不忍睹"></p>
+<p>左右分别是4TB、1TB的电路板正反面。很显然，1TB、2TB只需一颗和两颗闪存芯片，再加一颗主控、一颗缓存就搞定了，所以PCB非常短小精悍，1TB的留了个空焊位。4TB的正反各两颗闪存芯片，补上四个空焊位那就是8TB。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0701/59e66d2ec3f1fbf.jpg" alt="img:QLC闪存三星870 QVO SSD拆解探秘：缓存外写入速度惨不忍睹"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0701/9c155f0f70ca157.jpg" alt="img:QLC闪存三星870 QVO SSD拆解探秘：缓存外写入速度惨不忍睹"></p>
+<p>即便是4TB、8TB的电路板，放在标准的2.5寸盘体内，也是很小巧。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0701/10f7cd91049d084.jpg" alt="img:QLC闪存三星870 QVO SSD拆解探秘：缓存外写入速度惨不忍睹"></p>
+<p>这是三星MKX主控和LPDDR4缓存。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0701/4e48a6738ffff19.png" alt="img:QLC闪存三星870 QVO SSD拆解探秘：缓存外写入速度惨不忍睹"></p>
+<p>870 QVO系列的详细规格，1/2/4/8TB型号分别搭配1/2/4/8GB LPDDR4缓存，同时还设置了SLC缓存以提升性能，2/4/8TB的都有78GB，1TB则只有42GB。</p>
+<p>在写入的时候，一旦用完这些SLC缓存容量，就会回归到QLC的本质，性能自然大大降低，1TB的落差尤其巨大。</p>
+<p>根据官方数据，870 QVO系列的持续读取速度都是560MB/s，SLC缓存下的持续写入都是530MB/s，但是QLC闪存下，2/4/8TB型号的持续写入会降至160MB/s，1TB的更是只有80MB/s。</p>
+<p>随机性能方面，1TB的读取也不受影响，但是写入损失比较大，尤其是QD32队列深度的时候，随机读写会分别降低40％、48％。</p>
+<p>寿命上倒是保持一致，都是每天0.33次全盘写入，质保五年，最大写入量360TB、720TB、1440TB、2880TB，而一般的消费级QLC SSD只有每天0.1-0.15次，即便是五年质保写入量也不如870 QVO。</p>
+<p>AnandTech已经对870 QVO进行了详细的测试，其他没什么意外，这里只看看缓存内外的写入情况。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0701/dfae708abe359c4.png" alt="img:QLC闪存三星870 QVO SSD拆解探秘：缓存外写入速度惨不忍睹"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0701/ed5b68f91b872ec.png" alt="img:QLC闪存三星870 QVO SSD拆解探秘：缓存外写入速度惨不忍睹"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0701/36c294eb5ff03b9.png" alt="img:QLC闪存三星870 QVO SSD拆解探秘：缓存外写入速度惨不忍睹"></p>
+<p>QD32队列深度，128KB数据块，缓存内持续写入速度都可以达到标称的530MB/s左右，而在缓存耗尽之后，速度瞬间就跌了下来，1TB 80MB/s左右，4TB 164MB/s左右，同样完美符合标称。</p>
+<p>好消息是，缓存耗尽之后，写入速度一直非常稳定，直到完全填满都没有再变化。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0701/6e02ccb8facb168.jpg" alt="img:QLC闪存三星870 QVO SSD拆解探秘：缓存外写入速度惨不忍睹"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/997751/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">微软警告不得在《极限竞速》游戏中使用“臭名昭著”的标记</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/997777/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">新版1号店启动灰度测试 京东要深入实践会员制电商？</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/999589/">中国遥感卫星地面站成功接收高分多模卫星数据</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/999601/">新款丰田卡罗拉将7月上市：车机系统迎来史上最大升级</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/999605/">入侵6000账号的前雅虎工程师被判缓刑</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/999597/">奔驰全新GLC渲染图曝光：轴距增加内饰大变</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/999591/">搭载Intel Core i7的RedmiBook 16将于7月8日发布</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

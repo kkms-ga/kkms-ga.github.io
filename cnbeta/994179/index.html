@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>NVIDIA发布PCIe版安培计算卡：功耗骤降150W、性能20倍于上代 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="NVIDIA发布PCIe版安培计算卡：功耗骤降150W、性能20倍于上代" />
+<meta property="og:description" content="5月中旬，NVIDIA正式发布了全新一代“安培”(Ampere) GPU架构、GA100 GPU核心，并宣布了首款产品“A100”加速计算卡，采用专有的SMX4形态。今天，基于标准PCIe形态的A100计算卡登场了，更适合主流标准服务器。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/994179/" />
+<meta property="article:published_time" content="2020-06-22T17:48:58+08:00" />
+<meta property="article:modified_time" content="2020-06-22T17:48:58+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">NVIDIA发布PCIe版安培计算卡：功耗骤降150W、性能20倍于上代</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-22T17:48:58&#43;08:00">June 22, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>5月中旬，NVIDIA正式发布了全新一代“安培”(Ampere) GPU架构、GA100 GPU核心，并宣布了首款产品“A100”加速计算卡，采用专有的SMX4形态。今天，基于标准PCIe形态的A100计算卡登场了，更适合主流标准服务器。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0622/004ff57ea89f765.jpg" alt="img:NVIDIA发布PCIe版安培计算卡：功耗骤降150W、性能20倍于上代"></p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0622/eda848881975584.jpg" alt="img:NVIDIA发布PCIe版安培计算卡：功耗骤降150W、性能20倍于上代"></p>
+<p>PCIe A100仍然基于GA100核心，规模保持不变，还是台积电7nm工艺、826平方毫米、542亿个晶体管，提供6912个FP32 CUDA核心，最高加速频率也是1.41GHz，因此峰值性能相同：单精度19.5TFlops、双精度9.7TFlops、INT8推理1248Tops、INT8张量624Tops、FP16张量312TFlops、FP32张量156TFlops、FP32训练312TFlops、FP64高性能计算19.5TFlops。</p>
+<p>NVIDIA宣称，相比于上代Volta伏特架构的V100计算卡，INT8推理性能、FP32训练性能都实现了20倍的提升，FP64高性能计算也提升了2.5倍，是历史上进步最大的一次。</p>
+<p>显存依然搭配40GB HBM2，512-bit位宽，2.4GHz频率，1.6TB/s带宽。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0622/fe4b5486f32355c.jpg" alt="img:NVIDIA发布PCIe版安培计算卡：功耗骤降150W、性能20倍于上代"></p>
+<p>由于散热限制，热设计功耗从SMX4版本的400W大大降低到了250W，如此还能维持相同的峰值性能堪称奇迹，当然实际负载持续性能显然无法做到满血，但官方表示仍能有大约90％。</p>
+<p>另外一点不同就是多卡并联，SMX4版本支持最多八块并行，PCIe则只能两块并行，NVLink互连总线显然做了精简，但具体未披露，可能从12条砍半至6条。</p>
+<p>NVIDIA没有披露PCIe A100计算卡的出货时间和价格，应当会很快。AMD霄龙无疑仍然还是其最佳搭档，后者仍是唯一支持PCIe 4.0的数据中心平台。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0622/55f719bbafcc4f0.png" alt="img:NVIDIA发布PCIe版安培计算卡：功耗骤降150W、性能20倍于上代"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/994193/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">周鸿祎调侃潘石屹学Python：一百行代码有十个漏洞</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/994177/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">说好的5G爆发也没了 内存价格跌至5个月来新低</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/996253/">巴基斯坦航空业惊爆丑闻 262名飞行员资格造假</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/996255/">瑞幸咖啡退市成定局 巨额索赔在所难免</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/996249/">瑞幸退市成终局：董事会现内斗 陆正耀或出局？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/996251/">任天堂召开股东大会 社长表示Switch生产今夏恢复正常</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/996245/">6000mAh大电池&#43;高频骁龙865 华硕ROG游戏手机3现身蓝牙SIG认证</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

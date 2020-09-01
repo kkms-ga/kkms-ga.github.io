@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[图]开发者能创建四种架构的Mac原生应用吗？答案是肯定的 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[图]开发者能创建四种架构的Mac原生应用吗？答案是肯定的" />
+<meta property="og:description" content="在今年的 WWDC 全球开发者大会上，苹果宣布了 Mac 设备的第四次重大转型，今后将逐渐过渡到自研芯片 Apple Silicon 上。而这也在社交媒体、各大论坛上引发了关于 Mac 此前重大转型的诸多讨论，以及对苹果未来的期许和憧憬。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1002127/" />
+<meta property="article:published_time" content="2020-07-12T10:18:10+08:00" />
+<meta property="article:modified_time" content="2020-07-12T10:18:10+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[图]开发者能创建四种架构的Mac原生应用吗？答案是肯定的</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-12T10:18:10&#43;08:00">July 12, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>在今年的 WWDC 全球开发者大会上，苹果宣布了 Mac 设备的第四次重大转型，今后将逐渐过渡到自研芯片 Apple Silicon 上。而这也在社交媒体、各大论坛上引发了关于 Mac 此前重大转型的诸多讨论，以及对苹果未来的期许和憧憬。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0712/20c5e20d61f59e6.png" alt="img:[图]开发者能创建四种架构的Mac原生应用吗？答案是肯定的"></p>
+<p>MacRumors 论坛成员 Wowfunhappy 发帖称，即将到来的、基于 ARM 的 macOS 对 Universal Binaries 的持续支持，能够有存在使用四种架构的 Universal Binaries 的可能性。帖子中写道</p>
+<p>在发布会上，库克回顾了 Mac 的三次重大转型，先是迁移到 PowerPC，然后是 macOS X，接着是 Intel 处理器。在开幕演讲中，苹果还重新引入了 Universal Binaries，从而让开发者在过渡期内创建同时适用于 Intel 和 ARM Mac 的应用程序。</p>
+<p>但 Universal Binaries 从未真正消失过！你可以在 Mojave 上运行 PPC-Intel 应用程序，我推测在 Catalina 上同样也可以运行。此外，很多 Intel-only 应用程序也是“通用的”，因为它们包含 i386（32位Intel）和 x86_64（64位Intel）的版本。</p>
+<p>因此，我非常好奇：开发者是否有可能创建一个在所有四种架构上原生工作的Universal Binaries。PPC, i386, x86_64, 和 ARM?</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0712/a631907cf884328.jpg" alt="img:[图]开发者能创建四种架构的Mac原生应用吗？答案是肯定的"></p>
+<p>不过看起来答案是肯定的。TenFourFox 的开发者在博客中提到了这种可能性，证实了这种可能性确实存在。</p>
+<p>这几天我不断收到一个问题：AARM(苹果ARM)已经成了一个重点关注的话题，那么最终的 ARM-Intel-PowerPC Universal Binaries 有可能吗？当然是可能的! 其实，苹果已经有文件表明，你可以拥有五种 Binaries，即 ARM64、32位PowerPC、64位PowerPC、i386 和 x86_64。只需将它们分开构建，然后再一起 lipo。</p>
+<p>TenFourFox是一款适用于运行OS X 10.4或10.5的PowerPC Mac的火狐浏览器。它为这些用户提供了现代浏览器的支持。开发者实际上指出，每个架构甚至可以有自己的子类型，这意味着最终一个所谓的 &ldquo;Super Duper Universal Binary &ldquo;可以支持17种不同的指令集，可以在任何机器上运行，从PowerPC到未来基于Arm的Mac，完全支持所有处理器子类型。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1002113/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[图]AMD三款EPYC Milan CPU工程样片曝光：7nm&#43; Zen 3架构 A0步进</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004347/">Twitter为开发人员推新工具：将更好打击仇恨言论</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004385/">微软为 Visual Studio 推出新的 Razor 编辑器</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004341/">美广告监管组织通知Verizon停止使用误导性的5G网速与覆盖描述</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004345/">[图]Bungie宣布《命运2：凌光之刻​》推迟到11月10日上线</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004349/">OnePlus Buds真无线耳机将支持Warp闪充 10分钟补足10小时续航</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

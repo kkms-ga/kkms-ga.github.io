@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[技巧]Windows 10如何启用硬件加速GPU调度 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[技巧]Windows 10如何启用硬件加速GPU调度" />
+<meta property="og:description" content="如果你平时有关注过 Windows 10 系统的开发进度，那么自去年开始的热词“硬件加速GPU调度”就应该不会陌生了。当时该功能不过是设置应用中的一个选项，不过伴随着驱动程序的陆续发布，现在这项功能已基本可用了。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1000399/" />
+<meta property="article:published_time" content="2020-07-08T08:45:38+08:00" />
+<meta property="article:modified_time" content="2020-07-08T08:45:38+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[技巧]Windows 10如何启用硬件加速GPU调度</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-08T08:45:38&#43;08:00">July 08, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>如果你平时有关注过 Windows 10 系统的开发进度，那么自去年开始的热词“硬件加速GPU调度”就应该不会陌生了。当时该功能不过是设置应用中的一个选项，不过伴随着驱动程序的陆续发布，现在这项功能已基本可用了。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0708/83aada6d6ac5f53.jpg" alt="img:[技巧]Windows 10如何启用硬件加速GPU调度"></p>
+<p>想要体验这项功能，需要</p>
+<p>● Windows 10 May 2020（20H1/Version 2004）功能更新或者 Build 19041 及更高版本，在 Windows Search 中搜索“Winver”，确认版本</p>
+<p>● Nvidia GeForce 451.48 或 Adrenalin 2020 版 20.5.1 Beta 驱动程序。AMD 目前已经发布了测试版本，特尔正计划在不久的将来更新他们的WDDM 2.7驱动程序，支持硬件加速GPU。</p>
+<p>在升级到最新的 Windows 10 版本以及驱动程序之后，你可以通过设置应用或者注册表来打开/关闭该功能。</p>
+<p>通过设置应用启用该功能，步骤如下</p>
+<ol>
+<li>
+<p>打开开始菜单，点击设置齿轮图标。</p>
+</li>
+<li>
+<p>在设置应用中，点击&quot;系统&quot;并打开&quot;显示&quot;选项卡。</p>
+</li>
+</ol>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0708/b6967b31f69bf6b.jpg" alt="img:[技巧]Windows 10如何启用硬件加速GPU调度"></p>
+<ol start="3">
+<li>在&quot;多显示器&quot;部分，选择&quot;图形设置&rdquo;。</li>
+</ol>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0708/54bec89e123881e.jpg" alt="img:[技巧]Windows 10如何启用硬件加速GPU调度"></p>
+<ol start="4">
+<li>开启或关闭 &ldquo;硬件加速GPU调度 &ldquo;选项。</li>
+</ol>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0708/fa24125900ba84c.jpg" alt="img:[技巧]Windows 10如何启用硬件加速GPU调度"></p>
+<ol start="5">
+<li>重新启动系统。</li>
+</ol>
+<p>通过注册表方式启用该应用程序，步骤如下</p>
+<ol>
+<li>
+<p>打开 Windows 搜索</p>
+</li>
+<li>
+<p>搜索&quot;regedit&quot;并选择第一个选项。</p>
+</li>
+<li>
+<p>打开 &ldquo;注册表编辑器&rdquo;。</p>
+</li>
+</ol>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0708/7b718bebd8141c4.jpg" alt="img:[技巧]Windows 10如何启用硬件加速GPU调度"></p>
+<ol start="4">
+<li>
+<p>在注册表编辑器中，导航到 &ldquo;HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/GraphicsDrivers&rdquo;。</p>
+</li>
+<li>
+<p>找到名为&quot;HwSchMode&quot;的 DWORD 选项。该选项中的值 2 意味着启用，1 意味着关闭</p>
+</li>
+</ol>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0708/6e52a217e731fe5.jpg" alt="img:[技巧]Windows 10如何启用硬件加速GPU调度"></p>
+<ol start="6">
+<li>
+<p>重新启动系统。</p>
+</li>
+<li>
+<p>打开设置 &gt; 显示 &gt; 图形设置，并切换该选项。</p>
+</li>
+<li>
+<p>重新启动系统。</p>
+</li>
+</ol>
+<p>硬件加速 GPU 调度是 WDDM 2.7 的主要功能，它允许集成/独立显卡直接管理自己的显存，从而让你获得更好的性能，降低延迟，提高平均或最低帧率，改善视频播放效果。</p>
+<p>有了硬件加速GPU调度，Windows 10现在可以将内存管理控制权交给基于GPU的专用调度处理器，理论上应该可以解放一下CPU，减少输入滞后。</p>
+<p>这项功能在高端 CPU 上表现并不明显，因为它们能够完全胜任 GPU 帧处理。微软表示：“用户输入在‘N+1帧’期间被CPU接收，但直到下一帧才被 GPU 渲染”。</p>
+<p>不过，在低端和中端 CPU 上进行游戏时，硬件加速 GPU 调度才会被证明是有用的。根据微软的说法，硬件加速GPU调度还应该减少GPU调度的开销，并使图形子系统的一个基本支柱现代化，为 &ldquo;未来的事情做好准备&rdquo;。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1000409/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[图]iOS 14第二个开发者预览版发布：引入诸多细节调整</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1000407/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">疫情反弹 美佛罗里达州54家医院的ICU已达最大容量</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1002375/">育碧直播汇总：《看门狗》《刺客信条》等发售日公开</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1002341/">《孤岛惊魂6》首批截图：系列最大地图任你探索 还可免费升级下一代</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1002343/">《彩虹六号：围攻》社区玩家达六千万 官方发布感谢视频</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1002347/">《刺客信条：英灵殿》新预览视频公布 11月17日发行</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1002373/">不降价就解约 长租公寓平台“逼迫”业主降价惹争议</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

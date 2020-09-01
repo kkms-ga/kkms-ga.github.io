@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>你的《超级马里奥兄弟》通关了没？基于PPO强化学习算法的AI成功拿下29个关卡！ - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="你的《超级马里奥兄弟》通关了没？基于PPO强化学习算法的AI成功拿下29个关卡！" />
+<meta property="og:description" content="《超级马里奥兄弟》你能玩到第几关？说起这款FC时代的经典游戏，大家可能再熟悉不过了，大鼻子、留胡子，永远穿着背带工装服的马里奥大叔，成为了很多80/90后的童年回忆。看着画面中熟悉的马里奥大叔一路跌跌撞撞，躲避半路杀出来的毒蘑菇，锤子乌龟，头盔兔子、食人花，感觉又回到了小时候。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1008373/" />
+<meta property="article:published_time" content="2020-07-28T00:15:42+08:00" />
+<meta property="article:modified_time" content="2020-07-28T00:15:42+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">你的《超级马里奥兄弟》通关了没？基于PPO强化学习算法的AI成功拿下29个关卡！</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-28T00:15:42&#43;08:00">July 28, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>《超级马里奥兄弟》你能玩到第几关？说起这款FC时代的经典游戏，大家可能再熟悉不过了，大鼻子、留胡子，永远穿着背带工装服的马里奥大叔，成为了很多80/90后的童年回忆。看着画面中熟悉的马里奥大叔一路跌跌撞撞，躲避半路杀出来的毒蘑菇，锤子乌龟，头盔兔子、食人花，感觉又回到了小时候。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0728/1046e9d1f3b1a13.gif" alt="img:你的《超级马里奥兄弟》通关了没？基于PPO强化学习算法的AI成功拿下29个关卡！"></p>
+<p>最早发行的这版《超级马里奥兄弟》设置8个场景，每个场景分为4关，共32个关卡，相信很多朋友至今还没有完全通关。</p>
+<p>Viet Nguyen就是其中一个。这位来自德国的程序员表示自己只玩到了第9个关卡。因此，他决定利用强化学习AI算法来帮他完成未通关的遗憾。</p>
+<p>现在他训练出的AI马里奥大叔已经成功拿下了29个关卡。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0728/e3c1ff5c4a09509.gif" alt="img:你的《超级马里奥兄弟》通关了没？基于PPO强化学习算法的AI成功拿下29个关卡！"></p>
+<p>不过，遗憾的是第4、7、8场景中的第4关卡未通过。Viet Nguyen解释说，这与游戏规则的设置有关。在一场游戏结束后，玩家可以自行选择通关路径，但这可能出现重复访问同一关卡的情况，所以AI未成功进入到这三关游戏之中。</p>
+<p>Viet Nguyen使用的强化学习算法正是OpenAI研发的近端策略优化算法（Proximal Policy Optimization，简称PPO），他介绍，此前使用A3C代码训练马里奥闯关，效果远不及此，这次能够达到29关也是超出了原本的预期。</p>
+<p>现在Viet Nguyen已经将基于PPO编写的完整Python代码发布到了Github上，并给出了详细的使用说明，感兴趣的朋友可以体验一下：</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0728/2fbf36cfe6008c5.png" alt="img:你的《超级马里奥兄弟》通关了没？基于PPO强化学习算法的AI成功拿下29个关卡！"></p>
+<p>Github地址：https://github.com/uvipen/Super-mario-bros-PPO-pytorch</p>
+<p>还会玩Dota的AI算法：PPO</p>
+<p>据了解，PPO是OpenAI在2017年开发的算法模型，主要用来训练虚拟游戏玩家OpenAI Five，这位虚拟玩家在2018年的Dota2人机对抗赛中，战胜过世界顶级职业选手，同时能够打败99.95%的普通玩家。</p>
+<p>复杂的游戏环境一直被研究人员视为AI训练的最佳场景。为了让AI掌握游戏规则，学会运用策略，强化学习是研究人员常用的机器学习方法之一，它能够描述和解决AI智能体（Agent）在与环境交互过程中通过学习策略实现特定目标的问题。</p>
+<p>近端策略优化算法（PPO）已成为深度强化学习基于策略中效果最优的算法之一。有关该算法的论文已经发布在arXiv预印论文库中。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0728/e95e9ee5a8ab9da.png" alt="img:你的《超级马里奥兄弟》通关了没？基于PPO强化学习算法的AI成功拿下29个关卡！"></p>
+<p>论文中指出，PPO是一种新型的策略梯度（Policy Gradient）算法，它提出新的“目标函数”可以进行多个训练步骤，实现小批量的更新，解决PG算法中步长难以确定的问题。固定步长的近端策略优化算法如下:</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0728/3bd466609832d53.png" alt="img:你的《超级马里奥兄弟》通关了没？基于PPO强化学习算法的AI成功拿下29个关卡！"></p>
+<p>(每次迭代时，N个actor中的每个都收集T个时间步长的数据。 然后在这些NT时间步长的数据上构建替代损失，并使用 minibatch SGD 进行K个epochs的优化。)</p>
+<p>研究人员表明，该算法具有信任区域策略优化（TRPO）的一些优点，但同时比它实施起来更简单，更通用，具有更好的样本复杂性（凭经验）。为了证实PPO的性能，研究人员在一些基准任务上进行了模拟测试，包括人形机器人运动策略和Atari游戏的玩法。</p>
+<p>PPO算法的基准任务测试</p>
+<p>在游戏角色的AI训练中，一种基本的功能是具备连续性的运行和转向，如在马里奥在遇到诸如地面或者空中障碍时，能够以此为目标进行跳转和躲避。论文中，研究人员为了展示PPO的高维连续控制性能，采用3D人形机器人进行了测试，测试任务分别为：</p>
+<p>（1）仅向前运动；（2）每200个时间步长或达到目标时，目标位置就会随机变化；（3）被目标击倒后，需要从地面站起来。以下从左至右依次为这三个任务的学习曲线。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0728/fd7d47214f37d46.png" alt="img:你的《超级马里奥兄弟》通关了没？基于PPO强化学习算法的AI成功拿下29个关卡！"></p>
+<p>研究人员从以上学习曲线中，随机抽取了任务二在某一时刻的性能表现。如下图，</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0728/72909ec68dcfab2.png" alt="img:你的《超级马里奥兄弟》通关了没？基于PPO强化学习算法的AI成功拿下29个关卡！"></p>
+<p>可以看出，在第六帧的放大图中，人形机器人朝目标移动，然后随机改变位置，机器人能够跟随转向并朝新目标运行。说明PPO算法在连续转控方面具备出色的性能表现。</p>
+<p>那么它在具体游戏中“获胜率”如何呢？研究人员运用Atari游戏合集（含49个）对其进行验证，同时与A2C和ACER两种算法进行了对比。为排除干扰因素，三种算法全部使用了相同的策略网络体系，同时，对其他两种算法进行超参数优化，确保其在基准任务上的性能最大化。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0728/45ffcf80ed7aab1.png" alt="img:你的《超级马里奥兄弟》通关了没？基于PPO强化学习算法的AI成功拿下29个关卡！"></p>
+<p>如上图，研究人员采用了两个评估指标：（1）在整个训练期间每集的平均获胜数；（2）在持续100集训练中的每集的平均获胜数。 前者更适合快速学习，后者有助于最终的比赛表现。可以看出PPO在指标一种的获胜次数达到了30，在小样本下有更高的胜率。</p>
+<p>最后研究人员还强调，PPO近端策略优化的优势还在于简洁好用，仅需要几行代码就可以更改为原始策略梯度实现，适用于更常规的设置，同时也具有更好的整体效果。</p>
+<p>更多论文详细内容，请参见地址：https://arxiv.org/abs/1707.06347</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1008363/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">搜狗回应腾讯收购：将对相关事宜进行认真讨论和衡量</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1008371/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">苹果都不要的 ARM，英伟达为啥想接手？</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1010535/">中国联通重组科技创新体系：网研院、研究院正式合并</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1010537/">配上万块的保护壳，AirPods 配吗？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1010533/">微软发布新的Windows Insider计划网站</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1010541/">苹果用iPhone 11 Pro拍摄新的&#34;冰球带&#34;广告</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1010539/">Google Chrome用户现在可以在Canary版本中编辑密码</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

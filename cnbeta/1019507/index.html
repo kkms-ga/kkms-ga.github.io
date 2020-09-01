@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>两个月新增 80 万行代码，Linux 内核为什么不会崩？ - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="两个月新增 80 万行代码，Linux 内核为什么不会崩？" />
+<meta property="og:description" content="8 月初，当 Linux 5.8 RC 版本开放测试时，大多数的新闻都聚焦于它的大小，称其为“史上最大的内核版本”。正如 Linus Torvalds 本人指出的那样，“尽管没有任何一件事情能脱颖而出……但 5.8 似乎是我们有史以来最大的发行版之一。”" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1019507/" />
+<meta property="article:published_time" content="2020-08-24T09:55:39+08:00" />
+<meta property="article:modified_time" content="2020-08-24T09:55:39+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">两个月新增 80 万行代码，Linux 内核为什么不会崩？</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-24T09:55:39&#43;08:00">August 24, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>8 月初，当 Linux 5.8 RC 版本开放测试时，大多数的新闻都聚焦于它的大小，称其为“史上最大的内核版本”。正如 Linus Torvalds 本人指出的那样，“尽管没有任何一件事情能脱颖而出……但 5.8 似乎是我们有史以来最大的发行版之一。”</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0824/a1ec33a9a43e724.png" alt="img:两个月新增 80 万行代码，Linux 内核为什么不会崩？"></p>
+<p>确实，刚刚发布的 Linux 内核 5.8 RC 具有超过 14,000 个 commit，约 80 万行新代码以及大约 100 名新贡献者。要知道，距离 5.7 正式版发布才仅仅过去了约 2 个月的时间。Linux 内核维护者 Steven Rostedt 认为，5.8 之所以变得如此之大，很有可能是因为 COVID-19 疫情让很多人难以出门旅行，所有人都因此能够在这期间完成比平时更多的工作。</p>
+<p>Rostedt 表示，从一个经验丰富的 Linux 内核贡献者和维护者的角度来看，5.8 RC 发行版特别令人震惊的并不是它的大小，而是它的空前规模对于那些正在维护它的人来说却没有造成困扰，“我认为这是因为 Linux 具有比世界上任何软件项目都好的工作流程。”</p>
+<p>拥有最佳的工作流程意味着什么？对 Rostedt 而言，这归结为 Linux 内核开发人员随着时间的推移建立的一系列基本规则，以使他们能够持续不断地大规模、可靠地发展 Linux 内核项目。Rostedt 站在一个 Linux 内核资深维护者的角度，为我们分享了庞大的 Linux 内核项目 30 年来是如何有条不紊地运转的。</p>
+<p>第一个关键因素是 Git</p>
+<p>首先让我们从 Linux 项目的历史来看。在该项目的早期（1991-2002年），人们只能直接将补丁发送给 Linus Torvalds。准确地说，Linus 从项目的子维护者那里获取补丁，而这些子维护者从其他代码贡献者那里获取补丁。随着 Linux 内核变得越来越大，代码越来越复杂，很快他们就发现，一切都变得很难扩展和跟踪，并且项目将始终面临合并不兼容代码的风险。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0824/79b48f6e46c235a.png" alt="img:两个月新增 80 万行代码，Linux 内核为什么不会崩？"></p>
+<p>这导致 Linus 开始探索包括 BitKeeper 在内的各种版本管理工具。BitKeeper 是一种最早的分布式版本管理的方法，其他的版本管理系统通常使用签出/修改/签入协议，而 BitKeeper 则向所有人提供整个仓库的副本，并允许开发人员将其变更发送出去以进行合并。Linux 在 2002 年开始短暂地采用了 BitKeeper，但是由于其本身是一个专有软件，被认为不符合社区对开源工作的信念，于是该工具在 2005 年停止使用。为了寻找替代品，Linus 消失了一段时间，并带着 git 回来了，后者成为了更强大的分布式版本管理系统，并且是管理流程的第一个重要实例化。Git 的出现使 Linux 开发在今天依然运转良好。</p>
+<p>Rostedt 为我们列出了 Linux 内核工作流程中，围绕 Git 展开的七个重要基本原则。</p>
+<p>七大基本原则每次commit只能做一件事</p>
+<p>Linux 的中心原则是，所有更改都必须分解为小步骤进行 —— 您的每个commit都只能做一件事。这并不意味着每个 commit 都必须很小，比如对在数千个文件中使用的函数的API进行简单更改，可以使更改量很大，但仍然可以接受，因为它是针对某一项单一任务的更改。通过始终遵循此原则，项目维护者可以更轻松地识别和隔离任何有问题的更改，而不影响其他的功能。</p>
+<p>commit 不能破坏构建</p>
+<p>不仅应该将所有更改分解为尽可能小的变量，而且还不能破坏内核。即每个步骤都必须完全起作用，并且不引起退化。这就是为什么对函数原型的更改还必须更新调用它的每个文件，以防止构建中断的原因。因此，每个步骤都必须作为一个独立的更改来工作，这将我们带到了下一点：</p>
+<p>所有代码都是二等分的</p>
+<p>如果在某个时候发现了错误，则需要知道是哪个更改导致了问题。从本质上讲，二等分是一种操作，它使开发者可以找到所有发生错误的确切时间点。</p>
+<p>为此，请转到最后一个已知的工作 commit 所在的节点，并且已知第一个 commit 已损坏，然后在该点测试代码。如果可行，则前进到下一个节点；如果不是，则返回更上层的节点。这样一来，开发者就可以在十几次编译/测试中，从成千上万的可能 commit 中分离出导致问题出现的 commit 。Git 甚至可以通过 git bisect 功能帮助自动化该过程。</p>
+<p>重要的是，这只有在开发者遵守以前的规则的情况下才能很好地起作用：每个 commit 仅做一件事。否则，您将不知道是 commit 的许多更改中的哪一个导致了问题；如果 commit 破坏了构建让整个项目无法正常启动，同时等分线又恰好落在了该 commit 上，则您将不知道接下来是该往上一个节点测试还是往下一个节点测试，因为它们都有问题。这意味着您永远都不应编写依赖于将来 commit 的 commit ，例如：调用尚不存在的函数，或更改全局函数的参数而不更改同一 commit 中的所有调用者。</p>
+<p>永远不要 rebase 公共分支</p>
+<p>Linux 项目工作流程不允许 rebase 他人使用的任何公共分支。因为 rebase 这些公共分支后，已重新基准化的 commit 将不再与基于原存储库中的相同 commit 匹配。在树的层次结构中，不是叶子的公共主干部分不能重新设置基准，否则将会破坏层次结构中的下游分支。</p>
+<p>Git 正确合并</p>
+<p>其他的版本管理系统是合并来自不同分支代码的噩梦，它们通常难以弄清代码冲突，并且需要大量的手动工作来解决。而 Git 的结构可以轻松完成这项工作，因此 Linux 项目也从中直接受益。这就是为什么 5.8 版本的大小并不重要的重要原因。在 5.8-RC1 发布周期中，平均每天有 200个 commit ，并从 5.7 版本中继承了 880 个合并。一些维护者注意到了其中增加的工作量，但是对此仍然没有感到什么太大的压力或者导致倦怠。</p>
+<p>保留定义明确的 commit 日志</p>
+<p>不幸的是，这可能是许多其他项目忽略的最重要的原则之一。每个 commit 都必须是独立的，这也应该包括与该 commit 相应的日志。内核贡献者必须在更改的 commit 日志中做出说明，让所有人了解与正在进行的更改相关的所有内容。Rostedt 提到，他自己的一些最冗长和最具描述性的变更日志，往往是针对一些单行代码提交的，因为这些单行代码更改是非常细微的错误修复，且代码本身包含的信息极少。因此更改的代码越少，日志反而应该说明得更详细。</p>
+<p>在一个 commit 过了几年之后，几乎没有人会记得当初为什么进行更改。Git 的 blame 功能就可以显示这些代码的修改记录。比如一些 commit 可能非常古老，也许您需要去除一个锁定，或者对某些代码进行更改，而又不确切知道它为什么存在，就可以使用 git blame 来查看。编写良好的代码更改日志可以帮助确定是否可以删除该代码或如何对其进行修改。Rostedt 说：“有好几次我很高兴能在代码上看到详细的变更日志，因为我不得不删除这些代码，而变更日志的描述让我知道我这么做是可以的。”</p>
+<p>持续测试和集成</p>
+<p>最后一项基本原则是开发过程中进行持续测试和持续集成。在向上游发送 commit 请求之前，开发者会测试每个 commit 。Linux 社区还有一个名为Linux-next 的镜像 ，它提取维护人员在其存储库的特定分支上进行的所有更改，并对其进行测试以确保它们能正确集成。Linux-next 非常有效地运行着整个内核的可测试分支，该分支将用于下一个发行版。Linux-next 是一个公共仓库，任何人都可以测试它，这种情况经常发生 —— 人们现在甚至发布有关 Linux-next 中代码的错误报告。事实上，已经进入 Linux-next 几周的代码基本上可以确定会最终进入主线发行版中。</p>
+<p>软件开发行业的黄金标准</p>
+<p>所有的这些原则制度使 Linux 社区能够以如此庞大的规模（常规 9 周为一个版本迭代周期）发布令人难以置信的可靠代码（每个版本平均 10,000 次 commit ，最后一个版本超过 14,000 次 commit ）。</p>
+<p>Rostedt 指出，Linux 项目取得空前成功的另一个因素是他们社区的文化。Linux 内核社区内部存在一种持续改进的文化，这使他们能够首先采用这些实践。同时他们还有一种信任的文化，“我们有一条清晰的途径，人们可以通过该途径做出贡献，并随着时间的推移证明他们愿意且有能力推进该项目的发展。这将建立一个相互信任的关系网，这些关系对于项目的长期成功至关重要。”</p>
+<p>Rostedt 认为，内核开发者的肩上承担着比其他任何项目都要重的责任。“在内核层，我们别无选择，只能遵循这些做法。因为所有其他应用程序都在内核之上运行，内核中的任何性能问题或错误都将导致上层的应用程序出现性能问题或错误。我们必须完美处理内核中的错误，否则，整个计算机系统都将受到损害。我们非常关心每个错误，因为内核中的错误带来的风险很高，这种思维方式也能让我们很好地服务于任何软件项目。”</p>
+<p>上层的应用程序会因为错误而崩溃，造成的后果可能是惹恼用户，但风险不高。而内核的错误可能导致的后果是让计算机上的一切都出现问题，承担着巨大的风险。</p>
+<p>这就是 Linux 内核开发工作流程被视为软件开发行业黄金标准的原因。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1019517/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">业界良心 CDPR确认《赛博朋克2077》将有免费DLC</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1019533/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">蓝色起源向NASA交付40英尺的全尺寸月球着陆器模型</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021999/">未来游戏展：国产FPS《光明记忆：无限》1分钟预告公开</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1022017/">或能阻止新冠大流行的疫苗的有效性要达到多少？新研究给出答案</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1022003/">三星Galaxy Z Fold 2折叠屏新机最终规格已曝光</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021997/">美股全线收涨 道指抹去今年全部跌幅</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1022007/">FCC曝光Bose或推出配备了扬声器的新款Frames智能太阳镜</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

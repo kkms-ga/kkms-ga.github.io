@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Intel Tiger Lake架构解密：你能想到的全都变了 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Intel Tiger Lake架构解密：你能想到的全都变了" />
+<meta property="og:description" content="今年年初的CES 2020大会上，Intel首次官方宣布了代号Tiger
+Lake的下一代移动酷睿处理器，将采用增强版的10nm制造工艺，集成全新的CPU架构、Xe
+GPU架构，并大幅拓展AI支持。半年多过去了，Tiger Lake的架构细节现在终于公开，可以说你能想到的几乎每一处细节，都是焕然一新！" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1015387/" />
+<meta property="article:published_time" content="2020-08-13T22:30:27+08:00" />
+<meta property="article:modified_time" content="2020-08-13T22:30:27+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Intel Tiger Lake架构解密：你能想到的全都变了</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-13T22:30:27&#43;08:00">August 13, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>今年年初的CES 2020大会上，Intel首次官方宣布了代号Tiger
+Lake的下一代移动酷睿处理器，将采用增强版的10nm制造工艺，集成全新的CPU架构、Xe
+GPU架构，并大幅拓展AI支持。半年多过去了，Tiger Lake的架构细节现在终于公开，可以说你能想到的几乎每一处细节，都是焕然一新！</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/c8fda2a445cad02.png" alt="img:Intel Tiger Lake架构解密：你能想到的全都变了"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/46155f33cb2e812.png" alt="img:Intel Tiger Lake架构解密：你能想到的全都变了"></p>
+<p>首先如前所述，Tiger Lake的新一代10nm工艺首次引入了革命性的SuperFin晶体管结构，将增强型FinFET晶体、Super MIM(金属-绝缘体-金属)电容器相结合，能够提供增强的外延源极/漏极、改进的栅极工艺，额外的栅极间，性能相比初代10nm可以提升超过15％。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/7d7be821ad25de0.png" alt="img:Intel Tiger Lake架构解密：你能想到的全都变了"></p>
+<p>Tiger Lake CPU部分的架构代号为Willow Cove，是在此前10nm Ice Lake十代酷睿集成的Sunny Cove架构基础上深入强化而来，大幅提升频率、能效，重新设计缓存体系，再加上其他改进，可提供超越代间CPU性能的提高，此外还有尔控制流强制技术(Control Flow Enforcement Technology)以强化安全性。</p>
+<p>Ice Lake/Sunny Cove一代的阿喀琉斯之踵可以说就是频率上不去，即便是苹果定制的特别版本最高也只能加速到4.1GHz，公开版甚至只有3.9GHz，相比之下成熟的14nm已经可以让10核心轻松飙到5.3GHz。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/8dfe52bd20b288c.png" alt="img:Intel Tiger Lake架构解密：你能想到的全都变了"></p>
+<p>Tiger Lake/Willow Cove则实现了一次飞跃，具体数字未公布，但是从官方幻灯片上看，同样的电压下频率可以提高最多700MHz左右，而且还可以进一步增加电压，加速频率有极大希望达到甚至突破5GHz。——事实上从此前曝光的样品看，5GHz是妥妥的了。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/25919e4139c9bcf.png" alt="img:Intel Tiger Lake架构解密：你能想到的全都变了"></p>
+<p>核显方面，Tiger Lake首次集成全新设计的Xe架构，确切地说是Xe LP低功耗版本，大幅改进能效，最多拥有96个执行单元(EU)，相比Ice Lake增多了一半，同时拥有3.8MB大容量的三级缓存，还提升了内存和架构效率以获得更高带宽。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/89ab498715f9fcb.png" alt="img:Intel Tiger Lake架构解密：你能想到的全都变了"></p>
+<p>结构方面，Willow Cove架构使用双环形架构串联各个模块，并重新设计了缓存体系，每个核心的二级缓存容量增加到1.25MB，三级缓存容量也增大了一半，并维持极低的命中延迟，此外一致性互连带宽也增加了2倍。</p>
+<p>内存方面，Willow Cove集成双内存控制器子系统，支持DDR4-3200(初始状态)、LPDDR4X-4267、LPDDR5-5400，最大带宽可达约86GB/s，并支持Intel全内存加密技术(Total Memory Encryption)，直接在硬件层面抵御安全威胁。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/30be25a489a18b8.png" alt="img:Intel Tiger Lake架构解密：你能想到的全都变了"></p>
+<p>AI方面，Tiger Lake集成了高斯网络加速器GNA 2.0，可以视为Intel版本的神经处理单元(NPU)。</p>
+<p>这是一个独立的IP模块，只需很低的功耗就可以高效进行神经推理计算，并将CPU占用率降低20％， 从而大大提升AI性能，拓展AI应用场景，比如高动态范围的神经网络降噪。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/64c3417ebd685de.png" alt="img:Intel Tiger Lake架构解密：你能想到的全都变了"></p>
+<p>显示方面，Tiger Lake致力于在更高分辨率、画质下提供更多显示技术，比如在显示引擎与内存之间设置单独的结构通道以维持高质量画面传输，带宽最高达64GB/s。</p>
+<p>同时还有新一代图像处理器单元IPU6，完全硬件集成，集成最多6个传感器，支持最高4K90Hz视频输出、4200万像素静态图像输出——初期支持最高4K30Hz、2700万像素。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/823d45ce72b66eb.png" alt="img:Intel Tiger Lake架构解密：你能想到的全都变了"></p>
+<p>IO输入输出方面，Tiger Lake集成支持新一代Thunderbolt 4、USB4，最高带宽都是40Gbps，而且物理接口(Type-C)和传输协议都彼此兼容，可以实现一口走天下，当然了Thunderbolt 4更高级一些。</p>
+<p>它还在Type-C接口子系统上集成了显示输出，包括DP Alternate模式、Thunderbolt DP Tunneling，还支持独立显卡DP输入接口。</p>
+<p>大家期盼已久的PCIe 4.0也得到了原生支持，可以让CPU高带宽低延迟地访问内存，完整带宽8GB/s，相比连接芯片延迟也降低了大约100ns。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/21145c53d1c0f94.png" alt="img:Intel Tiger Lake架构解密：你能想到的全都变了"></p>
+<p>电源管理方面，一致结构、内存子系统内集成了自主DVFS(动态电压与频率调节)，提高了全集成电压稳压器(FIVR)的效率，可以根据电压实现频率、电压的动态缩放调节，兼顾高能效与高性能。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/cb75a620c6ec341.png" alt="img:Intel Tiger Lake架构解密：你能想到的全都变了"></p>
+<p>Tiger Lake之后，Intel还准备了下一代CPU架构，代号Golden Cove，将会用于明年的下一代Alder Lake酷睿处理器，目前已知的变化有：提升多线程性能、提升AI性能、提升网络与AI性能、强化安全，等等。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0813/d80a4abe37f3789.png" alt="img:Intel Tiger Lake架构解密：你能想到的全都变了"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1015383/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">22年后再战高性能显卡市场 Intel Xe GPU架构详解</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1015381/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">又一起超前点播案：法院判腾讯合同变更不生效 但欺诈行为不成立</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1017321/">特斯拉正与台积电合作开发HW 4.0自动驾驶芯片 2021年Q4量产</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1017317/">京东与申通停止合作背后：电商平台有权帮商家选择快递吗？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1017319/">日常更新？新款苹果30W USB‑C 电源适配器评测</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1017309/">只用一百多块钱：我就从华强北买到了 “Apple Watch”</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1017313/">拼多多：协助团购特斯拉武汉车主成功提车</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

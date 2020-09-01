@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Android版Firefox bug：后台运行或屏幕锁定时，相机保持活动状态 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Android版Firefox bug：后台运行或屏幕锁定时，相机保持活动状态" />
+<meta property="og:description" content="Mozilla 近期在修复 Android 版 Firefox 上的一个 bug，该 bug 导致用户切换应用程序或锁定手机屏幕后，摄像头仍处于活动状态。这个问题在一年前被发现，并由用户 Trishul 报告到了 Bugzilla。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1003817/" />
+<meta property="article:published_time" content="2020-07-16T09:50:37+08:00" />
+<meta property="article:modified_time" content="2020-07-16T09:50:37+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Android版Firefox bug：后台运行或屏幕锁定时，相机保持活动状态</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-16T09:50:37&#43;08:00">July 16, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Mozilla 近期在修复 Android 版 Firefox 上的一个 bug，该 bug 导致用户切换应用程序或锁定手机屏幕后，摄像头仍处于活动状态。这个问题在一年前被发现，并由用户 Trishul 报告到了 Bugzilla。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0716/aae2fd30abe6e21.png" alt="img:Android版Firefox bug：后台运行或屏幕锁定时，相机保持活动状态"></p>
+<p>消耗带宽是一方面，这个 bug 暴露了更大的隐私问题。许多用户选择在移动浏览器而非应用程序上进行视频流传输，也在一定程度上是出于隐私考虑，因为应用程序会请求更多权限，获取更多手机内的数据。</p>
+<p>在面对外媒 ZDNet 的采访时，Mozilla 表示，像其他专门的视频会议应用程序一样，他们也会提供系统通知，让用户知道 Firefox 中的网站在何时访问摄像头及麦克风。但当屏幕锁定时，通知就会被隐藏起来。这是他们认为自己做得不够好的地方。</p>
+<p>在提出一年后，这项 bug 近几天又被重新开始讨论起来。Mozilla 目前打算通过在屏幕锁定时改为仅默认音频传输来解决问题。Bugzilla 页面中的一条留言认为“持续的音频是有意义的，我经常会将电话或视频会议放置在后台，然后在另一个应用程序中查找内容，或者在锁定手机的情况下，比如开车时收听音频。”</p>
+<p>Mozilla 表示，该 bug 预计于今年十月修复，会先在平台级别推出，之后再陆续面向用户发布。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1003833/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[图]微软计划2021年为Windows 10 on ARM引入WPF支持</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1003837/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">AMD Navi 22 RDNA 2显卡曝光 或为苹果定制的Radeon Pro型号</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005787/">立讯收购纬创昆山iPhone工厂 富士康与和硕或面临更大的竞争</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005791/">谷歌地图更新 支持有桩共享单车的线路导航</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005779/">特斯拉市值暴涨背后：各国早期投资者大赚一笔</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005781/">9年驾龄老司机 高速上全程一档从江苏开到山东</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005797/">美国陆军选择BAE系统公司为其开发下一代导弹预警系统</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

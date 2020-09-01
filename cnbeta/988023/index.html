@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Visual Studio 2019 v16.7 Preview 2 发布 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Visual Studio 2019 v16.7 Preview 2 发布" />
+<meta property="og:description" content="微软发布了 Visual Studio 2019 v16.7 的第二个预览版本。现在，在连接管理器中，可以编辑远程 SSH
+连接，例如：目标系统的 IP 地址发生更改并且需要更新。还可以设置默认远程连接以通过 $ {defaultRemoteMachineName} 在
+CMakeSettings.json 和 launch.vs.json 中使用。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/988023/" />
+<meta property="article:published_time" content="2020-06-07T16:48:30+08:00" />
+<meta property="article:modified_time" content="2020-06-07T16:48:30+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Visual Studio 2019 v16.7 Preview 2 发布</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-07T16:48:30&#43;08:00">June 07, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>微软发布了 Visual Studio 2019 v16.7 的第二个预览版本。现在，在连接管理器中，可以编辑远程 SSH
+连接，例如：目标系统的 IP 地址发生更改并且需要更新。还可以设置默认远程连接以通过 $ {defaultRemoteMachineName} 在
+CMakeSettings.json 和 launch.vs.json 中使用。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p>访问:</p>
+<p>微软中国官方商城 - Visual Studio</p>
+<p>当编辑远程连接时，Visual Studio 将不再需要将标头重新复制到 Windows 以获得本机 IntelliSense 体验。同样，设置默认的远程连接对于将 CMakeSettings.json 和 launch.vs.json 检查到源代码控制中非常有用，而无需用户或计算机的特定信息。这些通过 SSH 的远程连接使用户可以直接从 Visual Studio 在远程 Linux 系统上构建和调试 C++ 项目。</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-82897fa682de43e894ef8d8c6a2dda08f79.png" alt="img:Visual Studio 2019 v16.7 Preview 2 发布"></p>
+<p>此版本还为 Visual Studio 中的 Windows 上的 Clang（clang-cl）带来了增强的 IntelliSense 支持。clang include 路径现在包括 clang 库，开发团队已经改进了编辑器内花体的显示（特别是在使用 std 库时），并且添加了 clang 模式对 C++ 2a 的支持。</p>
+<p>预览版还包含四个新的代码分析规则，以将其他安全功能合并到 C++ 中：C26817、C26818、C26819 和 C26820。</p>
+<p>此外，新的 C++ 20 标准库功能已经实现。GitHub 上的 STL Changelog 中提供了详细列表。</p>
+<p>.NET 生产力</p>
+<p>现在，“快速信息”（Quick Info）将显示诊断 ID 以及帮助链接，可以轻松导航到文档，以了解有关代码中的警告和错误的更多信息。</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-13026f8fddf8d46afe5f68b88d8965d0d56.png" alt="img:Visual Studio 2019 v16.7 Preview 2 发布"></p>
+<p>Git 生产力</p>
+<p>新版本专注于解决合并冲突，将 Visual Studio 合并编辑器与 TFVC 分离，并将其重点放在了 Git 上。</p>
+<p>文件顶部的新信息栏会告诉用户何时存在需要手动解决的合并冲突。单击即可打开合并编辑器，该编辑器现在具有更多有用的图块和标题，以帮助区分冲突的分支。</p>
+<p>此版本减少了缩放边距、运行状况边距和工具栏周围的混乱情况。 此外，当区别唯一时，更容易解析与对齐的匹配行、单词级别差异和可见空白之间的冲突。用户可以关闭无冲突的差异，而只关注冲突。现在，还可以通过双向合并在文件级别解决添加/添加冲突。另外，新版本添加了一个复选框，只需单击一下即可解决一侧或另一侧的所有冲突。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0607/16b67eb986107d9.gif" alt="img:Visual Studio 2019 v16.7 Preview 2 发布"></p>
+<p>其他 Git 改进还包括：在开始新的克隆操作之前关闭所有打开的文件夹或解决方案，以便 Visual Studio 打开新克隆的存储库，以帮助更快地获取代码。改进了提交文本框，添加了内联错误检查。还添加了 UI，可帮助用户更清晰地了解初始化存储库并将其推送到 GitHub 或 Azure Repos 等远程主机时发生的情况。</p>
+<p>Kubernetes 的本地流程</p>
+<p>使用 Kubernetes 进行本地处理时，可以在与其他应用程序或服务连接到 Kubernetes 集群的同时，在开发工作站上编写、测试和调试 .NET 代码。通过将开发工作站连接到群集，用户无需在开发计算机上手动运行和配置相关服务。集群中的环境变量、连接字符串和卷可用于本地运行的微服务代码。</p>
+<p>详情见发布公告： <a href="https://devblogs.microsoft.com/visualstudio/visual-studio-2019-v16-7-preview-2/">https://devblogs.microsoft.com/visualstudio/visual-studio-2019-v16-7-preview-2/</a></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/988019/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Intel公布十代酷睿PL功耗：10核5.3GHz 56秒真男人</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/988035/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">央行数字货币到底是什么？如何影响你我的生活？</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990273/">“智迎”新基建时代 戴尔携全新商用客户端产品及解决方案亮相中国</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990265/">首例儿童骑共享单车身亡案宣判 ofo被判赔6.7万</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990253/">以色列VTOL出租车开发商宣布将在CityHawk中使用氢燃料电池</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990269/">TCL新智能机外观专利曝光 或采用屏下隐藏式前摄方案</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990263/">OPPO Reno4 Pro 评测：亮点槽点并存，但依旧无缘性价比</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

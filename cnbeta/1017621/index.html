@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>以隐私安全之名 Android 11砍掉了第三方相机应用选择器 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="以隐私安全之名 Android 11砍掉了第三方相机应用选择器" />
+<meta property="og:description" content="随着安全和隐私意识的提升，谷歌已在此前的 Android 大版本更新中关闭或限制了许多功能。而在即将正式发布的 Android 11 身上，谷歌又为相机 API 引入了一项重大的变化。这一次，用户将无法选择第三方相机 App 来拍摄照片或视频，迫使其仅依赖系统自带的相机应用。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1017621/" />
+<meta property="article:published_time" content="2020-08-19T12:16:48+08:00" />
+<meta property="article:modified_time" content="2020-08-19T12:16:48+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">以隐私安全之名 Android 11砍掉了第三方相机应用选择器</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-19T12:16:48&#43;08:00">August 19, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>随着安全和隐私意识的提升，谷歌已在此前的 Android 大版本更新中关闭或限制了许多功能。而在即将正式发布的 Android 11 身上，谷歌又为相机 API 引入了一项重大的变化。这一次，用户将无法选择第三方相机 App 来拍摄照片或视频，迫使其仅依赖系统自带的相机应用。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0819/062fbf690fd8279.png" alt="img:以隐私安全之名 Android 11砍掉了第三方相机应用选择器"></p>
+<p>Android Police 指出，这项变动的核心是 Android 定义的 Intent 系统。此前开发者只需遵循一定的条件而创建一个请求，即可在相关界面中提供系统推荐的几款第三方相机 App，以供用户选择。</p>
+<p>对于某些并非专为摄影而构建的 App 来说（比如向二手交易平台上传一张咖啡杯的图片），此时 Intent 系统就能够发挥很好的作用。遗憾的是，在即将到来的 Android 11 系统中，情况将发生巨大的转变。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0819/ce4c863f1cb6c45.png" alt="img:以隐私安全之名 Android 11砍掉了第三方相机应用选择器"></p>
+<p>Android 10 上的相机 App 选择器</p>
+<p>具体说来是，在 Android 11 中，三项 Intent 功能将不再起作用，分别是视频拍摄（VIDEO_CAPTURE）、图像拍摄（IMAGE_CAPTURE）、以及密拍（IMAGE_CAPTURE_SECURE）。</p>
+<p>更新之后，Android 11 将自动提供预安装的相机应用来执行这些操作，而不再给第三方 App 提供候选的机会。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0819/4075adc0b2fcbfc.png" alt="img:以隐私安全之名 Android 11砍掉了第三方相机应用选择器"></p>
+<p>功能变更前后的代码对比</p>
+<p>根据谷歌问题追踪器（Google Issue Tracker）上的表示，该公司称之“是为保护用户隐私和安全而作出的正确权衡”。</p>
+<p>尽管谷歌没有给出更具体的原因，但一些人猜测，此举或可防止某些用户被恶意相机应用诱骗（比如设置成默认相机 App），然后用它来捕获一些本应保密的内容。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1017623/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">键盘党的壮举：孤身飞全球</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1017625/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[图]少即是多：2020年极简主义摄影奖获奖者名单揭晓</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019591/">《使命召唤：黑色行动冷战》PC版依然为战网独占</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019601/">vivo、Realme等手机品牌低调返回中国台湾市场</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019615/">“巴威”加强为台风级 强降雨一路向北</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019583/">《微软飞行模拟》新附加插件 让莫斯科的风景更美丽</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019599/">红旗H9上市：撒贝宁让AI讲个笑话 笑话还没讲他就笑喷了</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

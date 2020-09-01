@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>谷歌Play商店剔除了11款带有Joker恶意软件的Android应用 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="谷歌Play商店剔除了11款带有Joker恶意软件的Android应用" />
+<meta property="og:description" content="臭名昭著的 Joker 恶意软件，可在未经用户同意的情况下订阅许多增值服务。以色列网络安全公司 Check Point 的安全研究人员发现，幕后开发者对这些应用的代码机型了修改，以绕过 Play 商店的安全性审查。庆幸的是，谷歌已经注意到了此事，并于近日在 Play 商店中剔除了 11 款带有 Joker 恶意软件的 Android 应用。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1003381/" />
+<meta property="article:published_time" content="2020-07-15T10:42:23+08:00" />
+<meta property="article:modified_time" content="2020-07-15T10:42:23+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">谷歌Play商店剔除了11款带有Joker恶意软件的Android应用</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-15T10:42:23&#43;08:00">July 15, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>臭名昭著的 Joker 恶意软件，可在未经用户同意的情况下订阅许多增值服务。以色列网络安全公司 Check Point 的安全研究人员发现，幕后开发者对这些应用的代码机型了修改，以绕过 Play 商店的安全性审查。庆幸的是，谷歌已经注意到了此事，并于近日在 Play 商店中剔除了 11 款带有 Joker 恶意软件的 Android 应用。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0715/f2335025864e9af.jpg" alt="img:谷歌Play商店剔除了11款带有Joker恶意软件的Android应用"></p>
+<p>Check Point 指出，这些应用侵犯了用户隐私、能够下载更多恶意软件到受感染的设备、甚至在未经用户知情或同意的情况下订阅增值付费服务。</p>
+<p>作为 Android 上最臭名昭著的恶意软件之一，黑客对代码进行了微小的改动，而后一直在谷歌官方应用市场招摇过市。</p>
+<p>尽管谷歌已从 Play 商店剔除了这 11 款带有 Joker 恶意软件的应用，但除非用户手动卸载，某则它们是不会从受害者的设备中移除的。</p>
+<p>安全研究人员指出，Joker 的幕后主使者采用了威胁传统 PC 环境的一项古老技术，并将之运用到了移动 App 世界中，以避免被谷歌检出。</p>
+<p>为扣取用户的增值订阅费用，Joker 使用了通知侦听服务和动态 dex 文件这两个主要组件，后者依赖于命令与控制服务器来执行服务的注册。</p>
+<p>起初，负责与服务器端进行通信并下载的动态 dex 文件代码位于 main classes.dex 中。但之后，初始 classes.dex 文件的功能中已包含了加载新的有效负载。</p>
+<p>此外，恶意软件开发者可将恶意代码动态地隐藏于 dex 文件中，同时仍可确保其能被加载（Windows PC 平台上众所周知的一项恶意软件开发技术），以避免被系统给检测到。</p>
+<p>而后，新变体也将恶意 dex 文件隐藏为 Base64 编码的字符串，通过读取字符串对其进行解码，然后加载并映射感染设备，从而将应用程序内部的恶意 dex 文件隐藏起来。</p>
+<p>这 11 款恶意 Android 应用的列表如下：</p>
+<p>com.imagecompress.android</p>
+<p>com.relax.relaxation.androidsms</p>
+<p>com.cheery.message.sendsms</p>
+<p>com.peason.lovinglovemessage</p>
+<p>com.contact.withme.texts</p>
+<p>com.hmvoice.friendsms (twice)</p>
+<p>com.file.recovefiles</p>
+<p>com.LPlocker.lockapps</p>
+<p>com.remindme.alram</p>
+<p>com.training.memorygame</p>
+<p>Check Point 安全研究人员建议，用户应在下载前检查所有应用程序。若怀疑设备已下载了受感染的文件，则应立即将其卸载、检查手机和信用卡账单上是否有任何意料之外的支出。</p>
+<p>据悉，谷歌已于过去 30 天内第三次对恶意软件展开了清理行动。不过在手机上安装反病毒软件，依然是一项有助于防止系统被感染的重要措施。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1003397/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">海盗船推出Touch Bar风格的iCUE NEXUS键盘副屏</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1003379/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">OpenCV 开源协议将从 BSD 变更为 Apache 2</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005339/">嫦娥五号年内升空，我们为什么要去月亮上“挖土”？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005353/">网传红旗H9 2.0T顶配45万：有望8月15日正式上市</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005355/">外媒：英国将日本NEC和富士通列为5G设备替代供应商</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005381/">《集合啦！动物森友会》夏日新CM公开 夏日同游其乐融融！</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005383/">阿联酋希望号发射升空 拉开2020火星探测大幕</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

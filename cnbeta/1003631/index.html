@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Intel 10nm工艺处理器令人头大：休眠后频率上不去还不稳定 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Intel 10nm工艺处理器令人头大：休眠后频率上不去还不稳定" />
+<meta property="og:description" content="Intel这两年在先进工艺上有点焦头烂额，10nm工艺迟迟达不到足够高的性能水准，最直接的后果就是频率上不去。14nm已经可以在桌面和游戏本上做到十核心5.3GHz、八核心5.3GHz，10nm还只能停留在轻薄本上，四核心最高不过3.9GHz或者4.1GHz，后者还是苹果特殊定制的。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1003631/" />
+<meta property="article:published_time" content="2020-07-15T19:46:34+08:00" />
+<meta property="article:modified_time" content="2020-07-15T19:46:34+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Intel 10nm工艺处理器令人头大：休眠后频率上不去还不稳定</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-15T19:46:34&#43;08:00">July 15, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Intel这两年在先进工艺上有点焦头烂额，10nm工艺迟迟达不到足够高的性能水准，最直接的后果就是频率上不去。14nm已经可以在桌面和游戏本上做到十核心5.3GHz、八核心5.3GHz，10nm还只能停留在轻薄本上，四核心最高不过3.9GHz或者4.1GHz，后者还是苹果特殊定制的。</p>
+<p>Intel日前发布了代号Cooper Lake的第三代可扩展至强处理器，但还是14nm，而且仅限四路和八路市场，而面向更广泛双路市场的Ice Lake-SP才会首次上10nm工艺，具体核心、频率规格一直成谜，但种种迹象表明不容乐观。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0715/b194bd28d76a9a1.jpg" alt="img:Intel 10nm工艺处理器令人头大：休眠后频率上不去还不稳定"></p>
+<p>Intel Linux工程师近日提交了一个新的补丁，涉及Ice Lake-SP平台的电源管理，进一步暴露了10nm工艺频率上的不给力。</p>
+<p>Intel工程师在补丁描述中说：“ICX(Ice Lake)平台上，从C1E或者更低休眠状态恢复时，CPU频率提升会非常缓慢。这虽然确实能在很多情况下省电，但是也会导致一些意外情况，比如由于CPU频率的不确定性，应用负载可能无法获得足够的性能。”</p>
+<p>对此问题，Intel的解决办法也很“暴力”，不是在硬件层面解决，而是直接禁止C1E、C6状态的自动启动，以维持持续高频率、高性能，而代价就是没法省电了。</p>
+<p>目前还不清楚该问题是否在Windows系统中也存在。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1003637/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">宝马ix3第五代eDrive电驱技术续航500km 能否挑战Model Y？</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1003651/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">网友发现马力欧35周年推特账号 或许有庆祝活动</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005581/">Redmi发布真无线耳机AirDots 2：仅需79元</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005569/">通用汽车计划推出雪佛兰电动皮卡：续航里程达644公里</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005587/">中国科学家依托星系巡天获得迄今最强暗能量观测证据</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005575/">高达70%的退货率… 直播带货为何屡屡翻车？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005585/">2020中国互联网大会将于7月23日正式开启</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

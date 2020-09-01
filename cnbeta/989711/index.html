@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>英特尔处理器又曝两个SGX新漏洞 攻击者可轻松提取敏感数据 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="英特尔处理器又曝两个SGX新漏洞 攻击者可轻松提取敏感数据" />
+<meta property="og:description" content="正在英特尔努力消除多个处理器漏洞造成的负面影响的时候，三所大学的安全研究人员再次无情地曝光了 SGX 软件防护扩展指令的另外两个缺陷。对于攻击者来说，这可以让他们相当轻松地提取敏感数据。庆幸的是，新问题可通过积极的补救措施得到修复，且当前尚无新漏洞已在野外被利用的相关证据。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/989711/" />
+<meta property="article:published_time" content="2020-06-11T12:26:13+08:00" />
+<meta property="article:modified_time" content="2020-06-11T12:26:13+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">英特尔处理器又曝两个SGX新漏洞 攻击者可轻松提取敏感数据</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-11T12:26:13&#43;08:00">June 11, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>正在英特尔努力消除多个处理器漏洞造成的负面影响的时候，三所大学的安全研究人员再次无情地曝光了 SGX 软件防护扩展指令的另外两个缺陷。对于攻击者来说，这可以让他们相当轻松地提取敏感数据。庆幸的是，新问题可通过积极的补救措施得到修复，且当前尚无新漏洞已在野外被利用的相关证据。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>天翼云“年中上云节”已上线 云产品全场0.6折起 8888元礼包全场可用</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0611/f1536f0bf0e28d0.png" alt="img:英特尔处理器又曝两个SGX新漏洞 攻击者可轻松提取敏感数据"></p>
+<p>资料图（来自：Intel 官网）</p>
+<p>来自美国密歇根、荷兰阿姆斯特丹、以及澳大利亚阿德莱德三所大学的研究人员披露 —— 攻击者可利用多核体系架构的工作方式，来获得对受感染系统上敏感数据的访问权限。</p>
+<p>其已经为两个漏洞开发了对应的攻击方法，并给出了 SGAxe 和 CrossTalk 的概念证明。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0611/6e1f9ae8f8e3a37.png" alt="img:英特尔处理器又曝两个SGX新漏洞 攻击者可轻松提取敏感数据"></p>
+<p>CPU 处理的图像</p>
+<p>前者似乎是今年早些时候曝光的 CacheOut 攻击的高级版本，黑客可从 CPU 的 L1 缓存中提取内容。</p>
+<p>研究人员解释称，SGAxe 是英特尔减轻针对软件防护扩展（SGX）的旁路攻击的一个失败尝试。作为 CPU 上的一个专属区域，SGX 原意是确保正在处理的代码和数据的完整与机密性。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0611/e1f610d73a4d92e.gif" alt="img:英特尔处理器又曝两个SGX新漏洞 攻击者可轻松提取敏感数据"></p>
+<p>SGAxe 还原的图像</p>
+<p>借助瞬态执行攻击，黑客可从实质上恢复存储在 SGX 区域中的加密密钥，并将之用于解密长存储区，以获得机器的 EPID 密钥。后者被用于确保事务的安全性，比如金融交易和受 DRM 保护的内容。</p>
+<p>至于第二个 CrossTalk 漏洞，其属于微体系架构数据采样（MDS）的一个衍生，能够针对 CPU 的行填充缓冲区（LBF）处理的数据发起攻击。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0611/175b1265229e0fd.png" alt="img:英特尔处理器又曝两个SGX新漏洞 攻击者可轻松提取敏感数据"></p>
+<p>其原本希望提供 CPU 内核访问的“登台缓冲区”，但黑客却能够利用在一个单独核心上运行的特制软件，来破坏保护其运行的软件代码和数据私钥。</p>
+<p>据悉，新漏洞影响 2015 ~ 2019 年发布的多款英特尔处理器，包括部分至强 E3 SKU（E5 和 E7 系列已被证明可抵御此类新型攻击）。</p>
+<p>英特尔在 6 月份的安全公告中称，只有极少数的人能够在实验室环境中发起这些攻击，目前尚无漏洞在野外被利用的报告。</p>
+<p>即便如此，该公司仍将尽快发布微码更新，同时让之前签发的证明密钥失效。</p>
+<p>访问购买页面:</p>
+<p>英特尔旗舰店</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/989709/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">科学家发现新液晶相  有望打开 &#34;新材料宇宙之门 &#34;</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/989693/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">亚马逊联手高盛推出小型企业信贷 最高100万美元额度</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991619/">收购NEVS造车加速 恒大健康暴涨23%市值达1045亿港元</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991581/">骁龙865 Plus？高频版骁龙865现身安兔兔：ROG或首发</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991611/">台积电赴美建厂黄了？要看特朗普给多少补贴，对华为没有任何影响</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991577/">[图]升级Windows 10 Version 2004后Chrome出现要求重复登录情况</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991631/">WhatsApp在巴西推出新的数字支付功能</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[图]Excel新增STOCKHISTORY函数：可显示指定时间段内的股价历史数据 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[图]Excel新增STOCKHISTORY函数：可显示指定时间段内的股价历史数据" />
+<meta property="og:description" content="Microsoft Excel 近日获得了一项新功能：帮助用户更直观的了解一家公司在某个时间段内的历史股价变化情况。这款新函数称之为“STOCKHISTORY”，在 Stocks 数据类型基础上整合动态数组功能，能够抓取不同时间段内的股价变动情况并将其完整列出。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/989637/" />
+<meta property="article:published_time" content="2020-06-11T10:21:09+08:00" />
+<meta property="article:modified_time" content="2020-06-11T10:21:09+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[图]Excel新增STOCKHISTORY函数：可显示指定时间段内的股价历史数据</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-11T10:21:09&#43;08:00">June 11, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Microsoft Excel 近日获得了一项新功能：帮助用户更直观的了解一家公司在某个时间段内的历史股价变化情况。这款新函数称之为“STOCKHISTORY”，在 Stocks 数据类型基础上整合动态数组功能，能够抓取不同时间段内的股价变动情况并将其完整列出。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>天翼云“年中上云节”已上线 云产品全场0.6折起 8888元礼包全场可用</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p>访问:</p>
+<p>微软中国官方商城 - Office</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0611/08cb52d734847d3.jpg" alt="img:[图]Excel新增STOCKHISTORY函数：可显示指定时间段内的股价历史数据"></p>
+<p>动态数组通过在单元格中引入一项函数，从而将数据划分到多个单元格中。目前该功能已经支持SORT、FILTER等函数，但现在STOCKHISTORY也利用它来显示历史股票数据。</p>
+<p>该函数可以与许多参数一起使用，让你设置你想看到的数据。股票参数定义了你想要的数据是哪家公司或金融工具，它也可以用来定义从哪个交易所获取数据。</p>
+<p>其中start_date定义了应该收集数据的第一个时间点；end_date定义了你想要数据的最后一个时间点，但它是可选的；interval定义了你想要的数据是每日、每周还是每月，它也是可选的，默认设置为每日；headings让用户创建额外的标题行是函数返回的结果所需要的。</p>
+<p>此外还可以添加五个属性来选择要包含哪些信息，如日期、开盘或收盘值、最高价、最低价和成交量。目前STOCKHISTORY功能已经面向 Microsoft 365 的 Beta 频道用户开放，未来应该会向所有用户开放。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0611/128c2cac1a61f09.png" alt="img:[图]Excel新增STOCKHISTORY函数：可显示指定时间段内的股价历史数据"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0611/4ee5d436793daf8.png" alt="img:[图]Excel新增STOCKHISTORY函数：可显示指定时间段内的股价历史数据"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0611/b6c23916cf2433d.png" alt="img:[图]Excel新增STOCKHISTORY函数：可显示指定时间段内的股价历史数据"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0611/c351265dc183ca2.png" alt="img:[图]Excel新增STOCKHISTORY函数：可显示指定时间段内的股价历史数据"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0611/0ecccce0dd2beb5.png" alt="img:[图]Excel新增STOCKHISTORY函数：可显示指定时间段内的股价历史数据"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0611/cef2308beed62fa.png" alt="img:[图]Excel新增STOCKHISTORY函数：可显示指定时间段内的股价历史数据"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0611/75e4632ef6113f2.png" alt="img:[图]Excel新增STOCKHISTORY函数：可显示指定时间段内的股价历史数据"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0611/8db602cb8b68c63.png" alt="img:[图]Excel新增STOCKHISTORY函数：可显示指定时间段内的股价历史数据"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0611/624c7343c38c12c.png" alt="img:[图]Excel新增STOCKHISTORY函数：可显示指定时间段内的股价历史数据"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0611/e7d5ec97946f744.png" alt="img:[图]Excel新增STOCKHISTORY函数：可显示指定时间段内的股价历史数据"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0611/52ae4a370f51a42.png" alt="img:[图]Excel新增STOCKHISTORY函数：可显示指定时间段内的股价历史数据"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0611/8e0966ba49306ed.gif" alt="img:[图]Excel新增STOCKHISTORY函数：可显示指定时间段内的股价历史数据"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/989439/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">星巴克预计疫情造成32亿美元损失 计划改革咖啡店模式</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/989611/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">IGN《如龙7》14分钟演示：街头战斗让人热血沸腾</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991503/">Polestar 2预定开启：续航里程达443公里</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991523/">Google Chrome v83.0.4103.106 正式版发布</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991527/">科学家看见一颗中子星正在“启动”</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991543/">美四大通信运营商电话服务疑出现问题</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991497/">亚马逊上的清单还是泄露了PS5的售价和上市日期</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

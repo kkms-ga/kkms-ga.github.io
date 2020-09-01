@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[图]Mac恶意软件通过Xcode项目传播 滥用WebKit、Data Vault漏洞 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[图]Mac恶意软件通过Xcode项目传播 滥用WebKit、Data Vault漏洞" />
+<meta property="og:description" content="趋势科技本周四报告称，在多个 Xcode 项目中发现了 XCSSET 恶意软件系列，发现了导致恶意有效荷载的兔子洞（rabbit hole）。在探索讨论攻击行为的报告[PDF]中，网络安全研究人员表示在其中一个开发者项目中“不寻常”感染还发现了两个零日漏洞。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1016349/" />
+<meta property="article:published_time" content="2020-08-16T15:50:51+08:00" />
+<meta property="article:modified_time" content="2020-08-16T15:50:51+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[图]Mac恶意软件通过Xcode项目传播 滥用WebKit、Data Vault漏洞</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-16T15:50:51&#43;08:00">August 16, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>趋势科技本周四报告称，在多个 Xcode 项目中发现了 XCSSET 恶意软件系列，发现了导致恶意有效荷载的兔子洞（rabbit hole）。在探索讨论攻击行为的报告[PDF]中，网络安全研究人员表示在其中一个开发者项目中“不寻常”感染还发现了两个零日漏洞。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0816/0ddede85aa13115.jpg" alt="img:[图]Mac恶意软件通过Xcode项目传播 滥用WebKit、Data Vault漏洞"></p>
+<p>Xcode 是 macOS 系统中用于开发苹果相关软件和应用的免费集成开发环境（IDE）。虽然目前还不清楚 XCSSET 是如何感染到 Xcode 项目中的，可一旦被嵌入，恶意软件就会在项目构建时运行。</p>
+<p>该团队表示：“根据推测，这些系统主要由开发人员使用。这些 Xcode 项目已经被修改，在构建时，这些项目将运行一个恶意代码。这最终会导致主要的XCSSET恶意软件被丢弃并在受影响的系统上运行”。</p>
+<p>一些受影响的开发者已经在 GitHub 上分享了他们的项目，研究人员表示针对 Mac 用户的一项运动正在推广 XCSSET恶意软件套件，它能够劫持Safari网络浏览器，并注入各种 JavaScript 有效负载，这些负载可以窃取密码、金融数据和个人信息，部署赎金等。</p>
+<p>隐藏在项目中的初始有效载荷以Mach-O可执行文件的形式出现。研究人员能够追踪受感染项目的Xcode工作数据文件，并发现一个隐藏文件夹中包含Mach-O，位于其中一个.xcodeproj文件中。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1016355/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">澳洲零售商曝多款PS5实体游戏封面 3A游戏售价约493元</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1016363/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">开车可以「大撒把」了，但你还是不能玩手机</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1018699/">北汽回应新能源汽车充电时发生冒烟：不排除车辆上存在易燃易爆品</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1018685/">印度版红米9规格与渲染图曝光 正式命名或为红米9C</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1018697/">[图]ARM和DARPA签署三年合作协议 以维持美国芯片设计领先地位</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1018689/">特斯拉车主专用约会APP问世：首先你得有辆特斯拉</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1018687/">[图]设计师带来User Account Control界面概念：更加现代化</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

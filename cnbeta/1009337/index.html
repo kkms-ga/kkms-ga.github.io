@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[图]Zoom再爆安全漏洞：会议默认使用6位数字密码 能在几分钟内破解 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[图]Zoom再爆安全漏洞：会议默认使用6位数字密码 能在几分钟内破解" />
+<meta property="og:description" content="受疫情影响越来越多的人开始在家远程办公，这也让 Zoom 这款在线视频会议水涨船高。在使用度、热度持续攀升的同时，不重视用户隐私、存在诸多安全漏洞等各种负面内容也接踵而至。迫使公司宣布冻结新功能发布 90 天，以修复当前软件中存在的各种漏洞。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1009337/" />
+<meta property="article:published_time" content="2020-07-30T07:34:39+08:00" />
+<meta property="article:modified_time" content="2020-07-30T07:34:39+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[图]Zoom再爆安全漏洞：会议默认使用6位数字密码 能在几分钟内破解</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-30T07:34:39&#43;08:00">July 30, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>受疫情影响越来越多的人开始在家远程办公，这也让 Zoom 这款在线视频会议水涨船高。在使用度、热度持续攀升的同时，不重视用户隐私、存在诸多安全漏洞等各种负面内容也接踵而至。迫使公司宣布冻结新功能发布 90 天，以修复当前软件中存在的各种漏洞。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0730/7fac21bbfb9d933.jpg" alt="img:[图]Zoom再爆安全漏洞：会议默认使用6位数字密码 能在几分钟内破解"></p>
+<p>今天，安全研究人员 Tom Anthony 公布了 Zoom 的一个关键安全漏洞。通过这个漏洞，任何人都可以加入受密码保护的 Zoom 会议。Zoom 会议默认由 6 位数字密码保护。所以，有可能出现 100 万个不同的密码。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0730/78ab9346dfd7c23.jpg" alt="img:[图]Zoom再爆安全漏洞：会议默认使用6位数字密码 能在几分钟内破解"></p>
+<p>Tom 发现，Zoom的网络客户端允许任何人检查会议的密码是否正确，没有任何尝试次数的限制。因此，攻击者可以写一个小的 Python 代码来尝试所有的 100 万个密码，并在几分钟内找到正确的密码。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0730/27a135233a9f2ae.jpg" alt="img:[图]Zoom再爆安全漏洞：会议默认使用6位数字密码 能在几分钟内破解"></p>
+<p>在 Tom 向 Zoom 报告了这个问题之后，Zoom 的网络客户端就进行了离线维护。Zoom 要求用户在 web 客户端中登录加入会议，以及更新默认会议密码为非数字和更长的密码来缓解这个问题。</p>
+<p>尽管这个问题现在已经被修复，但它引发了以下令人不安的问题&mdash;是否已经有攻击者利用这个漏洞来监听其他人的视频会议？例如政府会议？</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1009343/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">反垄断委员会主席西西林：一个月后将发布反垄断报告</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1009379/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">奥迪将在2021款Q5采用OLED尾灯</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1011171/">[视频]索尼放出WH-1000XM4宣传视频 充电10分钟播放5小时</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1011173/">[图]微软和谷歌等合作伙伴共同创立开源安全基金会</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1011175/">[图]马斯克：特斯拉Cybertruck预订数量“至少20万辆”</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1011161/">世卫组织发起口罩挑战 鼓励人们佩戴口罩</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1011165/">微软前CEO鲍尔默:收购TikTok令人兴奋 已准备好应对监管</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

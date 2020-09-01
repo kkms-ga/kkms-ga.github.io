@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>微软介绍Windows 10即将迎来的KDP内核数据保护功能 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="微软介绍Windows 10即将迎来的KDP内核数据保护功能" />
+<meta property="og:description" content="微软今日公布了即将成为 Windows 10 一部分的新增安全功能的首批技术细节，其全称为“内核数据保护”（KDP），旨在阻止恶意软件 / 恶意威胁攻击者修改或破坏操作系统的内存数据。软件巨头补充道：通过向开发者开放 API 的访问，有助于其将 Windows 内核的某些部分指定为只读区域。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1001515/" />
+<meta property="article:published_time" content="2020-07-10T10:05:52+08:00" />
+<meta property="article:modified_time" content="2020-07-10T10:05:52+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">微软介绍Windows 10即将迎来的KDP内核数据保护功能</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-10T10:05:52&#43;08:00">July 10, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>微软今日公布了即将成为 Windows 10 一部分的新增安全功能的首批技术细节，其全称为“内核数据保护”（KDP），旨在阻止恶意软件 / 恶意威胁攻击者修改或破坏操作系统的内存数据。软件巨头补充道：通过向开发者开放 API 的访问，有助于其将 Windows 内核的某些部分指定为只读区域。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0610/c8591c5ce28c735.jpg" alt="img:微软介绍Windows 10即将迎来的KDP内核数据保护功能"></p>
+<p>微软基础内核团队今日表示：“当攻击者利用经过签名、但相当脆弱的驱动程序攻击策略，来破坏数据结构并安装恶意的未签名驱动程序时，KDP 可确保数据结构不会被篡改，以减轻此类攻击的影响”。</p>
+<p>微软还考虑到了新技术对其它软件的影响，比如反作弊和数字版权管理（DRM）应用程序。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0710/7e29cd080be2545.png" alt="img:微软介绍Windows 10即将迎来的KDP内核数据保护功能"></p>
+<p>一阶段：虚拟地址到客户物理地址的转换流程（图自：Microsoft）</p>
+<p>除了提升操作系统的整体安全性，KDP 还具有其它优点，比如：</p>
+<p>● 性能改进：KDP 可减轻验证组件的负担，无需定期验证已被施加写保护的数据变量；</p>
+<p>● 可靠性改进：KDP 可使诊断非安全漏洞类型的内存出错问题变得更加轻松；</p>
+<p>● 激励驱动程序开发者和供应商：KDP 可改善基于虚拟化的安全兼容性，并提高生态系统中相关技术的采用率。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0710/4d7b4b0aa45dcca.png" alt="img:微软介绍Windows 10即将迎来的KDP内核数据保护功能"></p>
+<p>二阶段：GPA 到 SPA 的物理地址转换</p>
+<p>微软表示，该公司一直致力于为 Windows 10 添加名叫“基于虚拟化的安全性”的新技术（简称 VBS）。</p>
+<p>它可借助计算机的基础硬件来隔离安全区域，让操作系统内部可正常访问“虚拟安全模式下”的内存资源。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0710/cde4d95c3dbfa01.png" alt="img:微软介绍Windows 10即将迎来的KDP内核数据保护功能"></p>
+<p>层级结构中 NPT 页表的嵌套项</p>
+<p>KDP 的工作原理是将内核内存区域标记为已读，然后将其移动到 VBS 的“虚拟安全模式”下运行。如此一来，即便操作系统本身，也无法越权对其进行篡改。</p>
+<p>微软表示，想要在 Windows 10 上启用 KDP 安全特性的应用程序，其唯一要求就是支持 VBS 功能。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0710/8d1fe6994ea985f.png" alt="img:微软介绍Windows 10即将迎来的KDP内核数据保护功能"></p>
+<p>安全池中的 VTL1 到 VTL 0 DELTA 值</p>
+<p>如果你的计算机已经从硬件上支持英特尔、AMD 或 ARM 的虚拟化扩展和二级地址转换（包括 AMD 的 NPT、英特尔的 EPT、以及 ARM 的 Stage 2 address translation），均可无缝升级支持 KDP 功能。</p>
+<p>可选的是硬件支持 MBEC，特点是能够降低与 HVCI 相关的性能成本。目前 KDP 已向 Windows 10 Insider 测试者开发体验，但微软尚未公布其抵达稳定版本的确切时间表。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1001481/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[图]三星Galaxy Note 20 Ultra高清渲染图曝光</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1001499/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">冲马桶真的会传播新冠病毒吗？</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1003339/">Facebook下月推出音乐流媒体服务 对标YouTube</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1003361/">佛罗里达州卫生官员：迈阿密现在是美国疫情的“震中”</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1003343/">前谷歌机器人主管打造出能够灵活延伸的辅助机器人</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1003359/">[图]网页端Outlook现允许添加Google Calendar账号</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1003337/">运营商之殇：5G的步伐 3G的服务</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

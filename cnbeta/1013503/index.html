@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>微软部分Edge插件疑是李鬼 技术人员分析称其有恶意代码 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="微软部分Edge插件疑是李鬼 技术人员分析称其有恶意代码" />
+<meta property="og:description" content="微软的Edge浏览器在放弃自己的引擎，改用谷歌开源的Chromium核心之后，已经成为微软浏览器翻身之作，目前已经是第二大了，仅次于正牌Chrome。Edge浏览器优点多多，兼容Chrome的插件就是最具吸引力的地方，而且微软的应用商店国内可以正常访问，所以不少人去微软官方下载插件，扩展Edge功能。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1013503/" />
+<meta property="article:published_time" content="2020-08-09T16:53:40+08:00" />
+<meta property="article:modified_time" content="2020-08-09T16:53:40+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">微软部分Edge插件疑是李鬼 技术人员分析称其有恶意代码</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-09T16:53:40&#43;08:00">August 09, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>微软的Edge浏览器在放弃自己的引擎，改用谷歌开源的Chromium核心之后，已经成为微软浏览器翻身之作，目前已经是第二大了，仅次于正牌Chrome。Edge浏览器优点多多，兼容Chrome的插件就是最具吸引力的地方，而且微软的应用商店国内可以正常访问，所以不少人去微软官方下载插件，扩展Edge功能。</p>
+<p>Chrome的一些知名插件在Edge上也很受欢迎，比如Proxy SwitchyOmega，很多人也直接从微软官方商店下载了，然后问题来了，Edge版的Proxy SwitchyOmega竟然是李鬼。</p>
+<p>虽然Proxy SwitchyOmega的功能可以正常使用，但是上传者别有用心加入了其他代码，V2EX上已经有大神做了分析，对比发现background.html 里多引了一个脚本 js/pic.js。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0809/b739d34333b2572.jpg" alt="img:微软部分Edge插件疑是李鬼 技术人员分析称其有恶意代码"></p>
+<p>这个李鬼版插件的作者很狡猾，将脚本隐藏为一个PNG图像文件，很多人都不可能注意到其中的问题。</p>
+<p>简单来说，现在这个李鬼插件会加载商品返利代码，用户购物的时候不知不觉中使用了这个页面下单，李鬼插件的作者就会获得分成。</p>
+<p>如果只是返利还好说，其实插件中被人加了别的代码，远程控制都是有可能的。</p>
+<p>事实上，这也不是第一次有人曝出Edge商店的Proxy SwitchyOmega插件有恶意代码了，早前看微软页面评论就有人提到过，不过现在看评论好像都没了。</p>
+<p>也不止是这一个插件有问题，新版Edge浏览器支持Chrome版插件以来，已经有多款插件曝出过类似的问题了，都是插件被加入了恶意代码。</p>
+<p>在这件事上，微软官方的Edge商店审核不严还是关键啊，不仅因为兼容Chrome，省事了就放下不管了。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1013511/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">日产全新奇骏实车图亮相：“万年”自吸终迎升级</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1013487/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">AMD大小核混合架构CPU来了：专利曝光</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015773/">雷克萨斯注册RZ 45e商标：全新纯电轿跑SUV或汲LF-30概念车设计</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015775/">Xbox掌门人：PS5频率高意味着发热量大、相信索尼能解决</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015781/">百度Q2财报解读：百度App日活2亿不增收，爱奇艺拖累整体营收</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015787/">飞机跑出机场？厦门机场辟谣：正常的生产作业</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015789/">PCIe 5.0 SSD硬盘2022年问世：4倍性能、7nm芯片工艺</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

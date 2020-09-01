@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>安全人员称苹果Enclave存在漏洞 但不会影响大多数iPhone用户 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="安全人员称苹果Enclave存在漏洞 但不会影响大多数iPhone用户" />
+<meta property="og:description" content="安全研究人员近日披露了苹果Secure Enclave处理器的一个漏洞，但虽然敏感信息的数据存储，意味着包括Apple Pay详情和Face ID生物识别记录在内的数据有可能受到攻击者的攻击，但事实上，这对于绝大多数苹果客户来说，它不大可能成为一个问题。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1011111/" />
+<meta property="article:published_time" content="2020-08-03T21:07:32+08:00" />
+<meta property="article:modified_time" content="2020-08-03T21:07:32+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">安全人员称苹果Enclave存在漏洞 但不会影响大多数iPhone用户</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-03T21:07:32&#43;08:00">August 03, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>安全研究人员近日披露了苹果Secure Enclave处理器的一个漏洞，但虽然敏感信息的数据存储，意味着包括Apple Pay详情和Face ID生物识别记录在内的数据有可能受到攻击者的攻击，但事实上，这对于绝大多数苹果客户来说，它不大可能成为一个问题。</p>
+<p>7月24日，在中国上海举行的MOSEC移动安全大会上，盘古团队的安全研究员徐浩的演讲透露，苹果的Secure Enclave处理器存在问题。该团队发现该芯片存在漏洞，而这个漏洞被苹果认为是 &ldquo;无法修复 &ldquo;的。</p>
+<p>Secure Enclave由一个与主处理器隔离的，基于硬件的密钥管理器组成，它用于保存用户想要保密的高度敏感数据，通常与安全或支付有关。它还能够保持系统加密操作的完整性，即使设备操作系统的内核已经被破坏。</p>
+<p>Secure Enclave是许多苹果产品安全的重要组成部分，包括iPhone 5s及以后的产品、iPad Air及以后的产品、Apple Watch Series 1及以后的产品、第四代Apple TV、HomePod以及包含T1或T2安全芯片的Mac。</p>
+<p>尽管盘古团队在大会上告知了该漏洞的存在，但拒绝提供很多细节，该团队很可能有兴趣将信息提供给苹果，以领取利润丰厚bug赏金，或者提供给第三方，以获得更多资金和被用于恶意目的。</p>
+<p>根据MOSEC微博账号的解释，他们发现的漏洞并不是Secure Enclave处理器本身的漏洞。而是一个内存控制器的问题，该控制器控制了TZ0寄存器内存，而TZ0寄存器内存管理着Secure Enclave处理器的内存使用范围。</p>
+<p>通过控制TZO寄存器，可以让攻击者改变SEP和主处理器之间共享内存的内存隔离系统的功能。反过来，这又可以可行地被用来获取通常只有Secure Enclave才会查看和使用的数据，使其成为安全风险。据称，由于该问题涉及到芯片内置的只读ROM，因此该漏洞无法通过苹果软件更新来弥补，被认为是硬件漏洞。</p>
+<p>对于终端用户来说，虽然Secure Enclave的漏洞可能看起来很可怕，但它不太可能影响到普通的iPhone用户。唯一真正可行的原因是，如果政府机构或执法部门在调查中没收了iPhone，或者由于政治或企业间谍原因而被黑客攻击，否则大多数人根本不会受到影响。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0803/7b2facb9317b8fa.jpg" alt="img:安全人员称苹果Enclave存在漏洞 但不会影响大多数iPhone用户"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1011097/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">索尼Vision-S原型车登陆日本以准备进一步的开发工作</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1011089/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">电脑鼠标的共同发明者Bill English逝世 享年91岁</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1013277/">特朗普的微信“禁令”究竟有何效力？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1013273/">华为打出两张创新牌，信号是什么？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1013279/">东芝完全退出笔记本电脑市场</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1013275/">行政令45天后 美商务部将如何决定微信的命运？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1013267/">280万张北京消费券开始发放 在京消费者可在京东App领取</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

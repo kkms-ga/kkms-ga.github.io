@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Phoronix 发布 PHP 8 性能基准测试 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Phoronix 发布 PHP 8 性能基准测试" />
+<meta property="og:description" content="Phoronix 发布了针对 PHP 8 的性能基准测试报告。由于 PHP 8 Alpha1 大约要到6月中旬才发布，所以 Phoronix 从
+PHP 8 最新的 Git 代码（截至5月底）构建了用于测试的版本。PHP 8 重要新特性除了新的 JIT
+编译器，还包括新的静态返回类型、union types 2.0（联合类型）和 attributes（属性）等。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/988143/" />
+<meta property="article:published_time" content="2020-06-08T08:51:20+08:00" />
+<meta property="article:modified_time" content="2020-06-08T08:51:20+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Phoronix 发布 PHP 8 性能基准测试</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-08T08:51:20&#43;08:00">June 08, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Phoronix 发布了针对 PHP 8 的性能基准测试报告。由于 PHP 8 Alpha1 大约要到6月中旬才发布，所以 Phoronix 从
+PHP 8 最新的 Git 代码（截至5月底）构建了用于测试的版本。PHP 8 重要新特性除了新的 JIT
+编译器，还包括新的静态返回类型、union types 2.0（联合类型）和 attributes（属性）等。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p>用于参考对比的版本包括：PHP 7.4.6, 7.3.18, 7.2.31, 7.1.33, 7.0.33, 5.6.39, 5.5.38 和 5.4.44，以及启用了 JIT (Just In Time) 的 PHP 8。</p>
+<p>所有受测试的版本都是在相同系统中使用相同的编译器和 PHP 配置文件以相同的方式进行构建，测试环境如下：</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0608/49f44fbf98c41da.png" alt="img:Phoronix 发布 PHP 8 性能基准测试"></p>
+<p>测试结果如下：</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0608/9f3a0f6a4f8f2ee.png" alt="img:Phoronix 发布 PHP 8 性能基准测试"></p>
+<p>上图显示了使用 PHPbench 测试各版本 PHP 的性能结果。可以看到，从 PHP 7.4 stable 到 PHP 8 有小幅度改进，大约是 7% 的提升，但如果 PHP 8 启用了 JIT，性能改进可以说是非常明显，比 PHP 7.4 stable 提升了 92%。至于更旧的版本，PHP 8 with JIT 的性能是 PHP 5.4 的 5 倍。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0608/4e9d2337edd2072.png" alt="img:Phoronix 发布 PHP 8 性能基准测试"></p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0608/48755c450cc36bc.png" alt="img:Phoronix 发布 PHP 8 性能基准测试"></p>
+<p>上图是各版本 PHP 微服务基准测试的结果，通过一些 PHP 自带的内置测试，可以看到 PHP 8.0 的速度比已经很快的 PHP 7.4 略有提高，而启用 JIT 支持后，其速度更是碾压全场。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0608/fe4d3d6a5c41f3d.png" alt="img:Phoronix 发布 PHP 8 性能基准测试"></p>
+<p>上图的测试结果显示，在使用 Phoronix Test Suite Self Tests 进行测试的过程中，无论是否开启 JIT，PHP 8 的性能</p>
+<p>与 PHP 7 的成绩都没有明显的改进，主要是遇到了 I/O 瓶颈，所以总体上没有产生太大的差异。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0608/865e6c012ec3c8d.png" alt="img:Phoronix 发布 PHP 8 性能基准测试"></p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0608/f1d593918f3854f.png" alt="img:Phoronix 发布 PHP 8 性能基准测试"></p>
+<p>同样的，在渲染测试和合并测试方面，启用 JIT 的 PHP 8 没有产生明显的优势，不过与旧版本 PHP 5 相比，PHP 8 的性能有了显著的提升。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0608/70a1c6cff23f4fc.png" alt="img:Phoronix 发布 PHP 8 性能基准测试"></p>
+<p>上图是综合了各测试结果的评分数据对比，就目前的开发状态来看，PHP 8.0 的速度是 PHP 5.4-5.6 的 3 倍左右，启用 JIT 后，就变成了 4 倍左右的差距。</p>
+<p>从数据来看，PHP 8.0 是一个相当值得期待的版本，无论是性能方面的提升还是语言特性的增加。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/988141/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">50倍潜望式变焦/7.88mm机身 小米10青春版新配色开卖：2299元</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/988127/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">又一款中国产新冠核酸检测试剂盒获得美国紧急使用授权</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990273/">“智迎”新基建时代 戴尔携全新商用客户端产品及解决方案亮相中国</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990265/">首例儿童骑共享单车身亡案宣判 ofo被判赔6.7万</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990253/">以色列VTOL出租车开发商宣布将在CityHawk中使用氢燃料电池</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990269/">TCL新智能机外观专利曝光 或采用屏下隐藏式前摄方案</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990263/">OPPO Reno4 Pro 评测：亮点槽点并存，但依旧无缘性价比</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

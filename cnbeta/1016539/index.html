@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>历史上第一个聊天机器人：200 行代码就能欺骗人类感情 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="历史上第一个聊天机器人：200 行代码就能欺骗人类感情" />
+<meta property="og:description" content="在 1964 年至 1966 年间，麻省理工学院人工智能实验室的德裔美国计算机科学家约瑟夫·维森鲍姆（Joseph Weizenbaum）开发了历史上第一个聊天机器人 —— Eliza。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1016539/" />
+<meta property="article:published_time" content="2020-08-17T10:55:22+08:00" />
+<meta property="article:modified_time" content="2020-08-17T10:55:22+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">历史上第一个聊天机器人：200 行代码就能欺骗人类感情</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-17T10:55:22&#43;08:00">August 17, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>在 1964 年至 1966 年间，麻省理工学院人工智能实验室的德裔美国计算机科学家约瑟夫·维森鲍姆（Joseph Weizenbaum）开发了历史上第一个聊天机器人 —— Eliza。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0817/3ce5a5277d3871f.png" alt="img:历史上第一个聊天机器人：200 行代码就能欺骗人类感情"></p>
+<p>Eliza 的名字源于爱尔兰剧作家萧伯纳的戏剧作品《卖花女》中的角色，剧中出身贫寒的卖花女 Eliza 通过学习与上流社会沟通的方式，变成大使馆舞会上人人艳羡的“匈牙利王家公主”。作为世界上第一个聊天机器人，Eliza 被其作者赋予了充满戏剧性的内涵。</p>
+<p>尽管在当时已经存在一些基本的数字语言生成器（可以输出一些连贯文本的程序），但 Eliza 是第一个明确设计用于与人互动的程序。用户可以使用打字机输入人类的自然语言，获得来自机器的响应。正如维森鲍姆解释的那样，Eliza 使“人与计算机之间的对话成为可能 ”。</p>
+<p>Eliza 是维森鲍姆用一种名为 MAD-SLIP 的编程语言，在 36 位的 IBM 7094（一种早期的晶体管大型计算机）上开发的。在那个年代里，计算机时间是非常宝贵的资源，所以 Eliza 只能通过分时系统运行，用户只能通过电动打字机和打印机与程序进行远程交互。当用户键入一个句子并按 Enter 键时，一条消息会被发送到远端的大型机。Eliza 扫描消息中是否存在关键字，并将这些关键字组成新的句子，用以回复响应，打印出来并供用户阅读。</p>
+<p>为了鼓励用户与 Eliza 对话，维森鲍姆使用“狡猾策略”为 Eliza 设计了一种模拟罗杰式心理医生（一种以人为本的心理咨询）的对话风格。该程序将接受用户所说的内容，并将以一个问题作为回应，如下面的示例所示。（可以注意该程序如何接收“男朋友”和“沮丧”之类的关键字并重新使用它们。）</p>
+<p>人：男人都是一样的。</p>
+<p>Eliza：怎么说？</p>
+<p>人：他们总是在困扰我们一些事情。</p>
+<p>Eliza：您可以举一个具体示例吗？</p>
+<p>人：好吧，我的男朋友让我来了这里。</p>
+<p>Eliza：您的男朋友让您来了这里？</p>
+<p>人：他说我很多时候都很沮丧。</p>
+<p>Eliza：很抱歉听到您感到沮丧。</p>
+<p>人：是的，我不开心。</p>
+<p>Eliza 的这种对话方式，给人的印象就是计算机可以理解用户所讲的内容，而不必为对话提供任何新的补充。事实上，维森鲍姆仅用 200 行代码就实现了这一过程，使 Eliza 能够让人产生被机器聆听、理解的错觉。</p>
+<p>为了测试 Eliza 与对话者互动的能力，维森鲍姆邀请学生和同事进入他的办公室，并让他们在他的观察下与机器聊天。他有些担忧地注意到，在与 Eliza 进行短暂互动期间，许多测试者竟开始对该程序产生情感上的依恋。他们会向机器敞开心，坦承他们在生活和人际关系中面临的问题。</p>
+<p>更令人惊讶的是，甚至在维森鲍姆向他们介绍了 Eliza 的工作原理，并解释说它并不是真正理解了用户所说的任何内容之后，测试者对 Eliza 的这种亲密感仍然存在。尤其是魏森鲍姆的助手，尽管她一直看着该程序从零开始构建的全过程，但在测试时，这位助手仍然坚持要魏森鲍姆离开房间，以便她可以与 Eliza 私下交谈。</p>
+<p>通过 Eliza 的实验，魏森鲍姆开始质疑阿兰·图灵（Alan Turing）在 1950 年提出的关于人工智能的想法。图灵在他的题为“ 计算机械与智能 ”的论文中提出，如果一台计算机可以通过文本与人类进行令人信服的对话，则可以认为它是智能的。这一思想也就是著名的图灵测试的基础。</p>
+<p>但是 Eliza 的测试证明，即使人机之间的理解只从人类这一侧产生，也可以在人机之间进行令人信服的对话。也就是说，对人类智能的模拟（而不是智能本身）足以使人蒙昧。维森鲍姆称这种现象为 “Eliza 效应”，并认为这是数字时代人类共同遭受的一种“妄想”。这一见解对维森鲍姆来说是一次深刻的冲击，并直接影响了他在未来十年里所做研究的思想轨迹。</p>
+<p>1976 年，魏森鲍姆发表了《计算能力与人为原因：从判断到计算》 ，该书对人们为何愿意相信“一台简单的机器也许能够理解复杂的人类情感” 进行了深刻的剖析。</p>
+<p>他在这本书中认为，“Eliza 效应” 代表着一种困扰现代人的广泛病理学。在一个被科学技术和资本主义所占领的世界中，人们已经习惯于将自己看作是一台大型且冷漠的社会机器中一枚孤立的齿轮。魏岑鲍姆认为，正是由于当时的社会环境日渐冷漠，才使得人们变得如此绝望，以至于抛弃应有的理性和判断力，转而去相信一个机器程序可以聆听他们的心声。</p>
+<p>魏森鲍姆的余生都在致力于这种对人工智能和计算机技术的人文主义批评。他的任务是提醒人们 ，他们的机器并不像通常所说的那样聪明，“即使有时好像他们会说话，但他们从未真正聆听过你，它们只是机器。”</p>
+<p>Eliza 的 Java 实现：详情点击</p>
+<p>译自 Oscar Schwartz</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1016547/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">特斯拉文件显示马斯克所持股票已超4000万股 目前价值666亿美元</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1016543/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">日本科学家在南冰洋发现新品种海洋蠕虫</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1018885/">[图]UWP Remote Desktop应用更新：支持深色/浅色模式 支持ARM64</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1018915/">[图]NVIDIA RTX 3000系列售价曝光：RTX 3090售价1399美元</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1018871/">[图]苹果美国/加拿大开始销售翻新10.2吋iPad 最高优惠90美元</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1018875/">脑机接口让失语患者“说”出“你好”</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1018923/">zstd 有望进入 Linux 5.9，下一步可能是支持压缩系统固件</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

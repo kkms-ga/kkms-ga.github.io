@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>NVIDIA安培架构深入分析：显著增加云端AI芯片门槛 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="NVIDIA安培架构深入分析：显著增加云端AI芯片门槛" />
+<meta property="og:description" content="在近日的GTC上，NVIDIA发布了最新的安培架构，以及基于安培架构的A100 GPU。A100
+GPU使用台积电7nm工艺实现，包含了542亿个晶体管，据官方消息可以实现比起上一代V100高7倍的性能。除了算力提升之外，NVIDIA还加入了GPU虚拟多实例（multi-Instance
+GPU，MIG）特性，可以让一块GPU虚拟化称为7个独立的GPU。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/981035/" />
+<meta property="article:published_time" content="2020-05-19T22:35:30+08:00" />
+<meta property="article:modified_time" content="2020-05-19T22:35:30+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">NVIDIA安培架构深入分析：显著增加云端AI芯片门槛</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-19T22:35:30&#43;08:00">May 19, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>在近日的GTC上，NVIDIA发布了最新的安培架构，以及基于安培架构的A100 GPU。A100
+GPU使用台积电7nm工艺实现，包含了542亿个晶体管，据官方消息可以实现比起上一代V100高7倍的性能。除了算力提升之外，NVIDIA还加入了GPU虚拟多实例（multi-Instance
+GPU，MIG）特性，可以让一块GPU虚拟化称为7个独立的GPU。</p>
+<p>访问购买页面:</p>
+<p>京东NVIDIA系列商品汇总</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0519/51d8848dfe780dc.jpg" alt="img:NVIDIA安培架构深入分析：显著增加云端AI芯片门槛"></p>
+<p>与安培架构同时公布的还有NVIDIA DGX A100超级计算机，该超算平台包含了8块A100 GPU，峰值算力可达10 PetaOPS。</p>
+<p>在发布会上，NVIDIA对于算力做了非常多的渲染。然而，在我们看来，NVIDIA在算力之外的特性扩展将成为更重要的门槛，中国半导体业界想要研发自主的GPU也需要考虑这些算力之外的重要特性。</p>
+<p>计算架构：改良式更新，前进步伐与预期相符</p>
+<p>NVIDIA A100 GPU相比于前一代V100 GPU，其算力提升主要来源于以下几方面：</p>
+<p>加入稀疏运算支持。这可能是A100 GPU运算架构上最大的革新了。具体来说，A100支持2:4的结构化稀疏，即在使用稀疏计算时，在矩阵中每四个元素就必须有两个或以上是0。通过稀疏运算，可以把性能提升两倍。</p>
+<p>事实上，深度学习中使用稀疏运算的概念从提出至今已经有差不多5年了，到了今天NVIDIA终于把这个概念落地到了产品中，而且使用的是的2:4结构化稀疏，其两倍的加速可以说是比较保守的（与此相对，2018年寒武纪的AI加速器IP中就支持四倍稀疏加速）。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0519/e24d18981025633.png" alt="img:NVIDIA安培架构深入分析：显著增加云端AI芯片门槛"></p>
+<p>引入TF32数制。这主要针对训练计算。回顾人工智能训练计算的历程，最早普遍使用的是32位浮点数数制（FP32）。为了加速训练计算，从几年前开始NVIDIA开始支持16位的FP16数制，该数制的优点是速度较快，但是动态范围方面在一些应用中存在一些问题。</p>
+<p>在A100中，NVIDIA为了解决FP16的问题，引入了TF32数制。TF32事实上不是32位数制，而是19位数制，其动态范围（exponent）与FP32相同都是8位，但其精度（mantissa）与FP16相同都是10位，相当于是FP32和FP16的融合。相比FP32，TF32可以实现8倍的吞吐量提升。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0519/1d005a3d3b0386b.png" alt="img:NVIDIA安培架构深入分析：显著增加云端AI芯片门槛"></p>
+<p>更强更多的流处理器（SM）。在A100中，每个流处理器的张量矩阵计算能力是V100的2倍，而在GPU中流处理器的数量相比V100则增加了30%。</p>
+<p>更大的片上存储和更快的内存接口。A100的设计中，每个流处理器的L1缓存容量从V100的128KB增加到了192KB，L2 缓存则增加到了40MB，相比前一代增加了6.7倍。内存接口方面，A100的HBM2就恶口总贷款高达1555GB/s，相比前一代增加了1.7X。</p>
+<p>总体来说，在计算架构方面，除了支持稀疏计算和引入TF32之外，其他的提升都属于可预计的常规提升，而稀疏计算和TF32在人工智能计算中也并非新概念。我们认为，这一代NVIDIA A100的算力性能提升属于渐进式改良，而非革命式提升。</p>
+<p>GPU虚拟实例和互联：进一步加高竞争壁垒</p>
+<p>我们认为，A100除了算力之外，其更重要的竞争壁垒提升来源于针对数据中心的GPU虚拟实例支持和互联方案。</p>
+<p>在安培架构中，一个重要的新特性就是GPU虚拟实例MIG。随着云端数据中心GPU部署比例的提升，如何实现GPU虚拟化是一个重要任务，而这一点如果解决不好将会降低总体GPU利用率。</p>
+<p>目前，在云服务中，用户申请的CPU和内存实例大多数情况下都是虚拟化的，当你申请到n个CPU核的时候，并不是说你包下了这块CPU芯片，而是很有可能在同一块CPU芯片上不同的核会分配给不同用户，而用户并不用去担心说他的CPU核都位于哪一块芯片上，主要用就行了。</p>
+<p>粗略地说，这就是CPU虚拟化。GPU之前也有虚拟化，即同一个GPU可以给不同的程序同时使用，但是其内存访问模型并不如CPU虚拟化那么完善，因此在多用户的情况下，通常不会采用多个用户同时共享一块GPU的方法，而是把一块GPU分配给一个用户。</p>
+<p>这样就带来了效率问题，例如用户A只需要用到一块GPU中一半的计算资源，而用户B的计算需要用到1.5块GPU，那么使用传统粗颗粒度解决方案就会造成用户A和B都占用了一块GPU，那么用户A事实上是浪费了GPU资源，而用户B的计算资源需求则没有很好地得到满足。</p>
+<p>随着GPU应用到越来越多的场景中，不同场景算法对于GPU的利用率和需求都有不同，这样的话沿用之前的粗颗粒度方案一定会造成总体数据中心GPU利用率的问题。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0519/a129673025fb1cb.png" alt="img:NVIDIA安培架构深入分析：显著增加云端AI芯片门槛"></p>
+<p>为了解决这个问题，MIG应运而生。A100中的MIG支持把同一块GPU划分成7个独立实例，每个实例之间的内存空间访问互不干扰，这样就可以实现细颗粒度的GPU计算资源分配，从而在计算需求非常异质化的云计算场景增加资源利用效率。</p>
+<p>诚然，目前MIG中支持的7个GPU虚拟实例划分或许还不算特别细颗粒度，但是却可以看作是走向虚拟化的重要里程碑。除了MIG之外，A100还在多芯片互联上做了改善。</p>
+<p>首先，A100上包含了第三代NVLINK，主要用于同主机上GPU之间的互相通信，通信带宽相比V100增加了一倍到600GB/s。在GPU和CPU通信上，A100支持PCIe Gen4，相比上一代PCIe Gen3带宽也增加了一倍。此外，A100的互联还与Mellanox的解决方案做了深度集成，可以很好地支持基于以太网和InfiniBand的RDMA。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0519/0bc5139b1bea98b.png" alt="img:NVIDIA安培架构深入分析：显著增加云端AI芯片门槛"></p>
+<p>云端AI芯片进入门槛大大提升</p>
+<p>我们认为，NVIDIA A100的发布再次拉开了与其他在人工智能云端领域芯片竞争对手的差距。从算力上来看，NVIDIA A100在BERT benchmark上的性能是T4的11倍，而初创公司中最成功的Habana（现已被Intel高价收购）在去年推出的新款Goya芯片在同一benchmark上的性能仅仅是T4的两倍左右，因此A100一举又占据了算力的高地。我们认为，NVIDIA在算力提升上面的主要优势在于其系统工程能力较强。</p>
+<p>我们之前分析过，NVIDIA在A100中使用的计算单元架构创新实际上并不新鲜，在人工智能硬件领域已经存在了多年，而且之前也有不少初创公司尝试过类似的实现。然而，当芯片的规模上升了之后，其设计流程就不仅仅是逻辑设计问题，还需要考虑良率、散热等多方面因素，而这些看似底层的因素其实在最顶层的架构设计过程中就要考虑到——换句话说，虽然其他人也能想到要用这些架构创新，但是因为各种问题就是没有办法实现A100这样能量产的巨型芯片，这其实也是NVIDIA多年积累的一个壁垒。</p>
+<p>事实上，我们认为算力只是NVIDIA A100硬件竞争壁垒的一小部分，其更重要的壁垒还来自于互联、虚拟化等特性。互联和虚拟化特性都是云端数据中心场景中需要的重要需求，而这些需求的实现需要扎扎实实，一步一步的设计和积累。</p>
+<p>如果说之前NVIDIA还没有引入虚拟化特性，云端AI加速芯片还是算力的比拼因此初创企业还有弯道超车机会的话，那么在A100之后我们认为其他和NVIDIA针对相同市场的云端AI加速芯片初创公司已经失去了这个机会，而必须要一步一步把虚拟化、RDMA等分布式计算必须的特性老老实实地实现在自己的芯片上，才有资格去和NVIDIA去正面交锋。</p>
+<p>对于云端计算市场，其他芯片厂商另外一种可能的策略就是针对NVIDIA还无法顾及且GPU的SIMT架构无法很好覆盖的领域，例如FinTech的一些计算等等。我们预计在未来的几年内或许会出现更多这样的初创公司。</p>
+<p>对于GPU国产化的启示：算力并非一切，对于分布式计算和虚拟化的支持也很重要</p>
+<p>这次NVIDIA发布的A100 GPU对于用于云端数据中心的GPU国产化也有重要启示，即算力并非一切，对于分布式计算的支持和多用户虚拟化的支持可能更加重要。</p>
+<p>在目前的云端高性能计算中，一大部分的任务会使用分布式计算。在分布式计算中，单卡GPU的算力只是基础，除了算力之外的IO也会成为决定性能的重要因素。这里的IO包括单机多卡之间的通信，GPU和CPU之间的通信，以及多台主机之间的通信等。</p>
+<p>在NVIDIA的技术栈中，单机多卡通信有NvLink，多机通信有来自于新近收购的Mellanox的RDMA和Smart NIC技术，可以说在IO领域NVIDIA也是做到了全球最领先，这样才保证了云端GPU方案独步天下。与分布式计算息息相关的则是虚拟化支持。如前所述，GPU虚拟化将能带来云计算领域的GPU资源利用率大幅提升。</p>
+<p>然而，除了利用率提升之外，虚拟化的访问模型还为分布式计算的软件栈提供了一个干净的接口，这样分布式系统的工程师可以不用关心GPU底层的实现细节，凭借虚拟化的概念就可以构建灵活的多用户使用模型和界面，从而在系统层面上为高效分布式系统提供了有力的支持和赋能。</p>
+<p>我们认为，目前GPU虚拟化还处于早期阶段，未来我们将会看到NVIDIA以及其他的欧美厂商在这个方向的投入。对于国产GPU来说，我们一直在强调要构建一个好的生态，才能让国产GPU真正具有竞争力。这样的生态首先包括一个可扩展性良好的架构——这就指向了IO这样的数据通信互联的支持；此外还需要有一个较友好容易上手的开发环境，能允许开发者在硬件基础上开发各种支持多用户的云端应用，虚拟化就是对多用户支持的核心组件。</p>
+<p>我们认为，一个算力强大，但是对于分布式计算和虚拟化支持有限的GPU，对于国产生态而言还不如一个虽然算力较弱（例如只有NVIDIA一半甚至三分之一），但是在分布式和多用户场景有合理完整支持的GPU。而这两者恰恰需要一步一步扎实的积累，不能指望弯道超车。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/981021/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">纳斯达克通知瑞幸必须摘牌 距其停牌已有42天</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/981025/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">瑞幸咖啡接到纳斯达克摘牌警告 要求举行听证会</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/982829/">英特尔为Windows 10系统更新了Wi-Fi和蓝牙驱动程序</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/982827/">因偷拍美女LG双屏手机广告引发争议 官方致歉</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/982819/">华为可能成为第一家首发屏下摄像头技术的厂商</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/982815/">黑屏、乱码、反复重启……三星手机翻车事迹再&#43;1</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/982817/">华为Mate 40首发 麒麟1000基于5nm工艺打造</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

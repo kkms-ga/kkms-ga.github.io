@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[图]Windows 10 May 2020将改善Chrome的通知功能 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[图]Windows 10 May 2020将改善Chrome的通知功能" />
+<meta property="og:description" content="从竞争走向合作，基于Chromium的Edge浏览器已变成更有吸引力的产品，并且反哺让Chrome浏览器变得更好。目前谷歌已经采纳了微软贡献的诸多提议，包括优化了滚动特性、改善了电池和可访问性，而现在Edge工程师正在改进Chrome和Windows
+10系统中Action Center的整合。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/974929/" />
+<meta property="article:published_time" content="2020-05-05T08:32:46+08:00" />
+<meta property="article:modified_time" content="2020-05-05T08:32:46+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[图]Windows 10 May 2020将改善Chrome的通知功能</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-05T08:32:46&#43;08:00">May 05, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>从竞争走向合作，基于Chromium的Edge浏览器已变成更有吸引力的产品，并且反哺让Chrome浏览器变得更好。目前谷歌已经采纳了微软贡献的诸多提议，包括优化了滚动特性、改善了电池和可访问性，而现在Edge工程师正在改进Chrome和Windows
+10系统中Action Center的整合。</p>
+<p>访问:</p>
+<p>微软中国官方商城 - Windows</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0505/fe6e45682df876a.jpg" alt="img:[图]Windows 10 May 2020将改善Chrome的通知功能"></p>
+<p>目前如果你收到某个网站的多条通知，那么在Action Center中点击通知并不是最新的，Chrome打开的并不是通知所指定的URL地址，而是这个网站的默认URL。在Windows 10上，Chrome浏览器还受到其他通知问题的困扰，不过微软似乎终于想出了一个解决方案。Edge工程师表示，这些问题源于WinRT toast事件，所以导致这些BUG。</p>
+<p>在即将到来的Windows 10 May 2020功能更新中，微软将WinRT toast closed event带到类似于Chrome和Edge的Win32应用程序中。在该功能更新之后，基于Chromium的浏览器能够使用WinRT toast closed event，能够解决Chrome和Edge的通知问题。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0505/94f8981935c04c6.png" alt="img:[图]Windows 10 May 2020将改善Chrome的通知功能"></p>
+<p>在另一项Chromium提交中，微软还为旧版本的Windows 10系统开发了一个解决方案：</p>
+<p>在旧版本Windows 10系统中，我建议我们停止使用WinRT toast dismissed event作为网页通知关闭事件。相反相反，我们应该通过定期检查Chromium的web通知状态是否与Windows动作中心的状态相匹配，来检测通知何时关闭。如果Chromium跟踪的web通知在动作中心中已经不存在了，我们可以假设该通知关闭了。我们可以使用多种信号来触发通知状态检查，包括当计时器启动时，当toast被点击、驳回或显示时，当toast历史记录被检索时等等。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/974931/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">JavaScript 引擎 V8 发布 8.3 版本</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/974945/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[图]OPPO配件专利：为手机带来QWERTY打字体验</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976489/">被炒员工谈亚马逊工作体验：贝佐斯已脱离“群众”</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976493/">MeerKAT望远镜图像：原来“x星系”背后还有这样的秘密</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976491/">比特大陆内斗升级到“抢营业执照”，吴忌寒：就是干，不要怂</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976475/">科学家首次发现新冠病毒可能还潜伏在精液中</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/976473/">官方公布首批登陆 Xbox Series X 的第三方游戏</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

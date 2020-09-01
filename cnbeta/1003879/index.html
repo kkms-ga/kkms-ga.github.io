@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Ice Lake-SP的休眠唤醒时间较慢， 是否会影响它的发布时间呢？ - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Ice Lake-SP的休眠唤醒时间较慢， 是否会影响它的发布时间呢？" />
+<meta property="og:description" content="按照Intel的线路图规划的话，今年第三季度应该会推出Ice Lake-SP服务器处理器，此前发布的Cooper
+Lake是14nm的，而且仅面向4路或者8路的高端市场，而用途更广泛的单路或双路服务器依然交给采用10nm&#43;工艺的Ice
+Lake-SP，但最近曝出了一个会导致性能不稳定的bug。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1003879/" />
+<meta property="article:published_time" content="2020-07-16T10:50:47+08:00" />
+<meta property="article:modified_time" content="2020-07-16T10:50:47+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Ice Lake-SP的休眠唤醒时间较慢， 是否会影响它的发布时间呢？</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-16T10:50:47&#43;08:00">July 16, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>按照Intel的线路图规划的话，今年第三季度应该会推出Ice Lake-SP服务器处理器，此前发布的Cooper
+Lake是14nm的，而且仅面向4路或者8路的高端市场，而用途更广泛的单路或双路服务器依然交给采用10nm+工艺的Ice
+Lake-SP，但最近曝出了一个会导致性能不稳定的bug。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0716/a7948f1a54e7619.jpg" alt="img:Ice Lake-SP的休眠唤醒时间较慢， 是否会影响它的发布时间呢？"></p>
+<p>根据phoronix的报道，Linux的最新补丁指出Ice Lake-SP处理器的一个有趣的问题，当它进入睡眠状态后，CPU要花费比预期更长的时间才能恢复正常频率，导致CPU频率的不稳定，从而影响性能一致性。</p>
+<p>这个问题的严重性还不太清楚，不过这表明目前Ice Lake-SP处理器还有一定的问题需要解决，这是否会影响它的发布时间还不太确定，不过tomshardware就此联系过Intel，他们回应依然有望在2020年下半年向客户交付Ice Lake-SP。</p>
+<p>至于Ice Lake-SP的问题，其实就是它从C1E或者更低的C状态休眠恢复时，CPU频率提升会非常缓慢，C状态在许多情况下能让CPU节能，但是这也会导致一些意外的情况，比如CPU频率的不确定性，这有可能导致应用负载无法获取足够的性能，此外，当CPU利用率较低时，CPU频率可能无法锁定在特定水平。</p>
+<p>而现在Intel解决问题的方法也很简单粗暴，就是发放补丁禁止Ice Lake-SP处理器的自动进入C1E状态，并且通过sysfs禁用C1E/C6睡眠状态，这样CPU就无法进入睡眠状态，功耗会增加，但CPU可以更快的相应服务器的负载变化，从而更快地运行。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0716/cc375e3008c3976.jpg" alt="img:Ice Lake-SP的休眠唤醒时间较慢， 是否会影响它的发布时间呢？"></p>
+<p>具体来说Ice Lake-SP从PC0 + C6状态唤醒时延迟未128us，而Skylake-SP则是108us左右，延迟增加了18.5%，不过Skylake-SP的唤醒时间比Intel更早期的处理器其实也增加了不少，这应该是CPU架构设计的问题，目前不清楚在Windows系统下是否同样存在这个问题。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1003873/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">伊桑·霍克主演《特斯拉》曝海报 将于8月21日上线</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005829/">十年后，Lightworks 终于给出了不开源的原因</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005821/">新研究显示削弱地球磁场的神秘异常现象是一个反复出现的特征</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005839/">SpaceX成功发射并部署韩国军用通信卫星</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005811/">为什么有些男性的上厕所时间会那么久？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1005837/">[图]Linux基金会推出公共卫生计划，帮助对抗新冠疫情</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

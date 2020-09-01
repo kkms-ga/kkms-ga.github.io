@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>国内第一个吃螃蟹的内存安全公司：如何做安全的最后一道防线？ - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="国内第一个吃螃蟹的内存安全公司：如何做安全的最后一道防线？" />
+<meta property="og:description" content="你可能不知道，你的一举一动总是逃不过黑客的眼睛。不久前，马斯克和美国宇航局 NASA
+首次发射了载人火箭，创造了航天史上的又一个奇迹。不料又被黑客盯上了，一个名为 DopplePaymer 的勒索团伙“高调”宣布他们入侵了一家名为
+DMI 的公司内网，还留下了祝贺信息挑衅。而巧合的是，这家公司正是 NASA 的一家 IT 供应商，这家公司的客户名单里不乏全美前 100
+强的公司和政府机构。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/989185/" />
+<meta property="article:published_time" content="2020-06-10T12:10:51+08:00" />
+<meta property="article:modified_time" content="2020-06-10T12:10:51+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">国内第一个吃螃蟹的内存安全公司：如何做安全的最后一道防线？</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-10T12:10:51&#43;08:00">June 10, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>你可能不知道，你的一举一动总是逃不过黑客的眼睛。不久前，马斯克和美国宇航局 NASA
+首次发射了载人火箭，创造了航天史上的又一个奇迹。不料又被黑客盯上了，一个名为 DopplePaymer 的勒索团伙“高调”宣布他们入侵了一家名为
+DMI 的公司内网，还留下了祝贺信息挑衅。而巧合的是，这家公司正是 NASA 的一家 IT 供应商，这家公司的客户名单里不乏全美前 100
+强的公司和政府机构。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>天翼云高性能云主机1折起 低至74元/年</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0610/fa3d33c3410d2d7.png" alt="img:国内第一个吃螃蟹的内存安全公司：如何做安全的最后一道防线？"></p>
+<p>图片来源于ZDNet</p>
+<p>而按照黑客的惯常思维，一般做法是要企业破财免灾，否则他们就会在泄密网站上公开所有文件作为报复。</p>
+<p>一旦文件被泄露，后果怎样，你懂的，所以企业的一般做法就是乖乖交赎金。</p>
+<p>同期，Google 工程师统计了 2015 年以来，Chrome 稳定分支中修复级别为 &ldquo;high&rdquo; 或 &ldquo;critical&rdquo; 的 912 个安全错误，结果发现约 70% 是内存安全漏洞。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0610/8596c750af9dd92.png" alt="img:国内第一个吃螃蟹的内存安全公司：如何做安全的最后一道防线？"></p>
+<p>但事实上，不只是 Google，内存安全漏洞是很多科技公司都头疼的问题，微软工程师也曾公开表示：在过去 12 年中，微软产品的安全更新中，约有 70% 也是在解决内存安全漏洞。</p>
+<p>随着攻防对抗的发展，基于内存的攻击方法越来越多，比如 UAF、DoubleFree、堆栈溢出等类型漏洞都属于内存破坏型漏洞，我们所熟悉的心脏滴血、永恒之蓝等大规模安全事件，就是内存安全漏洞引发，而内存攻击的特性是没有文件，所以即使企业或者组织采购了一系列安全产品，但是狡猾的攻击者可以绕过这些安全产品。</p>
+<p>于是，为了解决内存安全问题，技术大佬们也是日思夜想，终于被他们找到了一条新的突破点：既然攻击者狡猾，那我们就一个也不放过，从电脑的核心开始保护。</p>
+<p>那么，这套内存保护系统到底是什么？要怎么搞呢？</p>
+<p>国内第一个吃螃蟹的内存安全公司</p>
+<p>故事还要从两个安全大佬的梦想说起。</p>
+<p>2005 年，喜欢研究计算机病毒的姚纪卫进入了一家反病毒安全公司施展抱负，2007 年便创作发布了 LinxerUnpacker 软件。值得一提的是，该软件是全球首款基于反病毒虚拟机的通用脱壳软件。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0610/d433a85d9a65c0f.png" alt="img:国内第一个吃螃蟹的内存安全公司：如何做安全的最后一道防线？"></p>
+<p>安芯网盾 CTO 姚纪卫 </p>
+<p>2008 年又创作了 PChunter，该软件基于国际领先的系统底层技术，同时也被国外媒体评为全球最优秀的 AntiRootkit 软件。</p>
+<p>彼时，姜向前在哈尔滨工程大学留校工作，主导高校信息化建设，在学校时两人便是极要好的朋友，工作之后也一直保持着密切的交流，探讨着安全行业的未来发展趋势。</p>
+<p>当时，杀毒软件基本上还是利用特征码去匹配，时效性不高，一旦出现新病毒或变种就需要不断把它们的特征码加入到病毒库中，一来具有滞后性和被动性，二来病毒库将越来越庞大，消耗用户内存资源，治标不治本。</p>
+<p>所以，为了改变现状，两人便萌生了创业的想法。</p>
+<p>2009 年，两人联合创立了一个安全实验室，专心做杀毒引擎。没想到第一款产品就受到了国际认可，他们开发的基于代码动态执行分析分析的未知威胁文件检测系统，在国际权威测评机构 VB100 的未知病毒检测测评中获得了全球第二的成绩，并为 Google、华为等知名企业提供安全引擎。后来，受到免费杀毒软件的冲击，国内企业级安全引擎市场逐步萎缩。</p>
+<p>“在第一次创业后我们两人还是在安全行业深耕，我还是继续专研未知病毒的检测与防护技术，也研究了很长时间的虚拟化技术。第二次创业缘起于我们的一次游泳，当时我们聊起当前的安全产品虽多，但是企业安全防御建设还是面临大考。”姚纪卫介绍。</p>
+<p>2019 年两人再次合伙，结合两人这十来年在安全领域的摸索和经验，决定要继续自己的梦想。</p>
+<p>这一次他们的创业方向是内存安全，将未知威胁检测和硬件虚拟化结合在一起，在系统的最后一道防线来拦截威胁。即利用内存虚拟化技术来做内存保护。</p>
+<p>“我们敢于去做这样的尝试，都是基于我们在未知威胁的程序行为分析、虚拟化技术研究这方面花了很长时间去研究，并总结了一套方法论，这也是短期内难以被复制的。”姚纪卫回忆起创业初衷时如是说。</p>
+<p>值得注意的是，内存保护技术首次提出是在 2016 年，IT 咨询公司 Gartner 将基于非签名方法的终端防御技术（内存保护技术和漏洞利用阻断技术）列为面向未来的十大信息安全技术之一，但是那时候并没有相关的产品出现。</p>
+<p>据了解，内存保护系统不仅需要了解计算机体系结构和操作系统，还需要了解安全技术。这些技术要求背后隐藏的是人才要求，内存保护系统的实现需要有信息安全和计算机系统这两个方面的技术专家。安芯网盾团队刚好符合这两个要求。</p>
+<p>姚纪卫对此解释道：“不论威胁代码如何变化，但是万变不离其宗，不管攻击方式怎么变，最后都要落到内存读、写、执行上，理论上基于 CPU 指令集和内存这一层面实现的安全方案可以有效防御所有威胁，只要盯住内存，就能发现威胁的一举一动。”</p>
+<p>谈及内存安全产品获得关注的原因，姚纪卫从攻防对抗的角度进行了解释。</p>
+<p>首先，攻击者比之前更狡猾了，他们所使用的技术相比之前也更强大，目前有 80% 以上的攻击者会熟练采用各式各样工具突破层层网络边界防护，将恶意代码植入到主机内存上；其次是攻击范围更大，典型的例子是一些黑客将恶意代码植入之后，可以长达几个月甚至一两年的时间不做任何动作，在长久的潜伏之后进行攻击，被攻击者的业务往往遭受毁灭型的打击，这就意味着用户需要更有效的安全方案应对威胁。</p>
+<p>在国外，解决内存安全问题的相关内存安全产品应用已经初具规模，美国公司 Virsec 也大致在同时期发布了内存安全产品 AMFW，2018 年美国著名 IT 杂志 CRN将 内存保护产品评为 20 个关键创新热门安全产品中的 top1 。所以这样说来安芯网盾算是国内内存安全领域第一个吃螃蟹的公司。</p>
+<p>做安全的最后一道防线</p>
+<p>各种安全产品就像一道道墙，每一道墙都是一套解决方案，不同于其他安全公司的产品，安芯网盾要做的是在最危险的地方做守卫兵，从最底层守住安全防线。</p>
+<p>那么，什么是内存安全？</p>
+<p>据姚纪卫介绍，内存安全的核心原理是从计算机的体系结构出发，任何需要 CPU 执行的代码、处理的数据都需要经过内存进行存储。内存安全由内存监控、程序行为监控、智能分析、系统安全增强和安全响应等构成，可阻止异常内存访问和恶意代码执行等攻击行为，为计算机系统构建一个完整的内存安全环境。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0610/9c6ee96539e48da.png" alt="img:国内第一个吃螃蟹的内存安全公司：如何做安全的最后一道防线？"></p>
+<p>守护主机的最后一道安全防线（受访者供图）</p>
+<p>举个栗子，以前敌人进攻的路径大家是熟悉的，所以安全软件在敌人必经点设置了路障，自然就可以拦截，但现在情况不一样了，随着防御技术的升级，敌人的攻击路径也开始裂变，出现了多种未知威胁，对于这些未知威胁就需要全面排查，而安芯网盾做的就是在敌人入侵的最底层进行防护，实时监测内存状态和程序行为状态，每当敌人想要入侵时，就可以并在第一时间识别威胁且进行响应。</p>
+<p>据最新数据，内存保护系统在未知威胁方面的拦截能力能达到 99% 。那么，内存保护系统是如何达到高效的防护效果的？</p>
+<p>内存上的动作传统方法很难监控，安芯网盾的内存安全产品基于实时的程序行为监控、内存操作监控等技术实现了进程级别的内存保护，确保用户核心业务应用程序只按照预期的方式运行，不会因病毒窃取、漏洞触发而遭受攻击。不同于常规安全产品只运行在应用层或者系统层，安芯神甲智能内存保护系统能够在应用层、系统层、硬件层提供有机结合的立体防护。</p>
+<p>简单来说，内存安全产品就是通过监控 CPU 指令、内存访问可以监控内存代码和数据状态以及内存的读、写、执行行为，对系统行为做监控，基本可以监控系统所有的 API 调用（只要进内核就会被监控到，不进内核的 API 其实也干不了什么事情），还可以监控一些异常的内存数据流动，大量的行为数据可以极大的提高恶意代码的检出率，还能极大的规避误报。同时，还避免了其他安全产品所面临的兼容性问题，以及安全软件之间的冲突问题。</p>
+<p>除此之外，内存保护系统基于 Agent 架构，启动相关服务和脚本即可运行，而且在运行时 CPU 占用率不超过 5%，内存占用率不超过 100M。而且，这款产品在运行时对客户来说几乎是无感知的——由于实时响应的特性，用户在最后看到的只是一份报告/日志用以定期查阅，但在系统运行过程中已经帮助客户抵御了许多攻击。</p>
+<p>在内存产品的应用场景方面，姚纪卫认为，前景是十分广阔的。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0610/46e83a24bd95088.png" alt="img:国内第一个吃螃蟹的内存安全公司：如何做安全的最后一道防线？"></p>
+<p>安芯网盾内存安全产品核心优势（受访者供图）</p>
+<p>结合当前的大环境来讲，新基建推动信创产业提速发展，它包含了从 IT 底层基础软硬件到上层应用软件的全产业链的安全可控。这拓宽了安芯网盾内存安全产品的应用场景和市场，目前，安芯网盾的产品已经支持 X86 和 arm 架构的 CPU，以后将逐步适配更多国产架构的 CPU。</p>
+<p>随着“等保”、“关保”等政策的落地，以及新基建将信息安全提到一个新高度，不再像以往一样先系统运行，再购买产品服务层层的打补丁。现在要求关口前移，在设计之初就统筹规划安全。这给了新产品新技术一个大好机会，一些真正有效的预警、检测、防御等产品，比如内存防火墙这类创新产品也正受到越来越多 CSO 的青睐。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/989217/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">为阻断COVID-19传播 好莱坞工作室或依赖CGI技术来刻画亲密场景</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/989213/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">特斯拉弗里蒙特工厂Model 3总装线或有减少 一条改为Model Y总装线</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990273/">“智迎”新基建时代 戴尔携全新商用客户端产品及解决方案亮相中国</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990265/">首例儿童骑共享单车身亡案宣判 ofo被判赔6.7万</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990253/">以色列VTOL出租车开发商宣布将在CityHawk中使用氢燃料电池</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990269/">TCL新智能机外观专利曝光 或采用屏下隐藏式前摄方案</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990263/">OPPO Reno4 Pro 评测：亮点槽点并存，但依旧无缘性价比</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

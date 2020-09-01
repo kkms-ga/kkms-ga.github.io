@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>“轻量级的”Istio，微软开源了一个基于 Envoy 的服务网格 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="“轻量级的”Istio，微软开源了一个基于 Envoy 的服务网格" />
+<meta property="og:description" content="微软宣布了一个新的开源项目，即“开放服务网格（Open Service Mesh，OSM）”。它是一种在 Kubernetes 上运行的轻量级且可扩展的服务网格；旨在作为 Service Mesh Interface（SMI）规范的参考实现。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1012731/" />
+<meta property="article:published_time" content="2020-08-07T09:38:56+08:00" />
+<meta property="article:modified_time" content="2020-08-07T09:38:56+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">“轻量级的”Istio，微软开源了一个基于 Envoy 的服务网格</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-07T09:38:56&#43;08:00">August 07, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>微软宣布了一个新的开源项目，即“开放服务网格（Open Service Mesh，OSM）”。它是一种在 Kubernetes 上运行的轻量级且可扩展的服务网格；旨在作为 Service Mesh Interface（SMI）规范的参考实现。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0807/4918c7268fd1235.png" alt="img:“轻量级的”Istio，微软开源了一个基于 Envoy 的服务网格"></p>
+<p>微软的软件工程师 Michelle Noorali 介绍称，OSM 使用户能够在高度动态的微服务环境中统一管理，保护和观察服务到服务的通信。并表示，其希望这一项目能成为一个由社区主导的项目，且具有开放的治理机制。该公司计划实施一个开放的治理模型，并且已经提交了一个将该项目捐赠给云原生计算基金会（Cloud Native Computing Foundation，CNCF）的提案。</p>
+<p>我们希望 OSM 是一个社区主导的项目，它将促进在 SMI 的新 API 和现有 API 上的协作。我们希望 OSM 具有开放的治理机制，并希望在一个可以轻松地与社区协作的地方，因此我们已经提交了一份提案，开始了将 OSM 捐赠给 Cloud Native Computing Foundation  （CNCF）的过程。</p>
+<p>我们希望 OSM 可以让 Kubernetes 操作员轻松安装、维护和运行。同时，我们决心让 OSM 对于整个社区而言都是简单易懂的，并为之做出贡献。</p>
+<p>该项目具有一个与服务网格接口规范兼容的控制平面、用于数据平面的 Envoy 和灵活的设计，因此可以在简单或复杂的场景中使用。此外，OSM 旨在简化任务，例如配置流量转移、保护服务间通信、细粒度的访问控制策略、用于调试和监视的指标、与证书管理解决方案集成以及内置应用程序。</p>
+<p>事实上，如今的市场上已经存在有许多其他的服务网格技术；包括 Istio、Kuma 和 Linkerd 等。目前，Linkerd 由 CNCF 管理；Kuma 也作为 Sandbox 项目被捐赠给了 CNCF。而 Istio 方面，谷歌则于上月宣布建立了一个新的开放使用共享组织 Open Usage Commons，并不顾其与 CNCF 的承诺，将 Istio 的商标所有权转移至该组织。</p>
+<p>众所周知，Istio 有着复杂的部署和管理，OSM 与 Istio 的区别除了其将捐赠给 CNCF 外，还在于其比 Istio 更易于使用。微软 Azure 应用程序平台产品总监、CNCF 董事会成员 Gabe Monroy 在接受采访时表示，Open Service Mesh 被设计成了 Istio 的轻量级版本。</p>
+<p>“客户告诉我们的是，当今的解决方案非常复杂，Istio 就是一个很好的例子。这不是我一个人说的。我们在 AKS 支持队列中看到了客户的数据，他们正在尝试使用这个东西&ndash;他们就在这里挣扎。这就是难以使用的技术，难以大规模构建的技术。所以外面的解决方案都有一些不尽如人意的地方，我们真的觉得一些重量较轻、更注重 SMI 的东西，才是今天涉足这项技术的客户的最佳选择。&rdquo;</p>
+<p>此外，对于备受关注的 Istio 与 CNCF 之间的纠葛，Monroy 则发表意见称，“这很有意思，很多人都很注重治理方面的问题。不过我认为，当人们过度关注这个问题时，你就会忽视客户对这项技术的使用情况。而事实是，现如今，客户使用 Istio 的日子并不好过。我想即使是那些深入社区的人也会承认这一点，这也是我们目前没有兴趣为这个生态系统做贡献的真正原因。”</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1012743/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">法系豪华车DS9国内首发 动力超宝马5系</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1012725/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">高原喵星人 祁连山国家公园五只荒漠猫罕见同框</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1014595/">“跳过”5G直接发展6G？ 专家认为这基本不可能</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1014603/">美国5G策略转向：网络覆盖优先 加速释放中频频谱</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1014609/">美媒：美国记者走进武汉病毒研究所</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1014571/">研究发现电子烟与青少年和年轻人患COVID-19的风险较高有关</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1014577/">玻璃大王曹德旺：新能源车是有钱人做的 企业只靠国家补贴难存活</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

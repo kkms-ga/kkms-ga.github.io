@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>AMD的混合计算新专利被指是对英特尔Lakefield架构的借鉴 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="AMD的混合计算新专利被指是对英特尔Lakefield架构的借鉴" />
+<meta property="og:description" content="AMD申请的一项新专利表明，他们正在考虑跟随英特尔和Arm走上混合计算的道路。但有趣的是，这项专利描述了一个非常熟悉的产品&hellip;&hellip;混合计算是指一个处理设备使用两个（或多个）不同的架构，针对不同的目的进行优化。在这种情况下，AMD希望在不牺牲功能的情况下，创造一个更省电的笔记本电脑CPU/APU。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1013575/" />
+<meta property="article:published_time" content="2020-08-09T23:54:53+08:00" />
+<meta property="article:modified_time" content="2020-08-09T23:54:53+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">AMD的混合计算新专利被指是对英特尔Lakefield架构的借鉴</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-09T23:54:53&#43;08:00">August 09, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>AMD申请的一项新专利表明，他们正在考虑跟随英特尔和Arm走上混合计算的道路。但有趣的是，这项专利描述了一个非常熟悉的产品&hellip;&hellip;混合计算是指一个处理设备使用两个（或多个）不同的架构，针对不同的目的进行优化。在这种情况下，AMD希望在不牺牲功能的情况下，创造一个更省电的笔记本电脑CPU/APU。</p>
+<p>为此，他们使用了一个 &ldquo;高功能处理器&rdquo;，它能快速完成所有事情，而一个 &ldquo;低功能处理器 &ldquo;则能非常高效地完成少量事情，所有这些都在一个CPU/APU中完成。</p>
+<p>该专利主要涉及混合计算的基础知识。&ldquo;当高功能处理器未被充分利用时，异构处理器系统通过将线程的执行切换到低功能处理器上，过渡到低功耗模式。这种执行的切换包括迁移数据&hellip;&hellip;&quot;，随后，&quot;&hellip;&hellip;当低功能处理器被过度利用时，异构处理器系统通过切换一个线程的执行来过渡到更高功率模式[&hellip;&hellip;]。&rdquo;</p>
+<p>英特尔的Lakefield架构做的事情大致相同：英特尔采用了4个10nm Tremont内核作为低功能处理器，1个22nm Sunny Cover处理器作为高功能处理器。</p>
+<p>Arm也有类似设计，例如在智能手机中使用的八核处理器将四个核心专门用于高性能任务，而其他四个核心则管理后台应用和连接等。</p>
+<p>AMD专利的一个新颖之处在于其对不同实现方式的讨论。该专利提出了两种备用配置。在第一种情况下，两个处理器共用的物理存储用于两者之间的通信。在第二种情况下，在缓存中创建了一个虚拟链接。</p>
+<p>下面是一个示例过程，在这个过程中，低功能处理器（第一处理器）使用第一种配置向高功能处理器（第二处理器）发送指令。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/08/de7a50783bf5d75.webp" alt="img:AMD的混合计算新专利被指是对英特尔Lakefield架构的借鉴"></p>
+<p>第一处理器在低功耗模式下执行一个线程→第一处理器检测到线程试图利用不支持的功能→第一处理器停止执行线程→第一处理器指示切换到第二处理器并保存线程状态→第二处理器从共享内存位置恢复线程状态并开始执行。</p>
+<p>例如，当用户在到达Twitch主页后让处理器解码视频流时，可能会出现这样的场景。在这个场景中，高功能处理器已经（或可能已经）在活动了；正在酝酿等待处理低功能处理器发送的复杂任务。</p>
+<p>专利并不能说明一家公司进入市场的意愿，像这样相当随意的专利当然不能确认未来产品的任何属性。不过总的来说，AMD对移动市场的追求越来越狂热，并在另一个领域向英特尔发起进攻，这是非常有趣的。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1013573/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">三星Galaxy Note 20系列快充从45W缩水至25W</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015891/">联通三大研究院改革拉开序幕 其中两个合并组建新联通研究院</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015879/">美光泄密 RTX 3090显卡用上GDDR6X显存：带宽堪比HBM2</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015883/">拼多多方面回应特斯拉事件：消费者系官网下单 不存在转卖</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015885/">阿里与小米新入恒生指数 吸引资金流入提高股票流通性</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015889/">美光宣布下一代显存HBMnext：2022年见</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

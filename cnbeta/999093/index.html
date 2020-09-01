@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>什么是Windows 10硬件加速GPU计划？它有多大的用处？ - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="什么是Windows 10硬件加速GPU计划？它有多大的用处？" />
+<meta property="og:description" content="在Windows 10 Version
+2004中，开发团队给系统新增了一个名为“硬件加速GPU计划”的选项，它隐藏在“显示设置-图形设置”中，作为一个实验性的选项提供。对于这个选项，微软官方在之前并没有做太多的解释，我们也就是道听途说认为它可以减低显示延迟什么什么的。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/999093/" />
+<meta property="article:published_time" content="2020-07-04T14:20:52+08:00" />
+<meta property="article:modified_time" content="2020-07-04T14:20:52+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">什么是Windows 10硬件加速GPU计划？它有多大的用处？</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-04T14:20:52&#43;08:00">July 04, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>在Windows 10 Version
+2004中，开发团队给系统新增了一个名为“硬件加速GPU计划”的选项，它隐藏在“显示设置-图形设置”中，作为一个实验性的选项提供。对于这个选项，微软官方在之前并没有做太多的解释，我们也就是道听途说认为它可以减低显示延迟什么什么的。</p>
+<p>在上个月末，终于有官方人员对这个选项进行了完整的解释，本文就根据官方的这篇博文，讲讲这个全新的硬件加速GPU计划选项的具体工作原理和作用，并整合了多家媒体的测试数据，看看它起的作用大小。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0704/9b82997314e2356.png" alt="img:什么是Windows 10硬件加速GPU计划？它有多大的用处？"></p>
+<p>“硬件加速GPU计划”</p>
+<p>官方把Hardware-accelerated GPU scheduling这个词翻译成了硬件加速GPU计划，实际上在这里scheduling翻成“调度”能够让更多人明白它的意思，这也是比较有微软风味的翻译了。</p>
+<p>回归正题，要说到GPU调度管理，我们就先要了解一下WDDM GPU调度器是什么。</p>
+<p>WDDM GPU调度器与命令缓冲队列</p>
+<p>从NT 6开始，微软给Windows引入了一套新的显示驱动模型，也就是我们现在所熟知的Windows Display Driver Model，简称WDDM。在WDDM出现之前，应用程序可以直接把任务提交到GPU，当时系统只有一个全局的任务队列，严格按照先到先执行的原则进行任务的调度。鉴于当时用到GPU的场景基本上就是全屏游戏或者专业用途的渲染什么的，这种方案也没出什么问题，被沿用了很多年。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0704/83773c046c5c127.png" alt="img:什么是Windows 10硬件加速GPU计划？它有多大的用处？"></p>
+<p>到了应用程序开始普遍利用GPU加速的年代，比如说Windows要直接用GPU加速整个UI界面的渲染了，那么再用这个全局任务队列就会有问题，比如渲染系统界面的任务前面排了一个其他程序提交的任务，那么GPU会先处理掉那个任务再回头来处理系统的需求，这会造成整个系统UI的卡顿。为了妥善地安排GPU工作的优先级，势必需要一个新的任务调度器，由它负责安排GPU任务的工作优先级。</p>
+<p>那么WDDM就引入了那么一个任务调度器，它以高优先级线程的形式一直运行在CPU上，负责协调、优先处理和调度各种应用程序提交的工作。从Vista上面的WDDM 1.0到Windows 10 Version 2004的WDDM 2.7，官方一直都在加强这个调度器的功能。但这种管理方式存在有一定的限制，主要体现在提交会有额外开销和任务达到GPU有一定的延迟时间，不过这些限制在实际中都被传统图形应用的渲染缓冲队列给掩盖了。缓冲用来存放提前准备好的渲染命令等等内容，在GPU渲染当前帧的时候，CPU已经在准备下一帧、下下帧乃至之后的更多帧数了。这种方式能够保证CPU与GPU之间的良好执行并行性，也可降低整体的性能开销，是现在很常见的GPU调用方式。同时为了降低频率提交渲染命令带来的额外性能开销，一般应用程序会提前准备好多帧的内容一起发送到队列中。这里产生了问题，缓冲的帧数越多，用户能够感受到的延迟越高。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0704/449e48baada2957.jpg" alt="img:什么是Windows 10硬件加速GPU计划？它有多大的用处？"></p>
+<p>但如果想减少缓冲队列的深度来降低延迟，又会造成提交开销增加，影响到性能。这两者之间是一个权衡关系，程序可能以更高的频率每次提交更少的帧数来降低延迟，又可能以较低的频率每次提交更多的帧数来减少额外的调度、提交开销。所以，微软决定修改其显示驱动模型的基础架构，引入了“硬件加速GPU计划”。</p>
+<p>把任务调度交给专用硬件</p>
+<p>Windows 10 Version 2004中引入的新选项就是允许系统将绝大多数的调度任务交由GPU专有的硬件调度器去做，Windows将继续控制程序调用GPU的优先级，但高频任务将会交由GPU的调度处理器进行管理，它负责各种GPU引擎的量子管理和上下文切换。</p>
+<p>在NVIDIA的官方说法中，新的选项就是允许GPU直接管理它自有的内存，也就是显存，在此之前，显存是交给系统来管理的。</p>
+<p>要启用这个新调度方式有两个先决条件，一个是需要硬件支持：它需要GPU自身有专有的处理调度任务的硬件模块，另一个是驱动支持：系统需要一个符合WDDM 2.7标准的显示驱动。当你的驱动和硬件都支持时，系统设置里才会出现这一选项。另外，引入新的调度方式对驱动模型有一个重大且根本性的改变，在某些时候、某些场景下它可能会产生不可知的效果，因此微软将其作为一个实验性的选项，默认情况下是关闭掉的。目前开发团队还在比较两种调度器之间的性能差异，同时也在监控新调度器的可靠性，未来这个选项可能会在支持的硬件上变为默认开启状态。</p>
+<p>目前支持这一特性的GPU有NVIDIA的Pascal GPU和Turing GPU、AMD的RDNA GPU，Intel那边的情况不明。</p>
+<p>实际测试：对高端平台影响不大</p>
+<p>好了，说了那么多，我们还是来看看这项功能在实际中的表现吧，我们找来了Tom&rsquo;s Hardware和Wccftech两家媒体的测试数据（以下图片来自于Tom&rsquo;s Hardware和Wccftech）。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0704/9ce72834b7ee241.jpg" alt="img:什么是Windows 10硬件加速GPU计划？它有多大的用处？"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0704/6fc657ac0319d76.jpg" alt="img:什么是Windows 10硬件加速GPU计划？它有多大的用处？"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0704/8782fffb3f0bffa.jpg" alt="img:什么是Windows 10硬件加速GPU计划？它有多大的用处？"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0704/ee57cbc404999f3.jpg" alt="img:什么是Windows 10硬件加速GPU计划？它有多大的用处？"></p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0704/9a2b054c42a9f2e.jpg" alt="img:什么是Windows 10硬件加速GPU计划？它有多大的用处？"></p>
+<p>Tom&rsquo;s Hardware这边使用了三套测试平台，分别是Core i9-9900K+RTX 2080 Ti、Ryzen 9 3900X+RTX 2080 Ti和Core i9-9900K+GTX 1050。从五款游戏的测试结果来看，基本上没有用户可感知的区别。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0704/feae68ba87edee7.png" alt="img:什么是Windows 10硬件加速GPU计划？它有多大的用处？"></p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0704/eaaa5c9b160be06.png" alt="img:什么是Windows 10硬件加速GPU计划？它有多大的用处？"></p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0704/34e626da93b4f23.png" alt="img:什么是Windows 10硬件加速GPU计划？它有多大的用处？"></p>
+<p>Wccftech选择了Core i9-9900K+RTX 2080 Ti/GTX 1650 SUPER这样两套平台，在RTX 2080 Ti上面启用硬件调度的性能变化并不明显，但是在GTX 1650 SUPER这样一张主流级显卡上面则是出现了明显的提升。其原因，如果按照NVIDIA方面的说法来解释，那就是由GPU直接管理显存在效率上带来了一定的提升。也许，这项功能会为很多主流级平台带来可观的免费性能增幅，而对高端平台来说，影响是微乎其微的。</p>
+<p>总结：仍需时日完善的好技术</p>
+<p>所以，“硬件加速GPU计划”实质上是一项对Windows图形架构影响较大的新技术，它需要新硬件和新驱动的支持才能够实现，能够为平台带来一定的性能提升。但目前它仍然处于测试状态，GPU厂对它的支持仍然算是刚刚可以用的状态，还需要官方进一步的优化和完善它。这也是微软为次世代图形应用对系统做出的改变，为了尽可能的降低延迟，让系统跟上时代的发展。它是一项好技术，但仍然还有很长的一段路要走。</p>
+<p>相关文章:</p>
+<p>[图]硬件加速 GPU 调度选项即将登陆 Windows 10 平台</p>
+<p>[图]Windows 10硬件加速GPU调度即将上线 AMD和Intel的已在路上</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/999079/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">不只是肥胖 英国科学家揭秘长期居家办公可能带来的“恶果”</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/999087/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">NASA两名宇航员升空1个月 准备搭乘SpaceX飞船返航</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1001097/">支付宝老年报告：理财、种树、喂鸡、收蛋，他们在乘风破浪追赶时代</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1001089/">RENTCafe：居家隔离的人们在两个半月里玩了110小时的游戏</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1001091/">科学家希望NASA在前往火星之前先访问金星</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1001095/">身份证未丢失竟然都被建行担保4000万元 事主报警都被建行继续踢皮球</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1001087/">福特职工要求公司停止生产警车 CEO：将继续该项业务</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

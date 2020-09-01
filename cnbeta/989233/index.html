@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Adobe Flash爆出严重漏洞：可导致代码任意执行 获取个人隐私 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Adobe Flash爆出严重漏洞：可导致代码任意执行 获取个人隐私" />
+<meta property="og:description" content="众所周知，Flash是网络攻击的首选目标。值得注意的是，Adobe在2017年7月宣布计划将Flash推入使用寿命终止状态，这意味着它将在今年年底不再更新或分发Flash
+Player。不过仍然在使用Adobe的用户需要警惕，因为Adobe
+在今年5月被爆出了多个严重漏洞,好在Adobe于6月9日发布了安全更新，修复了漏洞。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/989233/" />
+<meta property="article:published_time" content="2020-06-10T14:11:11+08:00" />
+<meta property="article:modified_time" content="2020-06-10T14:11:11+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Adobe Flash爆出严重漏洞：可导致代码任意执行 获取个人隐私</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-10T14:11:11&#43;08:00">June 10, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>众所周知，Flash是网络攻击的首选目标。值得注意的是，Adobe在2017年7月宣布计划将Flash推入使用寿命终止状态，这意味着它将在今年年底不再更新或分发Flash
+Player。不过仍然在使用Adobe的用户需要警惕，因为Adobe
+在今年5月被爆出了多个严重漏洞,好在Adobe于6月9日发布了安全更新，修复了漏洞。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>天翼云高性能云主机1折起 低至74元/年</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0610/bddc3c6d888d871.jpg" alt="img:Adobe Flash爆出严重漏洞：可导致代码任意执行 获取个人隐私"></p>
+<p>Adobe 被爆出的漏洞：</p>
+<p>两个严重的越界写入漏洞（代号分别为：CVE-2020-9634，CVE-2020-9635）,一个内存损坏而导致的严重漏洞（代号：CVE-2020-9636）.</p>
+<p>对于CVE-2020-9634，特定的漏洞存在于GIF文件的解析中，该问题是由于缺乏对用户提供的数据的正确验证而导致的，这可能导致写操作超出了分配对象的末尾。</p>
+<p>对于CVE-2020-9635，PDF文件的解析中存在特定漏洞。问题是由于缺乏对用户提供的数据的正确验证而导致的，这可能导致在分配的对象开始之前进行写操作。</p>
+<p>攻击者可以利用CVE-2020-9634，CVE-2020-9635两个漏洞在当前进程的上下文中执行代码，诱使用户打开特定文件或访问恶意页面。</p>
+<p>对于CVE-2020-9636，该漏洞是在释放内存后尝试访问的。这可能导致一系列恶意影响，从导致程序崩溃到潜在地导致执行任意代码-甚至启用完整的远程代码执行功能。</p>
+<p>受影响的产品版本</p>
+<p>1.包括Adobe Flash Player桌面运行时（Windows，macOS和Linux），适用于Google Chrome的Adobe Flash Player（适用于Windows，macOS，Linux和Chrome OS）以及适用于Microsoft Edge / Internet Explorer 11（适用于Windows 10和8.1）的Adobe Flash Player，均适用于32.0版.0.330及更早版本</p>
+<p>2.适用于Windows的Adobe Framemaker版本2019.0.5及更低版本</p>
+<p>升级修复版本</p>
+<p>Adobe Flash Player更新到32.0.0.387版本，加强安全性。该版本除了修复最近爆出的漏洞，还可以解决历史上风险较高的产品中的漏洞。</p>
+<p>Adobe Framemaker版本升级到2019.0.6版本或最新版本</p>
+<p>其他漏洞</p>
+<p>Adobe还修补了与Experience Manager（其用于构建网站，移动应用程序和表格的内容管理平台）中的六个重要级别的漏洞。这些包括可能允许敏感信息泄露的服务器端请求伪造故障（CVE-2020-9643和CVE-2020-9645）和跨站点脚本漏洞（CVE-2020-9647，CVE-2020-9648，CVE-2020 -9651和CVE-2020-9644），可以在浏览器中启用任意JavaScript执行。</p>
+<p>受影响的产品版本</p>
+<p>Adobe Experience Manager (AEM)所有平台6.5版本</p>
+<p>升级修复版本</p>
+<p>建议所有用户迅速更新到AEM 最新版本（目前最新版本为：6.5.5.0），加强安全性。</p>
+<p>相关文章:</p>
+<p>Adobe Flash Player 32 正式版发布</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/989237/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">传Arm中国执行董事兼CEO吴雄昂被免职 官方回应未发生人事变动</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/989225/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">《荒野大镖客2》线上模式赛马三倍奖励 马匹和能力卡升级优惠</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990273/">“智迎”新基建时代 戴尔携全新商用客户端产品及解决方案亮相中国</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990265/">首例儿童骑共享单车身亡案宣判 ofo被判赔6.7万</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990253/">以色列VTOL出租车开发商宣布将在CityHawk中使用氢燃料电池</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990269/">TCL新智能机外观专利曝光 或采用屏下隐藏式前摄方案</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990263/">OPPO Reno4 Pro 评测：亮点槽点并存，但依旧无缘性价比</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

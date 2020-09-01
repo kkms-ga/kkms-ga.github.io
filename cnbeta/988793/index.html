@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>主板欺骗AMD锐龙 暗中拉高供电：HWiNFO已可揪出 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="主板欺骗AMD锐龙 暗中拉高供电：HWiNFO已可揪出" />
+<meta property="og:description" content="权威硬件识别工具HWiNFO今天放出了6.27-4185 Beta测试版，更新内容颇多，尤其是强化了不同主板的传感器监控，还特别加入了一条，支持AMD锐龙平台的“供电上报偏差”(Power Reporting Deviation)。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/988793/" />
+<meta property="article:published_time" content="2020-06-09T16:03:11+08:00" />
+<meta property="article:modified_time" content="2020-06-09T16:03:11+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">主板欺骗AMD锐龙 暗中拉高供电：HWiNFO已可揪出</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-09T16:03:11&#43;08:00">June 09, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>权威硬件识别工具HWiNFO今天放出了6.27-4185 Beta测试版，更新内容颇多，尤其是强化了不同主板的传感器监控，还特别加入了一条，支持AMD锐龙平台的“供电上报偏差”(Power Reporting Deviation)。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>天翼云高性能云主机1折起 低至74元/年</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p>访问购买页面:</p>
+<p>AMD旗舰店</p>
+<p>它的作用就是可以检测出主板是否暗中向AMD锐龙处理器提供更强的供电，以维持在更高运行频率，或者支持超频，但是却欺骗处理器，对外显示供电是正常的。</p>
+<p>资料图(和品牌无关)</p>
+<p>主板之所以能这么做，是利用了锐龙设计上的一个特点，那就是依赖于主板CPU VRM供电控制器，来检测报告主板对处理器的供电输入情况(范围为0-255的整数)，然后处理器内集成的电源管理协处理器，以此为准来调整运行频率，保证符合AMD的功耗设计限制。</p>
+<p>主板厂商就是借此钻了空子，拉高供电，但却让锐龙处理器误以为还在正常范围内，即便用户希望运行在正常频率，却仍然得到了更高性能，看似捡了便宜，但却是以牺牲功耗、发热为代价的，而且长此以往，必然会影响锐龙处理器乃至主板的寿命，对普通用户而言有些得不偿失。</p>
+<p>举例来说，锐龙7 3700X的热设计功耗为65W，默认功耗限制(PPT)为88W，但如果经检测发现主板显示的供电水只有实际的60％，就意味着处理器功耗限制被人为放宽到了大约147W(88÷0.6)，显然有点离谱。</p>
+<p>HWiNFO新版已经可以对此进行检测，并给出一个百分比，如果在95-105％(整数)之间说明主板供电正常，超出此范围，尤其是明显是低于95％，就说明主板厂商可能暗中动了手脚。</p>
+<p>不过，目前并不清楚都有哪些主板这么做了，HWiNFO也没有公布具体厂商、型号信息。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0609/146598f655143a1.jpg" alt="img:主板欺骗AMD锐龙 暗中拉高供电：HWiNFO已可揪出"></p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0609/2b8206347cffc3c.jpg" alt="img:主板欺骗AMD锐龙 暗中拉高供电：HWiNFO已可揪出"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/988797/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">搭星链卫星“便车” SpaceX已将数万台电脑送上了天</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/988805/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">防弹少年团（BTS）特别版Galaxy S20&#43; /Buds&#43;即将开启预订</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990273/">“智迎”新基建时代 戴尔携全新商用客户端产品及解决方案亮相中国</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990265/">首例儿童骑共享单车身亡案宣判 ofo被判赔6.7万</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990253/">以色列VTOL出租车开发商宣布将在CityHawk中使用氢燃料电池</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990269/">TCL新智能机外观专利曝光 或采用屏下隐藏式前摄方案</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990263/">OPPO Reno4 Pro 评测：亮点槽点并存，但依旧无缘性价比</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>微软正在优化Windows Core OS上的Chromium使用体验 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="微软正在优化Windows Core OS上的Chromium使用体验" />
+<meta property="og:description" content="传闻称微软一直没有放弃所谓的 Core OS，作为 Windows 10 的模块化版本，该软件旨在容纳多种不同外形尺寸的设备。除了类似 Chromebook 的廉价上网本，Core OS 还可在双屏 / 折叠设备、以及 HoloLens 2 扩展现实头戴式装置上发挥作用。许多人将 WCOS 视作 Windows OneCore 的继任者，并且是 Windows 10X 的开发基础。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/991637/" />
+<meta property="article:published_time" content="2020-06-16T12:00:51+08:00" />
+<meta property="article:modified_time" content="2020-06-16T12:00:51+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">微软正在优化Windows Core OS上的Chromium使用体验</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-16T12:00:51&#43;08:00">June 16, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>传闻称微软一直没有放弃所谓的 Core OS，作为 Windows 10 的模块化版本，该软件旨在容纳多种不同外形尺寸的设备。除了类似 Chromebook 的廉价上网本，Core OS 还可在双屏 / 折叠设备、以及 HoloLens 2 扩展现实头戴式装置上发挥作用。许多人将 WCOS 视作 Windows OneCore 的继任者，并且是 Windows 10X 的开发基础。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0616/9c4bb89639109a1.jpg" alt="img:微软正在优化Windows Core OS上的Chromium使用体验"></p>
+<p>Windows 10X 的一大特色，就是能够在沙箱环境中安全地运行 Win32 应用程序，以支持用户喜爱的大多数桌面应用程序。</p>
+<p>换言之，Windows 10X 的容器可顺畅运行 Chrome、Edge、Slack 等经典 Win32 应用，软件在与系统不同的沙箱环境中运行，将之与操作系统的核心组件安全隔离开来。</p>
+<p>尽管微软似乎并未做好谈论 WCOS 未来愿景的准备，但看起来其仍在积极开发中，甚至在 Chromium Gerrit 中找到了对该操作系统的引用。</p>
+<p>我们在 Microsoft Edge 工程师于 6 月 8 日向 Chromium Gerrit 提交的内容中发现了对 WCOS 的提及，只是此前它一直未能引发外界的较大关注。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0616/eb2a6bbb207889e.jpg" alt="img:微软正在优化Windows Core OS上的Chromium使用体验"></p>
+<p>如图所示，微软似乎正通过修复应用容器（AppContainer）方面的问题来优化 Chromium 的使用体验，以使之能够在 WCOS 上更好地工作。</p>
+<p>因为在 WCOS 系统上，应用容器的字符数限制为 50 个。但 Chromium 当前提供的 AppContainer 名称却大于 50 个字符，于是开发团队修改缩短了沙箱进程的名称。</p>
+<p>据悉，AppContainer 用于为 Win32 应用程序提供安全的沙箱环境，且允许应用程序访问专门为其授予的资源。</p>
+<p>得益于 WCOS 和 Windows 10X 上的最新改动，攻击者将更难以在已分配资源之外执行而已操作。</p>
+<p>最后，微软在支持文档中指出，用于 Win32 应用程序的 AppContainer 环境会将其隔离，使之无法在获得特殊许可的情况下访问硬件、文件、注册标和其它核心区域。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/991587/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">中国在建最北高寒高铁：牡佳高铁开始铺轨 日均2公里</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/991639/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[图]火星稀薄的大气层再次呈现绿色光芒</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993729/">去马赛克AI&#43;像素游戏角色=恐怖之源</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993691/">WHO发警告：我们正处于新冠大流行的新危险阶段</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993693/">红帽和 Fedora 社区共同改进模块化 将应用到 RHEL 9</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993727/">《漫威蜘蛛侠：迈尔斯·莫拉莱斯》预告疑似侵权Gameloft 从油管下架</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993707/">说好的最美“金边日环食” 为什么我看到的是日偏食？</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Chromium 对 root DNS 流量的影响 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Chromium 对 root DNS 流量的影响" />
+<meta property="og:description" content="基于 Chromium 的浏览器如今占据了七成以上的浏览器市场份额，它的某些行为可能会产生意想不到的巨大影响，比如 DNS 域名查询。Chromium 有一项功能叫 omnibox，用户可以在里面输入网站名字、网址和搜索查询词。但如何区分用户输入的一个单词是域名（企业内联网域名可以是一个单词）还是查询词？Chromium
+采取的方法是在后台进行域名 DNS 查询，检查是否会返回有效的 IP 地址。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1018963/" />
+<meta property="article:published_time" content="2020-08-22T12:44:17+08:00" />
+<meta property="article:modified_time" content="2020-08-22T12:44:17+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Chromium 对 root DNS 流量的影响</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-22T12:44:17&#43;08:00">August 22, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>基于 Chromium 的浏览器如今占据了七成以上的浏览器市场份额，它的某些行为可能会产生意想不到的巨大影响，比如 DNS 域名查询。Chromium 有一项功能叫 omnibox，用户可以在里面输入网站名字、网址和搜索查询词。但如何区分用户输入的一个单词是域名（企业内联网域名可以是一个单词）还是查询词？Chromium
+采取的方法是在后台进行域名 DNS 查询，检查是否会返回有效的 IP 地址。</p>
+<p>毫无疑问，这种关键字 DNS
+查询在很多情况下是返回域名不存在的错误消息。这种域名错误信息叫 NXDOMAIN，有些 ISP
+会在这上面打主意，对于无效域名它们会进行拦截重定向到广告页挣些广告费。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/08/175b9c51af70c86.webp" alt="img:Chromium 对 root DNS 流量的影响"></p>
+<p>Chromium 在 DNS 查询的的时候需要识别某个网络是否存在
+NXDOMAIN 拦截。根据 Chromium
+的源代码（intranet_redirect_detector.c），它使用的方法是在每次启动、每次 IP 地址变化、每次设备 DNS
+配置变更时对 3 个随机的  7-15 字符长（现在固定为 10 个字符长）的字符串进行 DNS 查询。</p>
+<p>如果至少 2 个随机域名查询到的 IP
+地址是相同的（即被重定向了），那么 Chromium 会认为存在 NXDOMAIN 拦截，如果用户输入的词查询结果匹配了被重定向的 IP，那么
+Chromium 将不会有任何操作，否则会提示是否是本地域名。</p>
+<p>Chromium 的这种行为会在 root DNS
+服务器留下记录。根据亚太互联网络信息中心的统计，root 服务器一半的查询流量来自于 Chromium 的检查。这相当于每天在 root 服务器系统查询 600 亿次。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/08/a981b000874072b.webp" alt="img:Chromium 对 root DNS 流量的影响"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1018969/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">股神巴菲特靠重仓苹果赚了一个百度 曾被嘲“巴韭特”</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1018959/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">路透社：TikTok最早将在8月24日起诉美国政府</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021159/">国际研究小组开发血液测试  可在精神疾病出现前数年就预测其存在</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021173/">专利显示苹果未来MacBook掌托处有望支持无线反向快充</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021177/">国际空间站实验显示：细菌可在太空中存活多年</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021181/">iFixit称Galaxy Note 20配备的不同散热系统不成问题</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021175/">LG推出PuriCare口罩式空气净化器</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

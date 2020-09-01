@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>自行开发一个Windows操作系统到底有多难？ - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="自行开发一个Windows操作系统到底有多难？" />
+<meta property="og:description" content="为什么除了微软、苹果、谷歌及开源社区的Linux之外，其他国家及公司实际上也没有自己的OS系统？这个问题的答案很简单，那就是开发一套受众广泛的OS系统太难了，没多少公司能够玩转。开发OS的门槛极低，认真学过《操作系统原理》课程的大学生都可以开发一套OS，但是真正把OS系统做到能用、好用就难比登天了。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1014887/" />
+<meta property="article:published_time" content="2020-08-12T18:20:42+08:00" />
+<meta property="article:modified_time" content="2020-08-12T18:20:42+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">自行开发一个Windows操作系统到底有多难？</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-12T18:20:42&#43;08:00">August 12, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>为什么除了微软、苹果、谷歌及开源社区的Linux之外，其他国家及公司实际上也没有自己的OS系统？这个问题的答案很简单，那就是开发一套受众广泛的OS系统太难了，没多少公司能够玩转。开发OS的门槛极低，认真学过《操作系统原理》课程的大学生都可以开发一套OS，但是真正把OS系统做到能用、好用就难比登天了。</p>
+<p>首先要考虑代码量，以Windows系统为例，微软之前公布过一些代码量的数据，Windows 98有1500万行代码，Windows XP有3500万行代码，Windows Vista有5000万行代码，Windows 7有5000万行代码。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0812/5744430c885f7fa.png" alt="img:自行开发一个Windows操作系统到底有多难？"></p>
+<p>CodeBase公布过的代码量数据</p>
+<p>Win7之后的数据不再公布，但是越现代的系统越复杂，如今的Win10系统代码量肯定大幅超过5000万行，达到1亿行也不稀奇。</p>
+<p>为了开发Win系统，微软需要组织大量团队开发不同的子系统，Win7时代据说是23个团队，至少1000人的规模，开发系统也要5年左右的时间。</p>
+<p>不比美国码农的工资，国内码农平均算50万年薪（包含福利什么的），1000人、5年时间也要25亿工资了。</p>
+<p>25亿就够了吗？远远不够，这样开发出来的OS系统还是个框架，还要有各种应用，更关键的是你要建立一套生态系统，这样的代码量至少要10倍提升，50倍、100倍也有可能。</p>
+<p>这样下来，每年的投资平均下来就要百亿级别了，打磨个三五年才有可能让OS系统成型，变得比较好用。</p>
+<p>那国内有这样的公司吗？根据工信部公布的2019年中国软件百强公司，软件百家企业2018年共完成软件业务收入8212亿元，算下来每家公司平均收入才82亿，这还是收入。</p>
+<p>当然，软件百强中有华为、阿里这样的TOP3公司，每年砸出上百亿研发OS系统是有可能的，至少资金、码农上有这个基础。</p>
+<p>但是问题又来了，哪怕国内公司有这样的破例开发OS系统，等到上市销售时，客户就要问了——凭啥买你的？特别是在Win10现在事实上接近免费的情况下。</p>
+<p>就算不考虑价格，新出的OS系统界面、操作跟Win10完全不同，消费者一定骂不适应，如果操作、界面高仿Win10，那一定会被骂抄袭。</p>
+<p>得了，把OS系统的主要环节考虑了一遍，应该没有哪个公司再去动这样的念头了，耗时耗力费钱，最后可能完全没有市场。</p>
+<p>这个问题就是大部分半导体及软件公司面对落后情况的死循环，所谓赢家通吃就是这样得来的，追赶者错过了时间机会，同样的赛道上赶超先驱的可能性太小了。</p>
+<p>当然，中国公司不是没有后来者居上的可能，面板、高铁、卫星导航等领域依然逆袭了，只是半导体、OS这两个领域太复杂了，希望未来5-10年里能有改变吧。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1014879/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">由于使用率低 Facebook不再提供瘦身的Facebook Lite应用</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1014881/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">腾讯第二季度营收1149亿元 同比增长29%</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1016745/">狂人迈克菲公开舔鞋底：自称可增强免疫力、预防感冒</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1016747/">羊群站在山坡一动不动如画面静止 但这不是jpg</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1016755/">“河底捞”赢了“海底捞”：但还是把名字改了</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1016763/">ASML设立首个EUV海外培训中心：就近辅导台积电打磨先进工艺</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1016759/">三星或将智能手机制造业务的重头迁移至印度</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>微软修复不力 谷歌Project Zero再次披露Windows中的一个严重漏洞 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="微软修复不力 谷歌Project Zero再次披露Windows中的一个严重漏洞" />
+<meta property="og:description" content="谷歌旗下的 Project Zero 安全团队，以查找自家和其它公司开发的软件中的漏洞而被人们所熟知。理论上，在 90 天的宽限期内，接到通报的厂商有相对充裕的时间来完成修复。然而在现实生活中，偶尔也会有一些例外情况。比如近日，Project Zero 团队就因为微软修复不力，而选择在 90 天后公开披露 Windows 中的一个严重漏洞。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1014783/" />
+<meta property="article:published_time" content="2020-08-12T15:18:43+08:00" />
+<meta property="article:modified_time" content="2020-08-12T15:18:43+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">微软修复不力 谷歌Project Zero再次披露Windows中的一个严重漏洞</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-12T15:18:43&#43;08:00">August 12, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>谷歌旗下的 Project Zero 安全团队，以查找自家和其它公司开发的软件中的漏洞而被人们所熟知。理论上，在 90 天的宽限期内，接到通报的厂商有相对充裕的时间来完成修复。然而在现实生活中，偶尔也会有一些例外情况。比如近日，Project Zero 团队就因为微软修复不力，而选择在 90 天后公开披露 Windows 中的一个严重漏洞。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0812/db3169a18f00343.png" alt="img:微软修复不力 谷歌Project Zero再次披露Windows中的一个严重漏洞"></p>
+<p>（来自：Google Project Zero）</p>
+<p>过去几年，Project Zero 团队已经曝光过影响 Windows 10 S、macOS 内核、iOS 等平台的严重漏洞。</p>
+<p>然而在昨日的“星期二补丁”中，研究人员声称微软未能提供一个完整的修复程序，于是决定公开一个影响各版本 Windows 的“中等”严重性漏洞。</p>
+<p>据悉，Project Zero 于 2020 年 5 月 5 日首次将一个身份验证漏洞汇报给了微软 —— 即使应用程序不具备此功能，也可通过用户凭据来绕过网络身份验证。</p>
+<p>在对枯燥的技术术语进行抽丝剥茧后，可知问题主要出在旧版 Windows 应用容器可通过单点登录、对用户授予企业身份验证的访问权限（这本该是个受限的敏感功能）。</p>
+<p>虽然具有此类缺陷的应用程序不会通过 Windows Store 的审核，但许多企业仍在使用基于侧载的部署方案，因而该漏洞仍需要 Windows 用户提高警惕。</p>
+<p>Project Zero 安全研究员 James Forshaw 指出：当应用程序向网络代理提起身份验证时，UWP 网络会错误地将之视作一个例外。</p>
+<p>这意味着，只要为 InitializeSecurityContext 指定了有效的目标名称，AppContainer 便可执行网络身份验证，而无论网络地址是否已经代理注册。</p>
+<p>结果就是，只要你的应用程序具有不受实际限制的网络访问功能，用户便可指定任意目标名称，对面向网络的资源进行身份验证。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0812/bdd089fa74cc6b0.png" alt="img:微软修复不力 谷歌Project Zero再次披露Windows中的一个严重漏洞"></p>
+<p>同样的，由于你可指定任意目标名称、并且正在执行实际的身份验证，那注入 SPN 检查和 SMB 签名之类的服务器防护手段都将变得毫无意义。</p>
+<p>从理论上来讲，由于防火墙 API 中存在后门，本地攻击者可借助经典版 Edge 浏览器访问本地主机服务、然后找到需要转义的系统服务，从而达到漏洞利用的目的。</p>
+<p>更糟糕的是，这只是该漏洞缺陷的一部分。因为即便代理没有正确地处理网络地址，它仍可被绕过。</p>
+<p>因其调用了 DsCrackSpn2，将服务类 / 实例：端口 / 服务名形式的网络目标名称划分成了各个组件。</p>
+<p>Project Zero 团队甚至附上了概念验证（PoC）的代码，以展示应用程序是如何绕过企业身份验证、以获得更高的特权的。</p>
+<p>PoC 尝试列出了 Windows Server 消息块（SMB）的共享，即使操作系统不允许此类访问，本地共享上仍会将它列出。</p>
+<p>遗憾的是，尽管 Project Zero 团队为微软提供了标准的 90 天的缓冲、并于 7 月 31 日再次延展了宽限期，以便该公司可在 8 月 Patch Tuesday 推出该修复程序，但微软最终还是让我们感到失望。</p>
+<p>该公司确实在昨日发布了 CVE-2020-1509 的修复程序，并对 James Forshaw 的发现表示了感谢，但 Project Zero 团队声称该公司并未彻底修复该缺陷，因其并未纠正 DsDrackSpn2 目标名称解析漏洞。</p>
+<p>最终 Project Zero 决定在今日公布这个复杂的漏洞详情，即便普通的“脚本小子”无法轻易利用，但特权提升（即使是本地特权提升）也是相当危险的。</p>
+<p>更具微软的安全公告，该问题影响多个 Windows 操作系统版本，包括 Windows Server 2012 / 2016 / 2019、Windows 8.1 / RT 8.1、以及直到 Version 2004 的 Windows 10 。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1014763/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">V3超充桩功率被指中美区别对待 特斯拉回应：请相信我们的价值观</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1014777/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">百世集团寻求快递和货运业务在港上市</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1016651/">马斯克星链正式上线：装个UFO 来测星链互联网下载速度</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1016653/">店大欺客？特斯拉拒交门牵出“中国区限定”款霸王条约</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1016633/">《信条》首批短评出炉 8月22日口碑解禁</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1016645/">Gartner发布云产品评估报告：阿里云计算能力全球第一</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1016637/">担心美国再次增加进口车关税 丰田/马自达增资在美工厂：累计投资23亿美元</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

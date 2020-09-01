@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>7nm安培GPU详解：400W功耗、40GB HBM2、826mm2怪兽出炉 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="7nm安培GPU详解：400W功耗、40GB HBM2、826mm2怪兽出炉" />
+<meta property="og:description" content="等了很久，今晚NVIDIA正式发布了7nm安培GPU，号称是8代GPU史上最大的性能飞跃。不过官方并没有公布安培GPU的技术细节，Anandtech网站倒是给出了一份详细的介绍。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/979201/" />
+<meta property="article:published_time" content="2020-05-14T23:01:13+08:00" />
+<meta property="article:modified_time" content="2020-05-14T23:01:13+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">7nm安培GPU详解：400W功耗、40GB HBM2、826mm2怪兽出炉</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-14T23:01:13&#43;08:00">May 14, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>等了很久，今晚NVIDIA正式发布了7nm安培GPU，号称是8代GPU史上最大的性能飞跃。不过官方并没有公布安培GPU的技术细节，Anandtech网站倒是给出了一份详细的介绍。</p>
+<p>访问购买页面:</p>
+<p>京东NVIDIA系列商品汇总</p>
+<p>这次的GTC 2020大会演讲中，NVIDIA CEO黄仁勋主要谈的就是HPC计算、AI人工智能等方面的内容，目前推出的A100大核心也是针对这个领域的，与之相比的是3年前发布的Volta架构V100核心，很多东西跟RTX 3080 Ti游戏卡会不一样，大家不用纠结。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0514/5c47cc590da8751.png" alt="img:7nm安培GPU详解：400W功耗、40GB HBM2、826mm2怪兽出炉"></p>
+<p>首先来说大方面的，V100核心使用的是12nm Volta架构，211亿晶体管，核心面积815mm2，而A100核心是台积电7N工艺，应该也是定制版的7nm工艺，826mm2，542亿晶体管，同样是核弹级别的。</p>
+<p>V100核心拥有80组SM单元，5120个CUDA核心，SXM2/3架构，而A100核心是108组SM单元，SXM4架构，6912个CUDA核心。</p>
+<p>AI方面是变化最大的，相比Volta架构的640个Tensor Core，A100核心的Tensor Core减少到了432个，但是性能大幅增强，支持全新的TF32运算，浮点性能156TFLOPS，同时INT8浮点性能624TOPS，FP16性能312TFLOPS。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0514/c60100e7c32028d.jpg" alt="img:7nm安培GPU详解：400W功耗、40GB HBM2、826mm2怪兽出炉"></p>
+<p>常规的FP32、FP64性能提升倒是不算明显，从V100核心的15.7.、7.8TFLOPS提升到了19.5、9.7TFLOPS。</p>
+<p>频率方面，A100核心实际上还倒退了，从V100的1530MHz降低到了1.41GHz左右，毕竟核心规模实在太大，功耗已经飙到了400W，比V100的300/350W功耗高出不少。</p>
+<p>显存方面，A100配备的也是HBM2显存，频率从1.75Gbps提升到了2.4Gbps，位宽5120bit，相比V100的4096bit增加了1024bit，容量也从16/32GB增加到了40GB。</p>
+<p>不过HBM2的配置略显奇怪，增加1024bit理论上应该多1组HBM2，但从核心图上看又是6组HBM2显存，或许是2组512bit的？保不准以后还会有完整版A100核心。</p>
+<p>不过HBM2显存位宽、频率双双提升的后果就是，A100核心寸带宽达到了1.6TB/s，远高于V100的900GB/s，比AMD的Radeon VII显卡的1TB/s带宽还要高。</p>
+<p>最后，NVLink技术也升级到了3.0版，带宽从300GB/s提升到了600GB/s，适合服务器领域多卡互联，不过未来应该还会有PCIe版的。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/979205/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">FBI向苹果公司送达搜查令 要求其访问参议员的iCloud数据</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/979203/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">乐视控股驳斥乐视网董事长言论：贾跃亭早已不实际控制乐视网</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/981033/">AMD Zen3工程样品首曝：8核心冲到4.6GHz</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/981031/">多方订单补缺口 台积电或早对华为订单归零做了几手准备</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/981023/">Apple TV&#43;不再坚持原创 开始购买“复古”内容</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/981027/">百度CIO李莹升为集团副总裁 在百度成长起来的领军人物</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/981029/">《最后的生还者2》限量版PS4 Pro捆绑套装公布</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

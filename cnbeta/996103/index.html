@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>iOS 14与macOS Big Sur将支持DNS加密通信 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="iOS 14与macOS Big Sur将支持DNS加密通信" />
+<meta property="og:description" content="在本周早些时候的开发者大会（WWDC 2020）期间，苹果表示 iOS 14 和 macOS Big Sur 都将支持 DNS 加密通信。今秋正式发布的时候，该公司设备用户将同时体验到 DNS-over-HTTPS（简称 DoH）和 DNS-over-LTS（简称 DoT）带来的好处。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/996103/" />
+<meta property="article:published_time" content="2020-06-27T09:24:34+08:00" />
+<meta property="article:modified_time" content="2020-06-27T09:24:34+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">iOS 14与macOS Big Sur将支持DNS加密通信</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-27T09:24:34&#43;08:00">June 27, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>在本周早些时候的开发者大会（WWDC 2020）期间，苹果表示 iOS 14 和 macOS Big Sur 都将支持 DNS 加密通信。今秋正式发布的时候，该公司设备用户将同时体验到 DNS-over-HTTPS（简称 DoH）和 DNS-over-LTS（简称 DoT）带来的好处。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0627/70667eaeab85d86.png" alt="img:iOS 14与macOS Big Sur将支持DNS加密通信"></p>
+<p>据悉，普通域名解析服务（DNS）的流量为明文传输，导致互联网服务提供商（ISP）和其它企业能够借此来追踪用户、甚至将信息转售给在线广告商。</p>
+<p>但在启用了 DoH 和 DoT 之后，域名查询和接收响应的过程都会被加密处理，可有效防止被第三方和恶意行为者追踪用户的浏览历史。</p>
+<p>为提升 iOS 和 macOS 用户的隐私体验，苹果公司也计划在其最新的应用程序开发框架中添加对 DoH 和 DoT 新功能的支持，以便开发人员打造或更新现有的应用。</p>
+<p>苹果还宣称，开发者能够有选择性地将整个操作系统的加密 DNS 通信设置，应用到自己创建的应用程序中（通过网络扩展程序或 MDM 配置文件）。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0627/0231e6341d3e09c.png" alt="img:iOS 14与macOS Big Sur将支持DNS加密通信"></p>
+<p>苹果公司互联网技术工程师 Tommy Pauly 在周三的演讲中称，大家有两种方法来开启加密 DNS 通信：</p>
+<p>第一种方法是将单个 DNS 加密服务器应用于全局设置，但若是公共型的加密域名协议服务器，还可编写一个网络扩展程序或 MDM 配置文件来实现。</p>
+<p>或者借助‘移动设备管理’来配置企业环境中的设备，以便向所有人推送、下载和应用所需的加密域名解析服务器设置。</p>
+<p>第二种方法是直接从 App 上选择是否使用某个加密 DNS 服务，那样即便系统其它部分没有全局启用，亦可让一台特定的加密 DNS 服务器为某些应用程序的所有连接服务。</p>
+<p>此外苹果的 DoH 和 DoT 实施也考虑到了情境因素，比如在企业客户安装了虚拟专用网应用之后，加密 DNS 配置文件也不会贸然将其覆盖。</p>
+<p>目前苹果已加入 Mozilla、谷歌和微软等公司的加密 DNS 通信倡议，积极在自家产品中（比如 Firefox、Chrome、Edge / Windows 10）中改进隐私安全体验。</p>
+<p>此外开发者还可编写特定的“规则”，以仅在某些情况或上下文中启用对加密 DNS 通信的支持。</p>
+<p>比如当用户使用移动数据网络、或者不受信任的 Wi-Fi 环境中时，就可提供对应的配置。</p>
+<p>如果网络服务提供商阻止在其网络上的加密 DNS 通信，苹果还可向用户发出警告，以便其采取其它能够保护自己隐私的措施。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/996107/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Linux Mint 20安装镜像已定 未来几天内发布</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/996111/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">专利表明PS5或支持Xbox One已砍掉的画中画功能</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998109/">外卖困局： Postmates上市还是被Uber收购？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998115/">三星Galaxy Z Flip 5G国行版已获认证 或采用高通骁龙865&#43;芯片组</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998125/">Manjaro Linux 32 位已死</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998129/">哈佛新冠地图显示了美国各县COVID-19的传播情况 并确定风险水平</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998089/">微软发布Windows 10全新开始菜单，引入纯色背景</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

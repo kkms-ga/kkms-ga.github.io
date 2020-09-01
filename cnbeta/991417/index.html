@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Linux Kernel 5.8 RC1 发布 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Linux Kernel 5.8 RC1 发布" />
+<meta property="og:description" content="Linux Kernel 5.8 的第一个 RC 版本已发布。5.8-rc1 的修改内容比较多，虽然其 commit 数量略少于最高的
+4.9-rc1 版本，但 5.8 涉及到修改的内容比 4.9
+更全面，例如包含了大量基础内核方面的修改和代码清理工作、针对文件系统的改动、通用的驱动更新，以及文档和架构方面的变动。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/991417/" />
+<meta property="article:published_time" content="2020-06-16T07:57:50+08:00" />
+<meta property="article:modified_time" content="2020-06-16T07:57:50+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Linux Kernel 5.8 RC1 发布</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-16T07:57:50&#43;08:00">June 16, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Linux Kernel 5.8 的第一个 RC 版本已发布。5.8-rc1 的修改内容比较多，虽然其 commit 数量略少于最高的
+4.9-rc1 版本，但 5.8 涉及到修改的内容比 4.9
+更全面，例如包含了大量基础内核方面的修改和代码清理工作、针对文件系统的改动、通用的驱动更新，以及文档和架构方面的变动。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0616/38025c0b1c8bc05.png" alt="img:Linux Kernel 5.8 RC1 发布"></p>
+<p>Linus 在发布公告中进一步补充道：“在 5.8 合并窗口中，对内核源代码仓库大约 20% 的文件进行了修改。这是一个相当大的比例，尽管其中一部分是使用脚本编写的。”从数字方面来看，5.8-rc1 包含超过 1.4 万个未合并的 commit（算上合并的则超过 1.5 万），新增代码大约 80 万行，以及超过 1.4 万个文件被修改。</p>
+<p>Linux Kernel 5.8 将会改进对许多处理器的支持，并为大量新硬件提供支持，增强安全性以及对开源 Intel/Radeon 显卡驱动的不断改进，稳定版预计将于8月中旬发布。</p>
+<p>部分重要更新：</p>
+<p>针对 AMD Radeon 显卡驱动的改进</p>
+<p>优化 SELinux</p>
+<p>更新电源管理功能</p>
+<p>在 Apple 键盘上支持交换 Fn 和 Ctrl 键</p>
+<p>支持 Intel Tiger Lake Thunderbolt</p>
+<p>支持 Habana Labs Gaudi 加速器</p>
+<p>针对 Btrfs 的部分改进</p>
+<p>针对 EXT4 和 exFAT 文件系统的代码清理和错误修复</p>
+<p>对引导 POWER10 处理器的初始支持</p>
+<p>虽然 5.8 的改动比较大，但好在 Linus 最近升级了自己的生产力工具，相信可以帮助加快构建这个“大”内核的速度 : )</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/991427/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">未来游戏展汇总 众多游戏最新预告放出</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/991453/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">苹果：去年消费者和广告主通过App Store花费5190亿美元</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993655/">国产半导体路在何方 瓦森纳与光刻机你了解多少</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993653/">Intel 11代酷睿i7性能偷跑：4核干掉友商8核 GPU完胜</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993647/">手机看车站大屏是怎样的感觉？12306新版体验</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993651/">新冠时期的职业赛事转播：没有观众就制造噪音</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/993649/">三星蓝光播放器突然大规模停止工作</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>猎鹰与龙飞船基于 Linux采用 C&#43;&#43;、Chromium与JS开发 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="猎鹰与龙飞船基于 Linux采用 C&#43;&#43;、Chromium与JS开发" />
+<meta property="og:description" content="最近两天科技界最重大的事件莫过于马斯克的 SpaceX 成功实现了猎鹰 9 号（Falcon 9）带着龙飞船（Crew
+Dragon）成功发射，并使飞船与国际空间站对接，将 NASA 两名宇航员送上了轨道前哨。背后关于 Falcon 9 与 Crew Dragon
+使用的计算机和软件等信息也引起了开发者的关注。多年前就存在的相关论坛提问帖也被翻了出来。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/985485/" />
+<meta property="article:published_time" content="2020-06-01T09:00:17+08:00" />
+<meta property="article:modified_time" content="2020-06-01T09:00:17+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">猎鹰与龙飞船基于 Linux采用 C&#43;&#43;、Chromium与JS开发</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-01T09:00:17&#43;08:00">June 01, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>最近两天科技界最重大的事件莫过于马斯克的 SpaceX 成功实现了猎鹰 9 号（Falcon 9）带着龙飞船（Crew
+Dragon）成功发射，并使飞船与国际空间站对接，将 NASA 两名宇航员送上了轨道前哨。背后关于 Falcon 9 与 Crew Dragon
+使用的计算机和软件等信息也引起了开发者的关注。多年前就存在的相关论坛提问帖也被翻了出来。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p><img src="https://oscimg.oschina.net/oscnet/up-1ecaf5864ecbc1e538696db410ddd009ee8.png" alt="img:猎鹰与龙飞船基于 Linux采用 C++、Chromium与JS开发"></p>
+<p>自称为 SpaceX 公司软件开发团队的网友表示 Falcon 9 火箭与 C#、MVC 都没有关系。Falcon、Dragon（此次载人的 Crew Dragon 前一代飞船）的应用主要使用 LabVIEW 进行编码，用于开发任务和发射控制的 GUI，供工程师和操作员监控车辆遥测并指挥火箭、航天器和护垫支持设备。</p>
+<p>LabVIEW（Laboratory Virtual Instrumentation Engineering Workbench，实验室虚拟仪器工程平台）是一种程序开发环境，由美国国家仪器（NI）公司研制开发的，类似于 C 和 BASIC 开发环境。LabVIEW 采用图形化编辑语言 G 编写程序，产生的程序是框图的形式。</p>
+<p>该网友还表示 Dragon 和 Falcon 9 使用 Linux 操作系统，其他网友补充，在 GDC 2016 与 Dragon 团队交流后了解到，Falcon 采用“三重冗余”系统，简单来讲，Falcon 9 具有 3 个双核 x86 处理器，每个核上都运行 Linux 实例。飞行软件采用 C/C++ 编写。对于每个计算/决定，“飞行字符串”都会比较两个核的结果，如果存在不一致，则字符串是错误的，不发送任何命令。如果两个内核都返回相同的响应，则字符串将命令发送到火箭上的各种微控制器，这些微控制器控制诸如引擎之类的东西。</p>
+<p>运行在 PowerPC 处理器上的微控制器从三个飞行字符串接收到三个命令，他们充当法官来选择正确的行动方案。如果所有三个字符串都一致，则微控制器将执行命令。</p>
+<p>而 Crew Dragon 飞行界面上使用了 Chromium 与 JavaScript 开发，实际的飞行计算机仍基于 C++ 运行。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/985465/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">美国总统特朗普称他将再次服用羟氯喹</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/985471/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">华为P40 Pro&#43;今日开启预售：7988元起</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/987649/">[图]LibreOffice 7.0 Beta 1发布 添加ODF 1.3 文档支持</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/987663/">福奇：将在确定新冠候选疫苗是否有效之前就开始早期生产</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/987655/">英特尔确认Windows 10 2020年5月更新会导致Optane盘出现问题</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/987645/">《命令与征服》登顶Steam热销榜 发售10分钟在线破万</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/987661/">《模拟城市》开发商的《炼油厂模拟器》现已提供Web体验</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

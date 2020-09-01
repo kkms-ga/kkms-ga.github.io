@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>PuTTY 0.74 正式版发布 SSH/Telnet 程序 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="PuTTY 0.74 正式版发布 SSH/Telnet 程序" />
+<meta property="og:description" content="PuTTY 0.74 发布了。PuTTY 是一款集成虚拟终端、系统控制台和网络文件传输为一体的自由开源程序。它支持多种网络协议，包括 SCP，SSH，Telnet，rlogin 和原始的套接字连接，它也可以连接到串行端口。其软件名字“PuTTY”并没有特殊含义。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/996609/" />
+<meta property="article:published_time" content="2020-06-29T07:34:54+08:00" />
+<meta property="article:modified_time" content="2020-06-29T07:34:54+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">PuTTY 0.74 正式版发布 SSH/Telnet 程序</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-29T07:34:54&#43;08:00">June 29, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>PuTTY 0.74 发布了。PuTTY 是一款集成虚拟终端、系统控制台和网络文件传输为一体的自由开源程序。它支持多种网络协议，包括 SCP，SSH，Telnet，rlogin 和原始的套接字连接，它也可以连接到串行端口。其软件名字“PuTTY”并没有特殊含义。</p>
+<p>PuTTY 0.74 是一个错误修复和安全版本，它修复了 0.73 中的错误，包括一个可能的漏洞，并且还添加了新的配置选项来减轻 SSH 主机密钥策略中的次要信息泄漏。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/06/36ea791ea38ce58.webp" alt="img:PuTTY 0.74 正式版发布 SSH/Telnet 程序"></p>
+<p>安全修复：如果 SSH 服务器接受了提供的公共密钥，然后拒绝了签名，那么如果密钥来自 SSH 代理，则 PuTTY 可以访问释放的内存。</p>
+<p>安全功能：如果想避免向窃听者泄露存储密钥的主机，则新的配置选项可禁用 PuTTY 的动态主机密钥首选项策略。</p>
+<p>Bug 修复：在 Windows 高对比度模式下，安装程序 UI 难以辨认。</p>
+<p>Bug 修复：Windows 7 上的控制台密码输入失败。</p>
+<p>终端中的 Bug 修复：一个可怕的“line==NULL”错误框的实例，以及另外两个断言失败。</p>
+<p>Bug 修复：来自代理的 RSA 签名的错误兼容填充中潜在的内存消耗循环。</p>
+<p>Bug 修复：PSFTP 的缓冲区处理在某些服务器（尤其是 proftpd 的服务器mod_sftp）上无法正常工作。</p>
+<p>Bug 修复：从备用终端屏幕还原时，光标的位置可能错误。（此类型的错误已在 0.59 中修复；这种情况未解决。）</p>
+<p>Bug 修复：在 Ubuntu 20.04（或具有类似 Pango 的最新版本的任何其他系统）上运行 GTK PuTTY 时，字符单元格高度可能太小像素。</p>
+<p>Bug 修复：旧式（低分辨率）scroll wheel events 在 GTK 3 PuTTY 中不起作用。这可能会使 scroll wheel 完全停止在 VNC 中工作。</p>
+<p>更新日志：https://www.chiark.greenend.org.uk/~sgtatham/putty/changes.html</p>
+<p>下载地址：https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/996625/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">中国半导体产业上半年逆势上扬</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/996613/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">一起爬山吗？聊聊《隐秘的角落》剧中的相机</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998957/">终于“不限速” 百度网盘这个开关一定要打开</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998953/">特斯拉在华开放电动皮卡Cybertruck预订 订金1000元</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998955/">马斯克72岁超模老妈与邓文迪同框:我从不怕老</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998951/">82版《西游记》文字剧本将出版：和电视剧区别不小</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/998949/">苹果想知道：旧iPhone的充电头 你如何处理？</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

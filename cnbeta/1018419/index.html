@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>微软发布TypeScript 4.0 改进性能与可伸缩性 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="微软发布TypeScript 4.0 改进性能与可伸缩性" />
+<meta property="og:description" content="TypeScript 4.0 现已正式发布，该版本没有重大的突破性变化。TypeScript 团队表示新版本继续使用与过去版本相似的版本控制模型，可将 4.0 视作 3.9 的延续升级版本。而且他们也一直在追求不牺牲主要灵活性的情况下，提供一个最大限度减少 breaking changes 的升级路径。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1018419/" />
+<meta property="article:published_time" content="2020-08-21T08:32:48+08:00" />
+<meta property="article:modified_time" content="2020-08-21T08:32:48+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">微软发布TypeScript 4.0 改进性能与可伸缩性</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-21T08:32:48&#43;08:00">August 21, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>TypeScript 4.0 现已正式发布，该版本没有重大的突破性变化。TypeScript 团队表示新版本继续使用与过去版本相似的版本控制模型，可将 4.0 视作 3.9 的延续升级版本。而且他们也一直在追求不牺牲主要灵活性的情况下，提供一个最大限度减少 breaking changes 的升级路径。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0821/cadc1ba3ee3f069.jpg" alt="img:微软发布TypeScript 4.0 改进性能与可伸缩性"></p>
+<p>（来自：Microsoft）</p>
+<p>事实上，如果你是这个语言的新手，现在是开始使用它的最好时机。社区已经在这里了，而且还在增长，有工作代码和伟大的新资源可以学习。有一点要记住：尽管我们在 4.0 中带来了所有的好东西，但你真的只需要知道 TypeScript 的基础知识就可以了。</p>
+<p>4.0 版本的主要更新内容如下：</p>
+<p>● 可变参数元组类型</p>
+<p>● 标记的元组元素</p>
+<p>● 构造函数的类属性推断</p>
+<p>● 短路分配运算符</p>
+<p>● catch 子句中的unknown</p>
+<p>● 定制 JSX 工厂</p>
+<p>● 带&ndash;noEmitOnError参数build模式下的速度提升</p>
+<p>● &ndash;incremental with &ndash;noEmit</p>
+<p>● 编辑器改进</p>
+<p>○ 转换为可选链接</p>
+<p>○ 支持/** @deprecated */</p>
+<p>○ 启动时的部分编辑模式</p>
+<p>○ 更智能的自动导入</p>
+<p>● Breaking Changes</p>
+<p>构造函数的类属性推断</p>
+<p>当 noImplicitAny 被启用时，TypeScript 4.0 现在可以使用控制流分(control flow analysis)析来确定类中的属性类型。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0821/3632e5955d4e1bd.png" alt="img:微软发布TypeScript 4.0 改进性能与可伸缩性"></p>
+<p>如果并非将构造函数的所有路径都分配给实例成员，则该属性可能被视为undefined。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0821/41f904c15006e8a.png" alt="img:微软发布TypeScript 4.0 改进性能与可伸缩性"></p>
+<p>在更清楚的情况下（例如具有某种initialize方法），如果位于strictPropertyInitialization中，可能会需要显式类型注释以及定值赋值断言(!)</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0821/9561fa8635f0137.png" alt="img:微软发布TypeScript 4.0 改进性能与可伸缩性"></p>
+<p>短路分配运算符</p>
+<p>JavaScript 和其他很多语言都支持复合赋值运算符。复合赋值运算符将一个运算符应用到两个参数上，然后将结果赋值到左边。如下：</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0821/b310f7906a8b1fd.png" alt="img:微软发布TypeScript 4.0 改进性能与可伸缩性"></p>
+<p>JavaScript 中的许多运算符都有一个对应的赋值运算符，但有三个例外：逻辑和(&amp;&amp;)、逻辑或(||)，以及空值合并(??)。</p>
+<p>TypeScript 4.0 为上述三个运算符增加了对应的赋值运算符支持：</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0821/99b062e85eb86b6.png" alt="img:微软发布TypeScript 4.0 改进性能与可伸缩性"></p>
+<p>详情可查看发布公告。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1018421/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">30%分成缘何而来？&#34;红白机&#34;时代开始有这规矩了</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1018397/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[图]索尼推新款工具 首批35款相机可充当网络摄像头使用</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1020375/">[图]新版Edge将获“zero copy capture”，提升续航表现</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1020381/">加拿大法庭否决孟晚舟关于公开更多机密文件的请求</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1020379/">消息称三星提高5nm工艺产能 拿回高通骁龙875订单</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1020377/">[图]iOS/iPadOS 14 Beta 6发布：新增空间音频</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1020373/">Final Cut Pro X 迎来更新：全新社交媒体工具 改进代理工作流程</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

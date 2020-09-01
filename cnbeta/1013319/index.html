@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>TeamViewer曝漏洞 计算机浏览特定网页即可被无密码入侵 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="TeamViewer曝漏洞 计算机浏览特定网页即可被无密码入侵" />
+<meta property="og:description" content="TeamViewer官方发布消息说最近修复了一个漏洞，该漏洞可能使攻击者悄悄地建立与您计算机的连接并进一步利用该系统。漏洞编号: CVE-2020-13699，该漏洞影响TeamViewer版本：8,9,10,11,12,13,14,15。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1013319/" />
+<meta property="article:published_time" content="2020-08-09T07:50:23+08:00" />
+<meta property="article:modified_time" content="2020-08-09T07:50:23+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">TeamViewer曝漏洞 计算机浏览特定网页即可被无密码入侵</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-09T07:50:23&#43;08:00">August 09, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>TeamViewer官方发布消息说最近修复了一个漏洞，该漏洞可能使攻击者悄悄地建立与您计算机的连接并进一步利用该系统。漏洞编号: CVE-2020-13699，该漏洞影响TeamViewer版本：8,9,10,11,12,13,14,15。</p>
+<p>国家信息安全漏洞库地址:</p>
+<p><a href="http://www.cnnvd.org.cn/web/xxk/ldxqById.tag?CNNVD=CNNVD-202007-1701">http://www.cnnvd.org.cn/web/xxk/ldxqById.tag?CNNVD=CNNVD-202007-1701</a></p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0809/39f5de3c2028050.png" alt="img:TeamViewer曝漏洞 计算机浏览特定网页即可被无密码入侵"></p>
+<p>风险等级: 8.8 高危</p>
+<p>典型的本地权限提升漏洞</p>
+<p>攻击者只需要构造一个特定的连接隐藏在恶意网页里.安装了Teamviewer的电脑浏览到该网页即可触发漏洞.</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0809/3d5a0379ea4e237.png" alt="img:TeamViewer曝漏洞 计算机浏览特定网页即可被无密码入侵"></p>
+<p>上图为CVE-2020-13699 PoC演示，在网页里使用一段不可见的iframe代码会启动TeamViewer Windows桌面客户端并迫使其打开远程SMB共享，也就是说攻击者无需知道TeamViewer的密码，该漏洞将自动把受害机的系统会话权限自动通过身份验证并获得权限.</p>
+<p>Windows在打开SMB共享时将执行NTLM身份验证，并且可以转发该请求（使用诸如响应程序之类的工具）以执行代码（或捕获该请求以进行哈希破解）。</p>
+<p>漏洞覆盖版本:</p>
+<p>teamviewer10</p>
+<p>teamviewer8</p>
+<p>teamviewerapi</p>
+<p>tvchat1</p>
+<p>tvcontrol1</p>
+<p>tvfiletransfer1</p>
+<p>tvjoinv8</p>
+<p>tvpresent1</p>
+<p>tvsendfile1</p>
+<p>tvsqcustomer1</p>
+<p>tvsqsupport1</p>
+<p>tvvideocall1</p>
+<p>tvvpn1  。”</p>
+<p>Windows的TeamViewer用户应考虑升级到新的程序版本：</p>
+<p>8.0.258861</p>
+<p>9.0.28860</p>
+<p>10.0.258873</p>
+<p>11.0.258870</p>
+<p>12.0.258869</p>
+<p>13.2.36220</p>
+<p>14.2.56676</p>
+<p>14.7.48350</p>
+<p>15.8.3</p>
+<p>新版在这里下载：</p>
+<p><a href="https://www.teamviewer.cn/cn/download/windows/">https://www.teamviewer.cn/cn/download/windows/</a></p>
+<p>所有15之前老版本都可以这里下载：</p>
+<p><a href="https://www.teamviewer.cn/cn/download/previous-versions/">https://www.teamviewer.cn/cn/download/previous-versions/</a></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1013309/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">高通游说美国政府 要求解除向华为销售元器件的禁令</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1013317/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">1466亿美元 伯克希尔哈撒韦二季度现金储备再创新高</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015443/">爱奇艺称遭美国证监会调查 股价盘后一度大跌19%</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015455/">代工领域遭遇“追兵” 富士康加大半导体上下游投资</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015441/">苹果以违反支付规则为由下架《堡垒之夜》 遭Epic Games起诉</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015449/">联想杨元庆：PC需求增长将是长期趋势 移动业务将持续好转</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1015453/">神奇的“降糖”电饭煲 是冤枉钱还是真有效？</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

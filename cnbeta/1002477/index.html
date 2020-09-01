@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[图]Linus Torvalds：希望英特尔AVX512指令集“痛苦地死去” - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[图]Linus Torvalds：希望英特尔AVX512指令集“痛苦地死去”" />
+<meta property="og:description" content="Linux 创始人 Linus Torvalds 在今天的邮件列表讨论中，表达了对部分英特尔处理器中的 Advanced Vector Extensions 512 (AVX-512)指令集的一些看法。引用外媒 Phoronix 本周早些时候关于英特尔为 Alder Lake（以及 Sapphire Rapids）启用该编译器指令的报道，Torvalds 在邮件列表中进行了讨论。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1002477/" />
+<meta property="article:published_time" content="2020-07-13T11:25:14+08:00" />
+<meta property="article:modified_time" content="2020-07-13T11:25:14+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[图]Linus Torvalds：希望英特尔AVX512指令集“痛苦地死去”</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-13T11:25:14&#43;08:00">July 13, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Linux 创始人 Linus Torvalds 在今天的邮件列表讨论中，表达了对部分英特尔处理器中的 Advanced Vector Extensions 512 (AVX-512)指令集的一些看法。引用外媒 Phoronix 本周早些时候关于英特尔为 Alder Lake（以及 Sapphire Rapids）启用该编译器指令的报道，Torvalds 在邮件列表中进行了讨论。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0713/bdecba32701966f.jpg" alt="img:[图]Linus Torvalds：希望英特尔AVX512指令集“痛苦地死去”"></p>
+<p>目前，在 GCC 中的 Alder Lake 指令集并没有涉及到 AVX-512，只是提及到了 AVX2 等其他内容，这可能是因为目前英特尔主要集中在大小核的新混合设计上。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0713/d0599fe18376c0c.png" alt="img:[图]Linus Torvalds：希望英特尔AVX512指令集“痛苦地死去”"></p>
+<p>由于没有看到适用于 Alder Lake 的 AVX-512，Linus Torvalds 评论道</p>
+<p>我希望 AVX512 痛苦地死去（dies a painful death），我希望英特尔能够解决真正的问题，而不是试图创建神奇的指令，从而换取好看的基准跑分。</p>
+<p>我希望英特尔能够回归到问题的本质：让进程重新运转起来，更专注于常规代码的改善，而不是 HPC 或者其他一些毫无意义的特殊情况。</p>
+<p>我以前就说过，现在我再强调一遍：在 x86 的全盛时代，在英特尔傲视群雄并碾压所有竞争对手的时候，其他所有人在FP负载上的优化都要比英特尔做的更好。相对而言，英特尔的FP性能是最烂的，而这一点都不重要。</p>
+<p>因为没有人在乎性能之外的东西。</p>
+<p>无论是现在还是未来，对于 AVX512 来说都是相同的道理。没错，你可以根据优先级对关注点进行排序，但是从宏观意义上来说这些东西对于设备的销售并不会产生太大的影响。</p>
+<p>而且 AVX512 还有一个致命的缺点。我更愿意看到那些晶体管预算用在其他更相关的事情上。哪怕还是FP数学（在GPU中，而不是AVX512）。或者就像 AMD 那样给我更多的核心（具有良好的单线程性能，但没有 AVX512 那样的垃圾）。</p>
+<p>我希望我的功耗极限是通过普通的线性代码实现的，而不是通过什么 AVX512 的功耗病毒，来牺牲最高时钟频率（因为最后用它来做memcpy）或者牺牲核心（因为那些无用的垃圾单元占据了空间）。</p>
+<p>没错，我对 AVX512 是存在偏见的。我更倾向于 FP 基准，而我也意识到很多人也很在意这个。我只是认为 AVX512 是错误的做法。这是我的一个小癖好。这是一个典型的例子，说明英特尔做错了什么，部分原因只是增加了市场的碎片化。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1002485/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">realme奥利给手机首曝：完美解决5G高刷痛点</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1002475/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">空客H160多用途直升机获欧洲航空安全局型号认证</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004755/">科研人员找到蚊子不会传播新冠病毒的支持数据</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004765/">三星豆状真无线耳机Galaxy Buds Live上耳效果曝光</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004773/">FCC为美国电信运营商设置“安全港”鼓励其打击骚扰电话发起者</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004753/">三星Galaxy Note 20机型360°渲染图曝光 采用平面显示屏</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004761/">美加州宣布被列入COVID-19观察名单的县不得开放学校</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

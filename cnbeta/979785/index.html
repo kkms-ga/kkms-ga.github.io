@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>上游 Linux 开发者反对&#34;-O3&#34;级别的内核优化 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="上游 Linux 开发者反对&#34;-O3&#34;级别的内核优化" />
+<meta property="og:description" content="WireGuard 作者 Jason A. Donenfeld 上周向 Linux 内核提交了一个补丁，他建议在使用新发布的 GCC 10 编译器或更高的版本时，将内核的默认编译优化级别由 -O2 设置为 -O3。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/979785/" />
+<meta property="article:published_time" content="2020-05-16T09:12:11+08:00" />
+<meta property="article:modified_time" content="2020-05-16T09:12:11+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">上游 Linux 开发者反对&#34;-O3&#34;级别的内核优化</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-16T09:12:11&#43;08:00">May 16, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>WireGuard 作者 Jason A. Donenfeld 上周向 Linux 内核提交了一个补丁，他建议在使用新发布的 GCC 10 编译器或更高的版本时，将内核的默认编译优化级别由 -O2 设置为 -O3。</p>
+<p>Jason 解释道，GCC 10 对 -O2 进行了改进，以便在使用 -flto
+时缩短编译时间，不过这似乎是以牺牲性能为代价来实现的。而现在的 -O3 优化不存在和 10 年前同样的 bug，所以当 gcc &gt;= 10
+时，他提交的补丁会将 Linux 内核的编译优化默认设置为 -O3 级别。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0516/d705ba992dd4a42.png" alt="img:上游 Linux 开发者反对\"-O3\"级别的内核优化"></p>
+<p>对于这个提交，部分开发者表示有兴趣支持 -O3 优化级别的子集功能，甚至探索 -Og 级别的优化，并努力缩短构建内核花费的时间，以便于测试。</p>
+<p>不过总体看来，将内核默认编译优化级别设置为 -O3 的提案遭到了广泛的反对，因为这不一定会让内核变得更快，反而有可能会引入因优化而导致出现的特殊特性，甚至会产生让代码变得更慢的地方。</p>
+<p>Linus Torvalds 也进行了表态，他不认为这是一个明智的想法，尤其是 GCC -O3 级别的优化有时会导致出现问题。</p>
+<p>GCC 开发者 Richard Biener 也写道，他不建议在内核中使用 -O3 级别的优化。他曾经提出使用 feedback/profile-driven 的数据让编译器做出更好优化决策的想法，但这会是一个非常庞大的任务，需要为 FDO 收集到足够的数据才能体会到方便之处。</p>
+<p>因此，至少目前来看，Linux 内核似乎不会追求这种更具侵略性、更激进的编译器优化级别。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/979791/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Linux Kernel 5.8 将为 blk-mq 引入内联加密支持</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/979779/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">不是莫纳罗亚火山：科学家确定地球新最大盾状火山</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/981551/">苹果不忘老机型推出iOS 12.4.7安全更新：建议所有用户安装</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/981569/">马斯克为何一再上涨特斯拉全自动驾驶价格？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/981553/">Visual Studio 2019 for Mac 8.6 发布</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/981541/">仓鼠实验证明口罩能在防止新冠病毒传播上起到有效作用</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/981561/">发现最古老的恒星，几乎与宇宙同龄！</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

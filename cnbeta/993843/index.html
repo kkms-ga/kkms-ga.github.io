@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>AMD 7nm锐龙APU内核探秘：搭配独显终于可以满血 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="AMD 7nm锐龙APU内核探秘：搭配独显终于可以满血" />
+<meta property="og:description" content="AMD Renoir核心可以说大获成功，采用7nm工艺、Zen 2 CPU架构、Vega GPU架构的它在笔记本领域大杀四方，锐龙4000U轻薄本、锐龙4000H游戏本备受青睐，而且马上就会登陆桌面市场，也就是锐龙4000G系列。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/993843/" />
+<meta property="article:published_time" content="2020-06-21T22:42:26+08:00" />
+<meta property="article:modified_time" content="2020-06-21T22:42:26+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">AMD 7nm锐龙APU内核探秘：搭配独显终于可以满血</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-21T22:42:26&#43;08:00">June 21, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>AMD Renoir核心可以说大获成功，采用7nm工艺、Zen 2 CPU架构、Vega GPU架构的它在笔记本领域大杀四方，锐龙4000U轻薄本、锐龙4000H游戏本备受青睐，而且马上就会登陆桌面市场，也就是锐龙4000G系列。</p>
+<p>现在，超大规模集成电路工程师Fritzchens Fritz公布了Renoir核心的内核照片，推特网友@Nemez则对每一个功能模块进行了详细标注。</p>
+<p><img src="https://img1.mydrivers.com/img/20200621/6c8440332e41477dba7a75335556c6fc.jpg" alt="img:AMD 7nm锐龙APU内核探秘：搭配独显终于可以满血"></p>
+<p><img src="https://img1.mydrivers.com/img/20200621/3b872361660142d9bccc445f18df2ac1.jpg" alt="img:AMD 7nm锐龙APU内核探秘：搭配独显终于可以满血"></p>
+<p><img src="https://img1.mydrivers.com/img/20200621/053aa0f3912d4e0c9afc7fe1b709b670.jpg" alt="img:AMD 7nm锐龙APU内核探秘：搭配独显终于可以满血"></p>
+<p>左侧是CPU部分的两个CCX模块，每一个里边有四个CPU核心、4MB三级缓存，总计八核心、8MB三级缓存，相比上代翻了一番，但是相比锐龙CPU，三级缓存只有四分之一，所以CCX整体规模小得多。</p>
+<p>右侧则是GPU部分的八个CU计算单元，总计512个流处理器，还有8个ROP单元、4个纹理单元，相比上代架构上没有大的变化，规模上还少了三个计算单元、192个流处理器，但是频率提速了超过40％，因此实际性能更好一些。</p>
+<p>同时在GPU核心旁边还可以看到显示引擎、显示物理层、多媒体引擎，这部分其实借鉴了Navi架构的设计，有的甚至比Navi还要更先进，因此影音能力非常出色。</p>
+<p>其他部分还有128-bit DDR4/LPDDR4/LPDDR4X内存控制器、I/O控制中心、五组PCIe 3.0 x4控制器、两组PCIe 3.0 x2控制器(也可配置为SATA/10GbE)，也就是总共24条PCIe 3.0通道。</p>
+<p>在此前的两代桌面锐龙APU上，如果搭配独立显卡都只能得到PCIe 3.0 x8的一半带宽，而在锐龙4000U/H系列笔记本上，独立显卡同样只有PCIe 3.0 x8，虽然也都足够使用，但仍然算是残血状态。</p>
+<p>现在，锐龙4000G有了24条PCIe 3.0，除去4条用于和芯片组通信，正好有16条提供给独立显卡、4条提供给NVMe M.2 SSD，不多不少刚刚好。</p>
+<p>Renoir并不原生支持PCIe 4.0，有些遗憾，不过在APU平台上，PCIe 4.0确实也没有什么作用，而且会明显增加成本和发热。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/993853/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">《封神三部曲》发“夏至”海报 2021年春节档上映</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/993837/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">摩托罗拉Edge Lite配置曝光：骁龙765&#43;4800mAh电池</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/995991/">《最后的生还者2》销量超400万 成销售速度最快的PS4独占游戏</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/995995/">“iPhone 12 Pro”两款机型或将配备120Hz屏幕</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/995981/">瑞幸咖啡跌29.3% 此前撤回听证会请求</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/995987/">外媒：腾讯在美国测试游戏直播服务 挑战亚马逊Twitch</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/995989/">优点互动盘前跌超23% 遭机构沽空称其一文不值</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

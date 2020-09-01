@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Windows 10 May 2020 中 WSL 与 WSL2 的性能比较 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Windows 10 May 2020 中 WSL 与 WSL2 的性能比较" />
+<meta property="og:description" content="科技媒体 Phoronix 对 Windows 10 May 2020 中 WSL 和 WSL 2 的性能进行了测试，参与测试的发行版为
+Ubuntu 20.04 on WSL/WSL2 ，以及 Ubuntu 20.04 LTS，均被安装在除 Windows 之外的电脑裸机中。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/993455/" />
+<meta property="article:published_time" content="2020-06-20T11:34:32+08:00" />
+<meta property="article:modified_time" content="2020-06-20T11:34:32+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Windows 10 May 2020 中 WSL 与 WSL2 的性能比较</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-20T11:34:32&#43;08:00">June 20, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>科技媒体 Phoronix 对 Windows 10 May 2020 中 WSL 和 WSL 2 的性能进行了测试，参与测试的发行版为
+Ubuntu 20.04 on WSL/WSL2 ，以及 Ubuntu 20.04 LTS，均被安装在除 Windows 之外的电脑裸机中。</p>
+<p>本次测试使用的电脑硬件设备是 Intel Core i9 10900K (Comet Lake) CPU，搭配 2 x 8GB DDR4-3200 的内存、三星 970 EVO 250GB NVMe SSD 硬盘、技嘉 Z490 AORUS MASTER 和 Radeon RX 5700 XT 显卡。具体的测试环境如下：</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0620/e07cf9d6b7ef654.png" alt="img:Windows 10 May 2020 中 WSL 与 WSL2 的性能比较"></p>
+<p>通过 Phoronix 测试套件，共进行了几十项不同的基准测试。测试结果如下：</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0620/96f14fd924e9cdf.png" alt="img:Windows 10 May 2020 中 WSL 与 WSL2 的性能比较"></p>
+<p>从上图的测试结果可以看到，在进行繁重的 CPU 工作负载时，如机器学习 LC0 国际象棋基准测试和 NAMD 测试等，WSL2 综合表现是最好的。在 NAMD 测试中，WSL 与 WSL2 的性能一样，比 Ubuntu 还稍快一些。在 LC0 测试中，WSL2 性能更快。尤其是 LC0 测试中使用 Eigen 后端的场景，WSL2 的性能甚至略微领先于 Ubuntu 本身——可能是由于 Windows 提供了更好的电源管理行为或类似行为。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0620/f1473960f32c071.png" alt="img:Windows 10 May 2020 中 WSL 与 WSL2 的性能比较"></p>
+<p>上图是测试一些 Java 工作负载的结果，这里明显看出了 WSL2 的性能比 WSL 更好。测试使用的是 OpenJDK，性能最好的是裸金属版本的 Ubuntu 20.04。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0620/f7e3323abdda4b4.png" alt="img:Windows 10 May 2020 中 WSL 与 WSL2 的性能比较"></p>
+<p>在使用部分应用程序进行测试时，罕见地看到 WSL 的性能比 WSL2 更好。不过从这项测试的总体结果来看，WSL/WSL2 的性能也非常接近裸金属版本 Ubuntu 20.04 的性能，三者相差无几。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0620/bf20802d5c517bf.png" alt="img:Windows 10 May 2020 中 WSL 与 WSL2 的性能比较"></p>
+<p>上面这几项测试也看不出三者之间的性能差距，因为整体来看都非常不错。但如果细看的话，裸金属版本的 Ubuntu 20.04 还是略占上风。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0620/c6b6b0be02c0b8a.png" alt="img:Windows 10 May 2020 中 WSL 与 WSL2 的性能比较"></p>
+<p>这里的测试结果显示，使用另外一些程序测试时，WSL2 的性能确实略微超过了 Ubuntu 20.04 本身。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0620/3cc731be5238831.png" alt="img:Windows 10 May 2020 中 WSL 与 WSL2 的性能比较"></p>
+<p>上图的测试结果反映了在 I/O 操作方面的性能。这正是 WSL 的短板，其性能较差的地方刚好包括 I/O 操作，刚问世时这个缺点曾被不少用户诟病。到了 WSL2，它采用了更类似于虚拟机的方式，使得 I/O 吞吐量大大提升。WSL2 的代码编译性能甚至与 Ubuntu 20.04 相差无几。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0620/91a0588b91c3320.png" alt="img:Windows 10 May 2020 中 WSL 与 WSL2 的性能比较"></p>
+<p>对于可能因为某种原因而不得不使用 Windows 10 的用户来说，WSL2 总体上至少在每个工作负载中都表现得 &ldquo;足够好”。即使是在各种内核 micro-benchmarks 测试中，WSL2 也基本上与 Ubuntu 20.04 及其 Linux 5.4 内核持平。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0620/0d6b747397ace39.png" alt="img:Windows 10 May 2020 中 WSL 与 WSL2 的性能比较"></p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0620/9b741b8278b31f0.png" alt="img:Windows 10 May 2020 中 WSL 与 WSL2 的性能比较"></p>
+<p>上图反映的是 socket activity 和上下文切换方面的性能，WSL2 由于架构的改变，其性能比 WSL 和 Ubuntu 20.04 都好很多。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0620/0c526529dbdad41.png" alt="img:Windows 10 May 2020 中 WSL 与 WSL2 的性能比较"></p>
+<p>上图反映了在大多数纯 CPU bound 的工作负载场景中，比如渲染器，在 WSL/WSL2 上都表现得十分出色。</p>
+<p><img src="https://static.oschina.net/uploads/space/2020/0620/083542_NOTu_2720166.png" alt="img:Windows 10 May 2020 中 WSL 与 WSL2 的性能比较"></p>
+<p>Facebook 的 RocksDB 数据库在 WSL2 和 Ubuntu 20.04 LTS 之间的性能表现相似，而在 WSL 中，糟糕的 I/O 性能导致了糟糕的结果。</p>
+<p><img src="https://static.oschina.net/uploads/space/2020/0620/083706_fWAO_2720166.png" alt="img:Windows 10 May 2020 中 WSL 与 WSL2 的性能比较"></p>
+<p>即使是在 WSL2 中使用 Git，也比 WSL 有了巨大的速度提升。</p>
+<p><img src="https://static.oschina.net/uploads/space/2020/0620/083819_jLKO_2720166.png" alt="img:Windows 10 May 2020 中 WSL 与 WSL2 的性能比较"></p>
+<p>本次测试总共包含 69 项测试。Ubuntu 20.04 LTS 赢得了 60% 的测试，这就意味着出现了一个有趣的结果，40% 的测试中 WSL/WSL2 比 Ubuntu 20.04 LTS 本身更快，尽管通常是以微弱的优势胜出。</p>
+<p><img src="https://static.oschina.net/uploads/space/2020/0620/084101_UoAx_2720166.png" alt="img:Windows 10 May 2020 中 WSL 与 WSL2 的性能比较"></p>
+<p>当将三者的 69 项基准测试结果的几何平均值进行比较时，WSL2 比 WSL 的性能高出大约 21%，而 Ubuntu 20.04 的速度仅快 8％。WSL2 由于解决了 WSL 的主要瓶颈，拥有了更快的 I/O。更值得关注的是，WSL2 的性能已非常接近 Ubuntu 本身的性能。通过 OpenBenchmarking.org 查看全部 69 项基准测试。</p>
+<p>详情查看 https://www.phoronix.com/</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/993479/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">包云岗：“Matlab被禁”事件启发：我们如何做出能卡别人脖子的软件？</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/993453/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">制作规模空前！网飞真人版《海贼王》9月1日南非开普敦开拍</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/995429/">美前司法部长在WWDC敦促开发者推动种族公正发展</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/995379/">苹果重新设计了iOS 14与macOS Big Sur的游戏中心</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/995385/">研究称糖尿病药物二甲双胍或可显著降低女性新冠患者的死亡率</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/995391/">Google：在线暑期实习的重点是开源</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/995431/">NASA科学家通过全新模拟揭示其他星球令人难忘的日落之美</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

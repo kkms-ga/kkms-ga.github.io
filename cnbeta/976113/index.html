@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Windows 10任务管理器里面的GPU占用率到底是怎么算的？ - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Windows 10任务管理器里面的GPU占用率到底是怎么算的？" />
+<meta property="og:description" content="从总体上来说，Windows 10是一个好系统，虽然我们天天戏称它为“Bug
+10”，但不可否认的是，从立项以来，开发团队就一直在努力为它加入新的功能，其中有不少是相当实用的，比如说，他们在1709这个大版本中，为任务管理器加入了GPU性能监控单元，用户可以通过任务管理器直观地看到目前的GPU占用率，比以往要开GPU-Z等程序方便了不少。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/976113/" />
+<meta property="article:published_time" content="2020-05-07T21:44:10+08:00" />
+<meta property="article:modified_time" content="2020-05-07T21:44:10+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Windows 10任务管理器里面的GPU占用率到底是怎么算的？</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-07T21:44:10&#43;08:00">May 07, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>从总体上来说，Windows 10是一个好系统，虽然我们天天戏称它为“Bug
+10”，但不可否认的是，从立项以来，开发团队就一直在努力为它加入新的功能，其中有不少是相当实用的，比如说，他们在1709这个大版本中，为任务管理器加入了GPU性能监控单元，用户可以通过任务管理器直观地看到目前的GPU占用率，比以往要开GPU-Z等程序方便了不少。</p>
+<p>访问:</p>
+<p>微软中国官方商城 - Windows</p>
+<p>但很多用户在实际使用的时候也发现了，这个针对GPU的性能监控好像不太准，我显卡在全力计算的时候，任务管理器里面的GPU占用率怎么这么低？</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0507/5c05829b2a77840.png" alt="img:Windows 10任务管理器里面的GPU占用率到底是怎么算的？"></p>
+<p>为了找出答案，我们找到了当时引入这项新功能时，开发者的讲解Blog，由于是与图形相关的内容，这篇Blog被归入DirectX Developer Blog中。</p>
+<p>首先开发者给我们讲述了任务管理器是怎么得知GPU的占用情况的。在Windows 10上面，GPU通过Windows Display Driver Model（WDDM，Windows显示驱动模型）抽象，它的核心——图形内核——负责抽象、管理和在所有进程分配GPU资源。它含有一个GPU事务器（VidSch）和一个视频内存管理器（VidMem），前者负责将GPU的各种引擎分配给想要使用它们的进程，并对访问进行仲裁和优先级排序，后者则是负责管理GPU可调用的内存——包括专用的显存和共享的系统内存。</p>
+<p>任务管理器就是通过VidSch和VidMem回报的数据来计算GPU的使用情况的，这样一来，不管程序使用了什么API（DX、OpenGL、OpenCL，甚至CUDA、Mantle这种专有API都可以监控），它都能准确地收集GPU的占用情况，另外由于两者是实际负责分配GPU资源的，位于驱动层面，它们回报数据的精准度也要比很多第三方工具要高，使得任务管理器有很高的精度。</p>
+<p>既然有很高的精度，那它为什么还是报不准我的GPU占用率呢？这就牵扯到另一个问题，GPU引擎。</p>
+<p>现代GPU上除了有主要用于图形、通用计算的统一计算单元外，还会集成一些其他的电路，比如说，用于视频编解码的专用模块。它们之间的关系一般是并行的，GPU可以同时运行图形计算和视频编码任务，在驱动层面，这些不同的模块就被抽象为不同的Engine，也就是引擎，比如说一个典型的GPU可以有以下这些引擎：</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0507/b85ab51ce95371e.png" alt="img:Windows 10任务管理器里面的GPU占用率到底是怎么算的？"></p>
+<p>在具体执行任务的时候，不同的任务会在不同的引擎上面执行，比如说我打游戏，就用到3D引擎；我用显卡加速Premiere Pro，就用到CUDA引擎；我用NVENC编码视频，就用到视频编码引擎。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0507/5c9ff63a62bbade.png" alt="img:Windows 10任务管理器里面的GPU占用率到底是怎么算的？"></p>
+<p>由于部分引擎之间有复用的关系，比如说3D引擎和CUDA引擎复用CUDA Cores进行计算，那么如果通过简单加法来计算占用率，那这个占用率就有可能会超过100%。开发团队也考虑过使用平均利用率来表示，但也不靠谱。那3D引擎不是被用的最多吗，就用它怎么样？也不太行，比如在视频引擎满载而3D引擎空载的情况下，它将会显示0%的占用率，也是不准确的。最终，开发团队选择将当前最为繁忙的引擎占用率作为GPU整体占用率的代表。</p>
+<p>恩……博文说的很好，那么到今天为止这个功能上线也有一段时间了，其具体表现是怎样的呢？让我们看回顶上的那张图，在GPU的CUDA引擎满载的情况下，其左边的整体占用率仍然很低，显然是没有达到开发团队所说的。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0507/3f997d2119199cb.png" alt="img:Windows 10任务管理器里面的GPU占用率到底是怎么算的？"></p>
+<p>我们又测试了一下别的情况，这里使用NVENC对视频进行编码，此时可以看到左边窗格中的GPU占用率又跑到了满载。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0507/904a463d09a2e4d.png" alt="img:Windows 10任务管理器里面的GPU占用率到底是怎么算的？"></p>
+<p>而在跑典型的3D应用程序的时候，它也很正常。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0507/04d7d6648c7425b.png" alt="img:Windows 10任务管理器里面的GPU占用率到底是怎么算的？"></p>
+<p>最后，我们尝试了OpenCL负载，这次任务管理器又能反映出CUDA引擎的占用率了。</p>
+<p>如此看来，任务管理器GPU占用率的薛定谔情况可能是Windows 10的一个Bug所导致的，在大部分情况下，它都会反映负载最大引擎的占用率，但在某些情况下，它并不能够正确地显示当前最繁忙引擎的占用情况。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/976107/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">美官员考虑让新冠确诊病例佩戴电子脚镣 确保居家隔离</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/976115/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">联想发布刃9000K游戏主机：RTX 2080S&#43;10核i9仅售2万元</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/978177/">苹果将部分MacBook Air/Pro、iPod Touch机型添加到过时产品列表中</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/978179/">Intel Xe独显集齐三种新工艺 高端游戏卡DG2要上台积电5nm？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/978183/">马来西亚菲律宾产能跟不上 分析师预测后半年NS还缺货</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/978181/">《大力水手》新动画电影要来了！还是那个菠菜猛男</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/978189/">瑞德西韦在中国临床试验新备案：评估治疗中度新冠患者安全性</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

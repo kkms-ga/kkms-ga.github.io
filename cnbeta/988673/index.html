@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>报告称糟糕的安全设计破坏了OmniBallot在线投票系统 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="报告称糟糕的安全设计破坏了OmniBallot在线投票系统" />
+<meta property="og:description" content="根据麻省理工学院和密歇根大学的计算机科学家周日发表的一篇研究论文，一种名为OmniBallot的在线选票传递和投票服务在几个层面上存在安全漏洞。《纽约时报》首次报道的这篇论文称，软件制造商Democracy Live让选票容易被操纵，收集敏感的选民信息，并且在选票在互联网上传播时无法控制标记的选票。因此，该文件总结道该公司无法证实中途是否被操纵。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/988673/" />
+<meta property="article:published_time" content="2020-06-09T11:00:19+08:00" />
+<meta property="article:modified_time" content="2020-06-09T11:00:19+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">报告称糟糕的安全设计破坏了OmniBallot在线投票系统</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-09T11:00:19&#43;08:00">June 09, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>根据麻省理工学院和密歇根大学的计算机科学家周日发表的一篇研究论文，一种名为OmniBallot的在线选票传递和投票服务在几个层面上存在安全漏洞。《纽约时报》首次报道的这篇论文称，软件制造商Democracy Live让选票容易被操纵，收集敏感的选民信息，并且在选票在互联网上传播时无法控制标记的选票。因此，该文件总结道该公司无法证实中途是否被操纵。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>天翼云高性能云主机1折起 低至74元/年</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0609/4538578ab68bf87.png" alt="img:报告称糟糕的安全设计破坏了OmniBallot在线投票系统"></p>
+<p>调查结果不包括具体的软件漏洞，而是得出结论，交付选票和接收回票的过程可能太容易被操纵。一个漏洞来源来自于该软件对第三方软件和服务的依赖，包括亚马逊、谷歌和Cloudflare等公司的软件和服务，而Democracy Live并不控制这些软件和服务。</p>
+<p>“我们发现，OmniBallot使用了一种简单化的互联网投票方式，很容易被选民设备上的恶意软件以及内部人员或其他攻击者操纵投票，这些攻击者可以入侵Democracy Live、亚马逊、谷歌或Cloudflare，”研究人员在论文中说。</p>
+<p>此外，研究人员并没有找到隐私政策，解释Democracy Live如何保护用户的身份、选票和可以在线识别用户身份的技术数据。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0609/2ebd67a719d6e58.png" alt="img:报告称糟糕的安全设计破坏了OmniBallot在线投票系统"></p>
+<p>针对该报告，Democracy Live告诉CNET，其计划在其投票门户上提供隐私政策，供选民查看。Democracy Live还将在其系统未来的所有部署中提供投票验证工具。该公司还表示，虽然研究人员表示，不应该让选民选择以电子方式返回已标记的选票，但大多数州都要求像Democracy Live这样的供应商提供这一选项。该公司表示，OmniBallot电子退票系统比使用电子邮件附件或传真系统退票更安全，这些都是选民获得的其他选择。</p>
+<p>最后，Democracy Live强调，其技术是为残障人士设计的，对他们来说，持有、阅读和标记纸质邮寄选票可能不是一个选择。“没有任何技术是‘防弹的’，”Democracy Live首席执行官Bryan Finney告诉《纽约时报》。“但我们需要能够让被剥夺权利的人获得选举权。”</p>
+<p>这项研究凸显了围绕网络投票的问题，网络安全专家和美国国土安全部表示，网络投票存在着被黑客攻击和操纵的高风险。该研究结果也是在对邮寄投票以及处理选举的最佳方式，同时最大限度地减少COVID-19的传播进行激烈辩论的时候出现的。</p>
+<p>最近美国有三个州表示将使用OmniBallot。研究人员能够在7个州和另外11个州内的98个较小的地方找到投票服务的网址，其中包括华盛顿州的一个县级保护区，此前有报道称他们使用了在线投票系统来提高选民投票率。</p>
+<p>研究人员发现，OmniBallot在选民的网络浏览器上工作。选民验证身份后，会收到一份PDF格式的选票。根据他们的位置，选民可以打印空白选票，以电子方式标记选票，然后打印出来传真或邮寄，或者标记选票，然后在线提交。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/988615/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">苹果因滑动解锁和QuickPath等功能遭专利诉讼</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/988661/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">高层变革、发力5G OPPO还能华丽转身吗？</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990273/">“智迎”新基建时代 戴尔携全新商用客户端产品及解决方案亮相中国</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990265/">首例儿童骑共享单车身亡案宣判 ofo被判赔6.7万</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990253/">以色列VTOL出租车开发商宣布将在CityHawk中使用氢燃料电池</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990269/">TCL新智能机外观专利曝光 或采用屏下隐藏式前摄方案</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/990263/">OPPO Reno4 Pro 评测：亮点槽点并存，但依旧无缘性价比</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

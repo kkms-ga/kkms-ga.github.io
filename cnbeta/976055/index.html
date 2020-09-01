@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>线上图片请抛弃 PNG 和 JPG：使用 WebP - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="线上图片请抛弃 PNG 和 JPG：使用 WebP" />
+<meta property="og:description" content="WebP 是 2010 年 Google 开发的一种图片格式，它为网页上的图片提供了卓越的无损和有损压缩。网站开发者们可以使用 WebP 来创建尺寸更小、细节更丰富的图片，以此来提高网站的速度。更快的加载速度对于网站的用户体验和网站的营销效果是至关重要的。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/976055/" />
+<meta property="article:published_time" content="2020-05-07T18:43:37+08:00" />
+<meta property="article:modified_time" content="2020-05-07T18:43:37+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">线上图片请抛弃 PNG 和 JPG：使用 WebP</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-07T18:43:37&#43;08:00">May 07, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>WebP 是 2010 年 Google 开发的一种图片格式，它为网页上的图片提供了卓越的无损和有损压缩。网站开发者们可以使用 WebP 来创建尺寸更小、细节更丰富的图片，以此来提高网站的速度。更快的加载速度对于网站的用户体验和网站的营销效果是至关重要的。</p>
+<p>为了在所有设备和用户中达到最佳加载效果，你网站上的图片文件大小不应该超过 500 KB。</p>
+<p>与 PNG 图片相比，WebP 无损图片通常至少要比 PNG 图片小 25%。在同等的 SSIM（结构相似度）质量指标下，WebP 有损图片通常比 JPEG 图片小 25% 到 34%。</p>
+<p>无损 WebP 也支持透明度。而在可接受有损 RGB 压缩的情况下，有损 WebP 也支持透明度，通常其大小比 PNG 文件小三倍。</p>
+<p>Google 报告称，把动画 GIF 文件转换为有损 WebP 后文件大小减少了 64%，转换为无损 WebP 后文件大小减少了 19%。</p>
+<p>WebP 文件格式是一种基于 RIFF（资源互换文件格式）的文档格式。你可以用 hexdump 看到文件的签名是 52 49 46 46（RIFF）：</p>
+<p>独立的 libwebp 库作为 WebP 技术规范的参考实现，可以从 Google 的 Git 仓库 或 tar 包中获得。</p>
+<p>全球在用的 80% 的 web 浏览器兼容 WebP 格式。本文撰写时，Apple 的 Safari 浏览器还不兼容。解决这个问题的方法是将 JPG/PNG 图片与 WebP 图片一起提供，有一些方法和 Wordpress 插件可以做到这一点。</p>
+<p>为什么要这样做？</p>
+<p>我的部分工作是设计和维护我们组织的网站。由于网站是个营销工具，而网站的速度是衡量用户体验的重要指标，我一直致力于提高网站速度，通过把图片转换为 WebP 来减少图片大小是一个很好的解决方案。</p>
+<p>我使用了 web.dev 来检测其中一个网页，该工具是由 Lighthouse 提供服务的，遵循 Apache 2.0 许可证，可以在 <a href="https://github.com/GoogleChrome/lighthouse">https://github.com/GoogleChrome/lighthouse</a> 找到。</p>
+<p>据其官方描述，“LIghthouse 是一个开源的，旨在提升网页质量的自动化工具。你可以在任何公共的或需要鉴权的网页上运行它。它有性能、可用性、渐进式 web 应用、SEO 等方面的审计。你可以在 Chrome 浏览器的开发工具中运行 Lighthouse，也可以通过命令行或作为 Node 模块运行。你输入一个 URL 给 Lighthouse，它会对这个网页进行一系列的审计，然后生成这个网页的审计结果报告。从报告的失败审计条目中可以知道应该怎么优化网页。每条审计都有对应的文档解释为什么该项目是重要的，以及如何修复它。”</p>
+<p>创建更小的 WebP 图片</p>
+<p>我测试的页面返回了三张图片。在它生成的报告中，它提供了推荐和目标。我选择了它报告有 650 KB 的 app-graphic 图片。通过把它转换为 WebP 格式，预计可以把图片大小降到 61 KB，节省 589 KB。我在 Photoshop 中把它转换了，用默认的 WebP 设置参数保存它，它的文件大小为 44.9 KB。比预期的还要好！从下面的 Photoshop 截图中可以看出，两张图在视觉质量上完全一样。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0507/e966d7f54e6d47c.png" alt="img:线上图片请抛弃 PNG 和 JPG：使用 WebP"></p>
+<p>左图：650 KB（实际大小）。右图： 44.9 KB（转换之后的目标大小）。</p>
+<p>当然，也可以用开源图片编辑工具 GIMP 把图片导出为 WebP。它提供了几个质量和压缩的参数：</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0507/9cf861238e8d4b9.jpg" alt="img:线上图片请抛弃 PNG 和 JPG：使用 WebP"></p>
+<p>另一张图放大后：</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0507/254c7d378c3898f.png" alt="img:线上图片请抛弃 PNG 和 JPG：使用 WebP"></p>
+<p>PNG（左图）和 WebP（右图），都是从 JPG 转换而来，两图对比可以看出 WebP 不仅在文件大小更小，在视觉质量上也更优秀。</p>
+<p>把图片转换为 WebP</p>
+<p>你也可以用 Linux 的命令行工具把图片从 JPG/PNG 转换为 WebP：</p>
+<p>在命令行使用 cwebp 把 PNG 或 JPG 图片文件转换为 WebP 格式。你可以用下面的命令把 PNG 图片文件转换为质量参数为 80 的 WebP 图片。</p>
+<p>你还可以用 Image Magick，这个工具可能在你的发行版本软件仓库中可以找到。转换的子命令是 convert，它需要的所有参数就是输入和输出文件：</p>
+<p>使用编辑器把图片转换为 WebP</p>
+<p>要在图片编辑器中来把图片转换为 WebP，可以使用 GIMP。从 2.10 版本开始，它原生地支持 WebP。</p>
+<p>如果你是 Photoshop 用户，由于 Photoshop 默认不包含 WebP 支持，因此你需要一个转换插件。遵循 Apache License 2.0 许可证发布的 WebPShop 0.2.1 是一个用于打开和保存包括动画图在内的 WebP 图片的 Photoshop 模块，在 <a href="https://github.com/webmproject/WebPShop">https://github.com/webmproject/WebPShop</a> 可以找到。</p>
+<p>为了能正常使用它，你需要把它放进 Photoshop 插件目录下的 bin 文件夹：</p>
+<p>Windows x64 ：C:Program FilesAdobeAdobe PhotoshopPlug-insWebPShop.8bi</p>
+<p>Mac：Applications/Adobe Photoshop/Plug-ins/WebPShop.plugin</p>
+<p>Wordpress 上的 WebP</p>
+<p>很多网站是用 Wordpress 搭建的（我的网站就是）。因此，Wordpress 怎么上传 WebP 图片？本文撰写时，它还不支持。但是，当然已经有插件来满足这种需求，因此你可以在你的网站上同时准备 WebP 和 PNG/JPG 图片（为 Apple 用户）。</p>
+<p>在 Marius Hosting 有下面的说明：</p>
+<p>“直接向 Wordpress 上传 WebP 图片会怎样？这很简单。向你的主题 functions.php 文件添加几行内容就可以了。Wordpress 默认不支持展示和上传 WebP 文件，但是我会向你介绍一下怎么通过几个简单的步骤来让它支持。登录进你的 Wordpress 管理员界面，进入‘外观/主题编辑器’找到 functions.php。复制下面的代码粘贴到该文件最后并保存：</p>
+<p>如果你想在‘媒体/媒体库’时看到缩略图预览，那么你需要把下面的代码也添加到 functions.php 文件。为了找到 functions.php 文件，进入‘外观/主题编辑器’并搜索 functions.php，然后复制下面的代码粘贴到文件最后并保存：</p>
+<p>”</p>
+<p>WebP 和未来</p>
+<p>WebP 是一个健壮而优化的格式。它看起来更好，压缩率更高，并具有其他大部分常见图片格式的所有特性。不必再等了，现在就使用它吧。</p>
+<p>via: <a href="https://opensource.com/article/20/4/webp-image-compression">https://opensource.com/article/20/4/webp-image-compression</a></p>
+<p>作者：Jeff Macharyas 选题：lujun9972 译者：lxbwolf 校对：wxy</p>
+<p>本文由 LCTT 原创编译，Linux中国 荣誉推出</p>
+<p>访问:</p>
+<p>阿里云 - 最高1888元通用代金券立即可用</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/976051/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">42款AMD/NVIDIA显卡真实功耗测试：7nm果然干不过12nm</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/978027/">4月国内手机市场总体出货量4172.8万部 同比增长14.2%。</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/978083/">戴尔正式推出 XPS 15（9500） 起售价 12999 元</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/978103/">乐视退市？欠债多少？贾跃亭破产后不欠乐视钱？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/978121/">世卫组织专家：人类传染病疫情中应慎用“群体免疫”这一术语</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/978143/">全新奔驰S实车曝光：内饰开创新风格</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

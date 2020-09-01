@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>世界首个开源PDK 谷歌做到了 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="世界首个开源PDK 谷歌做到了" />
+<meta property="og:description" content="一颗芯片的诞生，需要经历芯片设计、制造、封装和测试等步骤，其中芯片设计和制造是最为核心和困难的环节，但相对设计而言，因为受资金和技术的限制，晶圆制造厂更为稀缺。对于任何人而言，如果想要制造芯片，在已经拥有RTL（电阻晶体管逻辑电路）的前提下，还需要克服两大障碍，一是从芯片代工厂获得工艺设计套件（PDK），二是有足够的资金支付制造费用。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1000777/" />
+<meta property="article:published_time" content="2020-07-08T21:52:35+08:00" />
+<meta property="article:modified_time" content="2020-07-08T21:52:35+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">世界首个开源PDK 谷歌做到了</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-08T21:52:35&#43;08:00">July 08, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>一颗芯片的诞生，需要经历芯片设计、制造、封装和测试等步骤，其中芯片设计和制造是最为核心和困难的环节，但相对设计而言，因为受资金和技术的限制，晶圆制造厂更为稀缺。对于任何人而言，如果想要制造芯片，在已经拥有RTL（电阻晶体管逻辑电路）的前提下，还需要克服两大障碍，一是从芯片代工厂获得工艺设计套件（PDK），二是有足够的资金支付制造费用。</p>
+<p>PDK即Process Design Kit 工艺设计包，是连接IC设计公司、代工厂和EDA公司的桥梁。PDK包括设计规则文件、电学规则文件、版图层次定义文件、SPICE仿真模型、器件版图和期间定制参数。而PDK是将RTL转化为物理芯片的关键步骤，也是实流程开源的障碍，因此想制造自己的芯片，就要有一套可制造且开源的PDK。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0708/4d57c37625ac100.png" alt="img:世界首个开源PDK 谷歌做到了"></p>
+<p>但在未来，制造自己的芯片将成为可能。最近，Google的软件工程师Tim Ansell宣布了同SkyWater合作的第一个可制造的、开源的PDK——SkyWater PDK。另外，无需承担昂贵的制造费用，Google也将提供完全免费的芯片制造流程。</p>
+<p>免费获得SkyWater PDK的条件</p>
+<p>尽管Google的免费开源芯片能够提供给所有人，但也有一定的条件。</p>
+<p>申请获得免费SkyWater PDK的用户自己的设计必须开源，其次芯片的制程限制在130nm工艺节点，同时，用户需要向efabless.com上传一份开源的Git URL。最终，Google会在申请报名的名单中选择40个用户团队，为其提供10平方毫米的晶片模具，大约100个流片。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0708/3191a8d8d11d412.png" alt="img:世界首个开源PDK 谷歌做到了"></p>
+<p>除了提供免费的芯片制造流程外，获得申请资格的团队也无需自己找代工厂代工，Google的合作伙伴SkyWater将为其生产代工。</p>
+<p>SkyWater是一家总部设在美国且拥有美国DMEA认证的集成电路和微设备生产商，专门从事先进的创新工程服务和各种差分集成电路（IC）的批量生产。此外，SkyWater还为航空航天、国防、汽车、云与计算、消费、工业、物联网和医疗等市场的客户提供服务。</p>
+<p>在芯片制造领域，该公司于2017年接管了原本属于Cypress Semiconductor（赛普拉斯半导体）的晶圆代工厂，这家工厂采用的常规制程为130nm和90nm，也可以实现65nm芯片的生产。同时，该工厂专注于为物联网应用制造高容量的小批量生产，如专用的SRAM和混合信号电路。</p>
+<p>关于具体生产时间，Tim表示，将在今年11月份开始为第一批入选者进行“试生产”，在2021年初进行第二轮生产，并在2021中后期进入常态化生产。</p>
+<p>有关开源PDK的一些信息</p>
+<p>目前，GitHub上已经有SkyWater PDK开源文档，可以得到PDK的一些信息。</p>
+<p>文件描述显示，SkyWater开源PDK内容包括：</p>
+<p>有关在SKY130过程节点上创建可制造设备所需的设计规则的全面文档。</p>
+<p>用于多个开源和专有设计流程的EDA工具支持文件。</p>
+<p>用于创建模拟设计的原始单元库和模型。</p>
+<p>涵盖一系列不同用例的多个标准数字单元库。</p>
+<p>使用PDK的多个文档示例。</p>
+<p>Sky130是一种成熟的180nm-130nm混合技术，最初由Cypress Semiconductor内部开发，之后归属于SkyWater Technology，并为一般工业所用，此次SkyWater 和Google的合作，将将此项技术推广至所有人可用。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0708/05f7e74c97969a5.png" alt="img:世界首个开源PDK 谷歌做到了"></p>
+<p>Sky 130工艺节点技术堆栈包括：</p>
+<p>支持带有5.0V I / O的内部1.8V（可在2.5V下运行）；</p>
+<p>1级本地互连；</p>
+<p>5级金属；</p>
+<p>具有电感能力；</p>
+<p>具有较高的片状rho多晶硅电阻器；</p>
+<p>可选的MiM电容器；</p>
+<p>包括SONOS缩小的电池；</p>
+<p>支持10V稳压电源；</p>
+<p>高压漏极扩展NMOS和PMOS。</p>
+<p>Sky130工艺节点极具灵活性，为设计人员提供了广泛的设计选择。Google表示，如果Sky130工艺节点成功，未来将会有更多更先进的工艺节点可供选择。</p>
+<p>不过，目前GitHub的PDK开源信息还不是全部，相关内容仍在持续更新中。</p>
+<p>本文参考来源：</p>
+<p><a href="https://fossi-foundation.org/2020/06/30/skywater-pdk">https://fossi-foundation.org/2020/06/30/skywater-pdk</a></p>
+<p>开源地址：</p>
+<p><a href="https://github.com/google/skywater-pdk">https://github.com/google/skywater-pdk</a></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1000769/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">超大底&#43;1亿像素 vivo X50 Pro&#43;售价4998元起</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1000773/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">前Xbox高管：PS5和XSX不太可能推出加强版本</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1002705/">ESA推迟阿丽亚娜六号运载火箭的发射</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1002699/">苹果公司承诺为加州经济适用房计划提供超过4亿美元的资金</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1002697/">龙芯自主浏览器全新升级：性能优于x86</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1002703/">业余无线电爱好者群体正面对一个不确定的未来</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1002701/">GitHub崩了 微软回应：服务器被盗 正在追回</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

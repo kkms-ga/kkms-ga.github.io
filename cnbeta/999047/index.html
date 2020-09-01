@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Facebook研制神经超采样技术 用以抗衡DLSS - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Facebook研制神经超采样技术 用以抗衡DLSS" />
+<meta property="og:description" content="SIGGRAPH 2020大会即将召开，Facebook研究人员今天发表了一篇文章，介绍了“神经超采样”（neural supersampling）技术。这是一种根据人工智能机器学习为基础的提高图像清晰度的算法技术，跟NVIDIA的DLSS“深度学习超采样”技术差不太多。不过，这个神经超采样并不需要专门的硬件或者软件就能实现，而且结果还不错，基本可以媲美DLSS的效果。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/999047/" />
+<meta property="article:published_time" content="2020-07-04T11:20:14+08:00" />
+<meta property="article:modified_time" content="2020-07-04T11:20:14+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Facebook研制神经超采样技术 用以抗衡DLSS</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-04T11:20:14&#43;08:00">July 04, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>SIGGRAPH 2020大会即将召开，Facebook研究人员今天发表了一篇文章，介绍了“神经超采样”（neural supersampling）技术。这是一种根据人工智能机器学习为基础的提高图像清晰度的算法技术，跟NVIDIA的DLSS“深度学习超采样”技术差不太多。不过，这个神经超采样并不需要专门的硬件或者软件就能实现，而且结果还不错，基本可以媲美DLSS的效果。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0704/bcba4b025c3f603.jpg" alt="img:Facebook研制神经超采样技术 用以抗衡DLSS"></p>
+<p>“和我们的研究比较接近的，Nvidia最近发布了深度学习超采样（DLSS），可以将低分辨率图片通过神经网络进行实时处理，放大采样。</p>
+<p>在本文中，我们将介绍一种新方法，让现代游戏引擎容易整合，不需要特殊硬件或软件，可应用于许多现有的软件平台、加速硬件和显示器。</p>
+<p>我们观察到，对于神经超采样来说，由运动向量提供的额外的辅助信息起到了关键作用。运动向量决定了连续帧内像素之间的几何学对应。换句话说，每个运动向量都指向了亚像素地点，在这些像素上，一个可见表面点可能会出现在上一帧的邻近位置。这些值通常由计算机视觉方法进行估算，但这样的光学流动模拟算法容易出错。对比之下，渲染引擎可以直接制作密集的运动向量，从而得到可靠的、丰富的输入信息，提供给神经超采样，应用于渲染画面内容。</p>
+<p>我们的方法就是基于以上观察，结合了额外的辅助信息，使用创新的时空神经网络设计，将图片和视频品质最大化，同时提供实时运算性能。”</p>
+<p>在文章中，Facebook提到了神经超采样技术可能会应用于AR和VR程序，为他们的Oculus平台提供便利。不过如果效果好的话，应用于其他3D游戏应该也是可行的。当然，新技术需要靠实践去检验，我们很期待看到这个神经超采样的实际表现。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/999041/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">格力回应被取消中标资格：暗指同行美的恶意诽谤</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/999043/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">十年内，滴滴没有轻松时刻</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1000965/">英伟达股票市值超越英特尔 成世界第三大半导体厂商</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1000973/">[图]小米电视棒现身葡萄牙官网：零售价约合317元</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1000981/">乐视：或将推出Micro LED电视</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1000991/">不同寻常的毛毛虫把废弃的“外骨骼头”戴成一顶非常怪异的帽子</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1001019/">力推不停车收费令ETC厂商赚翻 金溢科技半年盈利暴涨680%</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

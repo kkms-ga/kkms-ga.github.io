@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>这才是制作Windows 10安装U盘的正确姿势 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="这才是制作Windows 10安装U盘的正确姿势" />
+<meta property="og:description" content="微软已经发布了Windows 10 2004，要装机的话，用Win10 2004自然成为了最佳之选。笔者之前曾经介绍过如何从微软官方网站下载Win10 2004的原版ISO镜像，那么要如何用这个镜像制作Win10 2004的安装U盘呢？其实和从前相比，Win10 2004的安装U盘制作有一些注意事项，这就来给大家说说吧。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/995669/" />
+<meta property="article:published_time" content="2020-06-26T07:16:42+08:00" />
+<meta property="article:modified_time" content="2020-06-26T07:16:42+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">这才是制作Windows 10安装U盘的正确姿势</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-26T07:16:42&#43;08:00">June 26, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>微软已经发布了Windows 10 2004，要装机的话，用Win10 2004自然成为了最佳之选。笔者之前曾经介绍过如何从微软官方网站下载Win10 2004的原版ISO镜像，那么要如何用这个镜像制作Win10 2004的安装U盘呢？其实和从前相比，Win10 2004的安装U盘制作有一些注意事项，这就来给大家说说吧。</p>
+<p>注意事项一：U盘需使用NTFS文件系统</p>
+<p>在之前，很多朋友制作Windows 10的安装U盘，会将U盘格式化为FAT32的文件系统。通常来说，这的确是一种合理的做法，FAT32兼容性好，可以被几乎所有的操作系统识别，而且也能被各种主板的BIOS识别引导。然而，这在Windows 10 2004当中，就不合时宜了。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0626/a3e096c1077d176.png" alt="img:这才是制作Windows 10安装U盘的正确姿势"></p>
+<p>Windows 10 2004安装镜像中的“install.wim”文件大于4G，无法放入FAT32格式的U盘中</p>
+<p>Windows 10 2004的镜像解压后，其中的“install.wim”文件体积大于4G，是无法放置到FAT32的U盘当中的（FAT32无法容纳大于4G的单个文件）。因此，需要将U盘格式化为NTFS文件系统，才可以制作Windows 10 2004的安装U盘。</p>
+<p>注意事项二：U盘使用FAT32？需要特殊操作</p>
+<p>然而很多朋友并不喜欢将U盘格式化为NTFS，毕竟NTFS在macOS等非Windows系统中兼容不够好，而且某些BIOS/UEFI无法启动NTFS的U盘。U盘一定要使用FAT32装Windows 10 2004，就需要对install.wim这个大于4G的文件进行分割了。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0626/4ca341d3528b428.jpg" alt="img:这才是制作Windows 10安装U盘的正确姿势"></p>
+<p>用命令行分割“intall.wim”文件</p>
+<p>用管理员权限运行CMD，假设install.wim的位置处于虚拟光驱G盘的“sources”目录，想要将这文件分割为两部分，放置到D盘，具体的命令为：</p>
+<p>Dism /Split-Image /ImageFile:&ldquo;G:sourcesinstall.wim&rdquo; /SWMFile:D:install.swm /FileSize:4000</p>
+<p>接着把分割后生成的两个文件替代原先sources目录是“install.wim”文件，就可以放置到U盘了。将其他Windows 10 2004镜像解压出来的文件，也都放置到U盘，就可以正常安装了。</p>
+<p>注意事项三：注意UEFI匹配</p>
+<p>很多朋友都发现，Windows 10的安装U盘制作起来特别简单，只要将Windows 10的镜像解压，文件复制到U盘当中，Windows 10的安装U盘就制作完成了。之所以能如此方便，是因为Windows 10的安装文件包含UEFI引导程序，如果主板对UEFI引导也有着完好的支持，将主板的启动模式设置为UEFI，就可以顺利引导Windows 10安装U盘了。</p>
+<p>不过，这里也有值得注意的事项。</p>
+<p>例如，不是所有主板都有UEFI模式。某些主板只装载了传统的BIOS，那么Windows 10 2004的安装U盘就需要用其他工具制作了。例如使用Rufus，这是一个很好的系统安装U盘制作工具，支持各类系统镜像写入U盘制作成安装盘。利用Rufus制作的Windows 10安装U盘，就算使用传统BIOS也可以引导启动。Rufus是一款免费开源的工具，有需要的朋友可以点击下面的链接进入它的GitHub开源页面。</p>
+<p>Rufus：https://github.com/pbatard/rufus</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0626/390ab406c9ffd36.jpg" alt="img:这才是制作Windows 10安装U盘的正确姿势"></p>
+<p>Rufus是非常良心的安装U盘制作软件</p>
+<p>此外，如果安装U盘使用的是NTFS格式，某些主板的UEFI可能也无法识别——部分主板的UEFI引导区并不支持NTFS，只能够引导FAT的U盘。可以用上文的方法，分割文件后制作FAT32的安装U盘。</p>
+<p>总结</p>
+<p>总的来说，Windows 10 2004制作安装U盘还是比较方便的。其实微软提供的Media Creation Tool也提供了制作安装U盘的选项，但自动化的工具毕竟有所局限，例如MCT制作安装U盘会为大容量U盘新增一个FAT32的分区等等。而通过一些手动调整，所制作出来的Windows 10 2004安装U盘就能够更加适配各种使用场景，大家不妨试试吧。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/995679/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">Visa和万事达卡据称考虑终止与Wirecard的关系</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/995709/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">[图]Comcast成为首个加入Mozilla TRR计划的网络服务提供商</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/997511/">据报道苹果正在评估iPhone运行macOS可能性</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/997509/">研究表明小行星撞击是导致恐龙灭绝的原因</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/997513/">未来iPhone之间的AirDrop可能使用激光快速传输大文件</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/997515/">三星发布全新870 QVO产品线 首次为消费者提供8TB SSD</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/997517/">高通发布骁龙Wear 4100和4100&#43; 智能手表芯片组平台</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

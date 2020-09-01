@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>如何解决Google Chrome吃内存的硬伤？ - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="如何解决Google Chrome吃内存的硬伤？" />
+<meta property="og:description" content="Chrome已经成为了世界上最流行的浏览器，然而这并不意味着它很完美——起码在资源占用方面，就经常为人所诟病。特别是在内存使用上，Chrome的策略经常令人惊呼连连，无论你往机器加了多少内存，Chrome总有办法把内存都吃掉。要如何解决这个问题？今天就一起来说说吧。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1007461/" />
+<meta property="article:published_time" content="2020-07-25T01:58:01+08:00" />
+<meta property="article:modified_time" content="2020-07-25T01:58:01+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">如何解决Google Chrome吃内存的硬伤？</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-25T01:58:01&#43;08:00">July 25, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Chrome已经成为了世界上最流行的浏览器，然而这并不意味着它很完美——起码在资源占用方面，就经常为人所诟病。特别是在内存使用上，Chrome的策略经常令人惊呼连连，无论你往机器加了多少内存，Chrome总有办法把内存都吃掉。要如何解决这个问题？今天就一起来说说吧。</p>
+<p>Chrome之所以如此耗费内存，跟它的机制是息息相关的。Chrome每个标签页都会启用一个新的进程，负责标签页中网页的渲染、脚本运行等，每个进程都需要占据不小的资源。与此同时，就算你不切到这个标签，它依然会维持网页元素的实时运行，因此当在Chrome开启多标签后，这些标签页都会单独占据不小的资源，内存也就被这样消耗殆尽。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0725/2068a9e94ba82f4.png" alt="img:如何解决Google Chrome吃内存的硬伤？"></p>
+<p>Chrome的机制非常吃内存</p>
+<p>要如何解决问题？标签页占据线程这是Chrome的底层机制，难以改变；因此要让Chrome节省内存，所需要做的就是让后台的标签页别处于激活状态，让后台的标签页将资源释放出来。事实上，Chrome就计划在新版中这么干，Chrome的一个开发思路就是减少后台标签页的JS唤醒计时器，让后台标签页中的网页别运行不必要的任务，这可以节省不少资源。</p>
+<p>不过Chrome的这个改进仍未应用于当前版本。怎么办？通过第三方的扩展程序，也可以实现类似的效果。</p>
+<p>The Great Suspender： <a href="https://chrome.google.com/webstore/detail/klbibkeccnjlkjkiokjodocebajanakg">https://chrome.google.com/webstore/detail/klbibkeccnjlkjkiokjodocebajanakg</a></p>
+<p>这是一款老牌的Chrome扩展，它的作用在于可以冻结后台的标签页。在Chrome商店中，可以直接安装The Great Suspender，而国内用户也可以直接通过搜索引擎找相应的crx文件安装。</p>
+<p>The Great Suspender的作用在于，它可以在一定时间后，冻结掉后台的标签页，让标签页中的网页暂停，将资源清空出来。而The Great Suspender的使用也很简单，安装后，就会弹出相应的设置页面，可以在其中设置多久之后冻结标签页，例如可以设置为1小时，那么后台标签页如果1小时不活动，就会被冻结。此外，还可以设定不要冻结固定的、正在播放的、输入框有文字以及使用中的标签，可谓是非常细致了。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0725/ec8f49994adfba3.png" alt="img:如何解决Google Chrome吃内存的硬伤？"></p>
+<p>可以设置一定时间后，自动冻结后台标签页</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0725/e5a515a495c23d8.png" alt="img:如何解决Google Chrome吃内存的硬伤？"></p>
+<p>一些设置选项</p>
+<p>在标签页被The Great Suspender冻结后，浏览这个标签是需要重新加载的，在默认情况下，需要手动刷新页面，才可以继续浏览。但是，The Great Suspender也提供了自动重新加载的选项，可以将功能设置为浏览冻结了的标签页时，就自动重新加载这个标签页，更便于使用。值得一提的是，这个重新加载是无需通过网络进行的，而是利用本地的缓存，就算是断网，也可以重新显示原来的页面，并回到之前浏览的位置。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0725/8c8d35f03e5591b.png" alt="img:如何解决Google Chrome吃内存的硬伤？"></p>
+<p>冻结后的标签页，其实也可以设置切换到冻结的标签页时自动刷新</p>
+<p>来看看The Great Suspender的效果吧。我们利用系统任务管理器进行资源监测，从下面的对比可以看到，在冻结标签页之前，Chrome的内存占用高达1.2G；用The Great Suspender冻结后台标签页后，就仅剩下670M了，效果还是立竿见影的。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0725/96cba426680a1e1.jpg" alt="img:如何解决Google Chrome吃内存的硬伤？"></p>
+<p>省内存效果还是很明显的</p>
+<p>总的来说，The Great Suspender的确可以解决Chrome内存占用过多的问题。不过它的体验也不是完美的，冻结标签后再浏览需要重新加载这点，会中断网页的连续浏览体验，而且会消耗CPU资源。不过，在官方没有发布改进资源占用的新版之前，这依然不失为一个减少Chrome内存占用的好方法，有需要的朋友不妨尝试一下！</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1007465/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">在macOS Big Sur中发现的代码表明Face ID可能会出现在Mac上</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1009325/">花呗上征信了！而我却担心起未来的房贷……</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1009323/">天文学家说这里是地球上看宇宙的最佳地点</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1009327/">16次熔断暴涨近600% 柯达成Robinhood散户投机新宠</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1009313/">IBM宣布SSD优化技术：性能、可靠性提升3倍 延迟降低50倍</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1009317/">MWC 2021大会将正常进行 但会更多体现线上元素</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

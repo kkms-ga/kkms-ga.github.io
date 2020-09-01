@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Rust和LLVM编译器中添加了Windows CFG支持 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Rust和LLVM编译器中添加了Windows CFG支持" />
+<meta property="og:description" content="微软方面宣布，该公司已与 LLVM 和 Rust 开发团队达成合作，将对 Windows Control Flow Guard（CFG）平台安全功能的支持添加到了 Clang 和 Rustc 编译器中。此前，CFG 仅适用于使用 Microsoft Visual C &#43;&#43; 编译的 C/C &#43;&#43; 代码。CFG 是微软自 Windows 8.1 版本开始添加的一项强大的安全功能，目前已在 Windows 10 中被广泛使用 。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1017983/" />
+<meta property="article:published_time" content="2020-08-20T09:23:53+08:00" />
+<meta property="article:modified_time" content="2020-08-20T09:23:53+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Rust和LLVM编译器中添加了Windows CFG支持</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-20T09:23:53&#43;08:00">August 20, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>微软方面宣布，该公司已与 LLVM 和 Rust 开发团队达成合作，将对 Windows Control Flow Guard（CFG）平台安全功能的支持添加到了 Clang 和 Rustc 编译器中。此前，CFG 仅适用于使用 Microsoft Visual C ++ 编译的 C/C ++ 代码。CFG 是微软自 Windows 8.1 版本开始添加的一项强大的安全功能，目前已在 Windows 10 中被广泛使用 。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0820/a03cc5643b56468.png" alt="img:Rust和LLVM编译器中添加了Windows CFG支持"></p>
+<p>（详情可查看官方博客）</p>
+<p>该功能可以保护应用程序代码的执行流，以防止恶意代码（例如内存错误的结果）劫持本机“控制流”并使应用程序执行有害的操作。CFG 是对其他漏洞利用缓解措施的补充，例如地址空间布局随机化（Address Space Layout Randomization，ASLR）和数据执行保护（Data Execution Prevention，DEP）。</p>
+<p>目前，CFG 功能已在 LLVM 10.0 和 Rust 1.47（当前为 Nightly 版本）两个版本中可用。</p>
+<p>LLVM 10.0 现在支持 CFG。我们对 CFG 的实现完全包含在核心库中，这使得它可以在基于 LLVM 的任何编译器中重用–前端编译器只需要设置正确的 flags 即可。</p>
+<p>CFG 在 Rust 1.47（当前为 Nightly 版本）中可用。要启用 CFG，只需添加 -C control-flow-guard flag 即可。</p>
+<p>值得一提的是，微软方面透露，将 CFG 支持扩展到 LLVM/Clang的主要驱动器是 Chromium，而 Chromium 代码库是使用 Clang 编译的。“因此，Chromium 团队正在努力在 Windows 版本中启用 CFG，这是在 Google Chrome 和 Microsoft Edge 中采用 CFG 的第一步。”</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1017951/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">解析《堡垒之夜》纠纷：7年前相似案件中苹果被裁胜诉</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1017959/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">“围剿”华为后 美国开始5G自救</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019943/">特斯拉英特尔等联手敦促FTC再诉高通垄断</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019979/">对话辛巴：快手从此再无一哥 我要培养30个李佳琦</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019953/">IBM、微软成立内部小组，删除产品中的“偏见性”词汇</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019975/">特朗普介入前 TikTok已与微软签署“无约束力收购意向书”</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019949/">AlphaGo 早已击败围棋冠军，计算机视觉还是 3 岁的“智力”</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[图]Windows Terminal 1.3预览版发布：新增Command palette - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[图]Windows Terminal 1.3预览版发布：新增Command palette" />
+<meta property="og:description" content="微软今天发布了新版 Windows Terminal、Windows Terminal Preview 的最新版本。Windows Terminal 是微软推出的一款现代化的终端应用，提供多标签、支持 UTF-8 字符，以及 GPU 加速的文本渲染引擎。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1021059/" />
+<meta property="article:published_time" content="2020-08-27T10:25:10+08:00" />
+<meta property="article:modified_time" content="2020-08-27T10:25:10+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[图]Windows Terminal 1.3预览版发布：新增Command palette</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-27T10:25:10&#43;08:00">August 27, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>微软今天发布了新版 Windows Terminal、Windows Terminal Preview 的最新版本。Windows Terminal 是微软推出的一款现代化的终端应用，提供多标签、支持 UTF-8 字符，以及 GPU 加速的文本渲染引擎。</p>
+<p>下载：Microsoft Store  和 GitHub 发布页</p>
+<p>Windows Terminal Preview 1.3 在涵盖了所有 1.2 版本的功能之外，还引入了一些新功能。新版中引入了“Command palette”功能，允许你在 Windows 终端中搜索所有可用的命令（类似于 Visual Studio 代码）。Windows Terminal 1.3 还带来了高级标签切换器和其他一些新的功能。</p>
+<p>Windows Terminal 1.3 的完整更新日志如下：</p>
+<p>Command palette</p>
+<p>Command palette 终于来了。这个新功能允许你在 Windows 终端中搜索所有可用的命令，类似于 Visual Studio Code 中的命令。你可以通过输入 Ctrl+Shift+P 来调用 Command palette。如果你想要更改这个快捷方式，你可以在你的settings.json 中的 keybindings 数组中添加 commandPalette 命令。</p>
+<p>{ &ldquo;command&rdquo;: &ldquo;commandPalette&rdquo;, &ldquo;keys&rdquo;: &ldquo;ctrl+shift+p&rdquo; }</p>
+<p>Command palette 有两种模式，包括执行模式（Action Mode）和命令行模式（Command Line Mode）。动作模式是您默认进入的模式，它将列出您所有的Windows终端命令。命令行模式可以通过键入 &gt; 进入，然后你可以输入任何 wt 命令，它将在当前窗口上被调用。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/08/2a57acb720fb123.gif" alt="img:[图]Windows Terminal 1.3预览版发布：新增Command palette"></p>
+<p>你也可以通过在settings.json文件中添加命令来定制你想添加到命令调色板的操作。您的键绑定应该会自动填充到命令调色板中。关于如何添加您自己的命令的完整文档可以在微软的文档网站上找到。</p>
+<p>高级标签切换器</p>
+<p>微软添加了一个高级标签切换器来帮助您更容易地在标签页之间导航。默认情况下，使用全局设置 useTabSwitcher 启用了该功能。当启用时，nextTab 和 prevTab 命令将使用标签切换器。默认情况下，这些键盘快捷键分别是 Ctrl+Tab 和 Ctrl+Shift+Tab。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/08/f8a19288c0ab977.gif" alt="img:[图]Windows Terminal 1.3预览版发布：新增Command palette"></p>
+<p>标签页颜色设置</p>
+<p>现在您可以为每个配置文件指定一个标签颜色了！这可以通过为配置文件添加标签颜色设置并将其设置为十六进制格式的颜色来实现。这可以通过添加tabColor设置到配置文件并将其设置为十六进制格式的颜色来实现。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0827/d9e2fd34eb209f6.jpg" alt="img:[图]Windows Terminal 1.3预览版发布：新增Command palette"></p>
+<p>提示：将您的标签颜色设置为与您的背景相同的颜色，以获得无缝体验。</p>
+<p>新命令</p>
+<p>我们已经添加了一些新的命令，您可以在您的settings.json文件中添加到您的键绑定。以下命令都不是默认绑定的。</p>
+<p>wt 命令可以作为快捷键绑定</p>
+<p>微软加入了执行 wt.exe 命令行参数与键绑定的功能。这可以通过wt命令来完成。命令行属性定义了你想在当前窗口中调用的命令行参数。有关 wt 命令行参数的更多信息可以在微软的文档网站上找到。</p>
+<p>// This command opens a new tab with PowerShell in a pane, a vertical
+pane running the Command Prompt profile in the C: directory, and a
+horizontal pane running the Ubuntu profile.{ &ldquo;command&rdquo;: { &ldquo;action&rdquo;: &ldquo;wt&rdquo;, &ldquo;commandline&rdquo;: &ldquo;new-tab pwsh.exe ;
+split-pane -p &ldquo;Command Prompt&rdquo; -d C:\ ; split-pane -p &ldquo;Ubuntu&rdquo; -H&rdquo;
+}, &ldquo;keys&rdquo;: &ldquo;ctrl+a&rdquo; }</p>
+<p>发送输入到 Shell</p>
+<p>如果你想使用键盘快捷键向shell发送输入，你可以使用sendInput命令来实现。</p>
+<p>// This command navigates backwards through the shell history.{ &ldquo;command&rdquo;: { &ldquo;action&rdquo;: &ldquo;sendInput&rdquo;, &ldquo;input&rdquo;: &ldquo;u001b[A&rdquo; }, &ldquo;keys&rdquo;: &ldquo;ctrl+b&rdquo; }</p>
+<p>标签搜索</p>
+<p>如果你是一个有很多标签页打开的人（像我一样），这个新命令是一个救生圈。现在你可以使用tabSearch命令在新的搜索框中搜索你的标签页。</p>
+<p>{ &ldquo;command&rdquo;: &ldquo;tabSearch&rdquo;, &ldquo;keys&rdquo;: &ldquo;ctrl+c&rdquo; }</p>
+<p>改变颜色方案</p>
+<p>您可以使用setColorScheme命令来设置活动窗口的配色方案。</p>
+<p>{ &ldquo;command&rdquo;: { &ldquo;action&rdquo;: &ldquo;setColorScheme&rdquo;, &ldquo;name&rdquo;: &ldquo;Campbell&rdquo; }, &ldquo;keys&rdquo;: &ldquo;ctrl+d&rdquo; }</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1021075/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">潜鲟F1探鱼无人机：全球首款水下搜鱼机器人</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023017/">加快全球重组步伐 福特据悉将在北美裁减1000名员工</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023027/">为何我们预测未来的感受是如此困难？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023043/">[图]Sonos首款耳机产品专利图曝光：支持主动降噪/语音助手</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023035/">[图]联想发布Slim 9i笔记本：首配14吋弧形曲面屏幕</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1023037/">半自主机器人在对抗新冠大流行中的潜在作用如何？</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

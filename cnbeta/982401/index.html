@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>PostgreSQL 13 Beta 1 发布 带来大量新特性 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="PostgreSQL 13 Beta 1 发布 带来大量新特性" />
+<meta property="og:description" content="PostgreSQL 13 的第一个 Beta 版本发布了，此版本更新亮点包括：PostgreSQL 13 中有许多新功能可以帮助提高
+PostgreSQL 的整体性能，同时使开发应用程序变得更加容易。B 树索引（PostgreSQL
+的标准索引）在处理重复数据方面得到了改进。这些增强功能有助于缩小索引大小并提高查找速度，特别是对于包含重复值的索引。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/982401/" />
+<meta property="article:published_time" content="2020-05-23T10:01:21+08:00" />
+<meta property="article:modified_time" content="2020-05-23T10:01:21+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">PostgreSQL 13 Beta 1 发布 带来大量新特性</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-23T10:01:21&#43;08:00">May 23, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>PostgreSQL 13 的第一个 Beta 版本发布了，此版本更新亮点包括：PostgreSQL 13 中有许多新功能可以帮助提高
+PostgreSQL 的整体性能，同时使开发应用程序变得更加容易。B 树索引（PostgreSQL
+的标准索引）在处理重复数据方面得到了改进。这些增强功能有助于缩小索引大小并提高查找速度，特别是对于包含重复值的索引。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2019/1004/29b52a487af5587.png" alt="img:PostgreSQL 13 Beta 1 发布 带来大量新特性"></p>
+<p>功能性</p>
+<p>PostgreSQL 13 增加了增量排序，当从查询的早期部分排序的数据已经被排序时，它可以加速数据的排序。此外，带有 OR 子句或 IN/ANY 常量列表的查询可以使用扩展的统计信息（通过 CREATE STATISTICS 创建）。</p>
+<p>在此发行版中，PostgreSQL 的分区功能增加了更多改进，包括增加了在分区表之间直接进行联接的情况，这可以缩短总体查询执行时间。分区表现在支持在行级触发器（row-level triggers）之前，并且分区表现在可以通过逻辑复制完全复制，而不必发布单个分区。</p>
+<p>PostgreSQL 13 为使用诸如 FETCH FIRST WITH TIES 之类的功能编写查询提供了更多便利，该功能返回与最后一行匹配的任何其他行。还为 jsonpath 查询添加了 .datetime() 函数，该函数将自动将类似日期或类似时间的字符串转换为适当的 PostgreSQL 日期/时间数据类型。</p>
+<p>现在，生成随机 UUID 甚至更加容易，因为可以使用 gen_random_uuid() 函数而无需启用任何扩展。</p>
+<p>Administration</p>
+<p>PostgreSQL 13 最令人期待的特性之一是 VACUUM 命令能够并行处理索引。可以使用 VACUUM 命令上的新 PARALLEL 选项（或 vacuumdb 上的 &ndash;parallel）来访问其功能，该选项允许用户指定用于清理索引的并行工作程序的数量。要注意的是，这不适用于 FULL 选项。</p>
+<p>reindexdb 命令还通过新的 &ndash;jobs 标志添加了并行性，它可以指定在为数据库重新索引时要使用的并发会话数。</p>
+<p>PostgreSQL 13 引入了“可信扩展”（trusted extension）的概念，该概念允许超级用户指定（只要具有 CREATE 特权就可以在其数据库中安装的）扩展。</p>
+<p>该版本包括更多监控 PostgreSQL 数据库中活动的方法：PostgreSQL 13 现在可以跟踪 WAL 使用情况统计信息、流式基础备份的进度，以及 ANALYZE 命令的进度。pg_basebackup 还可以生成一个清单，该清单可用于使用新工具 pg_verifybackup 来验证备份的完整性。现在也可以限制复制槽保留的 WAL 空间量。</p>
+<p>pg_dump 的新标志 &ndash;include-foreign-data 在转储输出中包括来自外部数据包装程序引用的服务器数据。</p>
+<p>pg_rewind 命令在 PostgreSQL 13 中也有所改进。除了 pg_rewind 自动执行崩溃恢复外，现在可以使用 &ndash;write-recovery-conf 标志使用它来配置备用 PostgreSQL 实例。 pg_rewind 也可以使用目标实例的 restore_command 来获取所需的预写日志。</p>
+<p>安全性</p>
+<p>PostgreSQL 在此最新版本中继续改进安全功能，引入了一些功能来帮助进一步安全地部署 PostgreSQL。</p>
+<p>libpq 是为 psql 和许多 PostgreSQL 连接驱动程序提供动力的连接库，新版本带来了几个有助于保护连接的新参数。PostgreSQL 13 引入了 channel_binding 连接参数，该参数允许客户端指定他们希望将通道绑定功能作为 SCRAM 的一部分。此外，使用密码保护的 TLS 证书的客户端现在可以使用 sslpassword 参数指定其密码。 PostgreSQL 13 还增加了对 DER 编码证书的支持。</p>
+<p>PostgreSQL 外部数据包装器（postgres_fdw）还获得了一些如何保护连接安全的增强功能，包括使用基于证书的身份验证连接到其他 PostgreSQL 集群的能力。此外，无特权的帐户现在可以通过 postgres_fdw 连接到另一个 PostgreSQL 数据库，而无需使用密码。</p>
+<p>其他亮点</p>
+<p>PostgreSQL 13 继续改善 Windows 的可操作性，现在在 Windows 上运行 PostgreSQL 的用户可以选择通过 UNIX 域套接字进行连接。</p>
+<p>PostgreSQL 13 文档增加了术语表，以帮助人们熟悉 PostgreSQL 和常规数据库概念。同时，表中的函数和运算符的显示也进行了大量修改，这有助于提高 Web 和 PDF 文档的可读性。</p>
+<p>用于性能测试的 pgbench 实用程序现在支持对“帐户”表进行分区的功能，从而可以更轻松地对包含分区的工作负载进行基准测试。</p>
+<p>在输出数据方面，psql 包含了 warn命令，该命令类似于 echo 命令，只是 warn 将其发送到 stderr。</p>
+<p>发布公告：https://www.postgresql.org/about/news/2040/</p>
+<p>访问:</p>
+<p>阿里云 - 最高1888元通用代金券立即可用</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/982383/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">微软正在调查Windows 10 KB4556799更新导致的一些问题</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/982413/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">美国商务部再将多家中国企业列入“实体清单” 360、云从科技在列</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/984197/">Outlook已支持通过Cortana语音交互来安排会议</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/984205/">科学家打造出新型电子太阳镜：可追踪大脑、眼球等活动</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/984207/">Windows 10 May 2020历时15个月开发 仍存在一系列已知问题</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/984211/">T2官方辟谣：《GTA6》将于2023年发售的传言不实</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/984209/">外媒评苹果蝶式键盘为何惨败：不该将浮华凌驾于功能之上</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Linus Torvalds对Linux内核支持Rust的看法：默认可以有效启用 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Linus Torvalds对Linux内核支持Rust的看法：默认可以有效启用" />
+<meta property="og:description" content="最近在 Linux Plumbers 2020 会议前，有内核开发者提议会上讨论一些关于 Linux 中支持 Rust 的话题，引来了 Linus Torvalds 的回应。去年就有开发者询问 Linux 内核稳定版维护者 Greg Kroah-Hartman “Linux 有没有想法拥抱 Rust”，Greg 表示愿意接受用 Rust 开发 Linux 内核的驱动程序，但前提是：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1002435/" />
+<meta property="article:published_time" content="2020-07-13T10:24:17+08:00" />
+<meta property="article:modified_time" content="2020-07-13T10:24:17+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Linus Torvalds对Linux内核支持Rust的看法：默认可以有效启用</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-13T10:24:17&#43;08:00">July 13, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>最近在 Linux Plumbers 2020 会议前，有内核开发者提议会上讨论一些关于 Linux 中支持 Rust 的话题，引来了 Linus Torvalds 的回应。去年就有开发者询问 Linux 内核稳定版维护者 Greg Kroah-Hartman “Linux 有没有想法拥抱 Rust”，Greg 表示愿意接受用 Rust 开发 Linux 内核的驱动程序，但前提是：</p>
+<p>1、以可选的方式存在，而不是默认启用，这样其他开发者就不需要使用 Rust 去构建内核</p>
+<p>2、Rust 驱动需要体现出比 C 驱动具有优势，比如针对内核 API 的安全封装器</p>
+<p>此次 Linus 关于 Linux 支持 Rust 的回应看上去正是针对这第 1 个条件。</p>
+<p>Greg 希望 Linux 中的 Rust 支持是以可选的方式存在，而不能全面默认启用，类似于在一个大的系统配置项里还要单独开启一个针对 Rust 的小选项，但 Linus 则认为应该在默认情况下可以有效地启用支持，以确保进行广泛的测试，而不是只有某些开发者孤立地在进行疯狂/错误的使用，因为没有人关注，问题会被掩盖。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0713/f47a717655d60b9.png" alt="img:Linus Torvalds对Linux内核支持Rust的看法：默认可以有效启用"></p>
+<p>同时，Linus 还用 Kconfig 的使用指令举例，表示 Rust 支持需要足够简洁，类似“config RUST_IS_AVAILABLE……”，Linus 认为如果在系统上检测到 Rust 编译器，则 Kconfig 将启用 Rust 支持，并继续构建任何假定的 Rust 内核代码，以至少查看其是否正确构建。“我希望以如此简单的格式引入第一个 Rust 驱动程序（或其它任何驱动程序），以使故障显而易见且简单。”</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1002427/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">登陆微软商城的第三款苹果应用会是谁?Apple Music还是Apple TV&#43;？</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1002431/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">创造新纪录：物理学家实现15万亿个热原子的量子纠缠</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004747/">华硕推出PN50迷你PC：采用锐龙4000系列处理器 集成Vega7核显</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004733/">国内多地加油站加油区域叫停 “扫码支付”：电磁辐射功率远大于通话</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004735/">居家办公令纽约曼哈顿房租下降45%</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004729/">Disney&#43;首部漫威剧《猎鹰与冬兵》正式推迟播出</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1004737/">NASA宇航员将于8月2日再次乘坐SpaceX载人龙飞船返回地球</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

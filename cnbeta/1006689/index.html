@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Windows Terminal Preview 1.2发布：新增专注/始终最前模式 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Windows Terminal Preview 1.2发布：新增专注/始终最前模式" />
+<meta property="og:description" content="今天微软发布了 Windows Terminal Preview 1.2，新增了专注模式（Focus Mode）、始终最前模式（Always on Top Mode），并且支持调整字体的粗细。目前用户可以通过 Microsoft Store 下载新版本，或者前往 GitHub 了解更多细节。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1006689/" />
+<meta property="article:published_time" content="2020-07-23T10:43:40+08:00" />
+<meta property="article:modified_time" content="2020-07-23T10:43:40+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Windows Terminal Preview 1.2发布：新增专注/始终最前模式</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-23T10:43:40&#43;08:00">July 23, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>今天微软发布了 Windows Terminal Preview 1.2，新增了专注模式（Focus Mode）、始终最前模式（Always on Top Mode），并且支持调整字体的粗细。目前用户可以通过 Microsoft Store 下载新版本，或者前往 GitHub 了解更多细节。</p>
+<p>Windows Terminal Preview 1.2 新增功能</p>
+<p>专注模式（Focus Mode）</p>
+<p>在启用该模式之后，能够隐藏标签页和标题栏，只显示 Terminal 内容。想要启用专注模式，可以在 settings.json 文件中为 toggleFocusMode 添加一个键值。</p>
+<p>{ &ldquo;command&rdquo;.toggleFocusMode &ldquo;toggleFocusMode&rdquo;, &ldquo;keys&rdquo;: &ldquo;shift+f11&rdquo; }</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0723/812cb3d1b6df93f.jpg" alt="img:Windows Terminal Preview 1.2发布：新增专注/始终最前模式"></p>
+<p>始终最前模式（Always on Top Mode）</p>
+<p>除了专注模式之外，你还可以始终让 Windows Terminal 窗口位于最顶部。这可以通过 alwaysOnTop 全局设置以及使用 toggleAlwaysOnTop 命令进行键绑定来实现。</p>
+<p>// Global setting（全局设置）</p>
+<p>&ldquo;alwaysOnTop&rdquo;: true</p>
+<p>// Key binding（按键绑定）</p>
+<p>{ &ldquo;command&rdquo;: &ldquo;toggleAlwaysOnTop&rdquo;, &ldquo;keys&rdquo;: &ldquo;alt+shift+tab&rdquo; }</p>
+<p>新命令</p>
+<p>增加了新的按键绑定命令，让您在与 Terminal 交互时更加灵活。</p>
+<p>设置标签颜色</p>
+<p>你可以用setTabColor命令来设置你的焦点标签的颜色，这个命令使用color属性来定义你想要的颜色，它接受十六进制格式的颜色，即#rgb或#rrggbb。这个命令使用color属性来定义你想要的颜色，它接受十六进制格式的颜色，即#rgb或#rrggbb。</p>
+<p>{ &ldquo;command&rdquo;: &ldquo;action&rdquo;: &ldquo;setTabColor&rdquo;, &ldquo;color&rdquo;: &ldquo;#ffffff&rdquo; }, &ldquo;keys&rdquo;: &ldquo;ctrl+a&rdquo; }</p>
+<p>打开标签颜色选择器</p>
+<p>增加了一个新的命令，允许你打开标签颜色选择器菜单。这可以通过openTabColorPicker命令来完成。如果你想用鼠标给选项卡上色，你可以在选项卡上单击右键来访问颜色选择器。</p>
+<p>{ &ldquo;command&rdquo;. &ldquo;openTabColorPicker&rdquo;: &ldquo;openTabColorPicker&rdquo;, &ldquo;keys&rdquo;: &ldquo;ctrl+b&rdquo; }</p>
+<p>重命名标签</p>
+<p>你可以用 renameTab 命令重命名重点标签页（感谢ggadget6！）。你也可以右击或双击标签页来重命名它。</p>
+<p>{ &ldquo;command&rdquo;: &ldquo;renameTab&rdquo;, &ldquo;keys&rdquo;: &ldquo;ctrl+c&rdquo; }</p>
+<p>切换复古效果</p>
+<p>您可以使用 toggleRetroEffect 命令来切换复古终端效果，这些效果会给文本添加扫描线和发光。这将启用experimental.retroTerminalEffect配置文件设置。</p>
+<p>{ &ldquo;command&rdquo;.toggleRetroEffect &ldquo;toggleRetroEffect&rdquo;, &ldquo;keys&rdquo;: &ldquo;ctrl+d&rdquo; }</p>
+<p>Cascadia Code字体大小</p>
+<p>Cascadia Code现在有了字体权重! 你可以在Windows终端预览中使用fontWeight配置文件设置来启用这些字体权重。</p>
+<p>&ldquo;fontWeight&rdquo;: &ldquo;light&rdquo;</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0723/3d90b15b068208b.jpg" alt="img:Windows Terminal Preview 1.2发布：新增专注/始终最前模式"></p>
+<p>命令面板更新</p>
+<p>命令调色板即将完成! 我们目前正在修正一些错误，但如果你想玩它，你可以将commandPalette命令添加到你的键绑定中，然后用键盘调用它。这个命令默认是不绑定的。</p>
+<p>{ &ldquo;command&rdquo;: &ldquo;commandPalette&rdquo;, &ldquo;keys&rdquo;: &ldquo;ctrl+shift+p&rdquo; }</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0723/c30d89cfec859da.gif" alt="img:Windows Terminal Preview 1.2发布：新增专注/始终最前模式"></p>
+<p>设置 UI 设计</p>
+<p>我们一直在积极研究设置 UI，并缩小了设计范围。设计图如下，更多内容可以在这里找到。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0723/809dc5e7ef9705e.jpg" alt="img:Windows Terminal Preview 1.2发布：新增专注/始终最前模式"></p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0723/09c013aad6b6430.jpg" alt="img:Windows Terminal Preview 1.2发布：新增专注/始终最前模式"></p>
+<p>杂项</p>
+<p>● 现在你可以使用nt、sp和ft分别作为新标签、分割窗格和焦点标签的命令行参数。</p>
+<p>● 我们现在有了合适的高对比度模式的标识。</p>
+<p>● 现在，粘贴大量文本和多行文本时会有警告。更多关于禁用这些警告的信息可以在全局设置文档页面找到。</p>
+<p>错误修复：</p>
+<p>● 现在你可以以管理员身份在运行对话框中按Ctrl+Shift+Enter键运行wt。</p>
+<p>● 在WSL中打印大量文本的速度提高了20%!</p>
+<p>● 当有输出时，如果你是向上滚动或有选择，终端将不再滚动到底部。</p>
+<p>● 伪控制台现在将以更高的保真度转发应用程序发出的颜色和样式，从而大大提高了色彩表现力.微软今天宣布发布Windows终端预览版1.2，新的焦点模式，新的总是在顶部模式，支持字体权重等。请在下面找到完整的变更日志。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1006709/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">三星或为Chromebook Nightfury配备QLED显示屏</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1006685/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">诺基亚TA-1258已获工信部认证 采用八核处理器与2X变焦后摄</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1008535/">暴雪官方重申：《魔兽世界》不会登陆主机</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1008525/">Analogue宣布Pocket掌机延期至明年上市 但预购将很快开启</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1008533/">研究：即便是最好的人脸识别算法也会受到口罩干扰</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1008545/">美CDC：1/3新冠肺炎幸存者在经历着挥之不去的症状</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1008547/">美航司要求旅客严格遵从佩戴口罩的要求 否则或被加入内部禁飞名单</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

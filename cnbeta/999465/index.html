@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>微软优化 chrome.exe 被固定到任务栏的过程 可降低 CPU 使用率 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="微软优化 chrome.exe 被固定到任务栏的过程 可降低 CPU 使用率" />
+<meta property="og:description" content="微软为 Chromium 提交的一个补丁能对检查浏览器是否被固定在任务栏进行性能优化。根据微软在补丁中的描述，他们发现
+Chrome 会在启动后的 45s 使用一段代码检测当前正在运行的 chrome.exe
+是否已被固定在任务栏上。每调用一次这段代码(chrome!UtilWinImpl::IsPinnedToTaskbar)都会产生较高的 CPU
+消耗(~300ms 的 CPU time 以及 1s wall time)。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/999465/" />
+<meta property="article:published_time" content="2020-07-06T10:29:15+08:00" />
+<meta property="article:modified_time" content="2020-07-06T10:29:15+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">微软优化 chrome.exe 被固定到任务栏的过程 可降低 CPU 使用率</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-06T10:29:15&#43;08:00">July 06, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>微软为 Chromium 提交的一个补丁能对检查浏览器是否被固定在任务栏进行性能优化。根据微软在补丁中的描述，他们发现
+Chrome 会在启动后的 45s 使用一段代码检测当前正在运行的 chrome.exe
+是否已被固定在任务栏上。每调用一次这段代码(chrome!UtilWinImpl::IsPinnedToTaskbar)都会产生较高的 CPU
+消耗(~300ms 的 CPU time 以及 1s wall time)。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0706/b78626c58ff35c3.png" alt="img:微软优化 chrome.exe 被固定到任务栏的过程 可降低 CPU 使用率"></p>
+<p>这个过程主要包括：</p>
+<p>枚举被固定在任务栏文件夹中的所有快捷方式</p>
+<p>检查它们是否为当前运行的 exe 的快捷方式</p>
+<p>枚举所有与快捷方式相关的 Shell verbs</p>
+<p>检查 verb 是否处于&quot;unpin&quot;状态（即是否已被固定在任务栏）</p>
+<p>上述的过程使用了一个单独的进程来进行检查，而且检查 Shell verbs 会导致 shell 扩展被加载，从而运行第三方代码，这些都会导致 CPU 使用率升高。</p>
+<p>微软对这个过程进行了优化，他们认为无需在快捷方式上枚举 verb，而是使用代码库中的其他固定状态检查来代替。于是删除了枚举 shell verbs 的代码，并在浏览器进程中运行代码，而不是使用单独的进程，因为已经不再会加载第三方代码。</p>
+<p>此项变更最后相应地降低了检查浏览器在任务栏状态时的 CPU 使用率。这个消耗可能对大部分配置来说可能并不明显，不过微软的 Eric Lawrence 认为，修复小问题最终可以提升浏览器的性能。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0706/dac8bc54fde8bd8.jpg" alt="img:微软优化 chrome.exe 被固定到任务栏的过程 可降低 CPU 使用率"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/999499/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">搜寻第九行星：潜伏在太阳系最远端的是一个黑洞？</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/999525/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">你朋友圈的代购们都转战海南了？</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1001887/">YouTube终于让创作者知道他们在该平台上是如何赚钱的</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1001889/">亚马逊网游《新世界》再次跳票 延期到2021年春季发售</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1001901/">有史最贵游戏诞生：1985年的《超级马里奥》以11.4万美元拍出</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1001899/">航空公司改行做外卖，在地面上也能吃到航空餐了</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1001905/">帕克探测器拍摄到引人注目的彗星NEOWISE的图像</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

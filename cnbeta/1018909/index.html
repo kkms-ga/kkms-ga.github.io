@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>英特尔展望未来FPGA设计并介绍新型224G PAM4收发器 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="英特尔展望未来FPGA设计并介绍新型224G PAM4收发器" />
+<meta property="og:description" content="FPGA 的全称是“现场可编程门阵列”，而能够以较低的功耗、将信号高速引入或推出的收发器，将是该领域在未来很长一段时间内的一个主战场。据悉，FPGA 有望迎来一个可充编辑逻辑的终极功能世界，通过引入多个收发器来提升带宽，将是其设计的一个重要组成部分。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1018909/" />
+<meta property="article:published_time" content="2020-08-22T10:42:48+08:00" />
+<meta property="article:modified_time" content="2020-08-22T10:42:48+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">英特尔展望未来FPGA设计并介绍新型224G PAM4收发器</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-22T10:42:48&#43;08:00">August 22, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>FPGA 的全称是“现场可编程门阵列”，而能够以较低的功耗、将信号高速引入或推出的收发器，将是该领域在未来很长一段时间内的一个主战场。据悉，FPGA 有望迎来一个可充编辑逻辑的终极功能世界，通过引入多个收发器来提升带宽，将是其设计的一个重要组成部分。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0822/4c06591c7198bb9.jpg" alt="img:英特尔展望未来FPGA设计并介绍新型224G PAM4收发器"></p>
+<p>无论是 SmartNIC、还是密集的服务器互联拓补，都依赖于 FPGA 开展初始部署和调整，然后才会转向 ASIC 。</p>
+<p>长期以来，Xilinx 和 Altera（已被英特尔收购）一直在努力压过对手一头，将收发器速率从 26G / 28G，一路推升到了 56G / 58G 。</p>
+<p>2018 年的 Arch Day 大会上，英特尔更是介绍了选用 116G 收发器的 M-系列 10nm Agilex FPGA 方案。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0822/d3733f5053e9f7a.jpg" alt="img:英特尔展望未来FPGA设计并介绍新型224G PAM4收发器"></p>
+<p>据悉，基于以太网的 116G“F-Tile”是一个独立的小芯片模块，通过嵌入式多芯片互连桥接（EMIB）技术与中央 Agilex FPGA 相连，并且采用了与主 FPGA 芯片不同的制程工艺。</p>
+<p>而作为 2020 英特尔架构日活动的一部分，该公司宣布其正在开发一款标称速率达 224G 的新型收发器模块。其不仅支持 PAM4 模式下的 224G 收发（4-bit），还支持 NRZ 模式下的 112G 收发（2-bit）。</p>
+<p>英特尔表示，新模块使得下一代以太网协议栈成为可能，该公司计划在 2021 / 2022 后期准备就绪，并且向后兼容 Agilex 的 100 / 200 /400 GbE 栈。至于误码率或功耗等更多细节，目前暂不得而知。</p>
+<p>相关文章:</p>
+<p>英特尔未来7nm FPGA产品将充分利用Foveros 3D堆叠技术</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1018913/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">设计师如何利用AI和Photoshop将古罗马皇帝的雕像变成逼真的面孔？</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1018897/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">《微软飞行模拟2020》已推出首个公共SDK</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021053/">美选举安全官员表示未发现邮寄选票的欺诈证据</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021055/">科学家成功在猪的淋巴结上培植出备用肝脏</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021061/">深圳21岁男子微信被封号，从腾讯用户接待中心跳楼身亡</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021081/">研究发现白天长时间的小睡跟死亡风险存在惊人联系</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1021051/">一项可能终结加州共享单车和滑板车业务的法案已被修改</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

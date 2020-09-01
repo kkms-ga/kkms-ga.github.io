@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>HW 3.0版Model 3拆解 特斯拉的黑科技终归也得向成本低头 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="HW 3.0版Model 3拆解 特斯拉的黑科技终归也得向成本低头" />
+<meta property="og:description" content="作为一款 2017 年 7 月份正式交付的车型，特斯拉 Model 3 已经不年轻了。不过，通过软硬件升级（硬件从 HW 2.5 换到了 HW 3.0），Model 3 依然拥有强悍的产品力，未来更是能轻松升级到全自动驾驶。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/995917/" />
+<meta property="article:published_time" content="2020-06-26T17:21:05+08:00" />
+<meta property="article:modified_time" content="2020-06-26T17:21:05+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">HW 3.0版Model 3拆解 特斯拉的黑科技终归也得向成本低头</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-26T17:21:05&#43;08:00">June 26, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>作为一款 2017 年 7 月份正式交付的车型，特斯拉 Model 3 已经不年轻了。不过，通过软硬件升级（硬件从 HW 2.5 换到了 HW 3.0），Model 3 依然拥有强悍的产品力，未来更是能轻松升级到全自动驾驶。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0626/f068db74805d3bc.jpg" alt="img:HW 3.0版Model 3拆解 特斯拉的黑科技终归也得向成本低头"></p>
+<p>至少，特斯拉是这样承诺的。</p>
+<p>相比于其大哥 Model S 与 Model X，Model 3是特斯拉首款真正意义上的“平民”电动车。去年 HW 3.0 面世后特斯拉向用户承诺，只要购买 FSD 套件，就能在售后获得 HW 3.0 升级。</p>
+<p>当然，即使你花了 FSD 的钱，现在也用不上全自动驾驶。毕竟，现在的 FSD 只能算是个 Autopilot 强化版。不过，Musk 依然对 FSD 信心满满，今年 7 月份还计划再次提高其售价。</p>
+<p>因此，特斯拉的信徒们对 Model 3 的探索也远未结束。那么，新的 HW 3.0 到底为 Model 3 带来了什么转变？未来这款碗大量又足的车型又将如何进化？今天，我们就针对其车载传感器与 ECU 进行一番解读。</p>
+<p>成本优先</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0626/aecafae0756bd42.jpg" alt="img:HW 3.0版Model 3拆解 特斯拉的黑科技终归也得向成本低头"></p>
+<p>最近几年，车载芯片的地位开始变得越发重要，因为其算力是支撑驾驶员辅助、自动驾驶和主动安全功能的中流砥柱。</p>
+<p>为了优化此类功能，许多 OEM 商与一级供应商开始用摄像头、雷达、LiDAR 等传感器武装车辆，帮它们获知周边环境信心。当然，传感器采集的所有信息都要汇集到一起，这时控制单元的重要性就体现出来了。</p>
+<p>鉴于特斯拉在公众中一直有着“高科技”的品牌形象，因此 Model 3 上的各项硬件自然成了黑科技的代名词。</p>
+<p>不过，System Plus 公司 CEO Romain Fraux 却一针见血的指出，特斯拉在设计 Model 3 之初主要目标其实是缩减 ADAS 系统的成本，以便拉低该车型的售价。</p>
+<p>在 Model 3 上，特斯拉标配了 8 颗摄像头，1 颗雷达和 12 颗超声波传感器。至于 LiDAR，Musk 则选择无视。</p>
+<p>赋能 ADAS 的传感器</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0626/a6102d064f4e38a.jpg" alt="img:HW 3.0版Model 3拆解 特斯拉的黑科技终归也得向成本低头"></p>
+<p>Model 3 的传感器阵列中包含 8 颗摄像头，它们能为车辆提供 360 度视野，探测半径更是高达 250 米。12 颗超声波传感器则是视觉系统的补充。两套传感器相结合，不但保证了远距离探测能力，相对于此前系统精确度还实现了翻番。除此之外，Model 3 的传感器套装还整合了处理能力增强版的前视雷达系统。它能为车辆提供额外的环境数据，同时在雨雾、砂尘等天气充当安全冗余，甚至直接“穿过”前车为 Model 3 提供“千里眼”视角。</p>
+<p>在摄像头配置上，车头安装了 3 颗负责前方视野，与雷达形成互补。这 3 颗摄像头技术特性并不相同，其中充当主摄那颗探测距离达到 250 米，但视场很窄，其他 2 颗探测距离分别为 150 和 60 米，但视场要宽上不少。另外 5 颗摄像头则负责监控车辆侧面和后方，其探测距离可达 100 米。</p>
+<p>至于那 12 颗超声波传感器，工作半径就只有 8 米了。不过，它能在任何速度下稳定工作，对车辆控制盲区相当有用。这些传感器采集到的数据还会被 Autopilot 拿来变线用。最后，有关车辆方位的确定，特斯拉用的还是 GPS。</p>
+<p>前视摄像头</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0626/26ffeaf0791dd2f.jpg" alt="img:HW 3.0版Model 3拆解 特斯拉的黑科技终归也得向成本低头"></p>
+<p>为了处理前方视野，特斯拉专门开发了三摄模组配合三颗图像传感器使用。Model 3 还搭载了 2 颗前视侧边摄像头，2 颗后视侧边摄像头与 1 颗后视摄像头。</p>
+<p>像素方面，这 8 颗摄像头均为 120 万像素，技术来源于 2015 年的 On Semiconductor 产品。“它们都是些便宜货，技术上也不新，分辨率更是不行。”Fraux 说道。</p>
+<p>从一家供应商一次买齐 8 颗摄像头也意味着，“特斯拉想要拿到一个最优惠的采购价。”Fraux 解释道。</p>
+<p>三摄系统有什么玄机？</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0626/35dbd4cbae51dd4.jpg" alt="img:HW 3.0版Model 3拆解 特斯拉的黑科技终归也得向成本低头"></p>
+<p>特斯拉的这套三摄系统用了 On Semiconductor 的 120 万像素（1280x960）AR0136A CMOS 传感器，单个像素尺寸为 3.75μ。</p>
+<p>为了进行一番比较，System Plus 找了采埃孚的 S-Cam4 三摄系统。这套系统搭载了 Omnivision 的 COMS 传感器与 Mobileye 的 EyeQ4 视觉处理器。</p>
+<p>如上图所示，特斯拉的 PCB 封装技术与宝马的不同。德国巨头更倾向于将不同的传感器放在不同的 PCB 上。特斯拉的前视三摄模组则将所有 CMOS 放在了一块 PCB 上，而且没有负责处理的 SOC。采埃孚的 S-Cam4 则有 Mobileye 的视觉处理器支撑。</p>
+<p>On Semiconductor 的成熟传感器加不需要后处理的特性让这种低成本摄像头模组终于成功完成了成本管控。据悉，采埃孚的三摄系统成本大约要 165 美元，而 Model 3 则只要 65 美元。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0626/4cb996cdb3a16d9.jpg" alt="img:HW 3.0版Model 3拆解 特斯拉的黑科技终归也得向成本低头"></p>
+<p>雷达</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0626/1889177eb440271.jpg" alt="img:HW 3.0版Model 3拆解 特斯拉的黑科技终归也得向成本低头"></p>
+<p>在雷达模组上，特斯拉求稳心态也暴露无遗，它们选择了大陆集团的 ARS4-B。ARS4-B 用到了 77GHz 的雷达芯片组与恩智浦的 32-bit MCU。Fraux 指出，虽然联发科与德州仪器都对车载芯片市场虎视眈眈，但恩智浦与英飞凌依然是无可争议的领先者。大陆集团则在雷达模组上优势巨大。ARS4-B 至少已登陆 15 款车型，包括奥迪 Q3，大众途观、日产奇骏等重量级产品。</p>
+<p>大陆集团还有一款名为 ARS4-A 的雷达系统，主要用于碰撞预警、紧急刹车辅助、碰撞缓解和自适应巡航。这款产品的强大之处在于其远距离实时测量能力，250 米的范围内精度可达 +/-0.2 米。近距离测量也能达到 70 米，还能直接拿到两个物体之间的相对速度和角度数据。</p>
+<p>特斯拉计算单元</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0626/89b8f5b2144026c.jpg" alt="img:HW 3.0版Model 3拆解 特斯拉的黑科技终归也得向成本低头"></p>
+<p>特斯拉自研了一款“液冷双核计算平台”，直接囊括了 Autopilot 与信息处理计算机。简言之，它们被安置在两块电路版上，但整合进了一个模组。</p>
+<p>具体来说，新的计算平台整合了负责中控信息娱乐的 ECU 与 Autopilot ECU，而在 HW 2.5 时代，Autopilot 用的还是英伟达的 SoC 与 GPU。</p>
+<p>虽然天才如 Musk，一条龙自主化也不现实，因此在自研 FSD 后，它们还是要用到英伟达的 GPU，英特尔的处理器，恩智浦与英飞凌的微控器，镁光、三星的闪存以及意法半导体的音频放大器。</p>
+<p>Autopilot ECU 的进化</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0626/1377f7fad22b6ff.jpg" alt="img:HW 3.0版Model 3拆解 特斯拉的黑科技终归也得向成本低头"></p>
+<p>System Plus 注意到，特斯拉在计算能力上的进化已经在 Autopilot ECU 上有所体现了。在 HW 2.5 时代，特斯拉整合了两块英伟达 Parker SoC，一块英伟达 Pacal GPU 和一块英飞凌的 TriCore CPU。到了 HW 3.0 时代，特斯拉则用上了两块自研 SoC，两块 GPU，两块神经网络处理器和一块锁步 CPU。</p>
+<p>与奥迪 A8 上那套采埃孚的系统相比，特斯拉的价格实惠不少，还有了安全冗余。</p>
+<p>HW2.5 vs. HW3.0</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0626/77a07599cfe632e.jpg" alt="img:HW 3.0版Model 3拆解 特斯拉的黑科技终归也得向成本低头"></p>
+<p>Fraux 表示，同样的体积下，特斯拉在 HW 3.0 里塞进了更多零部件（4746 个，比 HW 2.5 多了 65 个零部件）。</p>
+<p>制程方面，特斯拉的自研 SoC 为 14nm，比 HW 2.5 时代英伟达的 16nm 要先进一些。Fraux 指出，这也是汽车第一次用上 14nm FinFET 芯片。</p>
+<p>自研 SoC 才真香？</p>
+<p>在汽车行业，自行设计 ASIC（专用芯片）的做法已经很少见了。因为它风险太大了。“除非你公司内部一个天才的硬件设计团队”，Fraux 解释道。鉴于现在的汽车市场并不像从前火热，自掏腰包设计芯片就更显得得不偿失了。</p>
+<p>不过凡事没有绝对，想复制特斯拉自研芯片做法的厂家也不少，它们也想为自家的类 Autopilot 产品搞一个强力核心。</p>
+<p>不过，花大价钱自研芯片真的值得吗？</p>
+<p>“如果你还想有个好看的利润报表且量产需求很大，花这份钱就值得。”Fraux 解释道。过去几年里，车辆整合的电子元器件越来越多，而英伟达和英特尔这样的领军厂商可不愿玩“薄利多销”。如果 OEM 商未来五年内不愿将利润拱手让人，恐怕自行研发芯片才是扼住命运咽喉最好的方法。</p>
+<p>System Plus 预计，特斯拉 HW 2.5 成本为 280 美元，但换装自行设计的 FSD 后，HW 3.0 成本就讲到了 190 美元。“假设自研芯片会花费 1.5 亿美元，而一年产量能达到 40 万块的话，四年时间就能回本了。”Fraux 说道。显然，对汽车巨头来说自研芯片绝对是个好选择。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/995919/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">用新的思维方式看待芯片工艺制程</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/995923/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">分析师称iPhone 12仍会在9月中旬发布</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/997827/">老干妈公司相关负责人回应：暂不清楚腾讯是否会撤诉</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/997823/">继续电气化之旅 雪铁龙推全新ë-C4掀背车</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/997825/">[图]5G版Galaxy Z Flip定妆照公布：骁龙865&#43;处理器 8GB内存</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/997845/">高通7月29日发布第三财季财报 预计营收不低于44亿美元</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/997839/">宝马：其电动汽车将使用可再生能源生产的电池</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

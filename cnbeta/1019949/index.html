@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>AlphaGo 早已击败围棋冠军，计算机视觉还是 3 岁的“智力” - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="AlphaGo 早已击败围棋冠军，计算机视觉还是 3 岁的“智力”" />
+<meta property="og:description" content="20 世纪 50 年代和 60 年代，计算机视觉并没有被看成重头戏，人们认为视觉系统很容易复制，而教计算机下棋更加困难。但是现在，AlphaGo
+已经击败围棋冠军，IBM Watson 也在 Jeopardy 中击败人类竞赛者，而大多数计算机视觉软件最多只能完成 3 岁儿童的任务……" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1019949/" />
+<meta property="article:published_time" content="2020-08-25T09:04:24+08:00" />
+<meta property="article:modified_time" content="2020-08-25T09:04:24+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">AlphaGo 早已击败围棋冠军，计算机视觉还是 3 岁的“智力”</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-25T09:04:24&#43;08:00">August 25, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>20 世纪 50 年代和 60 年代，计算机视觉并没有被看成重头戏，人们认为视觉系统很容易复制，而教计算机下棋更加困难。但是现在，AlphaGo
+已经击败围棋冠军，IBM Watson 也在 Jeopardy 中击败人类竞赛者，而大多数计算机视觉软件最多只能完成 3 岁儿童的任务……</p>
+<p>理论与实践不断证明，人类视觉神经非常复杂，计算机视觉实现并非易事。计算机视觉研究从上世纪 50 年代兴起之后，也历经了狂欢、冷静，又重新燃起希望的阶段。</p>
+<p>本篇编译整理自计算机视觉相关文章，介绍计算机视觉各阶段的理论支撑与外部舆论变化。</p>
+<p>最早的人工智能想象</p>
+<p>大多数人都认为，是现代人创造了人工智能的概念，实际上远古祖先也提出了思考型机器人的理论。</p>
+<p>大约3000年前，荷马描述了火神赫菲斯托斯（Hephaestus）的故事。赫菲斯托斯用黄金塑造了机械侍女，并赋予她们理性和学习能力。在无人驾驶汽车问世之前的几个世纪，古希腊作家阿波罗纽斯（Apollonius）用想象力创造了塔洛斯（Talos），这是一个青铜自动机，负责保卫克里特岛。</p>
+<p>但这些历史性的叙述并不能准确描述当今正在开发的人工智能的种类。因为尽管现在大多数人工智能程序无法将其目标任务之外的知识概括化，但是对于本身给定的预期，他们已经达到或超过人类水平。</p>
+<p>人的视觉与计算机视觉</p>
+<p>人类视觉系统非常特别，超过50%的神经组织直接或间接地与视觉有关，其中超过66%的神经活动仅为处理视觉。今天人们对视觉、知觉的了解大部分来自1950年代和1960年代对猫进行的神经生理学研究。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0825/a9a527f278b2284.jpeg" alt="img:AlphaGo 早已击败围棋冠军，计算机视觉还是 3 岁的“智力”"></p>
+<p>上世纪50年代初期，哈佛医学院的两位神经科学家 David Hubel 和 Torsten Wiesel 在猫的视觉皮层上进行了一项实验。通过研究神经元对各种刺激的反应，两位科学家观察到，人类的视觉是分级的。神经元检测简单的特征，例如边缘，然后输入更复杂的特征，如形状，最后再输入更复杂的视觉表示。基于这些知识，计算机科学家就可以专注于以数字形式重建人类神经结构。</p>
+<p>早期乐观</p>
+<p>人工智能领域成立于1956年在达特茅斯学院举行的夏季研讨会上，来自不同领域的科学家们聚集在一起，以阐明并发展关于“思维机器”的观点。</p>
+<p>1960年代，大学开始认真进行计算机视觉研究，并将该项目视为人工智能的奠基石。</p>
+<p>麻省理工学院的神经科学家戴维·马尔（David Marr）在70年代出版了一本《VISION》，汇集了一些方法，作出了可检测的预测，提供解决神经科学问题的框架，并激发一代年轻科学家研究大脑及计算。该书提出了一种用于研究生物视觉系统的计算范例，并介绍信息处理系统的三个不同分析层次概念，即计算理论层次、表示形式和算法层次、以及实现层次。他们分别指向：计算的目标是什么；解决问题、实现目标的陈述与流程；这些表示和过程的物理实例化，例如如何在神经元中完成特定任务。这三个层次划分的意义是，研究者从视觉系统的宏观表示出发进行思考，而不是查看如单个神经元式的微观实体。</p>
+<p>Marr 建立了视觉表示框架，任何视觉系统感知到的强度，都是四个主要因素的函数：几何形状，意指形状和相对位置；可见表面的反射率和绝对吸附特性，即物理特性；照明，即光源；相机，包含光学。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0825/697202b75c12761.png" alt="img:AlphaGo 早已击败围棋冠军，计算机视觉还是 3 岁的“智力”"></p>
+<p>早期研究人员对相关领域的未来非常乐观，并提倡把人工智能作为一种可以改变世界的技术。一些人预测，一代人的时间内就会创造出像人类一样聪明的机器，这种炒作为研究人员赢得了数百万美元的公共和私人资金，研究中心在全球涌现。但是由于接下里的发展未能达到人们的高预期，国际上的人工智能开发工作受到了限制。</p>
+<p>AI 视觉的冬天</p>
+<p>研究人员以极大的乐观度，将公众的期望提高到了令人难以置信的高度，却未能体会到他们为自己设定的挑战的难度。当研究人员承诺的预期未能达成时，这个研究领域遭到了猛烈的批评，和严重的财务挫折。</p>
+<p>早期的计算资源在技术上无法跟上科学家提出的复杂问题，即使是最令人印象深刻的项目也只能解决微不足道的问题。此外，大多数研究人员都是在孤立的小组内工作，缺乏比较有意义的，可以推进该领域科学进展的方式。</p>
+<p>有一则故事可以反映当时研究人员的美好预期、以及预期落空后他们自身及和外界的失落与嘲讽。</p>
+<p>1966年，美国计算机科学家、麻省理工学院 AI 实验室联合创始人马文·明斯基（Marvin Minsky）获得了暑期津贴，聘请了一年级的本科生杰拉尔德·苏斯曼（Gerald Sussman），让他花费整个夏天的时间把一台摄像机与计算机连接起来，并让计算机描述它看到了什么。“不用说，苏斯曼没有在截止日期前完成，”Motion Metrics 的机器学习开发人员 Hooman Shariati 曾说，“在接下来的四十年中，视觉成为人工智能领域最困难、最令人沮丧的挑战之一。正如机器视觉专家贝特霍尔德·霍恩（Berthold Horn）曾经指出的那样，苏斯曼选择不再在视觉领域工作。”</p>
+<p>到70年代中期，政府和公司对人工智能失去了信心，行业资金枯竭。数学家詹姆斯·莱特希尔（James Lighthill）1973年发表了一篇论文，批评早期人工智能研究，这为后来英国政府撤回对该领域的支持奠定了研究基础。</p>
+<p>随后的这段时间被称为“人工智能的冬天”。虽然20世纪80年代和90年代研究还在继续，也有过一些小规模的复兴，但人工智能基本上被被归入了科幻小说的范畴，严肃的计算机科学家都避免使用这个词。</p>
+<p>卷积神经网络出现与多伦多大学的突破</p>
+<p>随着互联网成为主流，计算机科学家有了可以访问更多数据的权限。计算机硬件在继续改进，成本则在下降。80年代到90年代，基本神经网络和算法得到改进。</p>
+<p>1998年，Bengio、Le Cun、Bottou 和 Haffner 在一篇论文中首次介绍了第一个卷积神经网络 LeNet-5，能够分类手写数字。</p>
+<p>卷积神经网络可以做到平移不变形，即使对象的外观发生某种方式的变化，也可以识别出对象。卷积神经网络通过监督学习和反向传播对输入到卷积网络中的数据做训练，并反复、自我校正。和同样可以做反向传播的深度神经网络相比，卷积神经网络的特殊之处在于神经元之间的链接结构和独特的隐藏架构的方式，这是由人类视觉皮层内部的视觉数据处理机制启发得来的。此外，CNN 中的图层按照宽度、高度和深度三个维度进行组织。</p>
+<p>卷积网络最重要的属性之一就是，不管有多少层，整个 CNN 系统仅由两个部分组成：特征提取和分类。通过对特定特征的选择，以及通过前馈链接增加空间不变性，这也是人工视觉系统如 CNN 非常独特的原因。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0825/df0892e7b7f408b.png" alt="img:AlphaGo 早已击败围棋冠军，计算机视觉还是 3 岁的“智力”"></p>
+<p>（视觉皮层和卷积神经网络有许多相似）</p>
+<p>深度神经网络研究应用也有进步，并且使人们信心大增。2012年，人工智能在 ImageNet 大规模视觉识别挑战（ILSVRC）上取得突破。</p>
+<p>ILSVRC 是一个年度图像分类比赛，研究团队在给定的数据集上做视觉识别任务，评估算法准确性。2010年和2011年，ILSVRC 获奖者的错误率一直在26%左右。2012年，来自多伦多大学的团队带来一个名为 AlexNet 的深度神经网络，实现了16.4%的错误率。在接下来的几年中，ILSRVC 的错误率下降到了几个百分点。</p>
+<p>基于 AI 的计算机视觉的未来</p>
+<p>当下，人们已经知道，视觉能力是人类承担的生物学生最复杂的任务之一，对计算机视觉的研究和预期也更加贴近世界。同时，基于对人类视觉能力了解的深入，计算机视觉研究人员也在不断更新算法和理论。</p>
+<p>CNN 已经广泛用于需要处理视觉和空间信息的系统中。但随着人工智能需要解决更高级的问题，对计算和电力资源的增长需求成为 CNN 最突出的问题之一。研究人员的注意力也在逐渐转向尖峰神经网络 SNN，这是一种新型的 ANN ，受大脑神经动力学的启发，具有事件驱动，快速推理和省电的特性，也被认为是第三代神经网络。</p>
+<p>接下来 SNN 要优化解决的一个问题是视觉注意 VA 与智力。人类可分散的注意力使得人能同时执行多个任务，注意力转移可以使人快速访问新信息。视觉注意力研究的核心目标是要使处理的视觉信息量最少，以解决复杂的高级任务，例如对象识别。</p>
+<p>计算机视觉任务主要涉及处理静态图像，人类眼睛在检测到场景变化向大脑传递信息——这是一个事件，生物视觉系统的这一关键特性允许将注意力选择性地集中在场景的显著部分上，从而大量减少需要处理的信息量。</p>
+<p>假设针对一张人在草地上打高尔夫的图像。传统的传感器中，数据以帧的形式传输，图像上的所有内容都要经过处理，而重要的信息是人的运动，以及带动的球杆和球的运动。这时，基于事件的传感器并不会读取每个像素并且以恒定速率发送帧，而是在检测到像素局部亮度变化是，从每个像素异步发送数据包或事件，从而减少计算、传输的数据和功耗。</p>
+<p>研究人员认为，CNN 非常适合静态图像中的对象识别，但它缺乏动态特性来处理基于事件的传感器的实时数据集。因此，SNN 被寄予厚望。</p>
+<p>现在人工智能已经无缝集成到日常生活的多方面。研究人员表示，近年来，人工智能在许多研究领域都取得了巨大的成功。像 AlphaGo 这样的游戏系统已经使用强化学习来自学，助听器使用深度学习算法过滤掉环境噪音，这些技术甚至为自然语言处理与翻译、对象识别以及模式匹配系统提供了动力，我们已经对谷歌、亚马逊、iTunes 等提供的类似服务习以为常。这种趋势也丝毫没有放慢的迹象，人们可以用计算机自动化执行许多小的重复性任务以节省时间。</p>
+<p>尽管人工智能领域取得了令人难以置信的进步，但计算机视觉的应用仍有很长的路要走，因为距离计算机可以像人类一样地去解释图像还需要很长时间。就像文章开头提到的那样，AlphaGo 早已击败了人类围棋冠军，计算机视觉的识图能力仅相当于一个3岁的小孩。</p>
+<p>参考链接：</p>
+<p><a href="https://www.motionmetrics.com/how-artificial-intelligence-revolutionized-computer-vision-a-brief-history/">https://www.motionmetrics.com/how-artificial-intelligence-revolutionized-computer-vision-a-brief-history/</a></p>
+<p><a href="https://becominghuman.ai/from-human-vision-to-computer-vision-how-far-off-are-we-part1-3-b35d37a196a4">https://becominghuman.ai/from-human-vision-to-computer-vision-how-far-off-are-we-part1-3-b35d37a196a4</a></p>
+<p><a href="https://becominghuman.ai/from-human-vision-to-computer-vision-a-brief-history-part2-4-fcb1565d5492">https://becominghuman.ai/from-human-vision-to-computer-vision-a-brief-history-part2-4-fcb1565d5492</a></p>
+<p><a href="https://becominghuman.ai/from-human-vision-to-computer-vision-convolutional-neural-network-part3-4-24b55ffa7045">https://becominghuman.ai/from-human-vision-to-computer-vision-convolutional-neural-network-part3-4-24b55ffa7045</a></p>
+<p><a href="https://becominghuman.ai/from-human-vision-to-computer-vision-towards-spiked-based-visual-intelligence-and-neuromorphic-913e5de21bf9">https://becominghuman.ai/from-human-vision-to-computer-vision-towards-spiked-based-visual-intelligence-and-neuromorphic-913e5de21bf9</a></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1019935/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">美国法官：苹果封杀Epic虚拟引擎有报复嫌疑</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1019975/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">特朗普介入前 TikTok已与微软签署“无约束力收购意向书”</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1022185/">Windows 10准备在明年进行一次重大升级与转变</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1022195/">曼哈顿苹果零售店发出多起以购物顾客为目标的盗窃案</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1022227/">三星发布980 Pro硬盘：PCIe 4.0飙出7GB/s 全面进入TLC闪存时代</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1022223/">三星Galaxy S20 FE出现在泄露的海报中 并在保加利亚官网得到确认</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1022225/">NASA指派黑人宇航员Jeanette Epps执行波音首次载人飞行任务</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

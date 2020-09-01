@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>微软为 Visual Studio 推出新的 Razor 编辑器 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="微软为 Visual Studio 推出新的 Razor 编辑器" />
+<meta property="og:description" content="随着 Visual Studio 最新版本的发布，微软推出了一款新的 Razor 编辑器，用于使用 MVC、Razor Pages 和 Blazor 进行本地开发。该工具目前还处于实验状态。Razor 是一种基于 HTML 和 C# 的模板语言，可以用来为 .NET Web 应用程序创建动态内容。它不是一种编程语言，而是服务器端的标记语言。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1004385/" />
+<meta property="article:published_time" content="2020-07-17T10:00:34+08:00" />
+<meta property="article:modified_time" content="2020-07-17T10:00:34+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">微软为 Visual Studio 推出新的 Razor 编辑器</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-17T10:00:34&#43;08:00">July 17, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>随着 Visual Studio 最新版本的发布，微软推出了一款新的 Razor 编辑器，用于使用 MVC、Razor Pages 和 Blazor 进行本地开发。该工具目前还处于实验状态。Razor 是一种基于 HTML 和 C# 的模板语言，可以用来为 .NET Web 应用程序创建动态内容。它不是一种编程语言，而是服务器端的标记语言。</p>
+<p>目前，Visual Studio 能够在同一 Razor 文件中可同时支持针对 HTML、CSS、JavaScript、C# 和 Razor 特定语法的 IntelliSense、补全及诊断。</p>
+<p>为了在 Razor 文件中同时启用对所有这些语言的编辑器支持，Visual Studio 需要做一些繁琐的工作：解析 Razor 文档以确定其组成部分，然后将每个部分投影到特定语言的缓冲区中，即投影缓冲区。编辑 Razor 文档时，Visual Studio 看到的是到每个投影缓冲区的小窗口集合，以组成一个完整的文档。然后，每种语言服务都将单独处理每个缓冲区的编辑体验。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0717/cbab08127063d5a.png" alt="img:微软为 Visual Studio 推出新的 Razor 编辑器"></p>
+<p>但这种方案作用有限，也不适用于远程编辑。为了给 Razor 编辑提供更广泛的支持，微软推出了新的 Razor 编辑器。它通过 语言服务器协议（LSP）实现了编辑器功能，如自动补全、转到定义等。然后，特定于 IDE 的 Razor 扩展将与 Razor 语言服务器和其他用于 HTML＆C# 的语言服务器进行协调。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0717/131b24a844820b9.png" alt="img:微软为 Visual Studio 推出新的 Razor 编辑器"></p>
+<p>微软表示当前的开发重点是使新的基于 LSP 的 Razor 编辑器在功能上与现有的 Visual Studio Razor 编辑体验相同。接下来计划添加对功能还有：对 JavaScript 和 CSS IntelliSense 的支持、HTML 中的 URL 选择器支持、复杂的 C# 补全，以及从 C# 到 Razor 的定义/实现等等。</p>
+<p>要启用新的实验性 Razor 编辑器，应先安装最新的 Visual Studio preview 版本，转到 工具&gt;选项&gt;环境&gt;预览功能，然后选择启用实验性 Razor 编辑器选项：</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0717/53d7c90ecfbae29.png" alt="img:微软为 Visual Studio 推出新的 Razor 编辑器"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1004341/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">美广告监管组织通知Verizon停止使用误导性的5G网速与覆盖描述</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1004347/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">Twitter为开发人员推新工具：将更好打击仇恨言论</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006129/">“喜迎”制裁 电视开机广告终于不再任性</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006123/">[评论]蚂蚁集团上市，将是科创板第二个里程碑</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006131/">英伟达与佛罗里达大学联手打造高等教育AI超级计算机</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006133/">PS5将给未来的游戏带来这些可期的改变</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1006125/">追概念、听故事 乐视网退市给散户式炒作敲响警钟</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Chrome 团队：2020 年了，浏览器兼容性还是一个大问题 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Chrome 团队：2020 年了，浏览器兼容性还是一个大问题" />
+<meta property="og:description" content="根据 2019 年 Web 开发人员需求评估（Web Developer Needs Assessment，DNA）调查，来自世界各地的
+28,000 多名开发者所反馈的最大需求是浏览器兼容性问题——网站在不同网络浏览器上的外观或行为方式不同，这给开发人员带来不少痛苦。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/993063/" />
+<meta property="article:published_time" content="2020-06-19T11:27:31+08:00" />
+<meta property="article:modified_time" content="2020-06-19T11:27:31+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Chrome 团队：2020 年了，浏览器兼容性还是一个大问题</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-19T11:27:31&#43;08:00">June 19, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>根据 2019 年 Web 开发人员需求评估（Web Developer Needs Assessment，DNA）调查，来自世界各地的
+28,000 多名开发者所反馈的最大需求是浏览器兼容性问题——网站在不同网络浏览器上的外观或行为方式不同，这给开发人员带来不少痛苦。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0619/1daf81aeaa52afa.jpg" alt="img:Chrome 团队：2020 年了，浏览器兼容性还是一个大问题"></p>
+<p>因此，MDN 在 2020 年 3 月进行了一项针对浏览器兼容性的后续调查。这次调查揭示了 Web 开发人员在浏览器兼容性方面遇到的痛点。Chrome 团队通过一篇博客文章将其分享出来，并谈论了 Chrome 本身在这些问题上所做的努力。</p>
+<p>FleXbox</p>
+<p>Flexbox 是用于网络布局的工具，它提供了一种符合人机工程学的方式来定义可以在不同大小的视口上正常响应的布局。但是，如果不能在所有浏览器中都使用此功能 ，它的体验就不是很好。</p>
+<p>Chrome 团队表示，Flexbox 是他们今年实现浏览器兼容性的首要任务之一，并已经在其中投入了大量资金。</p>
+<p>具体来说，Chrome 渲染团队在现代 LayoutNG 布局引擎的基础上，对 Chromium flexbox 实现的架构进行了重新设计。这项工作预计会在 Chrome 84 中引入，它有望解决 Chromium 中的许多 Flexbox 兼容性问题。</p>
+<p>他们也正致力于在今年内为 Chromium 提供 flex-gap 和 fieldset+flex 支持。flex-gap 也将在 Chrome 84 中可用。</p>
+<p>Scrolling（滚动）</p>
+<p>在多个浏览器上正确滚动不是一件易事（例如，需要整个库来一致地锁定正文滚动）。Chrome 团队仍在研究有关滚动兼容性的反馈，目前为止，有几个关键领域很突出：</p>
+<p>虚拟键盘如何影响（或不影响）不同浏览器中的视口单元。 （Chrome 团队温馨提示：Microsoft Edge 在 VirtualKeyboard API 上的最新工作可能对此有所帮助。）</p>
+<p>与输入相关的事件以及与之交互的结果缺乏一致性。</p>
+<p>难以控制跨浏览器的滚动行为（例如，通过滚动锚定）。</p>
+<p>表单控件</p>
+<p>表单是 Web 中一个非常古老的部分，甚至早于 CSS。表单控件旨在模仿本机平台的外观，但它们未能始终如一地做到这一点，也未能满足现代 Web 开发的需求。兼容性调查在这方面揭示了两个主要问题：跨浏览器中的风格和行为不一致。</p>
+<p>在样式表单控件方面，Microsoft Edge 和 Google Chrome 团队最近完成了这一项目，更新了基于 Chromium 的浏览器中的默认表单样式。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0619/7cba8af44454ec4.png" alt="img:Chrome 团队：2020 年了，浏览器兼容性还是一个大问题"></p>
+<p>就行为而言，人们似乎普遍担心表单控件的行为未得到很好的指定，或者浏览器未始终遵循这些规范。一些具体示例是，当在包含表单的页面之间来回导航时，它们支持某些 <!-- raw HTML omitted --> 类型、自动填充行为和内容恢复行为。</p>
+<p>CSS Grid</p>
+<p>像 Flexbox 一样，CSS Grid 是现代布局的重要组成部分。调查结果显示，似乎 Chromium 中对 CSS Grid 的支持还不错。但有一项例外——Chromium 仍然不支持 subgrid。</p>
+<p>Chrome 团队透露，Microsoft Edge 的一个团队正在重新构造 Chromium 的 Grid 支持，以使用新的 LayoutNG 引擎。作为此计划的一部分，Chrome 也打算添加对 subgrid 的支持。</p>
+<p>最后，Chrome 团队指出，当涉及到浏览器兼容性时，仍然有太多缺少的功能和边缘错误。如果浏览器供应商可以理解到这些造成麻烦的原因，并采取措施解决问题，一切将会变得更好。在接下来的时间里，Chrome 也将变得更加兼容。如果想参加浏览器兼容性调查，提供反馈，可以填写此表格。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/993065/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">微软如何优化 Microsoft Edge 的内存使用？</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/993111/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">IBM宣布退出人脸识别，是道德楷模还是商业投机？</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/994991/">[视频]除了当车钥匙 iOS 14新版CarPlay还带来了哪些新功能？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/995003/">[图]适用于Linux的Microsoft Defender ATP 正式上线</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/995013/">20年风光不再：Segway电动平衡车宣布停产</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/995015/">研究人员开发尿液测试  揭示最适合人们身体的饮食习惯</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/994995/">更高效：吉利德计划展开瑞德西韦喷雾器试验</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

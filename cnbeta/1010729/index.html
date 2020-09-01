@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>最新版CCleaner被发现会删除同步的Firefox扩展设置和其它数据 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="最新版CCleaner被发现会删除同步的Firefox扩展设置和其它数据" />
+<meta property="og:description" content="微软从来都不是 &ldquo;注册表清理器&quot;CCleaner的粉丝，现在该公司刚刚给了微软另一个理由，让微软把它留在内置安全软件的黑名单中。最新的CCleaner公共版被发现会删除同步的Firefox扩展设置和其他数据。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1010729/" />
+<meta property="article:published_time" content="2020-08-02T19:00:36+08:00" />
+<meta property="article:modified_time" content="2020-08-02T19:00:36+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">最新版CCleaner被发现会删除同步的Firefox扩展设置和其它数据</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-02T19:00:36&#43;08:00">August 02, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>微软从来都不是 &ldquo;注册表清理器&quot;CCleaner的粉丝，现在该公司刚刚给了微软另一个理由，让微软把它留在内置安全软件的黑名单中。最新的CCleaner公共版被发现会删除同步的Firefox扩展设置和其他数据。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/08/9845da7f1067de0.jpg" alt="img:最新版CCleaner被发现会删除同步的Firefox扩展设置和其它数据"></p>
+<p>当你用Firefox同步两台电脑时，Firefox 79存储扩展数据的地方发生了变化，数据被存储在Profile目录中。不幸的是，CCleaner会删除Profile目录的内容，这意味着浏览器扩展数据和设置会不断被删除，这样一来每次使用清理软件后，就需要重新配置Firefox的扩展设定。</p>
+<p>这个问题在7月份Firefox还处于Beta版时就已经被报告给Piriform，但该公司没有采取任何行动，现在不少用户的数据随着Firefox 79的自动升级而丢失。</p>
+<p>解决方法当然是卸载CCleaner，但如果出于某些原因你还想继续使用它，你可以通过进入CCleaner &gt; Options &gt; Excludes &gt; Add &gt; File并添加，将相关文件（Storage-sync-v2-sqlite-shm和Storage-sync-v2.sqlite-wal）从日常清理中排除。</p>
+<p>具体如下：</p>
+<p>Exclude1=PATH|%AppData%MozillaFirefoxProfiles<em>|</em>.sqlite-shm;*.sqlite-wal||0|0|24</p>
+<p>相关文章:</p>
+<p>Windows Defender将CCleaner标记为“可能不需要的应用”</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1010725/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">买酸奶时看到这几个字 很可能是&#34;假酸奶&#34;</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1010727/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">云南吃野生菌中毒死亡人数超过新冠</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1012973/">贵阳检察机关逮捕冒充“老干妈”公司工作人员行骗犯罪嫌疑人</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1012975/">福布斯发布TikTok七位收入最高网红 年收入最高500万美元</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1012977/">余承东：9月15日后麒麟芯片将绝版 未来IoT产品都可用鸿蒙</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1012965/">5G、XR、云游戏全都有 ChinaJoy骁龙馆展现手游的现在与未来</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1012957/">除了13座晶圆厂 台积电旗下其实还有4座先进芯片封测工厂</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

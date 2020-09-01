@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Xbox Series X系统架构分析 SoC细节一览 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Xbox Series X系统架构分析 SoC细节一览" />
+<meta property="og:description" content="今天是Hot Chips 2020峰会的首个演讲日，原本计划在今天最末尾登场的微软计划带来Xbox Series
+X的系统架构演讲，现在媒体已经拿到了演讲所用的演示稿，可以提前分析这台高性能次世代主机的系统架构了。出乎预料的是，微软这次给到了非常详尽的资料，详细描述了Xbox
+Series X上面所用SoC的架构。废话不多说，我们赶紧来看一下。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1017373/" />
+<meta property="article:published_time" content="2020-08-19T01:11:53+08:00" />
+<meta property="article:modified_time" content="2020-08-19T01:11:53+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Xbox Series X系统架构分析 SoC细节一览</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-19T01:11:53&#43;08:00">August 19, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>今天是Hot Chips 2020峰会的首个演讲日，原本计划在今天最末尾登场的微软计划带来Xbox Series
+X的系统架构演讲，现在媒体已经拿到了演讲所用的演示稿，可以提前分析这台高性能次世代主机的系统架构了。出乎预料的是，微软这次给到了非常详尽的资料，详细描述了Xbox
+Series X上面所用SoC的架构。废话不多说，我们赶紧来看一下。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0819/46f2ec7cb7c6926.jpg" alt="img:Xbox Series X系统架构分析 SoC细节一览"></p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0819/edca2fb89d6e684.jpg" alt="img:Xbox Series X系统架构分析 SoC细节一览"></p>
+<p>首先官方还是介绍了一番这台主机新支持的诸多特性，诸如DXR、VRS、Mesh着色等等，这些我们大多都烂熟于心，而右边的某些特性则是首次公开，尤其是在音频方面，Xbox Series X支持了许多新特性。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0819/d5185ee2eb99533.jpg" alt="img:Xbox Series X系统架构分析 SoC细节一览"></p>
+<p>对于我们这帮架构爱好者来说，最兴奋的莫过于这张Die Shot。这是Xbox Series X上所使用的SoC的Die Shot，它使用台积电的N7e工艺（与N7P之间有什么关系有待考察），集成有153亿个晶体管，核心面积高达360.4mm2，SoC与AMD合作开发。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0819/ac5efb3fbee8162.jpg" alt="img:Xbox Series X系统架构分析 SoC细节一览"></p>
+<p>简化一下就是上面这张图，可以看到其整体结构仍然类似于AMD近几年的APU，不过相比起Renoir，它还是有很大的不同。CPU部分跟Renoir比较相近，同样是两组Zen 2 CCX，每组CCX带有4MB的三级缓存。CPU在关闭超线程的情况下可以跑到3.8 GHz，开启超线程会降低0.2 GHz的最高频率。</p>
+<p>CPU和SoC的其他部分通过一条可扩展的数据总线进行互联，推测是基于IF总线。总线上面连接了显示控制单元、媒体编解码单元、安全模块、存储加密解密解压缩单元、GPU、IO Hub和内存控制器。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0819/5a376bfda705bd0.jpg" alt="img:Xbox Series X系统架构分析 SoC细节一览"></p>
+<p>GPU部分设计了28组Dual CU单元，其中有两组被屏蔽，实际会有26组工作的Dual CU，也就是52组CU。由于GPU部分基于RDNA 2架构，我们也由此可以一窥RDNA 2架构的细节。</p>
+<p>从图上看，RDNA 2的架构与RDNA相差并不大，主要还是从硬件层面上支持了很多新出现的图形特性。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0819/f44adeb0bf385ec.jpg" alt="img:Xbox Series X系统架构分析 SoC细节一览"></p>
+<p>从Dual CU单元的组成来看，RDNA 2的基础单元架构与RDNA没有太大的区别，比较亮眼的是每个Dual CU中集成了两个硬件加速光线追踪的处理单元，也就是每CU有一个，这也是RDNA 2支持硬件光追的秘诀所在。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0819/9311ae35acbcd36.jpg" alt="img:Xbox Series X系统架构分析 SoC细节一览"></p>
+<p>内存控制器方面，因为需要同时满足CPU和GPU的需求，所以采用了高带宽的GDDR6内存系统，这套内存系统的特别之处在于，它采用了交错内存设计，同时将整个内存分为两部分，10GB部分的交错程度比另外的6GB来的更高，总的内存带宽可以达到560GB/s。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0819/20c15104ce4216b.jpg" alt="img:Xbox Series X系统架构分析 SoC细节一览"></p>
+<p>I/O部分，这里疑似幻灯片有误，应该是有8条PCIe 4.0总线，其中2条用于连接内置的1TB SSD，另外有2条用于连接外置的可扩展存储卡。</p>
+<p>演讲稿的其他方面则是在讲解图形方面的新特性，像是VRS、采样器反馈等DirectX 12 Ultimate中新增的特性。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0819/99be41e654d1704.jpg" alt="img:Xbox Series X系统架构分析 SoC细节一览"></p>
+<p>VRS的原理是通过改变单次像素着色器操作所处理的像素数量，来改变屏幕不同区域的着色质量。简单来说，它可以改变同个画面中不同部分的渲染精细度，它的用处是提高画面帧数。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0819/14e91c2278a552d.jpg" alt="img:Xbox Series X系统架构分析 SoC细节一览"></p>
+<p>采样器反馈是允许游戏引擎去跟踪纹理采样器的使用方式，让后者向引擎提供反馈，方法是生成“反馈图（Feedback Map）”，它会记录不同纹理区域的不同驻留等级，然后程序可以根据这些反馈信息来做决策——包括该如何使用纹理采样器和要在显存中保留哪些资源等。这比原先的流程更为精确，可以更好地分配计算资源。简单来说它的实际效果就是用更少的显存渲染更大、更详细的纹理。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0819/4cf860298ddf574.jpg" alt="img:Xbox Series X系统架构分析 SoC细节一览"></p>
+<p>微软还提到利用机器学习推导对游戏进行加速，这可能预示着Xbox Series X上会有类似于DLSS的技术。</p>
+<p>值得一提的是，Xbox Series X对音频处理方面也进行了加强。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0819/cb94ed6fc77bd63.jpg" alt="img:Xbox Series X系统架构分析 SoC细节一览"></p>
+<p>这枚SoC上还有几个由微软研发的硬件单元，包括音频单元、安全模块和存储处理器。其中，音频单元的单精度浮点（SPFP）性能直接能够超过Xbox One X上面的8核CPU。MSP，也就是存储处理器能够提供总计大于5GB/s的硬件加密性能，另外还有两个通用材质解压缩引擎，能够提供6GB/s的等效传输速率。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1017375/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">蛋壳公寓CEO被查事涉六亿国资？回应称报道严重不实</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1017387/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">AI系统的谜之操作：给照片莫名添加 Ryan Gosling 的头像</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019407/">高校新奇专业再引热议 有“爆款”也有“冷门”</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019409/">恐损及英美贸易协议的达成 英国计划削减“Facebook税”</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019411/">首部顺风车联合团体标准计划年内出台</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019403/">诺基亚即将在印度发布两款手机：其中一款是功能机</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1019389/">英特尔回应 Linus Torvalds 对 AVX512 的批评</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

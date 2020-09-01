@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>Chrome浏览器CSP漏洞导致数十亿用户面临数据被盗风险 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="Chrome浏览器CSP漏洞导致数十亿用户面临数据被盗风险" />
+<meta property="og:description" content="Threat Post 报道称：基于 Chromium 内核的浏览器被曝存在一个可被绕过的内容安全策略（简称 CSP）漏洞，导致数十亿用户易被攻击者窃取数据和执行恶意代码。PerimeterX 网络安全研究人员 Gal Weizman 指出，该漏洞（CVE-2020-6519）可在 Windows、Mac 和 Android 版 Chrome 浏览器，以及 Opera 和 Edge 中找到。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1014237/" />
+<meta property="article:published_time" content="2020-08-11T12:07:17+08:00" />
+<meta property="article:modified_time" content="2020-08-11T12:07:17+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">Chrome浏览器CSP漏洞导致数十亿用户面临数据被盗风险</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-08-11T12:07:17&#43;08:00">August 11, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Threat Post 报道称：基于 Chromium 内核的浏览器被曝存在一个可被绕过的内容安全策略（简称 CSP）漏洞，导致数十亿用户易被攻击者窃取数据和执行恶意代码。PerimeterX 网络安全研究人员 Gal Weizman 指出，该漏洞（CVE-2020-6519）可在 Windows、Mac 和 Android 版 Chrome 浏览器，以及 Opera 和 Edge 中找到。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0811/073c3e7c55a07d5.png" alt="img:Chrome浏览器CSP漏洞导致数十亿用户面临数据被盗风险"></p>
+<p>（来自：PerimeterX）</p>
+<p>如果你仍在使用 2019 年 3 月发布的 Chrome 73、以及 2020 年 7 月前的 Chrome 83，还请尽快更新至已修复 CVE-2020-6519 漏洞的 Chrome 84 。</p>
+<p>据悉，作为一项 Web 标准，内容安全策略（CSP）旨在阻止某些类型的攻击，比如跨站脚本（XSS）和数据注入（data-injection）。</p>
+<p>CSP 允许 Web 管理员指定浏览器可执行脚本的有效源范围，以便兼容该标准的浏览器仅执行可信来源的脚本加载操作。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0811/e100973e48952b6.png" alt="img:Chrome浏览器CSP漏洞导致数十亿用户面临数据被盗风险"></p>
+<p>浏览器易受攻击，但网站并不这样。</p>
+<p>Weizman 在周一发布的研究报告中指出：“CSP 是网站所有者用于执行数据安全策略、以防止在其网站上执行恶意影子代码的主要方法，因而当其绕过浏览器时，个人用户的数据就面临着风险”。</p>
+<p>目前大多数网站都已事实 CSP 内容安全策略，包括大家熟知的 ESPN、Facebook、Gmail、Instagram、TikTok、WhatsApp、Wells Fargo 和 Zoom 等互联网巨头。</p>
+<p>不过一些知名的站点得以幸免，包括 GitHub、谷歌 Play 商店、领英 LinkedIn、PayPal、Twitter、雅虎登录页面、以及 Yandex 。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0811/ddb795840724b0c.png" alt="img:Chrome浏览器CSP漏洞导致数十亿用户面临数据被盗风险"></p>
+<p>要利用此漏洞，攻击者必须先通过暴力破解或其它方法来访问 Web 服务器，以便能够修改其 JavaScript 代码。</p>
+<p>然后攻击者可以在 JavaScript 中添加 frame-src 或 child-src 指令，以允许注入代码并强制加载执行，从而绕过站点 CSP 内容安全策略的防护。</p>
+<p>尽管该漏洞被 CvSS 认定为中等严重等级（6/10），但由于它会影响 CSP 的执行，因此具有了更广泛的意义。换言之，当设备不幸中招时，事故造成的损害将严重得多。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0811/8066993a99e1d3b.png" alt="img:Chrome浏览器CSP漏洞导致数十亿用户面临数据被盗风险"></p>
+<p>举个例子，若 CSP 措施得当，网站仍可限制对此类敏感信息的访问。但以类似的方式，恶意 Web 开发者可利用第三方脚本，向付款页面加注一些额外的功能。</p>
+<p>更糟糕的是，这个漏洞已在 Chrome 浏览器中存在了一年以上，直到近日才得到彻底修复。因而 Weizman 警告称，该漏洞的全部影响尚不为人所知。</p>
+<p>最后，为避免遭受此类攻击而导致个人身份信息（PII）等敏感数据泄露，还请大家立即将浏览器升级到最新版本。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1014221/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">俞敏洪：应鼓励适当鼓励孩子打游戏 很考验人的机智</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1016259/">俄新冠疫苗已收到10亿剂购买申请 特朗普:美国疫苗马上要出</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1016261/">北大学者：中长期看，我国口粮安全有充分保障</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1016263/">三代锐龙最平民装机之选：A520主板曝下周二上市</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1016269/">想要禁掉TikTok的特朗普加入了另一家视频分享应用Triller</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1016251/">微软希望将触摸操控带到非触屏笔记本中</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>GNOME Shell日历修复过度消耗CPU并影响电池寿命的Bug - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="GNOME Shell日历修复过度消耗CPU并影响电池寿命的Bug" />
+<meta property="og:description" content="五个月前，GNOME 社区的用户反馈了一个关于 GNOME Shell 日历服务器的 bug，此错误会影响诸如 Pop OS 19.10 和
+Fedora 31 等发行版。反馈中提到 GNOME Shell 日历服务器的 CPU 占用率长期为 20~25%。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/974235/" />
+<meta property="article:published_time" content="2020-05-02T14:51:27+08:00" />
+<meta property="article:modified_time" content="2020-05-02T14:51:27+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">GNOME Shell日历修复过度消耗CPU并影响电池寿命的Bug</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-02T14:51:27&#43;08:00">May 02, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>五个月前，GNOME 社区的用户反馈了一个关于 GNOME Shell 日历服务器的 bug，此错误会影响诸如 Pop OS 19.10 和
+Fedora 31 等发行版。反馈中提到 GNOME Shell 日历服务器的 CPU 占用率长期为 20~25%。</p>
+<p>此外，每隔 2、3 秒 CPU 使用量会骤然升高一次。无论是对于 CPU，还是笔记本电脑的电池寿命，该错误都会给它们造成很大的影响。好在问题目前已经被解决。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0502/79e8a2a6c1f3d6d.png" alt="img:GNOME Shell日历修复过度消耗CPU并影响电池寿命的Bug"></p>
+<p>反馈者将这个 bug 定位到了日历服务器中不断重启的 ECalClientView-s 服务中，并提供了许多关于此问题的详细信息、火焰图，还有不少其他用户表示在其他发行版上也遇到了同样的问题。</p>
+<p>GNOME 开发团队成员通过与多位遇到此问题的用户进行沟通，得到了更为详细的错误信息，并于几个星期前提交了解决该问题的补丁，不过直到近日才被合并。据团队成员介绍，此前的代码在收到任何关于 ECalClientView 的变更后，始终会重启整个 ECalClientView，从而导致不断重复地重启视图。最新提交的补丁通过正确使用 ECalClientView 修复了问题，并提升了性能。</p>
+<p>下一版本的 GNOME Shell 将会应用此修复程序。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/974237/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">软银国际裁员约10% 旗下拉美基金两名管理合伙人自愿离职</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/974233/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">苹果认为新款iPhone SE可吸引更多Android用户转投iOS阵营</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/975979/">漫威将开发恶灵骑士 有望在《奇异博士2》中登场</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/975977/">深圳无人驾驶地铁2022年通车</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/975975/">拆解报告：Apple苹果新款iPhone SE原装5W充电器A1443</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/975973/">十代酷睿超频揭秘：10核i9体质最佳、功耗轻松突破250W</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/975971/">Triton展示DeepView观光潜艇 可载数十名游客在水下100米航行</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

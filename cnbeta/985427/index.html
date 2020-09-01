@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>不测不知道 这么多的USB漏洞要从何“补”起? - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="不测不知道 这么多的USB漏洞要从何“补”起?" />
+<meta property="og:description" content="生活中，USB接口可以说无处不在，路由器、打印机、投影机、PC电脑、台式机等等，且使用频率极高。当然，作为硬件设备的输入输出接口，其安全性也至关重要。近日，研究人员在Windows、Linux、macOS等系统使用的USB驱动中，发现了26个新漏洞。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/985427/" />
+<meta property="article:published_time" content="2020-06-01T07:59:56+08:00" />
+<meta property="article:modified_time" content="2020-06-01T07:59:56+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">不测不知道 这么多的USB漏洞要从何“补”起?</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-01T07:59:56&#43;08:00">June 01, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>生活中，USB接口可以说无处不在，路由器、打印机、投影机、PC电脑、台式机等等，且使用频率极高。当然，作为硬件设备的输入输出接口，其安全性也至关重要。近日，研究人员在Windows、Linux、macOS等系统使用的USB驱动中，发现了26个新漏洞。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>其实，已有很大一部分的用户接受了“USB设备不安全”这一事实。我们在之前的文章中，也曾多次介绍过与USB有关的安全事件，例如让数十亿USB设备“不眠”的BadUSB漏洞，从键盘、打印机再到U盘，无一幸免。只是此次，漏洞数量众多，且危及多个主要操作系统。</p>
+<p>待进一步了解后得知，该科研团队是由普渡大学的Hui Peng、瑞士联邦理工学院洛桑分校的Mathias Payer所带领，26个新漏洞都是通过他们创建的新工具USBFuzz发现的。这类工具被团队成员称之为“模糊器”（fuzzer）。</p>
+<p>据悉，模糊器是多款应用程序的集合，能够帮助安全研究人员将大量无效、意外或者随机数据输入其他应用程序。之后，安全研究人员分析被测试软件的行为方式，以发现新的bug，其中一些可能被恶意利用。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0601/89ddf95a6c2284f.jpg" alt="img:不测不知道 这么多的USB漏洞要从何“补”起?"></p>
+<p>为了测试USB驱动，Peng和Payer共同开发了USBFuzz，这是一种专门用于测试现代操作系统的USB驱动堆栈的新型模糊器。据研究人员介绍，其核心部分，USBFuzz使用软件仿真的USB设备来向驱动程序提供随机的设备数据（当他们执行IO操作时）。</p>
+<p>此外，研究团队还表示：“由于仿真的USB设备是在设备层面工作的，因此将其移植到其他平台上是很直接的。”这使得研究团队不仅可以在Linux上测试USBFuzz，还可以在其他操作系统上进行测试。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0601/42c5ebe21f63ac0.png" alt="img:不测不知道 这么多的USB漏洞要从何“补”起?"></p>
+<p>研究人员在Linux内核的9个最新版本：v4.14.81、v4.15、v4.16、v4.17、v4.18.19、v4.19、v4.19、v4.19.1、v4.19.2和v4.20-rc2（评估时的最新版本）；FreeBSD 12 (最新版本)、MacOS 10.15 Catalina（最新版本）以及Windows（8和10版本，并安装了最新的安全更新）平台上，测试了USBFuzz。</p>
+<p>测试后，研究团队表示在USBFuzz的帮助下，团队一共发现了26个新bug。包括在FreeBSD中发现的一个，在MacOS中发现了三个（两个导致计划外重启，一个导致系统冻结），在Windows 8和Windows 10中发现了四个（导致死亡蓝屏）。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0601/9dc998d5c40a0cf.png" alt="img:不测不知道 这么多的USB漏洞要从何“补”起?"></p>
+<p>相较之下，最严重的是针对Linux系统的，共有18个。其中16个是针对Linux各个子系统（USB core, USB sound和net-work）的高危内存漏洞，此外还有1个是针对Linux的USB。</p>
+<p>对此，Peng和Payer表示，他们向Linux内核团队报告了这些bug，并提出了补丁建议，以减轻 &ldquo;内核开发人员在修复报告的漏洞时的负担&rdquo;。与此同时，研究团队也表示，在这18个Linux漏洞中，有11个自去年首次报告以来，他们收到了补丁。在这11个bug中，有10个还收到了CVE，这是一个被分配给重大安全漏洞的唯一代码。</p>
+<p>相关文章:</p>
+<p>[图]科学家发现26个USB漏洞：Linux有18个 Windows有4个</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/985439/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">珠峰测高 你想知道的那些事</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/985459/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">SpaceX载人龙飞船太空之旅前半段宣告完成</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/987643/">加拿大庞巴迪公司将裁员约2500人</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/987633/">你可以离一个黑洞有多近？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/987639/">瑞幸咖啡收盘暴涨36% 盘中触发熔断机制</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/987631/">苹果股价创历史新高 市值超1.4万亿美元</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/987641/">因版权问题 推特删除特朗普竞选团队发布视频</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

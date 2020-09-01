@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[图]屏下前摄效果不佳？微软利用神经网络找到新解决方案 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[图]屏下前摄效果不佳？微软利用神经网络找到新解决方案" />
+<meta property="og:description" content="在推进全面屏进程中，打孔前摄已经是较为成熟的商用解决方案，不过即将会被屏下前摄所取代。屏下前摄是指摄像头位于透明的 OLED 面板下方，在不活动的时候这个屏幕仍然可以作为一个正常的显示屏工作，在拍摄的时候能够让光线透过到达前摄传感器。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/1005303/" />
+<meta property="article:published_time" content="2020-07-20T08:18:06+08:00" />
+<meta property="article:modified_time" content="2020-07-20T08:18:06+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[图]屏下前摄效果不佳？微软利用神经网络找到新解决方案</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-20T08:18:06&#43;08:00">July 20, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>在推进全面屏进程中，打孔前摄已经是较为成熟的商用解决方案，不过即将会被屏下前摄所取代。屏下前摄是指摄像头位于透明的 OLED 面板下方，在不活动的时候这个屏幕仍然可以作为一个正常的显示屏工作，在拍摄的时候能够让光线透过到达前摄传感器。</p>
+<p>屏下前摄存在非常多的优势，但现有技术尚不足以使其商业化，其中一个尚未解决的问题就是由于屏幕像素结构的衍射，会模糊图像，降低对比度，降低可用的光照度，甚至完全遮挡一些图像内容。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0720/efd83c76b80756a.jpg" alt="img:[图]屏下前摄效果不佳？微软利用神经网络找到新解决方案"></p>
+<p>幸运的是，这种影响是以可预测的方式发生的，而且由于像素结构决定了一般只在水平方向上发生。为此微软的研究部门经过不懈的研究努力，终于找到了补偿 T-OLED 屏幕拍摄时图像模糊的影响。</p>
+<p>研究人员使用了一种 U-Net 卷积神经网络结构，既提高了信噪比，又消除了图像的模糊。该团队能够实现恢复的图像与直接拍摄的图像几乎没有区别。以下是处理效果前后对比</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0720/0b2f08219313654.jpg" alt="img:[图]屏下前摄效果不佳？微软利用神经网络找到新解决方案"></p>
+<p>直接用相机拍摄的效果</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0720/55b7551fa8b919b.jpg" alt="img:[图]屏下前摄效果不佳？微软利用神经网络找到新解决方案"></p>
+<p>在 T-OLED 屏幕下方拍摄的效果</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0720/94a281433b69cb2.jpg" alt="img:[图]屏下前摄效果不佳？微软利用神经网络找到新解决方案"></p>
+<p>使用人工智能算法矫正的效果</p>
+<p>让人工智能参与到图片捕捉中，还可以使用其他有趣的技术，比如模糊或替换背景以及其他视频操作技术，从而实现更好更自然的视频通话。微软似乎正在开发这项工作主要是为了在视频会议设置中的大屏幕中使用，但我相信它同样适用于你的下一款旗舰智能手机。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/1005309/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">NTT高管：美国政府要求其加入Open RAN政策联盟</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/1005285/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">各地推进影院复工：有影院3.1元放老片 全面恢复尚需时日</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1007487/">马斯克:新一轮刺激方案不符合美国民众最大利益 应该直接发钱</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1007479/">特朗普签署四项行政令 旨在降低美国药品价格</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1007483/">福奇：新冠病毒疫苗或2021年后数月才能广泛应用</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1007489/">蒂姆·库克等科技公司CEO参加的反垄断听证会正式推迟举行</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1007485/">美股周五收跌 英特尔暴跌16%</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

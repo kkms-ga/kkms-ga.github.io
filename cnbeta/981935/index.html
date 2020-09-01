@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>使用 ZFS 的 Ubuntu 20.10 安装工具默认启用 TRIM - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="使用 ZFS 的 Ubuntu 20.10 安装工具默认启用 TRIM" />
+<meta property="og:description" content="Ubuntu 安装工具 Ubiquity 目前正在积极为 Ubuntu 20.10 的 ZFS 引入加密功能，除此之外，其最新代码显示，现在默认为所有 Zpools 启用 TRIM。可以看到，对 Ubuntu 20.10 的最新 Ubiquity 桌面安装程序所做的一项更改是默认开启所有 ZFS pools 的 auto trim 功能。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/981935/" />
+<meta property="article:published_time" content="2020-05-22T07:52:33+08:00" />
+<meta property="article:modified_time" content="2020-05-22T07:52:33+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">使用 ZFS 的 Ubuntu 20.10 安装工具默认启用 TRIM</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-22T07:52:33&#43;08:00">May 22, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Ubuntu 安装工具 Ubiquity 目前正在积极为 Ubuntu 20.10 的 ZFS 引入加密功能，除此之外，其最新代码显示，现在默认为所有 Zpools 启用 TRIM。可以看到，对 Ubuntu 20.10 的最新 Ubiquity 桌面安装程序所做的一项更改是默认开启所有 ZFS pools 的 auto trim 功能。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0522/3ce0442fa185236.png" alt="img:使用 ZFS 的 Ubuntu 20.10 安装工具默认启用 TRIM"></p>
+<p>在安装过程中创建 Zpool 时此项变更会传递&quot;autotrim=on&quot;挂载选项。&ldquo;autotrim=on&quot;选项是自动开启 TRIM 的方式，无需运行 zpool trim 命令。</p>
+<p>OpenZFS/ZFSOnLinux 在去年正式支持 TRIM，此功能可帮助提升固态硬盘的性能。支持 TRIM 可以减少写入，从而延长硬盘寿命。</p>
+<p>ZFS 是 Ubuntu 20.10 的开发工作重点，计划于今年10月发布的 Ubuntu 20.10 将会看到相关成果。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/981957/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">天文学家通过ESO VLT观测到一颗行星的诞生</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/981965/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">蓝牙技术联盟曝光一加电视新型号 或具备独特连接功能</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/983665/">索尼将于5月28日带来更多《最后生还者2》详情</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/983667/">SpaceX筹资3.462亿美元：公司估值达360亿美元</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/983671/">iPhone 11是2020年Q1最受欢迎的智能手机 其次是三星和小米</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/983661/">疑有资金在赌有“援兵”接盘 瑞幸股价周二收盘暴涨53%</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/983669/">日本43岁重度手游玩家氪金百万 申请疫情补助引热议</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[图]微软公布硬件加速GPU调度更多细节 中低端CPU更显效果 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[图]微软公布硬件加速GPU调度更多细节 中低端CPU更显效果" />
+<meta property="og:description" content="Windows 10 May 2020（20H1/Version 2004）功能更新中，微软引入了 Windows Display Driver
+Model (WDDM 2.7)改进，为 GPU
+添加了硬件加速调度（HAGS）功能。在近日更新的官方支持文档中，微软公布了有关该功能的更多细节。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/999929/" />
+<meta property="article:published_time" content="2020-07-07T09:37:17+08:00" />
+<meta property="article:modified_time" content="2020-07-07T09:37:17+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[图]微软公布硬件加速GPU调度更多细节 中低端CPU更显效果</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-07-07T09:37:17&#43;08:00">July 07, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Windows 10 May 2020（20H1/Version 2004）功能更新中，微软引入了 Windows Display Driver
+Model (WDDM 2.7)改进，为 GPU
+添加了硬件加速调度（HAGS）功能。在近日更新的官方支持文档中，微软公布了有关该功能的更多细节。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0707/a6d48c0d373b1e7.jpg" alt="img:[图]微软公布硬件加速GPU调度更多细节 中低端CPU更显效果"></p>
+<p>硬件加速 GPU 调度是 WDDM 2.7 的主要功能，它允许集成/独立显卡直接管理自己的显存，从而让你获得更好的性能，降低延迟，提高平均或最低帧率，改善视频播放效果。</p>
+<p>用户体验</p>
+<p>有了硬件加速GPU调度，Windows 10现在可以将内存管理控制权交给基于GPU的专用调度处理器，理论上应该可以解放一下CPU，减少输入滞后。</p>
+<p>这项功能在高端 CPU 上表现并不明显，因为它们能够完全胜任 GPU 帧处理。微软表示：“用户输入在‘N+1帧’期间被CPU接收，但直到下一帧才被 GPU 渲染”。</p>
+<p>不过，在低端和中端 CPU 上进行游戏时，硬件加速 GPU 调度才会被证明是有用的。根据微软的说法，硬件加速GPU调度还应该减少GPU调度的开销，并使图形子系统的一个基本支柱现代化，为 &ldquo;未来的事情做好准备&rdquo;。</p>
+<p>不过，就目前而言，用户在启用该功能后可能不会发现任何明显的改进。</p>
+<p>启用方式</p>
+<p>1.下载 Windows 10 May 2020（20H1/Version 2004）功能更新或者 Build 19041 及更高版本，在 Windows Search 中搜索“Winver”，确认版本</p>
+<p>2.下载 Nvidia GeForce 451.48 或 Adrenalin 2020 版 20.5.1 Beta 驱动程序。特尔正计划在不久的将来更新他们的WDDM 2.7驱动程序，支持硬件加速GPU。</p>
+<p>升级到Windows 10 2004版和兼容的驱动程序后，前往 &ldquo;系统&quot;&gt;&quot;显示&quot;&gt;&quot;图形设置 &ldquo;并启用 &ldquo;硬件加速GPU调度 &ldquo;选项，然后重启电脑。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0707/0619d8affc2792e.jpg" alt="img:[图]微软公布硬件加速GPU调度更多细节 中低端CPU更显效果"></p>
+<p>英特尔表示：“WDDM 2.7引入了一项名为硬件加速GPU调度的新功能。目前最新的英特尔DCH驱动程序并不支持这一功能，[但]英特尔希望在未来的驱动程序版本中加入对这一功能的支持。”</p>
+<p>日前，AMD 悄然放出了 20.5.1 Beta GHS 版驱动，其中 GHS 正是代表“Graphics Hardware Scheduling”(图形硬件调度)。</p>
+<p>AMD显卡终于开始真正支持Windows 10 v2004的硬件加速GPU调度功能，可在Windows系统设置的图形设置处开启。目前AMD显卡仅限最新的RX 5700/5600系列高端卡，即便是RX 5500系列还未加入，更别说更老的RX Vega、RX 500/400系列了。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/999943/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">亚马逊苹果等科技公司CEO将于7月27日前往美国会作证</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/999923/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">韩国政府组织无人机表演感谢一线医疗工作者并提醒民众做好防护</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1002111/">[图]消除冯·诺伊曼瓶颈 Imec和GF合作展示新型人工智能芯片</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1002105/">唐山突发5.1级地震 北京铁路：扣停途经该地区旅客列车</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1002109/">传印度政府要求地方法院不要解封中国应用禁令</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1002107/">买AMD锐龙5 3600 结果到货是锐龙3 APU的包装</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/1002103/">[图]轻装上阵：WCOS将为Chromium提供现代游戏手柄支持</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

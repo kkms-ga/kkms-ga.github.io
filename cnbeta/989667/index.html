@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>ARM处理器或受侧信道攻击， 目前已有预防补丁可供更新 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="ARM处理器或受侧信道攻击， 目前已有预防补丁可供更新" />
+<meta property="og:description" content="不论是Intel还是AMD的x86处理器都曾经遭受过不少的漏洞攻击，近年最著名的可能就是熔毁  （Meltdown）以及幽灵（Spectre）了。虽然ARM处理器这边似乎很少听闻有这样的漏洞，但是早晚会有针对ARM架构的类似攻击手段出现。而最近这样的漏洞就被发现了，随后ARM就马上向软件开发人员发布了一份相关的指南。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/989667/" />
+<meta property="article:published_time" content="2020-06-11T11:25:19+08:00" />
+<meta property="article:modified_time" content="2020-06-11T11:25:19+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">ARM处理器或受侧信道攻击， 目前已有预防补丁可供更新</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-11T11:25:19&#43;08:00">June 11, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>不论是Intel还是AMD的x86处理器都曾经遭受过不少的漏洞攻击，近年最著名的可能就是熔毁  （Meltdown）以及幽灵（Spectre）了。虽然ARM处理器这边似乎很少听闻有这样的漏洞，但是早晚会有针对ARM架构的类似攻击手段出现。而最近这样的漏洞就被发现了，随后ARM就马上向软件开发人员发布了一份相关的指南。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>天翼云“年中上云节”已上线 云产品全场0.6折起 8888元礼包全场可用</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0611/ce8a1c9f5fdd1c2.jpg" alt="img:ARM处理器或受侧信道攻击， 目前已有预防补丁可供更新"></p>
+<p>这个漏洞的发现是Google发起的Safeside计划的其中一部分研究结果，目前只在ARMv8-A，也就是Cortex-A系列处理器里发现。利用这个漏洞的黑客可以用直线推测（Straight-Line Speculation，简称SLS）来对处理器发起侧信道攻击。</p>
+<p>SLS是侧信道攻击里比较经典的一种，可以让处理器预先访问数据来提升性能，然后抛弃所有没被使用过的计算分支（computational branches）。诸如此类的侧通道攻击可以让攻击者能够从处理器窃取数据。</p>
+<p>在ARM开发者FAQ的一个回答内，开发者表示：</p>
+<p>“请注意，目前我们认为这个漏洞的安全风险较低，因为它实际上很难被利用起来，并且尚未有漏洞已经被人利用过的证明。但是，我们也无法排除这种可能性，这就是为什么Arm现在会采取行动的原因。”</p>
+<p>ARM的工程师已经就这个漏洞提供了相关的更新补丁来预防。另外还有一些为热门代码编译器而生的额外补丁，理论上来说应该不会影响处理器的性能。</p>
+<p>考虑到目前很多装置都在用ARM处理器包括手机、平板、单片机等，甚至连树莓派 4都是在用，所以这个漏洞的潜在影响范围还是很大的。</p>
+<p>更多相关的信息可以在ARM的这份白皮书里看到。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/989665/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">特斯拉发布《2019环境影响力报告》回应电动车不够环保的负面传闻</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991553/">[视频]微软Excel正式推出Money功能：帮你管理、追踪和分析你的资金</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991561/">Instagram CEO：平台正在采取措施来支持黑人社区</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991565/">macOS 10.16命名猜想：Mammoth、Monterey或Skyline？</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991547/">FDA批准首个针对多动症儿童的“药品处方”视频游戏</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/991567/">研究发现性格内向的人更有可能选择植物性饮食</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

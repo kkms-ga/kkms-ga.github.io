@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>LLVM 开发者对于重命名&#34;master&#34;的讨论 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="LLVM 开发者对于重命名&#34;master&#34;的讨论" />
+<meta property="og:description" content="LLVM 项目最近一个待解决的任务是将其 Git
+仓库中使用&quot;master&quot;命名的分支更改为更具包容性的描述。到目前为止，几乎所有发表意见的人都支持这种改变，不过仍存在一些开放性的问题有待解决，比如该如何称呼新的主开发分支、评估更改分支命名涉及的技术成本，以及这种变更应该如何快速实现。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/993949/" />
+<meta property="article:published_time" content="2020-06-22T09:44:43+08:00" />
+<meta property="article:modified_time" content="2020-06-22T09:44:43+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">LLVM 开发者对于重命名&#34;master&#34;的讨论</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-22T09:44:43&#43;08:00">June 22, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>LLVM 项目最近一个待解决的任务是将其 Git
+仓库中使用&quot;master&quot;命名的分支更改为更具包容性的描述。到目前为止，几乎所有发表意见的人都支持这种改变，不过仍存在一些开放性的问题有待解决，比如该如何称呼新的主开发分支、评估更改分支命名涉及的技术成本，以及这种变更应该如何快速实现。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0622/b66d8ff636cf687.png" alt="img:LLVM 开发者对于重命名\"master\"的讨论"></p>
+<p>在 LLVM-dev 开发者邮件列表上，关于将 LLVM Git 仓库主分支从&quot;master&quot;改为 &ldquo;trunk&rdquo;, &ldquo;dev&rdquo; 或 &ldquo;main&quot;等名称已经进行了非常热烈的讨论。</p>
+<p>许多开发者似乎赞成把&quot;master&quot;改为&quot;trunk&rdquo;，就像使用 Subversion 开发 LLVM 时一样（LLVM 的代码仓库去年已从 SVN 切换至 Git），不过 Arm 对使用&quot;trunk&quot;作为主分支名称表示了担忧，因为他们已经将 trunk 分支用作其他用途。</p>
+<p>同时也有少数开发者表示更愿意将其称为&quot;dev&quot;分支。目前，上游的 Git 和 GitHub 尚未决定如何命名新的默认术语，他们的方案可能一致也可能不一致，但无论如何都希望更具包容性。</p>
+<p>LLVM 项目创始人 Chris Lattner 对此发表了评论并支持更改&quot;master&quot;分支的命名。他建议，与其自己想出一个新的名称，不如坐等上游 GitHub/Git 的方案。然后一旦落实，就与他们的方案保持一致，以避免任何不必要的混乱。</p>
+<p>不少开发者也同意这个提议，还希望在 LLVM 新版发布后进行更改以实现平滑过渡。但也有少数人呼吁尽快改名，不希望受 Git/GitHub 决定的影响而被耽误，更不希望等到下半年 LLVM 11.0 发布再改名，他们想看到一两周内就完成改掉&quot;master&quot;的任务。对于这种呼吁，考虑到涉及的技术成本，以及不希望意外地破坏项目上游或众多下游用户使用的任何构建/拉取脚本，有部分开发者提出了反对意见。</p>
+<p>除了&quot;master&quot;这个名词，还有开发者提出用 allowlist/denylist 替换 LLVM 中的 whitelist/blacklist。目前看来这个更改提议在 LLVM 代码库中很快就会实现。还有一位开发者提出，应避免使用&quot;work&quot;和&quot;job&quot;这两个名词，因为在俄语和其他斯拉夫语言中，它可以被翻译成&quot;奴隶(slave)&quot;。</p>
+<p>LLVM 面临的问题除了要就新的主分支名称达成共识外，还有变更背后的技术成本。目前所涉及的主要技术成本是必须更新其所有的构建机器人和 CI 基础设施，以便在新的分支名称下拉取代码，以及任何其他依赖 Git 中现有分支名称的脚本 —— 包括那些由 LLVM 本身以外的组织使用的脚本，毕竟这些组织可能并不知道名称发生了变化。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/993959/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">[图]你愿意参与创建火星的首个地图数据集吗？NASA启动AI4Mars​项目</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/993951/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">撞断A柱后大众帕萨特走下神坛 5月销量暴跌60%</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/996097/">瑞幸撤回听证会请求：起因于7月6日两则宣判通知</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/996099/">推特上再怼老冤家 马斯克：贝索斯是“抄袭狗”，哈哈</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/996095/">疫情迫使电影公司继续观望  迪士尼宣布再次推迟《花木兰》上映时间</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/996109/">加州规定到2045年商用卡车和货车必须实现零排放</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/996105/">研究表明新冠病毒可导致中风和精神障碍等并发症</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

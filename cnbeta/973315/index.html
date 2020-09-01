@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>[图]从对立走向合作 Windows Subsystem for Linux是如何诞生的 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="[图]从对立走向合作 Windows Subsystem for Linux是如何诞生的" />
+<meta property="og:description" content="Windows Subsystem for Linux（WSL）的开发，让微软从Linux的对立面走向合作，并且不断加大对开源社区的支持力度。而作为微软历史上的重要转折点，外界对WSL技术在Project Astoria中的起源有比较大的争议。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/973315/" />
+<meta property="article:published_time" content="2020-04-30T09:23:07+08:00" />
+<meta property="article:modified_time" content="2020-04-30T09:23:07+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">[图]从对立走向合作 Windows Subsystem for Linux是如何诞生的</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-04-30T09:23:07&#43;08:00">April 30, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>Windows Subsystem for Linux（WSL）的开发，让微软从Linux的对立面走向合作，并且不断加大对开源社区的支持力度。而作为微软历史上的重要转折点，外界对WSL技术在Project Astoria中的起源有比较大的争议。</p>
+<p>访问:</p>
+<p>微软中国官方商城 - Windows</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0430/a72c8340cefc607.jpg" alt="img:[图]从对立走向合作 Windows Subsystem for Linux是如何诞生的"></p>
+<p>Project Astoria目的在于通过为操作系统带来对Android应用的支持，来保持Windows Phone的生命力。Astoria于2015年4月亮相，随后在Build 2015上得到确认，该技术模拟了Android系统调用，将其翻译成Windows Phone的API调用，效果出乎意料的好（甚至有人说太有效了）。</p>
+<p>不过在2016年，微软确认他们不再开发Project Astoria，今天Windows团队的Kevin Gallo提供了以下原因。</p>
+<p>我们收到了很多反馈，认为使用两种Bridge技术将移动操作系统的代码移植到Windows中是没有必要的，如何在这两种技术之间的选择可能会让人感到困惑。</p>
+<p>我们仔细考虑了这些反馈，决定将精力集中在iOS的Windows Bridge上，让它成为将移动代码带到包括Xbox和PC在内的所有Windows 10设备上的唯一Bridge选项。</p>
+<p>对于那些花时间调查Android Bridge的开发者来说，我们强烈鼓励你去看看iOS Bridge和Xamarin提供的解决方案。</p>
+<p>iOS的Windows Bridge最终没有出现什么，这就要求开发者为Windows Phone重新编译他们的应用程序，而不是简单地在操作系统上运行Android二进制文件。</p>
+<p>然而令人惊讶的是，被取消的Project Astoria项目却发展到了更大、更好的领域，第一个版本的Windows Subsystem for Linux（WSL 2直接使用了Linux内核）使用了API翻译技术。</p>
+<p>微软高级软件工程师Ben Hill在 celebrateubuntu podcast上透露了这一消息。</p>
+<p><img src="https://static.cnbetacdn.com/article/2020/0430/540fc1b9ed6f86b.png" alt="img:[图]从对立走向合作 Windows Subsystem for Linux是如何诞生的"></p>
+<p>Ben Hill</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/973317/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">高通:受新冠疫情影响 第三季度智能机出货量将减30%</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/973319/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">特朗普敦促FDA尽快批准瑞德西韦治疗新冠肺炎</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/974967/">研究称新冠病毒或能在水中长期存活  但不意味着它对公众构成威胁</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/974961/">GNU C标准库增加对兆芯 CPU 的检测支持</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/974963/">[视频]你可以遛机器狗了：宇树科技推出四足机器狗A1</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/974959/">锐龙4000领衔 AMD今年祭出最强Zen3：IPC提升多达15%</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/974965/">TIOBE 5月榜单：时隔五年 C语言重返第一</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

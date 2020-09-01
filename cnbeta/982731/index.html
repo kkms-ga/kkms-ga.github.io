@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>IBM Power 10处理器8月揭秘：全新指令集、PCIe 5&#43;DDR5 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="IBM Power 10处理器8月揭秘：全新指令集、PCIe 5&#43;DDR5" />
+<meta property="og:description" content="说到高性能处理器，x86在IBM的Power面前也不敢托大了，无奈Power架构生态不够强大，IBM已经彻底开源了Power指令集，最近又推出了Power ISA 3.1，而基于这一指令集的Power 10处理器预计会在8月份公布。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/982731/" />
+<meta property="article:published_time" content="2020-05-24T15:08:41+08:00" />
+<meta property="article:modified_time" content="2020-05-24T15:08:41+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">IBM Power 10处理器8月揭秘：全新指令集、PCIe 5&#43;DDR5</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-05-24T15:08:41&#43;08:00">May 24, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>说到高性能处理器，x86在IBM的Power面前也不敢托大了，无奈Power架构生态不够强大，IBM已经彻底开源了Power指令集，最近又推出了Power ISA 3.1，而基于这一指令集的Power 10处理器预计会在8月份公布。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0524/7d1a5d217f2acfb.jpg" alt="img:IBM Power 10处理器8月揭秘：全新指令集、PCIe 5+DDR5"></p>
+<p>说到IBM的Power指令集，它也是一款历史悠久的CPU指令集了，苹果早期的电脑就是使用了Power架构，现在IBM的大型机使用的还是自家的Power处理器，最新一代是Power 9，最多可以拥有24个核心96线程（Power支持单核四线程技术），最高频率可以达到3.3GHz。</p>
+<p>目前TOP500超算排名第一及第二的超算使用的就是Power9处理器及NVIDIA的加速卡，所以在高性能方面Power处理器的实力还是非常强大的。</p>
+<p>在今年初的ISSCC 2020大会上，IBM公布了最新版的Power 9处理器详情，核心面积高达696mm2（大概是普通桌面8核处理器的3-4倍），集成92亿晶体管，频率5.2GHz，每个核心配备128KB L1数据缓存、128KB L1指令缓存、4+4MB L2 eDRAM缓存及256MB L3缓存。</p>
+<p>最新Power 9单核性能提升10%，多核数量提升20%（从10核到12核），L2缓存增加33%，L3缓存翻倍，L4缓存增加43%，这一切都是在同样的14nm SOI工艺下要实现的。</p>
+<p>IBM最近发布了Power ISA 3.1指令集，引入了新的指令前缀格式，增加了BF16支持，并加入了大量全新指令，主要就是提升了AI及高性能运算能力，扩展支持更多数据类型。</p>
+<p>首个使用Power ISA 3.1指令集的处理器会是Power 10，预计会在8月中旬的Hotchips 32会议上正式揭开，制程工艺应该会升级到7nm，核心数也会继续提升，同时会加入PCIe 5、DDR5等，毕竟基于Power 10的系统要到2021年才能问世。</p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/982723/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">民间高手魔改卡西欧计算器遭版权组织警告</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/982775/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">长征五号瞄准7月发射火星探测器 工程按计划推进</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/984795/">纽约州推新行政命令：赋予商家拒绝为不戴口罩者提供服务</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/984793/">研究：因气候变化 地球森林正在变得更矮、更稚嫩</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/984797/">改善肠道健康、预防疾病... 新研究发现喝咖啡益处多多</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/984805/">土耳其巨型陨石坠落：空中直接爆炸 现场视频曝光</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/984801/">新冠病毒导致男性不育，有科学根据吗？</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>

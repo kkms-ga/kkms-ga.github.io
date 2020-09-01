@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="never">
+	<title>黑莓安全研究部门发现针对Windows PC的新“大亨”赎金软件 - 罩妖塔</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	<meta property="og:title" content="黑莓安全研究部门发现针对Windows PC的新“大亨”赎金软件" />
+<meta property="og:description" content="据外媒报道， 美国联邦调查局(FBI)的互联网犯罪投诉中心(IC3)去年发布了《网络犯罪报告》。报告显示，网络犯罪在2019年造成了35亿美元的巨大损失。攻击者利用赎金软件从企业和个人用户身上套取金钱。黑莓的安全研究部门最近发现了一种新的赎金软件，影响了欧洲一家教育机构。与迄今为止发现的大多数赎金软件不同的是，这种新的赎金软件模块被编译成一种Java图像文件格式（JIMAGE）。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/n/cnbeta/987257/" />
+<meta property="article:published_time" content="2020-06-05T09:33:23+08:00" />
+<meta property="article:modified_time" content="2020-06-05T09:33:23+08:00" />
+
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/n/css/style.css">
+	
+	<link rel="shortcut icon" href="/n/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/n" title="罩妖塔" rel="home">
+				<div class="logo__title">罩妖塔</div>
+				<div class="logo__tagline">师傅，别跑</div>
+			</a>
+		</div>
+		
+<nav class="menu">
+	<button class="menu__btn" aria-haspopup="true" aria-expanded="false" tabindex="0">
+		<span class="menu__btn-title" tabindex="-1">Menu</span>
+	</button>
+	<ul class="menu__list">
+		<li class="menu__item">
+			<a class="menu__link" href="/n/cnbeta">
+				
+				<span class="menu__text">行业资讯</span>
+				
+			</a>
+		</li>
+	</ul>
+</nav>
+
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">黑莓安全研究部门发现针对Windows PC的新“大亨”赎金软件</h1>
+			<div class="post__meta meta">
+<div class="meta__item-datetime meta__item">
+	<svg class="meta__icon icon icon-time" width="16" height="14" viewBox="0 0 30 28"><path d="M15 0C7 0 1 6 1 14s6 14 14 14 14-6 14-14S23 0 15 0zm0 25C9 25 4 20 4 14S9 3 15 3s11 5 11 11-5 11-11 11zm1-18h-2v8.4l6.8 4.4L22 18l-6-3.8V7z"/></svg><time class="meta__text" datetime="2020-06-05T09:33:23&#43;08:00">June 05, 2020</time></div></div>
+		</header>
+		<div class="content post__content clearfix">
+			<p>据外媒报道， 美国联邦调查局(FBI)的互联网犯罪投诉中心(IC3)去年发布了《网络犯罪报告》。报告显示，网络犯罪在2019年造成了35亿美元的巨大损失。攻击者利用赎金软件从企业和个人用户身上套取金钱。黑莓的安全研究部门最近发现了一种新的赎金软件，影响了欧洲一家教育机构。与迄今为止发现的大多数赎金软件不同的是，这种新的赎金软件模块被编译成一种Java图像文件格式（JIMAGE）。</p>
+<p>6·18活动已全面开启 大促活动入口汇总：</p>
+<p>阿里云6·18上云年中大促 点击领取最高12000元红包</p>
+<p>2020天猫6·18超级红包在此领取 6月1日追加40亿元消费券</p>
+<p>京东6·18十七周年庆大促主会场入口 - 最高可领618元红包</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0605/4a1186c3d3ecf0d.png" alt="img:黑莓安全研究部门发现针对Windows PC的新“大亨”赎金软件"></p>
+<p>JIMAGE是一种存储自定义的JRE映像的文件格式，它的设计是为了在运行时被Java虚拟机（JVM）使用。</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0605/5c5053e3b9ca3e4.png" alt="img:黑莓安全研究部门发现针对Windows PC的新“大亨”赎金软件"></p>
+<p>以下是攻击的过程：</p>
+<p>为了在受害者的机器上实现持久化，攻击者使用了一种名为映像劫持（Image File Execution Options，IFEO)注入的技术。IFEO设置被存储在Windows注册表中。这些设置给了开发者一个选项，在目标应用程序执行过程中，通过附加调试应用程序来调试他们的软件。</p>
+<p>随后一个后门与操作系统的微软Windows屏幕键盘（OSK）功能一起执行。</p>
+<p>攻击者利用ProcessHacker工具禁用了组织的反恶意软件解决方案，并更改了活动目录服务器的密码。这使得受害者无法访问他们的系统。</p>
+<p>攻击者的大部分文件都被进行了时间限制，包括Java库和执行脚本，文件日期时间戳为2020年4月11日15:16:22</p>
+<p>最后，攻击者执行了Java赎金软件模块，对所有文件服务器进行了加密，包括连接到网络的备份系统在内的所有文件服务器都进行了加密。</p>
+<p>在提取出与该赎金软件相关的zip文件后，以 &ldquo;大亨 &ldquo;为名，共有三个模块。所以，黑莓团队将这个赎金软件命名为 &ldquo;大亨&rdquo;。</p>
+<p>下面来看看 &ldquo;大亨 &ldquo;的赎金说明：</p>
+<p><img src="https://static.cnbetacdn.com/thumb/article/2020/0605/a3b0fe63f993312.jpg" alt="img:黑莓安全研究部门发现针对Windows PC的新“大亨”赎金软件"></p>
+		</div>
+	</article>
+</main>
+
+
+<nav class="pager flex">
+	<div class="pager__item pager__item--prev">
+		<a class="pager__link" href="/n/cnbeta/987253/" rel="prev">
+			<span class="pager__subtitle">«&thinsp;Previous</span>
+			<p class="pager__title">纳指收跌0.69% 瑞幸咖啡三连涨股价近乎翻倍</p>
+		</a>
+	</div>
+	<div class="pager__item pager__item--next">
+		<a class="pager__link" href="/n/cnbeta/987241/" rel="next">
+			<span class="pager__subtitle">Next&thinsp;»</span>
+			<p class="pager__title">马云：在国家困难的时候，我们更要做生意</p>
+		</a>
+	</div>
+</nav>
+
+
+
+			</div>
+			<aside class="sidebar">
+<div class="widget-recent widget">
+	<h4 class="widget__title">Recent Posts</h4>
+	<div class="widget__content">
+		<ul class="widget__list">
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/989091/">宝马iX3电动SUV量产计划确认：预计夏末展开</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/989097/">福奇对新冠疫苗持乐观态度  认为这场大流行“将会结束”</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/989077/">美4名参议员要求FCC加速执行特朗普社交媒体行政令</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/989079/">Twitter在印度推出类似Stories的功能：Fleets</a></li>
+			<li class="widget__item"><a class="widget__link" href="/n/cnbeta/989089/">苹果中国正式上架Powerbeats Pro无线耳机：1888元</a></li>
+		</ul>
+	</div>
+</div>
+</aside>
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2020 罩妖塔.
+			
+		</div>
+	</div>
+</footer>
+
+	</div>
+<script async defer src="/n/js/menu.js"></script>
+</body>
+</html>
